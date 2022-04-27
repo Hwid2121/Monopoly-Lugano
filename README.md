@@ -5,7 +5,7 @@ ONE-PARAGRAPH DESCRIPTION OF YOUR GAME
 ## Team Members
 
 * Nicolo' Tafta (nicolo.tafta@usi.ch), Hwid2121
-* FIRSTNAME LASTNAME (EMAIL), GITHUBACCOUNT
+* Alberto Sardo (alberto.sardo@usi.ch), AlbertoSardo
 
 ## Mentor
 
