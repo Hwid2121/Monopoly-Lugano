@@ -21,7 +21,13 @@ public class Dice
     public Dice(){
         random();
     }
-
+    
+    public Dice(int die1, int die2){
+        this.die1 = die1;
+        this.die2 = die2;
+    }
+    
+    
     public void random(){
         die1 = rand.nextInt(7);
         die2 = rand.nextInt(7);
@@ -38,4 +44,7 @@ public class Dice
     public int getDice(){
         return die1 + die2;
     }
+    
+    
+
 }

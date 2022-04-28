@@ -1,4 +1,4 @@
-package model;
+package src.model;
 
 
 /**
@@ -35,6 +35,11 @@ public class Player
 
     public String getNickname(){
         return nickname;
+    }
+
+
+    public int diceRollPlayer(){
+        return -1;
     }
 
     

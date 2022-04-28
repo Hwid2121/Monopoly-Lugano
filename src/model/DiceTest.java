@@ -15,21 +15,21 @@ import org.junit.jupiter.api.Test;
  */
 public class DiceTest
 {
-    /**
-     * Default constructor for test class DiceTest
-     */
-    public DiceTest()
-    {
-    }
+    private Dice value1;
+    private Dice value2;
+    private Dice value3;
 
     /**
      * Sets up the test fixture.
      *
      * Called before every test case method.
      */
-    @BeforeEach
+    
     public void setUp()
     {
+        value1 = new Dice(0,0);
+        value2 = new Dice(1,0);
+        value3 = new Dice(1,5);
     }
 
     /**
@@ -37,8 +37,11 @@ public class DiceTest
      *
      * Called after every test case method.
      */
-    @AfterEach
-    public void tearDown()
+    @Test
+    public void testGetDice()
     {
+        assertEquals(0, value1);
+        assertEquals(1, value2);
+        assertEquals(6, value3);
     }
 }
