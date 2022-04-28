@@ -1,21 +1,21 @@
-package src;
+package src.model;
 
 
 /**
- * Write a description of class Player here.
+ * Write a description of class Table here.
  *
  * @author (your name)
  * @version (a version number or a date)
  */
-public class Player
+public class Table
 {
     // instance variables - replace the example below with your own
     private int x;
 
     /**
-     * Constructor for objects of class Player
+     * Constructor for objects of class Table
      */
-    public Player()
+    public Table()
     {
         // initialise instance variables
         x = 0;
