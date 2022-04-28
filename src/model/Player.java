@@ -1,4 +1,4 @@
-package src.model;
+package model;
 
 
 /**
@@ -21,6 +21,20 @@ public class Player
         this.nickname = nickname;
         money = 1500;
         position = 0;
+    }
+
+
+
+    public int getMoney(){
+        return money;
+    }
+
+    public int getPosition(){
+        return position;
+    }
+
+    public String getNickname(){
+        return nickname;
     }
 
     

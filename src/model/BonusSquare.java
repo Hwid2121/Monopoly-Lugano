@@ -1,35 +1,39 @@
-package src.model;
+package model;
 
 
 /**
- * Write a description of class BonusSquare here.
+ * This class rapresent the bonus square of the table such as:
+ *  - Start
+ *  - Bonus (in future cards)
+ *  - Malus (in future cards)
+ *  - Jail
+ *  - 
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author Nicolo' Tafta & Alberto Sardo
+ * @version 28/04/2022
  */
-public class BonusSquare
+public class BonusSquare extends Square
 {
-    // instance variables - replace the example below with your own
-    private int x;
 
-    /**
-     * Constructor for objects of class BonusSquare
-     */
-    public BonusSquare()
-    {
-        // initialise instance variables
-        x = 0;
+    
+
+
+    public BonusSquare( 
+                String name, String color, int pos){
+        super(name,color,pos);
+
     }
 
-    /**
-     * An example of a method - replace this comment with your own
-     *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
-     */
-    public int sampleMethod(int y)
-    {
-        // put your code here
-        return x + y;
+
+
+    public void giveMoney(){
+
     }
+
+    public void takeMoney(){
+        
+    }
+
+
+
 }
