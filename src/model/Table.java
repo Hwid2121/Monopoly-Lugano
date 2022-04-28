@@ -1,5 +1,6 @@
-package src.model;
-import Square;
+
+package model;
+
 
 /**
  * this class rapresent the table composed by the square and wher ethe player will play

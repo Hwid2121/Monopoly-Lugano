@@ -20,6 +20,6 @@ public class DiceTest
      */
     public DiceTest()
     {
-        assertEquals(d    
+     
     }
 }
