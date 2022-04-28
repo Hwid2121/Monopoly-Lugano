@@ -10,7 +10,17 @@ package src.model;
 public class Player
 {
    
+    private int money;
+    private final String nickname;
+    private int position;
+    private int[] propertiesID;
 
 
+
+    public Player(String nickname){
+        this.nickname = nickname;
+        money = 1500;
+        position = 0;
+    }
 
 }
