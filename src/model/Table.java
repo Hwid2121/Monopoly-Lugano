@@ -1,5 +1,5 @@
 
-package src.model;
+package model;
 
 
 /**
@@ -10,6 +10,12 @@ package src.model;
  */
 public class Table
 {
-   
+
+    Square[] cell = new Square[40];
+
+
+    public Square getSquare(int pos){
+        return cell[pos];
+    }
 
 }

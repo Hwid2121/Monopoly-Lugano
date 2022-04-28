@@ -16,12 +16,11 @@ public class BonusSquare extends Square
 {
 
     
+    private final String description;
 
-
-    public BonusSquare( 
-                String name, String color, int pos){
+    public BonusSquare(String name, String color, int pos, String description){
         super(name,color,pos);
-
+        this.description = description;
     }
 
 
@@ -31,9 +30,12 @@ public class BonusSquare extends Square
     }
 
     public void takeMoney(){
-        
+
     }
 
+    public String getDescription(){
+        return description;
+    }
 
 
 }

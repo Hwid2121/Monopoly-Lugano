@@ -1,4 +1,4 @@
-package src.model;
+package model;
 
 
 /**
@@ -11,4 +11,6 @@ package src.model;
 public class Monopoly
 {
     
+
+
 }
