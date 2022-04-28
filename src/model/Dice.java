@@ -1,5 +1,9 @@
-package src.model;
+
+package model;
 import java.util.Random;
+
+
+
 
 /**
  * THis class rappresents the Dice 
@@ -9,7 +13,7 @@ import java.util.Random;
  */
 public class Dice
 {
-    
+    Random rand = new Random();
     private  int die1;
     private  int die2;
 
@@ -19,8 +23,8 @@ public class Dice
     }
 
     public void random(){
-        die1 = (int)(Math.random()*6) + 1;
-        die2 = (int)(Math.random()*6) + 1;
+        die1 = rand.nextInt(7);
+        die2 = rand.nextInt(7);
     }
 
     public int getDie1(){
@@ -34,12 +38,4 @@ public class Dice
     public int getDice(){
         return die1 + die2;
     }
-}
-
-
-
-
- 
-
-
 }
