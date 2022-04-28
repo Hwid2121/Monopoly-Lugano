@@ -1,4 +1,4 @@
-package model;
+package src.model;
 
 
 // TODO: Replace this class with

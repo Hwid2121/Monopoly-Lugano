@@ -1,4 +1,4 @@
-package tui;
+package src.tui;
 
 /**
  * DESCRIBE THIS CLASS
