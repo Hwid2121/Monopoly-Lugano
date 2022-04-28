@@ -1,5 +1,5 @@
 package src.model;
-
+import Square;
 
 /**
  * this class rapresent the table composed by the square and wher ethe player will play
@@ -10,5 +10,5 @@ package src.model;
 public class Table
 {
    
-    
+
 }

@@ -1,6 +1,5 @@
 package src.model;
 
-
 /**
  * This rapresents each square of a table in monopoly game
  *
@@ -9,6 +8,5 @@ package src.model;
  */
 public class Square
 {
-    
     
 }
