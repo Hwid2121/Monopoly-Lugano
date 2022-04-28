@@ -44,4 +44,9 @@ public class DiceTest
         assertEquals(1, value2);
         assertEquals(6, value3);
     }
+    
+    public void testGetDie1(){
+        assertEquals(0, value1);
+        assertEquals(1,value2);
+    }
 }
