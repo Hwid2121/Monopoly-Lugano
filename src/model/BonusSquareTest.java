@@ -8,17 +8,17 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 /**
- * The test class DiceTest.
+ * The test class BonusSquareTest.
  *
  * @author  (your name)
  * @version (a version number or a date)
  */
-public class DiceTest
+public class BonusSquareTest
 {
     /**
-     * Default constructor for test class DiceTest
+     * Default constructor for test class BonusSquareTest
      */
-    public DiceTest()
+    public BonusSquareTest()
     {
     }
 

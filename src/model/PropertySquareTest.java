@@ -8,17 +8,17 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 /**
- * The test class SquareTest.
+ * The test class PropertySquareTest.
  *
  * @author  (your name)
  * @version (a version number or a date)
  */
-public class SquareTest
+public class PropertySquareTest
 {
     /**
-     * Default constructor for test class SquareTest
+     * Default constructor for test class PropertySquareTest
      */
-    public SquareTest()
+    public PropertySquareTest()
     {
     }
 
