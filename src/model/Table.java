@@ -28,8 +28,12 @@ public class Table
         cell[7] = new BonusSquare("bonus", "white", "You won lottery you got 75", 75);
         cell[8] = new PropertySquare(100,6, "via", "blue");
         cell[9] = new PropertySquare(120, 8 , "via", "blue");
-        cell[10] = new BonusSquare(200,2, "via", "special");  
+        cell[10] = new BonusSquare("Go to Jail!", "white", "now you go to the jail!", -1);
 
+        cell[11] = new PropertySquare(140, 10, "via", "pink");
+        cell[12] =new PropertySquare(150, 4xdiceroll , "eletric", "white");
+        cell[13] = new PropertySquare(140,10, "via", "pink");
+        cell[14] =new PropertySquare(120, 8 , "via", "blue");
     }
 
     public Square getSquare(int pos){
