@@ -14,7 +14,7 @@ public class Player
     private final String nickname;
     private int position;
     private int[] propertiesID;
-
+    private int turn;
 
 
     public Player(String nickname){
@@ -40,6 +40,11 @@ public class Player
 
     public int diceRollPlayer(){
         return -1;
+    }
+    
+    
+    public int getTurn(){
+        return turn;
     }
 
     

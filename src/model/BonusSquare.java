@@ -17,10 +17,11 @@ public class BonusSquare extends Square
 
     
     private final String description;
-
-    public BonusSquare(String name, String color, int pos, String description){
-        super(name,color,pos);
+    private final int money;
+    public BonusSquare(String name, String color, String description, int money){
+        super(name,color);
         this.description = description;
+        this.money = money;
     }
 
 

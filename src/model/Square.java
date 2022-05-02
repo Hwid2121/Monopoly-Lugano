@@ -18,10 +18,9 @@ public class Square
     private final int pos;
 
 
-    public Square(String name, String color, int pos){
+    public Square(String name, String color){
         this.name = name;
         this.color = color;
-        this.pos = pos;
     }
 
 

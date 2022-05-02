@@ -18,8 +18,8 @@ public class PropertySquare extends Square
 
 
     public PropertySquare(int price, int priceTax, 
-                String name, String color, int pos){
-        super(name,color,pos);
+                String name, String color){
+        super(name,color);
         this.price = price;
         this.priceTax = priceTax;
     }
