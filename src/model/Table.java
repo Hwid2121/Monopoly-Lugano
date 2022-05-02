@@ -113,45 +113,45 @@ public class Table
 
 /**
  *  start (+200)
- *  propertyA
+ * Via la Santa
  * bonus
- * propertyA
+ * Via Zurigo
  * malus (-200)
- * propertyA
- * propertyB
+ * Parco Florida
+ * Via Giuseppe Bagutti
  * bonus
- * propertyB
- * propertyB
- * JAIL
- * propertyC
- * propertyC
- * propertyC
- * propertyC
- * propertyC
- * propertyD
+ * Convento dei Cappucini
+ * Via delle Aie
+ * Penitenziario Lo Stampino
+ * Viale Cassarate
+ * Via delle Rose
+ * Parco Tassino
+ * Piazza Molino Nuovo
+ * Lugano Arte e Cultura (LAC)
+ * Via Maggio
  * bonus
- * propertyD
- * propertyD
+ * Piazzale Stazione
+ * Giardino Belvedere
  * NULL (do nothing)
- * propertyE
+ * Chiesa Santa Maria degli Angeli
  * bonus/malus
- * propertyE
- * propertyE
- * propertyE
- * propertyF
- * propertyF
- * propertyF
- * propertyF
+ * Lido di Lugano
+ * Corso Elvezia
+ * Viale Serafino Balestra
+ * Piazza della Riforma
+ * Via Nassa
+ * Riva Paradiso 
+ * Via alla Vetta
  * GO back TO JAIL
- * propertyG
- * propertyG
+ * Riva Vincenzo Vela
+ * Via Riviera
  * bonus
- * propertyG
- * propertyG
+ * Viale Castagnola
+ * Parco San Michele
  * bonus/malus
- * propertyE
+ * Villa Favorita 
  * malus (-100)
- * propertyE
+ * Parco Ciani
  * 
  * 
  */
