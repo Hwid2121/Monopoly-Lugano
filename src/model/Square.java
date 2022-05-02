@@ -1,4 +1,4 @@
-package src.model;
+package model;
 
 
 /**
@@ -15,8 +15,6 @@ public class Square
     private final String color;
 
 
-    private final int pos;
-
 
     public Square(String name, String color){
         this.name = name;
@@ -32,8 +30,6 @@ public class Square
         return color;
     }
 
-    public int getPos(){
-        return pos;
-    }
+
 
 }

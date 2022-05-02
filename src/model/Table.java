@@ -1,8 +1,8 @@
 
-package src.model;
+package model;
 
-import src.model.BonusSquare;
-import src.model.BonusSquareTest;
+import model.BonusSquare;
+import model.BonusSquareTest;
 
 /**
  * this class rapresent the table composed by the square and wher ethe player will play
@@ -43,7 +43,7 @@ public class Table
 
         cell[11] = new PropertySquare(140, 10, "via", "pink");
 
-        cell[12] = new PropertySquare(150, 4xdiceroll , "eletric", "white");
+        cell[12] = new PropertySquare(150, 66 , "eletric", "white");
 
         cell[13] = new PropertySquare(140,10, "via", "pink");
         
@@ -75,7 +75,7 @@ public class Table
 
         cell[27] = new PropertySquare(260, 22 , "via", "yellow");
 
-        cell[28] = new PropertySquare(150, 4xdiceroll , "via", "white");
+        cell[28] = new PropertySquare(150, 66 , "via", "white");
 
         cell[29] = new PropertySquare(280, 24 , "via", "yellow");
 

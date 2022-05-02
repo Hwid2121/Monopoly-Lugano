@@ -1,11 +1,11 @@
-package src.model;
+package model;
 
 
 /**
  * Write a description of class JailSquare here.
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author Nicolo' Tafta & Alberto Sardo
+ * @version 
  */
 public class JailSquare extends Square
 {

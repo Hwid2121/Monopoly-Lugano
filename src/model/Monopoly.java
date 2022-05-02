@@ -1,4 +1,4 @@
-package src.model;
+package model;
 
 
 /**
@@ -11,6 +11,12 @@ package src.model;
 public class Monopoly
 {
     
+    
+    
+
+    public static void main(String[] args) {
+        System.out.println("son fottuto");
+    }
 
 
 }

@@ -1,5 +1,5 @@
 
-package src.model;
+package model;
 
 /**
  * This rapresent the property in the table
@@ -17,8 +17,7 @@ public class PropertySquare extends Square
     private final int priceTax;
 
 
-    public PropertySquare(int price, int priceTax, 
-                String name, String color){
+    public PropertySquare(int price, int priceTax, String name, String color){
         super(name,color);
         this.price = price;
         this.priceTax = priceTax;

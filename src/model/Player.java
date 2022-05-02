@@ -1,4 +1,4 @@
-package src.model;
+package model;
 
 
 /**
@@ -46,6 +46,12 @@ public class Player
     public int getTurn(){
         return turn;
     }
+
+    public void turnIncrement(){
+        turn += 1;
+    }
+
+
 
     
 

@@ -1,11 +1,8 @@
-package src.model;
+package model;
 
+import static org.junit.Assert.fail;
 
-
-import static org.junit.jupiter.api.Assertions.*;
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
 /**
  * The test class DiceTest.
@@ -15,38 +12,5 @@ import org.junit.jupiter.api.Test;
  */
 public class DiceTest
 {
-    private Dice value1;
-    private Dice value2;
-    private Dice value3;
-
-    /**
-     * Sets up the test fixture.
-     *
-     * Called before every test case method.
-     */
     
-    public void setUp()
-    {
-        value1 = new Dice(0,0);
-        value2 = new Dice(1,0);
-        value3 = new Dice(1,5);
-    }
-
-    /**
-     * Tears down the test fixture.
-     *
-     * Called after every test case method.
-     */
-    @Test
-    public void testGetDice()
-    {
-        assertEquals(0, value1);
-        assertEquals(1, value2);
-        assertEquals(6, value3);
-    }
-    
-    public void testGetDie1(){
-        assertEquals(0, value1);
-        assertEquals(1,value2);
-    }
 }
