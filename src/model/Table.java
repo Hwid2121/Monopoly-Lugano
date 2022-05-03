@@ -1,5 +1,5 @@
 
-package model;
+package src.model;
 
 import model.BonusSquare;
 import model.BonusSquareTest;

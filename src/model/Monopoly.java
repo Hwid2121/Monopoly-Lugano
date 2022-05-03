@@ -1,5 +1,6 @@
 package model;
 
+import javax.print.attribute.standard.NumberOfDocuments;
 
 /**
  * This class rapresent the main of the game, here all the principals 
@@ -11,12 +12,21 @@ package model;
 public class Monopoly
 {
     
-    
+    public Table  table = new Table();
+    public Dice dice = new Dice();
     
 
-    public static void main(String[] args) {
-        System.out.println("son fottuto");
+    public final int  numOfPlayers;
+
+
+    public Monopoly(int players){
+        numOfPlayers = players;  
+        
+        
+    
     }
+
+
 
 
 }

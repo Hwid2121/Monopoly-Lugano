@@ -1,4 +1,4 @@
-package model;
+package src.model;
 
 
 /**
@@ -14,6 +14,7 @@ public class Square
     private final String name;
     private final String color;
 
+  
 
 
     public Square(String name, String color){
