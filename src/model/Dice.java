@@ -1,5 +1,5 @@
 
-package src.model;
+package model;
 import java.util.Random;
 
 

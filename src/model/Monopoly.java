@@ -1,5 +1,6 @@
 package model;
 
+
 import javax.print.attribute.standard.NumberOfDocuments;
 
 /**
@@ -14,6 +15,9 @@ public class Monopoly
     
     public Table  table = new Table();
     public Dice dice = new Dice();
+    
+
+
     
 
     public final int  numOfPlayers;

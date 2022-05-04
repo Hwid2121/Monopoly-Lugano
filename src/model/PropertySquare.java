@@ -1,5 +1,5 @@
 
-package src.model;
+package model;
 
 /**
  * This rapresent the property in the table
