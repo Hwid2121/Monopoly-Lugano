@@ -1,6 +1,6 @@
 package model;
 
-
+import java.util.ArrayList;
 import javax.print.attribute.standard.NumberOfDocuments;
 
 /**
@@ -20,14 +20,20 @@ public class Monopoly
 
     
 
-    public final int  numOfPlayers;
+    public int  numOfPlayers;
 
 
-    public Monopoly(int players){
-        numOfPlayers = players;  
-        
-        
-    
+    public Monopoly(ArrayList<Player> players){
+        numOfPlayers = players.size();
+    }
+
+
+
+
+
+
+    public boolean MonopolyEND(){
+        return numOfPlayers > 0;
     }
 
 

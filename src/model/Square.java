@@ -1,5 +1,5 @@
 package model;
-
+import java.util.ArrayList;
 
 /**
  * this class rapresents all the square in  the table, this class have 2 childs:

@@ -1,4 +1,5 @@
 package model;
+import java.util.ArrayList;
 
 
 /**
@@ -13,7 +14,8 @@ public class Player
     private int money;
     private final String nickname;
     private int position;
-    private int[] propertiesID;
+
+    private ArrayList<PropertySquare> listOfProperty = new ArrayList<PropertySquare>();
     private int turn;
 
 

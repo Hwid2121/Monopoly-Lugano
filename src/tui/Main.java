@@ -3,7 +3,7 @@ import java.util.Scanner;  // Import the Scanner class
 import java.util.ArrayList;
 
 import model.*;
-
+import model.Monopoly;
 
 /**
  * DESCRIBE THIS CLASS
@@ -31,12 +31,18 @@ public class Main {
    
 
 
-
+        String Nickname = "";
         while(listOfPlayers.size() < numberOfPlayers){
 
-            System.out.println("Nickname giocatore" + listOfPlayers.size());
-
-            listOfPlayers.add(new Player(input.nextLine()));
+            
+            System.out.println("Nickname giocatore " + listOfPlayers.size());
+            
+            Nickname = input.nextLine();
+            if(input.hasNextLine()){
+                
+                listOfPlayers.add(new Player(Nickname));
+            }
+            
 
         }
 
@@ -50,7 +56,25 @@ public class Main {
     }
 
     public  void gameStatus(){
-        this.status = 1;
+        
+        System.out.println("Il gioco inizia /n");
+        System.out.println("Ogni giocatore inizia con 1500");
+
+
+        Monopoly monopoly = new Monopoly(listOfPlayers);
+
+
+        while(monopoly.MonopolyEND()){
+
+            
+
+
+
+        }
+
+        status = -1;
+
+        
     }
 
     public  void finishStatus(){
