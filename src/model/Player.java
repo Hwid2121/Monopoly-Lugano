@@ -57,7 +57,7 @@ public class Player
         return -1;
     }
     
-    
+        
     public int getTurn(){
         return turn;
     }

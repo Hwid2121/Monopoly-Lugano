@@ -17,6 +17,10 @@ public class Table
     
     Square[] cell = new Square[sizeTable];
 
+    public Table(){
+        newtable();
+    }
+
 
     public void newtable(){
         cell[0] = new BonusSquare("Start","white", "The start for every player.",200);
@@ -103,12 +107,12 @@ public class Table
     }
 
     public Square getSquare(int pos){
-        return cell[pos];
+        return  cell[pos];
     }
 
 
     public String getSquareName(int pos){
-        return getSquare(pos).getName();
+        return this.getSquare(pos).getName();
     }
 
     public static int getSizeofTable(){

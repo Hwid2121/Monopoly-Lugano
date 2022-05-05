@@ -32,7 +32,7 @@ public class Monopoly
 
 
     public boolean MonopolyEND(){
-        return numOfPlayers == 1;
+        return numOfPlayers >= 1;
     }
 
 
@@ -49,8 +49,12 @@ public class Monopoly
         
 
         player.setPosition(steps);
-        System.out.println("Sei arrivato alla casella: " + table.getSquare());
+        System.out.println("Sei arrivato alla casella: " + table.getSquareName(player.getPosition()));
+        // table.getSquareName(player.getPosition())
+        
+
     }
+    
 
 
 

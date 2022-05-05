@@ -24,11 +24,11 @@ public class Square
 
 
     public String getName(){
-        return name;
+        return this.name;
     }
 
     public String getColor(){
-        return color;
+        return this.color;
     }
 
 
