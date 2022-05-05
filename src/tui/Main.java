@@ -74,7 +74,7 @@ public class Main {
 
             turn += 1;
 
-            if(turn >= 2){
+            if(turn >= 4){
                 break;
             }
             // break;

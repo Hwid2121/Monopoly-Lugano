@@ -50,8 +50,23 @@ public class Monopoly
 
         player.setPosition(steps);
         System.out.println("Sei arrivato alla casella: " + table.getSquareName(player.getPosition()));
-        // table.getSquareName(player.getPosition())
+
+
+        switch (table.getSquare(player.getPosition()).getColor()){
+            case "white":
+                Monopoly.bonusSquarePLAY();
+                break;
+            
+        }
+
+
+
         
+
+    }
+
+
+    public static void bonusSquarePLAY(){
 
     }
     
