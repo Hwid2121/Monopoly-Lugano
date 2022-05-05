@@ -31,9 +31,25 @@ public class Monopoly
 
 
 
-
     public boolean MonopolyEND(){
-        return numOfPlayers > 0;
+        return numOfPlayers == 1;
+    }
+
+
+
+    public void playTurn(Player player){
+
+        // player.printNickname();
+        System.out.println(player.getNickname() + " e' il tuo turno!");
+
+        int steps = dice.random();
+
+        System.out.println("I tuoi dadi hanno fatto " + dice.getDie1() +  " e " + dice.getDie2());
+        System.out.println("Avanzi di " + steps);
+        
+
+        player.setPosition(steps);
+        System.out.println("Sei arrivato alla casella: " + table.getSquare());
     }
 
 

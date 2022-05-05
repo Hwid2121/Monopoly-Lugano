@@ -13,9 +13,9 @@ import model.BonusSquareTest;
 public class Table
 {
     
-    static private final int size = 40;
+    static private final int sizeTable = 40;
     
-    Square[] cell = new Square[size];
+    Square[] cell = new Square[sizeTable];
 
 
     public void newtable(){
@@ -104,6 +104,15 @@ public class Table
 
     public Square getSquare(int pos){
         return cell[pos];
+    }
+
+
+    public String getSquareName(int pos){
+        return getSquare(pos).getName();
+    }
+
+    public static int getSizeofTable(){
+        return sizeTable;
     }
 
 }

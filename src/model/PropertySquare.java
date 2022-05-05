@@ -1,5 +1,6 @@
 
 package model;
+import model.*;
 
 /**
  * This rapresent the property in the table
@@ -11,7 +12,7 @@ public class PropertySquare extends Square
 {
     
 
-    private Player owner;
+    private String owner;
 
     private final int price;
     private final int priceTax;
@@ -23,15 +24,21 @@ public class PropertySquare extends Square
         this.priceTax = priceTax;
     }
 
-    public void changeOwner(){
-
+    public void changeOwner(Player player){
+        owner = player.getPlayer();
     }
 
-    public void buying(){
-
+    public PropertySquare buying(){
+        return this;
     }
 
+
+    
     public void selling(){
+
+    }
+
+    public void setOwner(){
 
     }
 

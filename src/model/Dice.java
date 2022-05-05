@@ -27,10 +27,11 @@ public class Dice
         this.die2 = die2;
     }
     
-    
-    public void random(){
-        die1 = rand.nextInt(7);
-        die2 = rand.nextInt(7);
+
+    public int random(){
+        die1 = rand.nextInt(5) + 1;
+        die2 = rand.nextInt(5) + 1;
+        return getDice();
     }
 
     public int getDie1(){

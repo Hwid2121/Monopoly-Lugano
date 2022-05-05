@@ -1,4 +1,5 @@
 package model;
+
 import java.util.ArrayList;
 
 
@@ -15,7 +16,7 @@ public class Player
     private final String nickname;
     private int position;
 
-    private ArrayList<PropertySquare> listOfProperty = new ArrayList<PropertySquare>();
+    private ArrayList<PropertySquare> listOfProperty = new ArrayList<PropertySquare>(); 
     private int turn;
 
 
@@ -31,6 +32,14 @@ public class Player
         return money;
     }
 
+    public String getPlayer(){
+        return nickname;
+    }
+
+    public void printNickname(){
+        System.out.println(nickname);
+    }
+
     public int getPosition(){
         return position;
     }
@@ -39,6 +48,10 @@ public class Player
         return nickname;
     }
 
+    
+    public void buyProperty(PropertySquare house){
+        listOfProperty.add(house.buying());
+    }
 
     public int diceRollPlayer(){
         return -1;
@@ -51,6 +64,13 @@ public class Player
 
     public void turnIncrement(){
         turn += 1;
+    }
+
+
+
+    public void setPosition(int pos){
+        position = (position + pos) % Table.getSizeofTable();
+        System.out.println(position);
     }
 
 
