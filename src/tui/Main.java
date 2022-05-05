@@ -52,6 +52,56 @@ public class Main {
 
     }
 
+    protected boolean nextTurn = false;
+
+    public void  bonusPLAYmain(Player player){
+
+    }
+
+    public void malusPLAYmain(Player player){
+
+    }
+
+    public void parkPLAYmain(Player player){
+
+    }
+
+    public void companyPLAYmain(Player player){
+
+    }
+
+    public void jailPLAYmain(Player player){
+
+    }
+
+    public void emptyPLAYmain(Player player) {
+
+    }
+
+    public void gotoPLAYmain(Player player){
+
+    }
+
+    public void PropertySquarePLAY(Player player){
+        
+        System.out.println("You are in a property'");
+        System.out.println("Write: Description (for the description of the property) ");
+        System.out.println("Buy (for buying the property) ");
+        System.out.println("Vendi (to sell this property) ");
+        System.out.println("Pass (to finish the turn) ");
+
+        String word  = input.nextLine();
+
+        switch(word){
+            case "Description":
+            monopoly.proper
+        }
+
+        while(!nextTurn){
+
+        }
+        
+    }
 
 
     public void gameStatus() {
@@ -74,12 +124,32 @@ public class Main {
             System.out.println("I tuoi dadi hanno fatto " + monopoly.die1() + " e " +  monopoly.die2());
             System.out.println("Avanzi di " + (monopoly.die1() + monopoly.die2()));
 
-
-            monopoly.playTurn(listOfPlayers.get(turn));
+            monopoly.setPositionPlayer(listOfPlayers.get(turn));
+            System.out.println("Sei arrivato alla casella: " + monopoly.table.getSquareName(listOfPlayers.get(turn).getPosition()));
             
 
-
             
+            switch(monopoly.table.getSquare(listOfPlayers.get(turn).getPosition()).getColor()){
+
+                case "bonus":
+                bonusPLAYmain(listOfPlayers.get(turn));
+                case "malus":
+                malusPLAYmain(listOfPlayers.get(turn));
+                case "park":
+                parkPLAYmain(listOfPlayers.get(turn));
+                case "company":
+                companyPLAYmain(listOfPlayers.get(turn));
+                case "jail":
+                jailPLAYmain(listOfPlayers.get(turn));
+                case "empty":
+                emptyPLAYmain(listOfPlayers.get(turn));
+                case "goto":
+                gotoPLAYmain(listOfPlayers.get(turn));
+
+
+                default:
+                    PropertySquarePLAY(listOfPlayers.get(turn));
+            }
 
             turn += 1;
 

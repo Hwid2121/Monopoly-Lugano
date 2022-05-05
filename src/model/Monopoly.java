@@ -52,37 +52,59 @@ public class Monopoly
     }
 
 
-    public void playTurn(Player player){
 
-        
+
+    public void setPositionPlayer(Player player){
         player.setPosition(steps);
-        System.out.println("Sei arrivato alla casella: " + table.getSquareName(player.getPosition()));
+    }
 
+    
 
-        switch (table.getSquare(player.getPosition()).getColor()){
-            case "white":
-                Monopoly.bonusSquarePLAY();
-                break;
-            
-            // case "black":
-            //     Monopoly.jailSquarePLAY();
-            
-            
-        }
-
+    public void PropertySquarePLAY(Player player){
         
-
-
-        
+        if (player.getMoney() >= )
 
     }
+
+
+    public String propertyDescr(Player player){
+        return table.getDescriptionProperty(player.getPosition());
+    }
+
+
+    public void bonusPLAY(Player player){
+        
+    }
+
+    public void malusPLAY(Player player){
+        
+    }
+
+    public void parkPLAY(Player player){
+        
+    }
+
+    public void companyPLAY(Player player){
+        
+    }
+
+    public void jailPLAY(Player player){
+        
+    }
+
+    public void emptyPLAY(Player player){
+        
+    }
+
+    public void gotoPLAY(Player player){
+        
+    }
+
+    
+
     
 
 
-
-    public static void bonusSquarePLAY(){
-
-    }
     
 
 

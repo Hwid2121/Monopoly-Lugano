@@ -18,6 +18,11 @@ public class PropertySquare extends Square
     private final int priceTax;
 
 
+
+
+    
+
+
     public PropertySquare(int price, int priceTax, String name, String color){
         super(name,color);
         this.price = price;
@@ -43,11 +48,11 @@ public class PropertySquare extends Square
     }
 
 
-    public int getPrice(){
-        return price;
+    public  int getPrice(){
+        return this.price;
     }
 
-    public int priceTax(){
+    public int getPriceTax(){
         return priceTax;
     }
 

@@ -23,85 +23,85 @@ public class Table
 
 
     public void newtable(){
-        cell[0] = new BonusSquare("Start","white", "The start for every player.",200);
+        cell[0] = new BonusSquare("Start","bonus", "The start for every player.",200);
 
         cell[1] = new PropertySquare(60,2, "Via Zurigo", "brown");
 
-        cell[2] = new BonusSquare("Community Chest", "white", "You won at lottery you got +100", 100 );
+        cell[2] = new BonusSquare("Community Chest", "bonus", "You won at lottery you got +100", 100 );
 
         cell[3] = new PropertySquare(60,2, "Via Giuseppe Bagutti", "brown");
 
-        cell[4] = new BonusSquare( "Income Tax", "white", "Income tax you have to pay 200", 200);
+        cell[4] = new BonusSquare( "Income Tax", "malus", "Income tax you have to pay 200", 200);
 
-        cell[5] = new PropertySquare(200,2, "Via la Santa", "special");
+        cell[5] = new PropertySquare(200,2, "Parco Florida", "park");
 
-        cell[6] = new PropertySquare(100,6, "Parco Florida", "blue");
+        cell[6] = new PropertySquare(100,6, "Via la Santa", "blue");
 
-        cell[7] = new BonusSquare("Monte Generoso", "white", "You won lottery you got 75", 75);
+        cell[7] = new BonusSquare("Casino' Lugano", "bonus", "You won lottery you got 75", 75);
 
         cell[8] = new PropertySquare(100,6, "Convento dei Cappuccini", "blue");
 
         cell[9] = new PropertySquare(120, 8 , "Via delle Aie", "blue");
 
-        cell[10] = new BonusSquare("Penitenziario Lo Stampino!", "white", "now you go to the jail!", -1);
+        cell[10] = new BonusSquare("Go to the jail!", "goto", "now you go to the jail!", -1);
 
         cell[11] = new PropertySquare(140, 10, "Viale Cassarate", "pink");
 
-        cell[12] = new PropertySquare(150, 66 , "Centrale Elettrica AIL", "white");
+        cell[12] = new PropertySquare(150, 66 , "Centrale Elettrica AIL", "company");
 
         cell[13] = new PropertySquare(140,10, "Via delle Rose", "pink");
         
-        cell[14] = new PropertySquare(160,12, "Parco Tassino", "pink");
+        cell[14] = new PropertySquare(160,12, "Piazza Molino Nuovo", "pink");
         
-        cell[15] = new PropertySquare(200,25, "Piazza Molino Nuovo", "white");
+        cell[15] = new PropertySquare(200,25, "Villa Favorita ", "Park");
         
         cell[16] = new PropertySquare(180,14, "Lugano Arte e Cultura (LAC)", "orange");
         
-        cell[17] = new BonusSquare("USI Campus West", "white", "get 100", 100);
+        cell[17] = new BonusSquare("USI Campus West", "bonus", "get 100", 100);
 
         cell[18] = new PropertySquare(180,14, "Via Maggio", "orange");
         
         cell[19] = new PropertySquare(200,16, "Chiesa Santa Maria degli Angeli", "orange");
         
-        cell[20] = new BonusSquare("Empty square, do nothing", "white", "Nothing, square only to sit in peace", 0);
+        cell[20] = new BonusSquare("Empty square, do nothing", "empty", "Nothing, square only to sit in peace", 0);
 
-        cell[21] = new PropertySquare(220, 18 , "Giardino Belvedere", "red");
+        cell[21] = new PropertySquare(220, 18 , "Piazzale Stazione ", "red");
 
-        cell[22] = new BonusSquare("bonus supposed to be cards", "white", "pick a card but in this case money", 120);
+        cell[22] = new BonusSquare("Punto citta' sent you a fine!", "malus", "you have to pay the fine of 120 chf", 120);
 
         cell[23] = new PropertySquare(220, 18 , "Corso Elvezia", "red");
 
         cell[24] = new PropertySquare(240, 20 , "Lido", "red");
 
-        cell[25] = new PropertySquare(200, 25 , "Piazzale Stazione", "white");
+        cell[25] = new PropertySquare(200, 25 , "Parco San Michele", "park");
 
         cell[26] = new PropertySquare(260, 22 , "Viale Serafino Balestra", "yellow");
 
         cell[27] = new PropertySquare(260, 22 , "Lido di Lugano", "yellow");
 
-        cell[28] = new PropertySquare(150, 66 , "Piazza della Riforma", "white");
+        cell[28] = new PropertySquare(150, 66 , "Universita' di Lugano", "company");
 
         cell[29] = new PropertySquare(280, 24 , "Via Nassa", "yellow");
 
-        cell[30] = new JailSquare("Penitenziario Lo Stampino!", "black", "This is the jail");
+        cell[30] = new JailSquare("Penitenziario lo Stampino!", "jail", "This is the jail");
 
         cell[31] = new PropertySquare(300,26, "Riva Paradiso", "green");
 
         cell[32] = new PropertySquare(300,26, "Via alla Vetta", "green");
 
-        cell[33] = new BonusSquare("USI Campus East", "white", "you won 150", 150);
+        cell[33] = new BonusSquare("USI Campus East", "bonus", "you won 150", 150);
 
         cell[34] = new PropertySquare(320, 28,  "Riva Vincenzo Vela", "green");
 
-        cell[35] = new PropertySquare(200,25, "Villa Favorita", "white");
+        cell[35] = new PropertySquare(200,25, "Parco Ciani", "Park");
 
-        cell[36] = new BonusSquare("USI East Campus Room c1.04", "white", "you got a malus -200", 200);
+        cell[36] = new BonusSquare("USI East Campus Room c1.04", "malus", "you got a malus -200", 200);
 
-        cell[37] = new PropertySquare(350,35, "Parco San Michele", "blue"); 
+        cell[37] = new PropertySquare(350,35, "Via Pessina", "blue"); 
 
-        cell[38] = new BonusSquare("Dogana Chiasso!", "white", "you have to pay 100", 100);
+        cell[38] = new BonusSquare("Dogana Chiasso!", "malus", "you have been caught by police you have to pay 100", 100);
 
-        cell[39] = new PropertySquare(400,50, "Parco Ciani", "blue"); 
+        cell[39] = new PropertySquare(400,50, "Piazza della Riforma", "blue"); 
 
 
     }
@@ -110,13 +110,30 @@ public class Table
         return  cell[pos];
     }
 
+    // public PropertySquare getPropertySquare(int pos){
+    //     return  cell[pos];
+    // }
+
 
     public String getSquareName(int pos){
         return this.getSquare(pos).getName();
     }
 
+    public String getSquarePrice(int pos){
+        return "" + this.getSquare(pos).getPrice();
+    }
+
+    public String getSquarePriceTax(int pos){
+        return "" + this.getSquare(pos).getPriceTax();
+    }
+
     public static int getSizeofTable(){
         return sizeTable;
+    }
+
+    public String getDescriptionProperty(int pos){
+        return "Name: " + getSquareName(pos) + "\n" + "Price: " + getSquarePrice(pos) + "\n" + "Rent value: " + getSquarePriceTax(pos);
+
     }
 
 }

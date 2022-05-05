@@ -15,7 +15,7 @@ public class Square
     private final String color;
 
   
-
+    private PropertySquare PropertySquare = new PropertySquare();
 
     public Square(String name, String color){
         this.name = name;

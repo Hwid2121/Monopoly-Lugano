@@ -23,7 +23,7 @@ public class JailSquare extends Square
         this.description = description;
     }
 
-    
+
 
 
     
