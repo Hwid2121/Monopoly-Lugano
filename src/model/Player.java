@@ -15,15 +15,23 @@ public class Player
     private int money;
     private final String nickname;
     private int position;
+    private int turn = 0;
+
+
+    private int[] inPrison = new int[2];
 
     private ArrayList<PropertySquare> listOfProperty = new ArrayList<PropertySquare>(); 
-    private int turn;
+
+    
 
 
     public Player(String nickname){
         this.nickname = nickname;
         money = 1500;
         position = 0;
+        inPrison[0] = 0;
+        inPrison[1] = 0;
+    
     }
 
 

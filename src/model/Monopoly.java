@@ -15,7 +15,10 @@ public class Monopoly
     
     public Table  table = new Table();
     public Dice dice = new Dice();
-    
+
+
+
+    public int steps;
 
 
     
@@ -36,18 +39,22 @@ public class Monopoly
     }
 
 
+    public int die1(){
+        return dice.getDie1();
+    }
+    public int die2(){
+        return dice.getDie2();
+    }
+
+    public int throwDice(){
+        steps = dice.random();
+        return steps;
+    }
+
 
     public void playTurn(Player player){
 
-        // player.printNickname();
-        System.out.println(player.getNickname() + " e' il tuo turno!");
-
-        int steps = dice.random();
-
-        System.out.println("I tuoi dadi hanno fatto " + dice.getDie1() +  " e " + dice.getDie2());
-        System.out.println("Avanzi di " + steps);
         
-
         player.setPosition(steps);
         System.out.println("Sei arrivato alla casella: " + table.getSquareName(player.getPosition()));
 
@@ -57,13 +64,20 @@ public class Monopoly
                 Monopoly.bonusSquarePLAY();
                 break;
             
+            // case "black":
+            //     Monopoly.jailSquarePLAY();
+            
+            
         }
 
+        
 
 
         
 
     }
+    
+
 
 
     public static void bonusSquarePLAY(){

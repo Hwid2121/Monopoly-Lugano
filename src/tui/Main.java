@@ -67,14 +67,25 @@ public class Main {
         while (monopoly.MonopolyEND()) {
 
             turn = turn % numberOfPlayers;
+            
+            System.out.println( listOfPlayers.get(turn).getNickname() + " e' il tuo turno!");
+
+            monopoly.throwDice();
+            System.out.println("I tuoi dadi hanno fatto " + monopoly.die1() + " e " +  monopoly.die2());
+            System.out.println("Avanzi di " + (monopoly.die1() + monopoly.die2()));
+
 
             monopoly.playTurn(listOfPlayers.get(turn));
+            
+
 
             
 
             turn += 1;
 
-            if(turn >= 4){
+            
+
+            if(turn >= 2){
                 break;
             }
             // break;

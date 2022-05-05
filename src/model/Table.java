@@ -83,7 +83,7 @@ public class Table
 
         cell[29] = new PropertySquare(280, 24 , "Via Nassa", "yellow");
 
-        cell[30] = new BonusSquare("Penitenziario Lo Stampino!", "white", "This is the jail", -1);
+        cell[30] = new JailSquare("Penitenziario Lo Stampino!", "black", "This is the jail");
 
         cell[31] = new PropertySquare(300,26, "Riva Paradiso", "green");
 

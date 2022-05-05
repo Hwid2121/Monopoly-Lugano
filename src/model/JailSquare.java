@@ -11,14 +11,21 @@ public class JailSquare extends Square
 {
    
     private Player player;
-    private int turn;
+    
+    private String description;
+
+    private int days = 2;
 
 
 
-    public JailSquare(int turn, String name, String color){
+    public JailSquare(String name, String color, String Description){
         super(name, color);
-        this.turn = player.getTurn();
+        this.description = description;
     }
+
+    
+
+
     
 
 }
