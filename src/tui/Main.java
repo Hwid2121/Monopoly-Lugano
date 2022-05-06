@@ -1,12 +1,11 @@
-package tui;
+package src.tui;
 
 import java.util.Scanner; // Import the Scanner class
 import java.util.ArrayList;
 
-import model.*;
-import model.Monopoly;
 
-/**
+import model.Monopoly;
+import model.Player;/**
  * DESCRIBE THIS CLASS
  * 
  * @author YOUR_USI_EMAIL

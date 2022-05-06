@@ -1,4 +1,4 @@
-package gui;
+package src.gui;
 
 /**
  * DESCRIBE THIS CLASS
