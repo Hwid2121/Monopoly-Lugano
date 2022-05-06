@@ -62,7 +62,7 @@ public class Monopoly
 
     public void PropertySquarePLAY(Player player){
         
-        if (player.getMoney() >= )
+        
 
     }
 
@@ -71,34 +71,7 @@ public class Monopoly
         return table.getDescriptionProperty(player.getPosition());
     }
 
-
-    public void bonusPLAY(Player player){
-        
-    }
-
-    public void malusPLAY(Player player){
-        
-    }
-
-    public void parkPLAY(Player player){
-        
-    }
-
-    public void companyPLAY(Player player){
-        
-    }
-
-    public void jailPLAY(Player player){
-        
-    }
-
-    public void emptyPLAY(Player player){
-        
-    }
-
-    public void gotoPLAY(Player player){
-        
-    }
+ 
 
     
 

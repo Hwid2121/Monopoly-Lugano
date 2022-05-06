@@ -119,13 +119,27 @@ public class Table
         return this.getSquare(pos).getName();
     }
 
-    public String getSquarePrice(int pos){
-        return "" + this.getSquare(pos).getPrice();
+    public int getSquarePrice(int pos){
+        Object obj = this.getSquare(pos);
+        if (obj instanceof PropertySquare){
+            PropertySquare s = (PropertySquare) obj;
+
+            return  s.getPrice();
+        }
+        return 0;
     }
 
-    public String getSquarePriceTax(int pos){
-        return "" + this.getSquare(pos).getPriceTax();
+    public int getSquarePriceTax(int pos){
+        Object obj = this.getSquare(pos);
+        if (obj instanceof PropertySquare){
+            PropertySquare s = (PropertySquare) obj;
+
+            return  s.getPriceTax();
+        }
+        return 0;
     }
+
+
 
     public static int getSizeofTable(){
         return sizeTable;

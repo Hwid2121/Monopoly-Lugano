@@ -49,7 +49,7 @@ public class PropertySquare extends Square
 
 
     public  int getPrice(){
-        return this.price;
+        return price;
     }
 
     public int getPriceTax(){

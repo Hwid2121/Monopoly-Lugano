@@ -20,7 +20,9 @@ public class Main {
     public int numberOfPlayers = 0;
     public int status = 0;
 
+    public int skip = 0;
     public int turn = 0;
+    
 
     public void preGameStatus() {
         this.status = 0;
@@ -82,35 +84,57 @@ public class Main {
 
     }
 
-    public void PropertySquarePLAY(Player player){
+    public void PropertySquarePLAY(Player player, Monopoly monopoly){
         
         System.out.println("You are in a property'");
         System.out.println("Write: Description (for the description of the property) ");
         System.out.println("Buy (for buying the property) ");
-        System.out.println("Vendi (to sell this property) ");
+        System.out.println("Sell (to sell this property) ");
         System.out.println("Pass (to finish the turn) ");
 
-        String word  = input.nextLine();
+        String word  = input.next();
 
+
+        
+
+        
         switch(word){
             case "Description":
-            monopoly.proper
+            System.out.println("\n \n" + monopoly.propertyDescr(listOfPlayers.get(turn))); 
+            break;
+
+            case "Buy":
+
+            if(player.getMoney() > monopoly.table.getSquarePrice(listOfPlayers.get(turn).getPosition())){
+                    System.out.println("Confirm to buy the property?" +  monopoly.table.getSquareName(listOfPlayers.get(turn).getPosition()) + "\n Your budget will be " + (monopoly.table.getSquarePrice(listOfPlayers.get(turn).getPosition()) + player.getMoney()));
+
+            } else System.out.println("You don't have enough money to buy the property");
+
+            System.out.println("");
+            case "Sell":
+
+            case "pass":
+                skip = 1;
         }
 
-        while(!nextTurn){
+        
+    
 
-        }
+
+
+
+        
         
     }
 
-
+    
     public void gameStatus() {
 
+        
         Monopoly monopoly = new Monopoly(listOfPlayers);
 
-
         System.out.println("Il gioco inizia!!!");
-        System.out.println("Ogni giocatore inizia con 1500   ");
+        System.out.println("Ogni giocatore inizia con 1500 chf ");
 
         
 
@@ -128,28 +152,36 @@ public class Main {
             System.out.println("Sei arrivato alla casella: " + monopoly.table.getSquareName(listOfPlayers.get(turn).getPosition()));
             
 
-            
+            while (skip == 0){
             switch(monopoly.table.getSquare(listOfPlayers.get(turn).getPosition()).getColor()){
 
-                case "bonus":
-                bonusPLAYmain(listOfPlayers.get(turn));
-                case "malus":
-                malusPLAYmain(listOfPlayers.get(turn));
-                case "park":
-                parkPLAYmain(listOfPlayers.get(turn));
-                case "company":
-                companyPLAYmain(listOfPlayers.get(turn));
-                case "jail":
-                jailPLAYmain(listOfPlayers.get(turn));
-                case "empty":
-                emptyPLAYmain(listOfPlayers.get(turn));
-                case "goto":
-                gotoPLAYmain(listOfPlayers.get(turn));
+                // case "bonus":
+                // bonusPLAYmain(listOfPlayers.get(turn), monopoly);
+                //     break;
+                // case "malus":
+                // malusPLAYmain(listOfPlayers.get(turn), monopoly);
+                //     break;
+                // case "park":
+                // parkPLAYmain(listOfPlayers.get(turn), monopoly);
+                //     break;
+                // case "company":
+                // companyPLAYmain(listOfPlayers.get(turn), monopoly);
+                //     break;
+                // case "jail":
+                // jailPLAYmain(listOfPlayers.get(turn), monopoly);
+                //     break;
+                // case "empty":
+                // emptyPLAYmain(listOfPlayers.get(turn), monopoly);
+                //     break;
+                // case "goto":
+                // gotoPLAYmain(listOfPlayers.get(turn), monopoly);
+                    // break;
 
 
                 default:
-                    PropertySquarePLAY(listOfPlayers.get(turn));
+                    PropertySquarePLAY(listOfPlayers.get(turn), monopoly);
             }
+        }
 
             turn += 1;
 
