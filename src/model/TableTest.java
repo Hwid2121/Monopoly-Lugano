@@ -1,4 +1,5 @@
-package model;
+package src.model;
+
 import static org.junit.Assert.fail;
 
 import org.junit.Test;
@@ -6,10 +7,9 @@ import org.junit.Test;
 /**
  * The test class TableTest.
  *
- * @author  (your name)
+ * @author (your name)
  * @version (a version number or a date)
  */
-public class TableTest
-{
-//    
+public class TableTest {
+    //
 }

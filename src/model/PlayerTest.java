@@ -1,17 +1,15 @@
- package model;
+package src.model;
 
+import static org.junit.Assert.fail;
 
- import static org.junit.Assert.fail;
-
- import org.junit.Test;
+import org.junit.Test;
 
 /**
  * The test class PlayerTest.
  *
- * @author  (your name)
+ * @author (your name)
  * @version (a version number or a date)
  */
-public class PlayerTest
-{
-    // 
+public class PlayerTest {
+    //
 }
