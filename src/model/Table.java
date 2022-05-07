@@ -119,7 +119,6 @@ public class Table {
         Object obj = this.getSquare(pos);
         if (obj instanceof PropertySquare) {
             PropertySquare s = (PropertySquare) obj;
-
             return s.getPrice();
         }
         return 0;
@@ -135,13 +134,36 @@ public class Table {
         return 0;
     }
 
+
+
     public static int getSizeofTable() {
         return sizeTable;
     }
 
     public String getDescriptionProperty(int pos) {
         return "Name: " + getSquareName(pos) + "\n" + "Price: " + getSquarePrice(pos) + "\n" + "Rent value: "
-                + getSquarePriceTax(pos);
+                + getSquarePriceTax(pos) + "\n Owner: " + getSquareOwner(pos) + "\n";
+
+    }
+
+
+    public String getSquareOwner(int pos) {
+        Object obj = this.getSquare(pos);
+        if (obj instanceof PropertySquare) {
+            PropertySquare s = (PropertySquare) obj;
+            return s.getOwner();
+        }
+        return "not a property";
+    }
+
+
+    public void setSquareOwner(Player player) {
+        Object obj = this.getSquare(player.getPosition());
+        if (obj instanceof PropertySquare) {
+            PropertySquare s = (PropertySquare) obj;
+            s.changeOwner(player);
+        }
+        
 
     }
 

@@ -29,7 +29,7 @@ public class Player {
     }
 
     public int getMoney() {
-        return money;
+        return this.money;
     }
 
     public String getPlayer() {
@@ -48,8 +48,14 @@ public class Player {
         return nickname;
     }
 
+    public void setMoney(int cash){
+        this.money =  getMoney() - cash;
+    }
+
     public void buyProperty(PropertySquare house) {
         listOfProperty.add(house.buying());
+        setMoney(house.getPrice());
+
     }
 
     public int diceRollPlayer() {
@@ -68,5 +74,25 @@ public class Player {
         position = (position + pos) % Table.getSizeofTable();
         System.out.println(position);
     }
+
+    public String getProperties(){
+
+
+        String out = "";
+
+        
+        
+        for (int i =0; i < listOfProperty.size(); i++){
+            out = out + listOfProperty.get(i).getName();
+        }
+
+
+
+        return out;
+
+
+    }
+
+    
 
 }

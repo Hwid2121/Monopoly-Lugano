@@ -9,10 +9,13 @@ package model;
  */
 public class PropertySquare extends Square {
 
-    private String owner;
+    private String owner = "";
 
     private final int price;
     private final int priceTax;
+
+
+    private boolean mortgage = false;
 
     public PropertySquare(int price, int priceTax, String name, String color) {
         super(name, color);
@@ -21,7 +24,7 @@ public class PropertySquare extends Square {
     }
 
     public void changeOwner(Player player) {
-        owner = player.getPlayer();
+        owner = player.getNickname();
     }
 
     public PropertySquare buying() {
@@ -32,8 +35,8 @@ public class PropertySquare extends Square {
 
     }
 
-    public void setOwner() {
-
+    public String getOwner() {
+        return owner;
     }
 
     public int getPrice() {
@@ -44,4 +47,13 @@ public class PropertySquare extends Square {
         return priceTax;
     }
 
+
+    public boolean getMortgageProperty(){
+        return mortgage;
+    }
+
+    public void setMortageProperty(){
+        mortgage = !mortgage;
+    }
+    
 }

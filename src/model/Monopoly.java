@@ -52,4 +52,15 @@ public class Monopoly {
         return table.getDescriptionProperty(player.getPosition());
     }
 
+
+
+    public void setOwner(Player player){
+        table.setSquareOwner(player);
+    }
+
+
+    public String getNicknameOwner(Player player){
+        return table.getSquareOwner(player.getTurn());
+    }
+
 }
