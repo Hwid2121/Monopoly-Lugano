@@ -5,6 +5,7 @@ import java.util.ArrayList;
 
 import model.Monopoly;
 import model.Player;
+import model.Table;
 
 /**
  * DESCRIBE THIS CLASS
@@ -111,6 +112,8 @@ public class Main {
                     switch (inp) {
                         case "yes":
                             monopoly.setOwner(player);
+                            player.buyProperty(monopoly.table.getSquare(position).getName());
+                            player.decreaseMoney(monopoly.table.getSquarePrice(position));
 
                             System.out.println("Square has been bought! \n");
 
@@ -153,6 +156,8 @@ public class Main {
 
             case "info":
                 System.out.println("\nName: " + player.getNickname() + "\nMoney: " + player.getMoney() + "\nProperties: "  + player.getProperties() + "\nPosition: " + player.getPosition() );
+                
+                break;
 
             case "Mortgage":
                     if ((

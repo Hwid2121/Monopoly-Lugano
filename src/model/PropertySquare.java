@@ -27,9 +27,7 @@ public class PropertySquare extends Square {
         owner = player.getNickname();
     }
 
-    public PropertySquare buying() {
-        return this;
-    }
+
 
     public void selling() {
 

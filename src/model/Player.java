@@ -1,6 +1,7 @@
 package model;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 
 /**
  * Thiss class rapresents the player
@@ -17,7 +18,7 @@ public class Player {
 
     private int[] inPrison = new int[2];
 
-    private ArrayList<PropertySquare> listOfProperty = new ArrayList<PropertySquare>();
+    private ArrayList<String> listOfProperty = new ArrayList<String>();
 
     public Player(String nickname) {
         this.nickname = nickname;
@@ -48,14 +49,13 @@ public class Player {
         return nickname;
     }
 
-    public void setMoney(int cash){
+    public void decreaseMoney(int cash){
         this.money =  getMoney() - cash;
     }
 
-    public void buyProperty(PropertySquare house) {
-        listOfProperty.add(house.buying());
-        setMoney(house.getPrice());
-
+    public void buyProperty(String house) {
+        listOfProperty.add(house);
+        
     }
 
     public int diceRollPlayer() {
@@ -77,21 +77,25 @@ public class Player {
 
     public String getProperties(){
 
-
-        String out = "";
-
         
+        Iterator<String> it = listOfProperty.iterator();
+        String out = it.next();
+        if (listOfProperty.size() == 0) return "No properties";
+        else 
+            {
+                
+               while(it.hasNext()){
+                   out = out + ", " + it.next();
+               }
+               return out;
+            }
         
-        for (int i =0; i < listOfProperty.size(); i++){
-            out = out + listOfProperty.get(i).getName();
-        }
-
-
-
-        return out;
-
 
     }
+
+
+
+    
 
     
 
