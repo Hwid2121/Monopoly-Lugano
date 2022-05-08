@@ -1,4 +1,4 @@
-package model;
+package src.model;
 
 /**
  * This class rapresent the bonus square of the table such as:
