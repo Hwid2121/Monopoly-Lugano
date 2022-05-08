@@ -1,6 +1,7 @@
 package tui;
 
 import java.util.Scanner; // Import the Scanner class
+import java.text.BreakIterator;
 import java.util.ArrayList;
 
 import model.Monopoly;
@@ -78,6 +79,7 @@ public class Main {
     }
 
     public void PropertySquarePLAY(Player player, Monopoly monopoly) {
+        int position = listOfPlayers.get(turn).getPosition();
 
         System.out.println("You are in a property'");
         System.out.println("Write: Description (for the description of the property) ");
@@ -88,7 +90,6 @@ public class Main {
 
         String inp;
         String word = input.next();
-        int position = listOfPlayers.get(turn).getPosition();
 
         switch (word) {
             case "Description":
@@ -117,55 +118,49 @@ public class Main {
 
                             System.out.println("Square has been bought! \n");
 
-                            
-
                         case "no":
                             break;
                     }
 
                 } else
                     System.out.println("You don't have enough money to buy the property");
-                    break;
-                
+                break;
 
-            
-            
             case "Sell":
 
-                if(player.getNickname() == monopoly.table.getSquareOwner(position)){
-                    System.out.println("Are you sure to sell: " + monopoly.table.getSquareName(position) 
-                    + " for " + monopoly.table.getSquarePrice(position)+
-                     " Write:\n \"yes\" for selling \"no\" for return back");
+                if (player.getNickname() == monopoly.table.getSquareOwner(position)) {
+                    System.out.println("Are you sure to sell: " + monopoly.table.getSquareName(position)
+                            + " for " + monopoly.table.getSquarePrice(position) +
+                            " Write:\n \"yes\" for selling \"no\" for return back");
 
-                     inp = input.next();
+                    inp = input.next();
 
-                     switch (inp){
+                    switch (inp) {
 
-                         case "yes":
+                        case "yes":
 
-                     }
+                    }
 
                 }
-                
+
                 break;
 
             case "Money":
                 System.out.println("Your bank have: " + player.getMoney());
                 break;
 
-
             case "info":
-                System.out.println("\nName: " + player.getNickname() + "\nMoney: " + player.getMoney() + "\nProperties: "  + player.getProperties() + "\nPosition: " + player.getPosition() );
-                
+                System.out.println("\nName: " + player.getNickname() + "\nMoney: " + player.getMoney()
+                        + "\nProperties: " + player.getProperties() + "\nPosition: " + player.getPosition());
+
                 break;
 
             case "Mortgage":
-                    if ((
-                        (monopoly.table.getSquareOwner(position) == player.getNickname()))){
+                if (((monopoly.table.getSquareOwner(position) == player.getNickname()))) {
 
-                            System.out.println("Are you sure to mortgage your property?");
-                        }
-                    
+                    System.out.println("Are you sure to mortgage your property?");
+                }
+
             case "pass":
                 skip = 1;
                 break;
@@ -194,6 +189,20 @@ public class Main {
             System.out.println("You are in the square: "
                     + monopoly.table.getSquareName(listOfPlayers.get(turn).getPosition()));
 
+
+            
+            Player realOwner = monopoly.checkOwnerForRent(listOfPlayers.get(turn).getNickname(), listOfPlayers,
+            listOfPlayers.get(turn).getPosition());
+
+            if (realOwner != null) {
+
+                System.out.println("Oh no! this property is owned by " + realOwner.getNickname()
+                        + "\n You have to pay: " + monopoly.table.getSquarePriceTax(listOfPlayers.get(turn).getPosition()));
+                realOwner.increaseMoney(monopoly.table.getSquarePriceTax(listOfPlayers.get(turn).getPosition()));
+                listOfPlayers.get(turn).decreaseMoney(monopoly.table.getSquarePriceTax(listOfPlayers.get(turn).getPosition()));
+
+            }
+
             while (skip == 0) {
                 switch (monopoly.table.getSquare(listOfPlayers.get(turn).getPosition()).getColor()) {
 
@@ -219,8 +228,9 @@ public class Main {
                     // gotoPLAYmain(listOfPlayers.get(turn), monopoly);
                     // break;
 
-                    default:
+                    default :
                         PropertySquarePLAY(listOfPlayers.get(turn), monopoly);
+
                 }
             }
             skip = 0;

@@ -2,6 +2,7 @@ package model;
 
 import java.util.ArrayList;
 import javax.print.attribute.standard.NumberOfDocuments;
+import java.util.Iterator;
 
 /**
  * This class rapresent the main of the game, here all the principals
@@ -61,6 +62,27 @@ public class Monopoly {
 
     public String getNicknameOwner(Player player){
         return table.getSquareOwner(player.getTurn());
+    }
+
+
+
+   
+
+
+    public Player checkOwnerForRent( String Nick, ArrayList<Player> players, int pos) {
+        Object obj = this.table.getSquare(pos);
+
+        if (obj instanceof PropertySquare) {
+            PropertySquare s = (PropertySquare) obj;
+            
+            if (s.getOwner() == "" || s.getOwner() == Nick) return null;
+            else{
+                for(int i =0; i < players.size(); i++){
+                    if(players.get(i).getNickname() == s.getOwner()) return players.get(i);
+                }
+            }
+        }
+        return null;
     }
 
 }

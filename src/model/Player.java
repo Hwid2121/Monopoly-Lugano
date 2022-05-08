@@ -53,6 +53,10 @@ public class Player {
         this.money =  getMoney() - cash;
     }
 
+    public void increaseMoney(int cash){
+        this.money = getMoney() + cash;
+        }
+
     public void buyProperty(String house) {
         listOfProperty.add(house);
         
