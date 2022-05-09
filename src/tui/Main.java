@@ -1,4 +1,4 @@
-package src.tui;
+package tui;
 
 import java.util.Scanner; // Import the Scanner class
 import java.text.BreakIterator;
