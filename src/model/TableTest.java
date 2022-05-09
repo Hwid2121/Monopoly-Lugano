@@ -27,9 +27,4 @@ public class TableTest {
         Table table = new Table();
         assertTrue(new PropertySquare(400, 50, "Piazza della Riforma", "blue").getName().equals(table.getSquare(39).getName()));
     }
-
-    @Test 
-    public void getDescriptionPropertyTest(){
-        assertEquals(expected,  getDescriptionProperty(39));
-    }
 }
