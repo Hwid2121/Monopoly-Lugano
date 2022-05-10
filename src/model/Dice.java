@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 
+=======
+>>>>>>> d138c17501786455d35aa9c142b534eaa1aef233
 package model;
 
 import java.util.Random;
