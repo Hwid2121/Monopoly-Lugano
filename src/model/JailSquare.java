@@ -1,4 +1,4 @@
-package src.model;
+package model;
 
 /**
  * Write a description of class JailSquare here.

@@ -1,5 +1,5 @@
 
-package src.model;
+package model;
 
 /**
  * this class rapresent the table composed by the square and wher ethe player

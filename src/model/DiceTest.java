@@ -20,7 +20,7 @@ public class DiceTest {
 
     @Test
     public void GetDie1Test(){
-        assertEquals(die1, new Dice (die1, die2).getDie1());
+        assertEquals(die1, new Dice(die1, die2).getDie1());
     }
 
     @Test
