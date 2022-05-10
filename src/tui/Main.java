@@ -127,21 +127,21 @@ public class Main {
                 break;
 
             case "Sell":
+                
+                // if (player.getNickname() == monopoly.table.getSquareOwner(position)) {
+                //     System.out.println("Are you sure to sell: " + monopoly.table.getSquareName(position)
+                //             + " for " + monopoly.table.getSquarePrice(position) +
+                //             " Write:\n \"yes\" for selling \"no\" for return back");
 
-                if (player.getNickname() == monopoly.table.getSquareOwner(position)) {
-                    System.out.println("Are you sure to sell: " + monopoly.table.getSquareName(position)
-                            + " for " + monopoly.table.getSquarePrice(position) +
-                            " Write:\n \"yes\" for selling \"no\" for return back");
+                //     inp = input.next();
 
-                    inp = input.next();
+                //     switch (inp) {
 
-                    switch (inp) {
+                //         case "yes":
 
-                        case "yes":
+                //     }
 
-                    }
-
-                }
+                // }
 
                 break;
 

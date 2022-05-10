@@ -16,7 +16,15 @@ public class Player {
     private int position;
     private int turn = 0;
 
-    private int[] inPrison = new int[2];
+
+    // first number set to 0 Initially
+    // first number rappresent number of turn to remain in jail
+    // if 0 then 0, if 2 then 2
+    private int inJail = 0;
+
+
+    private ArrayList<Card> deckOfPlayer = new ArrayList<Card>();
+
 
     private ArrayList<String> listOfProperty = new ArrayList<String>();
 
@@ -24,10 +32,22 @@ public class Player {
         this.nickname = nickname;
         money = 1500;
         position = 0;
-        inPrison[0] = 0;
-        inPrison[1] = 0;
-
     }
+
+
+
+    public int getTurnsInJail(){
+        return inJail;
+    }
+
+    
+
+    public void addCardToDeck(Card card){
+        deckOfPlayer.add(card);
+    }
+
+
+
 
     public int getMoney() {
         return this.money;
