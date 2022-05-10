@@ -1,5 +1,5 @@
 
-package src.model;
+package model;
 
 /**
  * This rapresent the property in the table
@@ -27,7 +27,7 @@ public class PropertySquare extends Square {
         owner = player.getNickname();
     }
 
-    
+
 
     public void selling() {
 
