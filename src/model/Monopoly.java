@@ -36,6 +36,9 @@ public class Monopoly {
         return dice.getDie2();
     }
 
+
+
+
     public int throwDice() {
         steps = dice.random();
         return steps;

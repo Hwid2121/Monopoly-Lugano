@@ -1,4 +1,7 @@
 package model;
+import java.rmi.dgc.DGC;
+import java.util.ArrayList;
+import java.util.Iterator;
 
 /**
  * Write a description of class JailSquare here.
@@ -8,15 +11,78 @@ package model;
  */
 public class JailSquare extends Square {
 
-    private Player player;
+    private ArrayList<Player> listOfPrisoners = new ArrayList<Player>();
 
-    private String description;
+    private Dice dice;
 
-    private int days = 2;
 
-    public JailSquare(String name, String color, String Description) {
+    private static int fine = 50;
+    private static int days = 3;
+
+    public JailSquare(String name, String color) {
         super(name, color);
-        this.description = description;
     }
+
+
+
+    public static void payFine(Player player){
+        player.decreaseMoney(55);
+    }
+
+    public static void freeFromJail(Player player){
+        player.setJail(0);
+    }
+
+    public static int getDays(){
+        return days;
+    }
+    public static int getFine(){
+        return fine;
+    }
+
+
+    public boolean checkPrisoner(Player player){
+        for (Player prison: listOfPrisoners){
+            if (prison == player) return true;
+        }
+        return false;
+    }
+
+    public static boolean checkFreeJailCard(Player player){
+
+
+        for(Card card : player.getDeck() ){
+            if(card.getDescription() == "Get Out of Jail Free"){
+                player.deleteCard(card.getDescription());
+                return true;
+            }
+        }
+
+        return false;
+        
+
+    }
+
+
+    public void perfectPair(){
+        
+        dice = new Dice(); 
+    }
+
+    public boolean checkPerfectPair(){
+        return dice.getPerfectPair();
+    }
+
+    public int getPair1(){
+        return dice.getDie1();
+    }
+    public int getPair2(){
+        return dice.getDie2();
+    }
+
+
+
+
+
 
 }

@@ -1,5 +1,6 @@
 package model;
 
+import java.text.BreakIterator;
 import java.util.ArrayList;
 import java.util.Iterator;
 
@@ -16,7 +17,9 @@ public class Player {
     private int position;
     private int turn = 0;
 
-    private int[] inPrison = new int[2];
+    private int inJail = 0;
+
+    private ArrayList<Card> deckOfPlayer = new ArrayList<Card>();
 
     private ArrayList<String> listOfProperty = new ArrayList<String>();
 
@@ -24,9 +27,35 @@ public class Player {
         this.nickname = nickname;
         money = 1500;
         position = 0;
-        inPrison[0] = 0;
-        inPrison[1] = 0;
+    }
 
+    public void setJail(int i) {
+        inJail = i;
+    }
+
+    public int getTurnsInJail() {
+        return inJail;
+    }
+
+    public boolean stillInJail() {
+        return inJail > 0;
+    }
+
+    public void addCardToDeck(Card card) {
+        deckOfPlayer.add(card);
+    }
+
+    public ArrayList<Card> getDeck() {
+        return deckOfPlayer;
+    }
+
+    public void deleteCard(String desc) {
+        for (int i = 0; i < deckOfPlayer.size(); i++) {
+            if (deckOfPlayer.get(i).getDescription() == desc) {
+                deckOfPlayer.remove(i);
+                break;
+            }
+        }
     }
 
     public int getMoney() {
@@ -49,17 +78,17 @@ public class Player {
         return nickname;
     }
 
-    public void decreaseMoney(int cash){
-        this.money =  getMoney() - cash;
+    public void decreaseMoney(int cash) {
+        this.money = getMoney() - cash;
     }
 
-    public void increaseMoney(int cash){
+    public void increaseMoney(int cash) {
         this.money = getMoney() + cash;
-        }
+    }
 
     public void buyProperty(String house) {
         listOfProperty.add(house);
-        
+
     }
 
     public int diceRollPlayer() {
@@ -79,28 +108,19 @@ public class Player {
         System.out.println(position);
     }
 
-    public String getProperties(){
+    public String getProperties() {
 
-        
+        if (listOfProperty.size() == 0)
+            return "No properties";
+
         Iterator<String> it = listOfProperty.iterator();
         String out = it.next();
-        if (listOfProperty.size() == 0) return "No properties";
-        else 
-            {
-                
-               while(it.hasNext()){
-                   out = out + ", " + it.next();
-               }
-               return out;
-            }
-        
+
+        while (it.hasNext()) {
+            out = out + ", " + it.next();
+        }
+        return out;
 
     }
-
-
-
-    
-
-    
 
 }
