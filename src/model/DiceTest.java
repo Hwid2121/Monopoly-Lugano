@@ -29,7 +29,12 @@ public class DiceTest {
     }
 
     @Test
-    public void GetDieceTest(){
-        assertEquals(die1 + die2, new Dice().getDice());
+    public void getDiceTest(){
+        assertEquals(die1 + die2, new Dice(die1, die2).getDice());
+    }
+
+    @Test
+    public void getPerfectPairTest(){
+        assertEquals(die1 == die2, new Dice(die1, die2).getPerfectPair());
     }
 }

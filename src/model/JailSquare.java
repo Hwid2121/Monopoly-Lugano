@@ -1,5 +1,4 @@
 package model;
-import java.rmi.dgc.DGC;
 import java.util.ArrayList;
 import java.util.Iterator;
 
@@ -61,12 +60,6 @@ public class JailSquare extends Square {
         return false;
         
 
-    }
-
-
-    public void perfectPair(){
-        
-        dice = new Dice(); 
     }
 
     public boolean checkPerfectPair(){
