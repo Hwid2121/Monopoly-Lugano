@@ -184,13 +184,25 @@ public class Table {
         
     }
 
-    public String getSquareBonusDescr(Player player){
-        Object obj = this.getSquare(player.getPosition());
+    public String getSquareBonusDescr(int pos){
+        Object obj = this.getSquare(pos);
         if (obj instanceof BonusSquare) {
             BonusSquare s = (BonusSquare) obj;
             return s.getDescription();
         }
         return "";
+        
+    }
+
+
+    public PropertySquare getPropertySquare(int pos){
+        Object obj = this.getSquare(pos);
+        
+        if (obj instanceof PropertySquare) {
+            PropertySquare s = (PropertySquare) obj;
+            return s;
+        }
+        return null;
         
     }
 

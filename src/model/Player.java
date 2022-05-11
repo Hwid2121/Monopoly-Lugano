@@ -22,6 +22,8 @@ public class Player {
     private ArrayList<Card> deckOfPlayer = new ArrayList<Card>();
 
     private ArrayList<String> listOfProperty = new ArrayList<String>();
+    private ArrayList<PropertySquare> listofPropertySquares = new ArrayList<PropertySquare>();
+    
 
     public Player(String nickname) {
         this.nickname = nickname;
@@ -57,6 +59,16 @@ public class Player {
             }
         }
     }
+    
+
+
+
+
+
+
+
+
+
 
     public int getMoney() {
         return this.money;
@@ -86,10 +98,17 @@ public class Player {
         this.money = getMoney() + cash;
     }
 
-    public void buyProperty(String house) {
-        listOfProperty.add(house);
+    // public void buyProperty(String house) {
+    //     listOfProperty.add(house);
 
+    // }
+
+
+    public void buyPropertySquare(PropertySquare house){
+        listofPropertySquares.add(house);
     }
+
+
 
     public int diceRollPlayer() {
         return -1;
@@ -113,19 +132,43 @@ public class Player {
         position = pos;
     }
 
-    public String getProperties() {
+    // public String getProperties() {
 
-        if (listOfProperty.size() == 0)
+    //     if (listOfProperty.size() == 0)
+    //         return "No properties";
+
+    //     Iterator<String> it = listOfProperty.iterator();
+    //     String out = it.next();
+
+    //     while (it.hasNext()) {
+    //         out = out + ", " + it.next();
+    //     }
+    //     return out;
+
+
+    // }
+
+
+
+    public String getPropertySquare(){
+
+        
+
+        if (listofPropertySquares.size() == 0)
             return "No properties";
+        else{
+                String s = listofPropertySquares.get(0).getName();
 
-        Iterator<String> it = listOfProperty.iterator();
-        String out = it.next();
+            for(int i = 1; i< listofPropertySquares.size(); i++){
 
-        while (it.hasNext()) {
-            out = out + ", " + it.next();
+                s = s + " ," + listofPropertySquares.get(i).getName();
+
+            }
+            return s;
         }
-        return out;
-
     }
+
+
+
 
 }

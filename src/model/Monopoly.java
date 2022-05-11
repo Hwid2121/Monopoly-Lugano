@@ -48,9 +48,7 @@ public class Monopoly {
         player.setPosition(steps);
     }
 
-    public void PropertySquarePLAY(Player player) {
-
-    }
+  
 
     public String propertyDescr(Player player) {
         return table.getDescriptionProperty(player.getPosition());
@@ -66,6 +64,11 @@ public class Monopoly {
     public String getNicknameOwner(Player player){
         return table.getSquareOwner(player.getTurn());
     }
+
+
+
+
+
 
 
 

@@ -113,28 +113,20 @@ public class Main {
 
     public void bonusPLAYmain(Player player, Monopoly monopoly) {
 
-       int price =  monopoly.table.getSquareBonusPrice(player) ;
-        
+        int price = monopoly.table.getSquareBonusPrice(player);
 
+        System.out.println(monopoly.table.getSquareBonusDescr(player.getPosition()));
 
-        if (monopoly.table.getSquare(player.getPosition()).getColor() == "bonus"){
-            
-            System.out.println(monopoly.table.getDescriptionProperty(player.getPosition()));
+        if (monopoly.table.getSquare(player.getPosition()).getColor() == "bonus") {
+
             player.increaseMoney(price);
         } else {
-            
-            System.out.println(monopoly.table.getDescriptionProperty(player.getPosition()));
             player.decreaseMoney(price);
-            
 
         }
         skip = 1;
-        
-    
+
     }
-
-
-
 
     public void jailPLAYmain(Player player, Monopoly monopoly) {
 
@@ -254,7 +246,7 @@ public class Main {
 
             case "info":
                 System.out.println("\nName: " + player.getNickname() + "\nMoney: " + player.getMoney()
-                        + "\nProperties: " + player.getProperties() + "\nPosition: " + player.getPosition());
+                        + "\nProperties: " + player.getPropertySquare() + "\nPosition: " + player.getPosition());
 
                 break;
 
@@ -305,7 +297,7 @@ public class Main {
                     switch (inp) {
                         case "yes":
                             monopoly.setOwner(player);
-                            player.buyProperty(monopoly.table.getSquare(position).getName());
+                            player.buyPropertySquare(monopoly.table.getPropertySquare(position));
                             player.decreaseMoney(monopoly.table.getSquarePrice(position));
 
                             System.out.println("Square has been bought! \n");
@@ -346,7 +338,7 @@ public class Main {
 
             case "info":
                 System.out.println("\nName: " + player.getNickname() + "\nMoney: " + player.getMoney()
-                        + "\nProperties: " + player.getProperties() + "\nPosition: " + player.getPosition());
+                        + "\nProperties: " + player.getPropertySquare() + "\nPosition: " + player.getPosition());
                 break;
 
             case "Mortgage":
@@ -358,7 +350,6 @@ public class Main {
             case "pass":
                 skip = 1;
                 break;
-
 
             default:
                 System.out.println("Command not allowed here.\n\n");
@@ -451,14 +442,12 @@ public class Main {
                         gotoPLAYmain(listOfPlayers.get(turn), monopoly);
                         break;
 
+                    case "bonus":
+                        bonusPLAYmain(listOfPlayers.get(turn), monopoly);
 
-                    case "bonus" :
-                    bonusPLAYmain(listOfPlayers.get(turn), monopoly);
-
-                    case "malus" :
-                    bonusPLAYmain(listOfPlayers.get(turn), monopoly);
-                    break;
-
+                    case "malus":
+                        bonusPLAYmain(listOfPlayers.get(turn), monopoly);
+                        break;
 
                     default:
                         PropertySquarePLAY(listOfPlayers.get(turn), monopoly);
