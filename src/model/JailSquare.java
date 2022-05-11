@@ -62,12 +62,6 @@ public class JailSquare extends Square {
 
     }
 
-
-    public void perfectPair(){
-        
-        dice = new Dice(); 
-    }
-
     public boolean checkPerfectPair(){
         return dice.getPerfectPair();
     }

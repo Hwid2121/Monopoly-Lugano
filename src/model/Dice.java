@@ -41,7 +41,7 @@ public class Dice {
     }
 
     public boolean getPerfectPair(){
-        return die1 == die2;
+        return this.die1 == this.die2;
     }
 
 }
