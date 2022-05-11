@@ -32,12 +32,12 @@ public class Card  {
     public static void card0(Player player){
 
     
-        player.setPosition(16);
+        player.movePosition(16);
     }
 
     public static void card1(Player player){
         player.increaseMoney(200);
-        player.setPosition(0);
+        player.movePosition(0);
 
     }
 
@@ -45,7 +45,7 @@ public class Card  {
         if (player.getPosition() > 6){
             player.increaseMoney(200);
         }
-        player.setPosition(6);
+        player.movePosition(6);
     }
 
     public static void card3(Player player){
@@ -58,6 +58,9 @@ public class Card  {
 
     public static void card5(Player player){
         // free from jail card
+
+        player.addCardToDeck(new Card("Get Out of Jail Free"));
+
     }
 
     public  static void card6(Player player){
@@ -70,7 +73,9 @@ public class Card  {
         if(player.getPosition() > 30){
            player.decreaseMoney(200);
         }
-        player.setPosition(30);
+        player.movePosition(30);
+
+        player.setJail(JailSquare.getDays());
 
     }
 
@@ -94,7 +99,7 @@ public class Card  {
         if (player.getPosition() > 35 ){
             player.increaseMoney(200);
         }
-        player.setPosition(35);
+        player.movePosition(35);
     }
 
 

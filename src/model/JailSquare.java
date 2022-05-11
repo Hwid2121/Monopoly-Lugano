@@ -1,5 +1,4 @@
 package model;
-import java.rmi.dgc.DGC;
 import java.util.ArrayList;
 import java.util.Iterator;
 
@@ -30,7 +29,7 @@ public class JailSquare extends Square {
     }
 
     public static void freeFromJail(Player player){
-        player.setJail(0);
+        player.setJail(-1);
     }
 
     public static int getDays(){

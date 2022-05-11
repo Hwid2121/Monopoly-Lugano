@@ -26,8 +26,6 @@ public class Main {
 
     Scanner input = new Scanner(System.in);
 
-  
-
     private int numberOfPlayers = 0;
     private int status = 0;
 
@@ -35,16 +33,13 @@ public class Main {
     private int turn = 0;
 
     // protected boolean nextTurn = false;
-    
 
     public void preGameStatus() {
         this.status = 0;
 
-       
         System.out.println("How many players?");
 
-
-        if(!input.hasNextInt()){
+        if (!input.hasNextInt()) {
             System.out.println("You have entered incorrect input! Please enter a number");
             input.nextLine();
             preGameStatus();
@@ -52,18 +47,12 @@ public class Main {
 
         numberOfPlayers = input.nextInt();
 
-
-        
-
-
-
         if (numberOfPlayers < 2) {
 
             System.out.println("Number of player not allowed, insert a number of player greater than 2");
             preGameStatus();
-        } 
-        
-        
+        }
+
         else {
 
             while (listOfPlayers.size() < numberOfPlayers) {
@@ -84,64 +73,42 @@ public class Main {
         }
     }
 
-    
-
     public void cardsPLAYmain(Player player, Monopoly monopoly) {
-
-
-        cardsDeck deck = new cardsDeck();
 
         System.out.println("You gonna take a card \n that can be a bonus card or a malus card\n ");
         System.out.println("After the effect the card the pass will be automatically");
         System.out.println("Good luck!\n");
 
-        
+        cardsDeck deck = new cardsDeck();
         System.out.println("[pick] (for picking a card)");
         String word = input.next();
-        
-        switch (word){
+
+        switch (word) {
             case "pick":
                 Card card = deck.randomCard();
-                 System.out.println("CARD:" + card.getDescription()); 
-                 deck.playCard(deck.getIndex(), player);
+                System.out.println("CARD:" + card.getDescription());
+                deck.playCard(deck.getIndex(), player);
 
-                 System.out.println("next turn");
-                 skip = 1;
-                 break;
-
+                System.out.println("next turn");
+                skip = 1;
+                break;
 
             default:
                 System.out.println("Command not allowed here.\n");
                 cardsPLAYmain(player, monopoly);
 
-
         }
 
-
-
-
-        }
-        
-
-        
-
-        
-
-
-
-
-
-    
-
-
+    }
 
     public void gotoPLAYmain(Player player, Monopoly monopoly) {
-        System.out.println("Go to the jail! \n You cannot do any actions");
-        System.out.println("Pass (to finish the turn) ");
+        System.out.println("Go to the jail! \n");
 
-        player.setPosition(30);
+        player.movePosition(30);
+        player.setJail(JailSquare.getDays());
 
         jailPLAYmain(player, monopoly);
+
     }
 
     public void malusPLAYmain(Player player) {
@@ -170,52 +137,91 @@ public class Main {
 
         String word = input.next();
 
-        switch (word) {
-            case ("Pay"):
-                JailSquare.payFine(player);
-                JailSquare.freeFromJail(player);
-
-                System.out.println("You paid 50 chf, you can throw the dice");
-
-                monopoly.throwDice();
-                monopoly.setPositionPlayer(player);
-
-                startTurn(player, monopoly);
-
-                break;
-
-            case ("Card"):
-                if (JailSquare.checkFreeJailCard(player)) {
+        if (player.getTurnsInJail() != 0) {
+            switch (word) {
+                case ("Pay"):
+                    JailSquare.payFine(player);
                     JailSquare.freeFromJail(player);
 
-                    System.out.println("You used the card, you can throw the dice\n ");
+                    System.out.println("You paid 50 chf, you can throw the dice");
+
+                    monopoly.throwDice();
+                    monopoly.setPositionPlayer(player);
+
                     startTurn(player, monopoly);
+
                     break;
 
-                } else {
-                    System.out.println("\n You don't have the card!\n");
-                    break;
-                }
-            case ("throw"):
+                case ("Card"):
+                    if (JailSquare.checkFreeJailCard(player)) {
+                        JailSquare.freeFromJail(player);
 
-                monopoly.throwDice();
-                System.out.println("Your dice made: " + monopoly.die1() + " and " + monopoly.die2());
-                if (monopoly.dice.getPerfectPair()) {
+                        System.out.println("You used the card, you can throw the dice\n ");
+                        monopoly.setPositionPlayer(listOfPlayers.get(turn));
+                        System.out.println("You are in the square: "
+                                + monopoly.table.getSquareName(listOfPlayers.get(turn).getPosition()));
+
+                        startTurn(player, monopoly);
+
+                        skip = 1;
+                        break;
+
+                    } else {
+                        System.out.println("\n You don't have the card!\n");
+                        break;
+                    }
+                case ("throw"):
+
+                    monopoly.throwDice();
+                    System.out.println("Your dice made: " + monopoly.die1() + " and " + monopoly.die2());
+                    if (monopoly.dice.getPerfectPair()) {
+                        JailSquare.freeFromJail(player);
+                        System.out.println("You did perfect pair, you gonna forward for " + (monopoly.die1() * 2));
+
+                        monopoly.setPositionPlayer(listOfPlayers.get(turn));
+                        System.out.println("You are in the square: "
+                                + monopoly.table.getSquareName(listOfPlayers.get(turn).getPosition()));
+
+                        startTurn(player, monopoly);
+
+                        skip = 1;
+                        break;
+
+                    } else {
+                        System.out.println("You did not do perfect pair, see you next turn!");
+                        player.setJail(player.getTurnsInJail() - 1);
+                        skip = 1;
+                        break;
+                    }
+
+                default:
+                    System.out.println("Command not allowed here.\n");
+                    jailPLAYmain(player, monopoly);
+
+            }
+        }
+
+        else {
+            System.out.println("You have to pay the fine");
+            word = input.next();
+
+            switch (word) {
+                case ("Pay"):
+                    JailSquare.payFine(player);
                     JailSquare.freeFromJail(player);
-                    System.out.println("You did perfect pair, you gonna forward for " + (monopoly.die1() * 2));
+
+                    System.out.println("You paid 50 chf, you can throw the dice");
+
+                    monopoly.throwDice();
+                    monopoly.setPositionPlayer(player);
+
                     startTurn(player, monopoly);
+
                     break;
+                default:
+                    System.out.println("invalid Input");
 
-                } else {
-                    System.out.println("You did not do perfect pair, see you next turn!");
-                    player.setJail(player.getTurnsInJail() - 1);
-                    skip = 1;
-                }
-
-            default:
-            System.out.println("Command not allowed here.\n");
-            jailPLAYmain(player, monopoly);
-
+            }
         }
 
     }
@@ -230,7 +236,6 @@ public class Main {
 
         switch (word) {
 
-
             case ("Money"):
                 System.out.println("Your bank have: " + player.getMoney());
                 break;
@@ -239,7 +244,6 @@ public class Main {
                 System.out.println("\nName: " + player.getNickname() + "\nMoney: " + player.getMoney()
                         + "\nProperties: " + player.getProperties() + "\nPosition: " + player.getPosition());
 
-                
                 break;
 
             case "pass":
@@ -253,8 +257,6 @@ public class Main {
         }
 
     }
-
-
 
     public void PropertySquarePLAY(Player player, Monopoly monopoly) {
         int position = listOfPlayers.get(turn).getPosition();
@@ -345,38 +347,55 @@ public class Main {
                 skip = 1;
                 break;
 
+            //
+            //
+            case "j":
+                cardsDeck deck = new cardsDeck();
+                deck.playCard(7, player);
+
             default:
-            System.out.println("Command not allowed here.\n\n");
-            PropertySquarePLAY(player, monopoly);
+                System.out.println("Command not allowed here.\n\n");
+                PropertySquarePLAY(player, monopoly);
         }
 
     }
 
+    public void throwDiceTurn(Player player, Monopoly monopoly) {
+
+        monopoly.throwDice();
+        System.out.println("Your dice made: " + monopoly.die1() + " and " + monopoly.die2());
+        System.out.println("Go forward by: " + (monopoly.die1() + monopoly.die2()));
+
+        monopoly.setPositionPlayer(listOfPlayers.get(turn));
+        System.out.println("You are in the square: "
+                + monopoly.table.getSquareName(listOfPlayers.get(turn).getPosition()));
+
+    }
+
     public void startTurn(Player player, Monopoly monopoly) {
-        if (listOfPlayers.get(turn).getTurnsInJail() == 0) {
-            monopoly.throwDice();
-            System.out.println("Your dice made: " + monopoly.die1() + " and " + monopoly.die2());
-            System.out.println("Go forward by: " + (monopoly.die1() + monopoly.die2()));
+        // if (listOfPlayers.get(turn).getTurnsInJail() == 0) {
+        // monopoly.throwDice();
+        // System.out.println("Your dice made: " + monopoly.die1() + " and " +
+        // monopoly.die2());
+        // System.out.println("Go forward by: " + (monopoly.die1() + monopoly.die2()));
 
-            monopoly.setPositionPlayer(listOfPlayers.get(turn));
-            System.out.println("You are in the square: "
-                    + monopoly.table.getSquareName(listOfPlayers.get(turn).getPosition()));
+        // monopoly.setPositionPlayer(listOfPlayers.get(turn));
+        // System.out.println("You are in the square: " +
+        // monopoly.table.getSquareName(listOfPlayers.get(turn).getPosition()));
 
-            Player realOwner = monopoly.checkOwnerForRent(listOfPlayers.get(turn).getNickname(), listOfPlayers,
-                    listOfPlayers.get(turn).getPosition());
+        Player realOwner = monopoly.checkOwnerForRent(listOfPlayers.get(turn).getNickname(), listOfPlayers,
+                listOfPlayers.get(turn).getPosition());
 
-            if (realOwner != null) {
+        if (realOwner != null) {
 
-                System.out.println("Oh no! this property is owned by " + realOwner.getNickname()
-                        + "\n You have to pay: "
-                        + monopoly.table.getSquarePriceTax(listOfPlayers.get(turn).getPosition()));
-                realOwner.increaseMoney(monopoly.table.getSquarePriceTax(listOfPlayers.get(turn).getPosition()));
-                listOfPlayers.get(turn)
-                        .decreaseMoney(monopoly.table.getSquarePriceTax(listOfPlayers.get(turn).getPosition()));
+            System.out.println("Oh no! this property is owned by " + realOwner.getNickname()
+                    + "\n You have to pay: "
+                    + monopoly.table.getSquarePriceTax(listOfPlayers.get(turn).getPosition()));
+            realOwner.increaseMoney(monopoly.table.getSquarePriceTax(listOfPlayers.get(turn).getPosition()));
+            listOfPlayers.get(turn)
+                    .decreaseMoney(monopoly.table.getSquarePriceTax(listOfPlayers.get(turn).getPosition()));
 
-            }
         }
-
     }
 
     public void gameStatus() {
@@ -392,15 +411,18 @@ public class Main {
 
             System.out.println(listOfPlayers.get(turn).getNickname() + " e' il tuo turno! \n");
 
-            startTurn(listOfPlayers.get(turn), monopoly);
+            if (listOfPlayers.get(turn).getTurnsInJail() == -1) {
+                startTurn(listOfPlayers.get(turn), monopoly);
+                throwDiceTurn(listOfPlayers.get(turn), monopoly);
+            }
 
             while (skip == 0) {
 
                 switch (monopoly.table.getSquare(listOfPlayers.get(turn).getPosition()).getColor()) {
 
                     case "cards":
-                    cardsPLAYmain(listOfPlayers.get(turn), monopoly);
-                    break;
+                        cardsPLAYmain(listOfPlayers.get(turn), monopoly);
+                        break;
 
                     // case "park":
                     // parkPLAYmain(listOfPlayers.get(turn), monopoly);

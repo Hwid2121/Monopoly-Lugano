@@ -17,7 +17,7 @@ public class Player {
     private int position;
     private int turn = 0;
 
-    private int inJail = 0;
+    private int inJail = -1;
 
     private ArrayList<Card> deckOfPlayer = new ArrayList<Card>();
 
@@ -106,6 +106,11 @@ public class Player {
     public void setPosition(int pos) {
         position = (position + pos) % Table.getSizeofTable();
         System.out.println(position);
+    }
+
+    public void movePosition(int pos){
+        
+        position = pos;
     }
 
     public String getProperties() {
