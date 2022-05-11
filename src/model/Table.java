@@ -33,7 +33,7 @@ public class Table {
 
         cell[6] = new PropertySquare(100, 6, "Via la Santa", "blue");
 
-        cell[7] = new BonusSquare("Casino' Lugano", "bonus", "You won lottery you got 75", 75);
+        cell[7] = new BonusSquare("Casino' Lugano", "bonus", "You won at blackjack you gain  75 chf", 75);
 
         cell[8] = new PropertySquare(100, 6, "Convento dei Cappuccini", "blue");
 
@@ -53,7 +53,7 @@ public class Table {
 
         cell[16] = new PropertySquare(180, 14, "Lugano Arte e Cultura (LAC)", "orange");
 
-        cell[17] = new BonusSquare("USI Campus West", "bonus", "get 100", 100);
+        cell[17] = new BonusSquare("USI Campus West", "bonus", "You the best Student free schoolarship of 100 chf", 100);
 
         cell[18] = new PropertySquare(180, 14, "Via Maggio", "orange");
 
@@ -86,17 +86,17 @@ public class Table {
 
         cell[32] = new PropertySquare(300, 26, "Via alla Vetta", "green");
 
-        cell[33] = new BonusSquare("USI Campus East", "bonus", "you won 150", 150);
+        cell[33] = new BonusSquare("USI Campus East", "bonus", "You the best Student free schoolarship of 150 chf", 150);
 
         cell[34] = new PropertySquare(320, 28, "Riva Vincenzo Vela", "green");
 
         cell[35] = new PropertySquare(200, 25, "Parco Ciani", "Park");
 
-        cell[36] = new BonusSquare("USI East Campus Room c1.04", "malus", "you got a malus -200", 200);
+        cell[36] = new BonusSquare("Bar Oops", "malus", "You spent a lot of money in drinks, pay the bill of 200 chf", 200);
 
         cell[37] = new PropertySquare(350, 35, "Via Pessina", "blue");
 
-        cell[38] = new BonusSquare("Dogana Chiasso!", "malus", "you have been caught by police you have to pay 100",
+        cell[38] = new BonusSquare("Dogana Chiasso!", "malus", "You brought to much food, you have been caugh and pay 100 chf of fine",
                 100);
 
         cell[39] = new PropertySquare(400, 50, "Piazza della Riforma", "blue");
@@ -106,6 +106,9 @@ public class Table {
     public Square getSquare(int pos) {
         return cell[pos];
     }
+
+
+
 
 
 
@@ -155,6 +158,10 @@ public class Table {
     }
 
 
+
+
+
+
     public void setSquareOwner(Player player) {
         Object obj = this.getSquare(player.getPosition());
         if (obj instanceof PropertySquare) {
@@ -164,6 +171,30 @@ public class Table {
         
 
     }
+
+
+
+    public int getSquareBonusPrice(Player player){
+        Object obj = this.getSquare(player.getPosition());
+        if (obj instanceof BonusSquare) {
+            BonusSquare s = (BonusSquare) obj;
+            return s.getMoney();
+        }
+        return -1;
+        
+    }
+
+    public String getSquareBonusDescr(Player player){
+        Object obj = this.getSquare(player.getPosition());
+        if (obj instanceof BonusSquare) {
+            BonusSquare s = (BonusSquare) obj;
+            return s.getDescription();
+        }
+        return "";
+        
+    }
+
+
 
 
 

@@ -22,16 +22,21 @@ public class BonusSquare extends Square {
         this.money = money;
     }
 
-    public void giveMoney() {
+    public void giveMoney(Player player) {
+        player.increaseMoney(this.getMoney());
 
     }
 
-    public void takeMoney() {
-
+    public void takeMoney(Player player) {
+        player.decreaseMoney(this.getMoney());
     }
 
     public String getDescription() {
         return description;
+    }
+
+    public int getMoney(){
+        return money;
     }
 
 }

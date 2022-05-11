@@ -1,4 +1,4 @@
-package src.tui;
+package tui;
 
 import java.util.Scanner; // Import the Scanner class
 
@@ -111,18 +111,30 @@ public class Main {
 
     }
 
-    public void malusPLAYmain(Player player) {
+    public void bonusPLAYmain(Player player, Monopoly monopoly) {
 
+       int price =  monopoly.table.getSquareBonusPrice(player) ;
+        
+
+
+        if (monopoly.table.getSquare(player.getPosition()).getColor() == "bonus"){
+            
+            System.out.println(monopoly.table.getDescriptionProperty(player.getPosition()));
+            player.increaseMoney(price);
+        } else {
+            
+            System.out.println(monopoly.table.getDescriptionProperty(player.getPosition()));
+            player.decreaseMoney(price);
+            
+
+        }
+        skip = 1;
+        
+    
     }
 
-    public void parkPLAYmain(Player player) {
-        System.out.println("You are in the park");
 
-    }
 
-    // public void companyPLAYmain(Player player) {
-
-    // }
 
     public void jailPLAYmain(Player player, Monopoly monopoly) {
 
@@ -347,11 +359,6 @@ public class Main {
                 skip = 1;
                 break;
 
-            //
-            //
-            case "j":
-                cardsDeck deck = new cardsDeck();
-                deck.playCard(7, player);
 
             default:
                 System.out.println("Command not allowed here.\n\n");
@@ -443,6 +450,15 @@ public class Main {
                     case "goto":
                         gotoPLAYmain(listOfPlayers.get(turn), monopoly);
                         break;
+
+
+                    case "bonus" :
+                    bonusPLAYmain(listOfPlayers.get(turn), monopoly);
+
+                    case "malus" :
+                    bonusPLAYmain(listOfPlayers.get(turn), monopoly);
+                    break;
+
 
                     default:
                         PropertySquarePLAY(listOfPlayers.get(turn), monopoly);
