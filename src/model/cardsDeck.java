@@ -67,7 +67,6 @@ public class cardsDeck {
 
 
 
-
     public  int getRandomNum(){
         index = rand.nextInt(cards.size());
         return index;

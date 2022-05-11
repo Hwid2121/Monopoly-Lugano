@@ -28,6 +28,8 @@ public class PropertySquare extends Square {
     }
 
 
+    
+
 
     public void selling() {
 
@@ -54,4 +56,6 @@ public class PropertySquare extends Square {
         mortgage = !mortgage;
     }
     
+
+
 }

@@ -40,4 +40,8 @@ public class Dice {
         return die1 + die2;
     }
 
+    public boolean getPerfectPair(){
+        return die1 == die2;
+    }
+
 }

@@ -23,7 +23,7 @@ public class Table {
 
         cell[1] = new PropertySquare(60, 2, "Via Zurigo", "brown");
 
-        cell[2] = new BonusSquare("Community Chest", "bonus", "You won at lottery you got +100", 100);
+        cell[2] = new BonusSquare("Pick a card!", "cards", "pick a card and discover if it's good or not", -1);
 
         cell[3] = new PropertySquare(60, 2, "Via Giuseppe Bagutti", "brown");
 
@@ -63,7 +63,7 @@ public class Table {
 
         cell[21] = new PropertySquare(220, 18, "Piazzale Stazione ", "red");
 
-        cell[22] = new BonusSquare("Punto citta' sent you a fine!", "malus", "you have to pay the fine of 120 chf",
+        cell[22] = new BonusSquare("Pick a card", "cards", "Pick a card and discover if it's good or not",
                 120);
 
         cell[23] = new PropertySquare(220, 18, "Corso Elvezia", "red");
@@ -80,7 +80,7 @@ public class Table {
 
         cell[29] = new PropertySquare(280, 24, "Via Nassa", "yellow");
 
-        cell[30] = new JailSquare("Penitenziario lo Stampino!", "jail", "This is the jail");
+        cell[30] = new JailSquare("Penitenziario lo Stampino!", "jail");
 
         cell[31] = new PropertySquare(300, 26, "Riva Paradiso", "green");
 
@@ -107,9 +107,7 @@ public class Table {
         return cell[pos];
     }
 
-    // public PropertySquare getPropertySquare(int pos){
-    // return cell[pos];
-    // }
+
 
     public String getSquareName(int pos) {
         return this.getSquare(pos).getName();
@@ -166,6 +164,11 @@ public class Table {
         
 
     }
+
+
+
+
+
 
 }
 

@@ -1,5 +1,6 @@
 package model;
 
+import java.text.BreakIterator;
 import java.util.ArrayList;
 import java.util.Iterator;
 
@@ -16,10 +17,9 @@ public class Player {
     private int position;
     private int turn = 0;
 
+    
 
-    // first number set to 0 Initially
-    // first number rappresent number of turn to remain in jail
-    // if 0 then 0, if 2 then 2
+
     private int inJail = 0;
 
 
@@ -35,9 +35,17 @@ public class Player {
     }
 
 
+    
+    public void setJail(int i){
+        inJail = i;
+    }
 
     public int getTurnsInJail(){
         return inJail;
+    }
+
+    public boolean stillInJail(){
+        return inJail>0;
     }
 
     
@@ -46,7 +54,19 @@ public class Player {
         deckOfPlayer.add(card);
     }
 
+    public ArrayList<Card> getDeck(){
+        return deckOfPlayer;
+    }
 
+
+    public void deleteCard(String desc){
+        for(int i=0; i< deckOfPlayer.size(); i++){
+            if (deckOfPlayer.get(i).getDescription() == desc){
+                deckOfPlayer.remove(i);
+                break;
+            } 
+        }
+    }
 
 
     public int getMoney() {
