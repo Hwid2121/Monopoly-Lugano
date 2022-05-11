@@ -29,42 +29,42 @@ public class Card  {
 
 
 
-    public void card0(Player player){
+    public static void card0(Player player){
 
     
         player.setPosition(16);
     }
 
-    public void card1(Player player){
+    public static void card1(Player player){
         player.increaseMoney(200);
         player.setPosition(0);
 
     }
 
-    public void card2(Player player){
+    public static void card2(Player player){
         if (player.getPosition() > 6){
             player.increaseMoney(200);
         }
         player.setPosition(6);
     }
 
-    public void card3(Player player){
+    public static void card3(Player player){
         player.increaseMoney(200);
     }
 
-    public void card4(Player player){
+    public  static void card4(Player player){
         player.decreaseMoney(50);
     }
 
-    public void card5(Player player){
+    public static void card5(Player player){
         // free from jail card
     }
 
-    public void card6(Player player){
+    public  static void card6(Player player){
         player.increaseMoney(100);
     }
 
-    public void card7(Player player){
+    public  static void card7(Player player){
         // card go to jail and don't receive money
 
         if(player.getPosition() > 30){
@@ -75,21 +75,22 @@ public class Card  {
     }
 
 
-    public void card8(Player player){
+    public static void card8(Player player){
         player.decreaseMoney(100);
     }
 
-    public void card9(Player player){
+    public  static void card9(Player player){
         player.decreaseMoney(40);
     }
 
-    public void card10(Player player){
+    public static void card10(Player player){
         player.increaseMoney(75);
     }
 
 
-    public void card11(Player player){
+    public static  void card11(Player player){
 
+        
         if (player.getPosition() > 35 ){
             player.increaseMoney(200);
         }
@@ -97,15 +98,15 @@ public class Card  {
     }
 
 
-    public void card12(Player player){
+    public static  void card12(Player player){
         player.decreaseMoney(200);
     }
 
-    public void card13(Player player){
+    public  static void card13(Player player){
         player.decreaseMoney(50);
     }
 
-    public void card14(Player player){
+    public  static void card14(Player player){
         player.decreaseMoney(120);
     }
 

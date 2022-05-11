@@ -67,9 +67,8 @@ public class cardsDeck {
 
 
 
-    public  int getRandomNum(){
+    public  void getRandomNum(){
         index = rand.nextInt(cards.size());
-        return index;
     }
 
     public Card randomCard(){
@@ -78,45 +77,65 @@ public class cardsDeck {
         return card;
     }
 
+    public int getIndex(){
+        return index;
+    }
 
 
 
-    public void playCard(Card card , Player player){
+
+    public void playCard( int index, Player player){
+        this.index = index;
         
-        int i = index;
+  
         
-        
-        switch(i){
+        switch(index){
             case 0:
-            card.card0(player);
+            Card.card0(player);
+            break;
             case 1:
-            card.card1(player);
+            
+            Card.card1(player);
+            break;
             case 2:
-            card.card2(player);
+            Card.card2(player);
+            break;
             case 3:
-            card.card3(player);
+            Card.card3(player);
+            break;
             case 4:
-            card.card4(player);
+            Card.card4(player);
+            break;
             case 5:
-            card.card5(player);
+            Card.card5(player);
+            break;
             case 6:
-            card.card6(player);
+            Card.card6(player);
+            break;
             case 7:
-            card.card7(player);
+            Card.card7(player);
+            break;
             case 8:
-            card.card8(player);
+            Card.card8(player);
+            break;
             case 9:
-            card.card9(player);
+            Card.card9(player);
+            break;
             case 10:
-            card.card10(player);
+            Card.card10(player);
+            break;
             case 11:
-            card.card11(player);
+            Card.card11(player);
+            break;
             case 12:
-            card.card12(player);
+            Card.card12(player);
+            break;
             case 13:
-            card.card13(player);
+            Card.card13(player);
+            break;
             case 14:
-            card.card14(player);
+            Card.card14(player);
+            break;
         }
 
 
