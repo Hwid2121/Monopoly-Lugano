@@ -38,6 +38,16 @@ public class JailSquareTest {
     public void getPerfectPairTest(){
         assertTrue(new Dice(5, 5).getPerfectPair());
     }
+    @Test
+    public void getPair1Test(){
+        Jail.getPair1();
+        assertEquals(6, new Dice(5, 6).getDie2());
+    }
+
+    @Test
+    public void getPair2Test(){
+        assertEquals(6, new Dice(5, 6).getDie2());
+    }
 
     @Test
     public void payFineTest(){
