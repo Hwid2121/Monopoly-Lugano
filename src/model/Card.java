@@ -94,7 +94,6 @@ public class Card  {
 
 
     public static  void card11(Player player){
-
         
         if (player.getPosition() > 35 ){
             player.increaseMoney(200);
