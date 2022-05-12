@@ -24,9 +24,36 @@ public class Monopoly {
         numOfPlayers = players.size();
     }
 
+
+
+    public  ArrayList<Player> playerEliminated(ArrayList<Player> players, Player banned){
+        players.remove(banned);
+        return players;
+    }
+
+
+
+
     public boolean MonopolyEND() {
         return numOfPlayers >= 1;
     }
+
+
+    public  boolean checkbankruptStatus(Player player){
+        if (player.getMoney() > 0){
+            return false;
+        } else return true;
+    }
+
+
+
+
+
+
+
+
+
+
 
     public int die1() {
         return dice.getDie1();

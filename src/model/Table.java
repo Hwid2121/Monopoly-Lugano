@@ -1,6 +1,10 @@
 
 package model;
 
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
+
 /**
  * this class rapresent the table composed by the square and wher ethe player
  * will play
@@ -21,85 +25,85 @@ public class Table {
     public void newtable() {
         cell[0] = new BonusSquare("Start", "bonus", "The start for every player.", 200);
 
-        cell[1] = new PropertySquare(60, 2, "Via Zurigo", "brown");
+        cell[1] = new PropertySquare(60, 2, "Via Zurigo", "brown", 30, 1);
 
         cell[2] = new BonusSquare("Pick a card!", "cards", "pick a card and discover if it's good or not", -1);
 
-        cell[3] = new PropertySquare(60, 2, "Via Giuseppe Bagutti", "brown");
+        cell[3] = new PropertySquare(60, 2, "Via Giuseppe Bagutti", "brown",30,3);
 
         cell[4] = new BonusSquare("Income Tax", "malus", "Income tax you have to pay 200", 200);
 
-        cell[5] = new PropertySquare(200, 2, "Parco Florida", "park");
+        cell[5] = new PropertySquare(200, 2, "Parco Florida", "park", 100,5);
 
-        cell[6] = new PropertySquare(100, 6, "Via la Santa", "blue");
+        cell[6] = new PropertySquare(100, 6, "Via la Santa", "azure", 50,6);
 
         cell[7] = new BonusSquare("Casino' Lugano", "bonus", "You won at blackjack you gain  75 chf", 75);
 
-        cell[8] = new PropertySquare(100, 6, "Convento dei Cappuccini", "blue");
+        cell[8] = new PropertySquare(100, 6, "Convento dei Cappuccini", "azure", 50,8);
 
-        cell[9] = new PropertySquare(120, 8, "Via delle Aie", "blue");
+        cell[9] = new PropertySquare(120, 8, "Via delle Aie", "azure", 60, 9);
 
         cell[10] = new BonusSquare("Go to the jail!", "goto", "now you go to the jail!", -1);
 
-        cell[11] = new PropertySquare(140, 10, "Viale Cassarate", "pink");
+        cell[11] = new PropertySquare(140, 10, "Viale Cassarate", "pink",70, 11);
 
-        cell[12] = new PropertySquare(150, 66, "Centrale Elettrica AIL", "company");
+        cell[12] = new PropertySquare(150, 66, "Centrale Elettrica AIL", "company", 75, 12);
 
-        cell[13] = new PropertySquare(140, 10, "Via delle Rose", "pink");
+        cell[13] = new PropertySquare(140, 10, "Via delle Rose", "pink", 70, 13);
 
-        cell[14] = new PropertySquare(160, 12, "Piazza Molino Nuovo", "pink");
+        cell[14] = new PropertySquare(160, 12, "Piazza Molino Nuovo", "pink",80, 14);
 
-        cell[15] = new PropertySquare(200, 25, "Villa Favorita ", "Park");
+        cell[15] = new PropertySquare(200, 25, "Villa Favorita ", "Park", 100, 15);
 
-        cell[16] = new PropertySquare(180, 14, "Lugano Arte e Cultura (LAC)", "orange");
+        cell[16] = new PropertySquare(180, 14, "Lugano Arte e Cultura (LAC)", "orange", 90, 16);
 
         cell[17] = new BonusSquare("USI Campus West", "bonus", "You the best Student free schoolarship of 100 chf", 100);
 
-        cell[18] = new PropertySquare(180, 14, "Via Maggio", "orange");
+        cell[18] = new PropertySquare(180, 14, "Via Maggio", "orange", 90,18);
 
-        cell[19] = new PropertySquare(200, 16, "Chiesa Santa Maria degli Angeli", "orange");
+        cell[19] = new PropertySquare(200, 16, "Chiesa Santa Maria degli Angeli", "orange", 100, 19);
 
         cell[20] = new BonusSquare("Empty square, do nothing", "empty", "Nothing, square only to sit in peace", 0);
 
-        cell[21] = new PropertySquare(220, 18, "Piazzale Stazione ", "red");
+        cell[21] = new PropertySquare(220, 18, "Piazzale Stazione ", "red", 110, 21);
 
         cell[22] = new BonusSquare("Pick a card", "cards", "Pick a card and discover if it's good or not",
                 120);
 
-        cell[23] = new PropertySquare(220, 18, "Corso Elvezia", "red");
+        cell[23] = new PropertySquare(220, 18, "Corso Elvezia", "red", 110, 23);
 
-        cell[24] = new PropertySquare(240, 20, "Lido", "red");
+        cell[24] = new PropertySquare(240, 20, "Lido", "red", 120, 24);
 
-        cell[25] = new PropertySquare(200, 25, "Parco San Michele", "park");
+        cell[25] = new PropertySquare(200, 25, "Parco San Michele", "park", 100, 25);
 
-        cell[26] = new PropertySquare(260, 22, "Viale Serafino Balestra", "yellow");
+        cell[26] = new PropertySquare(260, 22, "Viale Serafino Balestra", "yellow", 130, 26);
 
-        cell[27] = new PropertySquare(260, 22, "Lido di Lugano", "yellow");
+        cell[27] = new PropertySquare(260, 22, "Lido di Lugano", "yellow", 130, 27);
 
-        cell[28] = new PropertySquare(150, 66, "Universita' di Lugano", "company");
+        cell[28] = new PropertySquare(150, 66, "Universita' di Lugano", "company", 75, 28);
 
-        cell[29] = new PropertySquare(280, 24, "Via Nassa", "yellow");
+        cell[29] = new PropertySquare(280, 24, "Via Nassa", "yellow", 140, 29);
 
         cell[30] = new JailSquare("Penitenziario lo Stampino!", "jail");
 
-        cell[31] = new PropertySquare(300, 26, "Riva Paradiso", "green");
+        cell[31] = new PropertySquare(300, 26, "Riva Paradiso", "green", 150, 31);
 
-        cell[32] = new PropertySquare(300, 26, "Via alla Vetta", "green");
+        cell[32] = new PropertySquare(300, 26, "Via alla Vetta", "green", 150, 32);
 
         cell[33] = new BonusSquare("USI Campus East", "bonus", "You the best Student free schoolarship of 150 chf", 150);
 
-        cell[34] = new PropertySquare(320, 28, "Riva Vincenzo Vela", "green");
+        cell[34] = new PropertySquare(320, 28, "Riva Vincenzo Vela", "green", 160, 34);
 
-        cell[35] = new PropertySquare(200, 25, "Parco Ciani", "Park");
+        cell[35] = new PropertySquare(200, 25, "Parco Ciani", "Park", 100, 35);
 
         cell[36] = new BonusSquare("Bar Oops", "malus", "You spent a lot of money in drinks, pay the bill of 200 chf", 200);
 
-        cell[37] = new PropertySquare(350, 35, "Via Pessina", "blue");
+        cell[37] = new PropertySquare(350, 35, "Via Pessina", "blue", 175, 37);
 
         cell[38] = new BonusSquare("Dogana Chiasso!", "malus", "You brought to much food, you have been caugh and pay 100 chf of fine",
                 100);
 
-        cell[39] = new PropertySquare(400, 50, "Piazza della Riforma", "blue");
+        cell[39] = new PropertySquare(400, 50, "Piazza della Riforma", "blue", 200, 39);
 
     }
 
@@ -202,7 +206,115 @@ public class Table {
             PropertySquare s = (PropertySquare) obj;
             return s;
         }
-        return null;
+        return new PropertySquare(0, 0, "o", "o", 0, -1);
+        
+        
+    }
+
+
+
+    // public boolean getMonopolySquare(Player player){
+
+        
+    //     if (player.getPropertySquare().size() < 1){
+    //         return false;
+    //     } else{
+            
+
+    //     ArrayList<String> a = new ArrayList<String>();
+    //     for(PropertySquare property: player.getPropertySquare()){
+    //         a.add(property.getColor());
+    //     }
+    //     Collections.sort(a);
+        
+    //     int counter = 1;
+    //     String color = a.get(0);
+    //     for(int i =1; i< player.getPropertySquare().size(); i++){
+
+            
+    //     }
+    // }
+
+    // }
+
+
+    public boolean getMonopolyColor(Player player, String color){
+
+
+        int counter =0;
+
+        ArrayList<String> a = new ArrayList<String>();
+
+
+
+        for(PropertySquare property: player.getPropertySquare()){
+            a.add(property.getColor());
+        }
+
+        for(int i=0; i< a.size()-1; i++){
+            if(a.get(i) == color && getMono(i)){
+                getPropertySquare(i).setMononopolyColor();
+                counter+=1;
+            }
+        }
+
+        
+        if (  ((color == "red" || color == "brown" || color == "blue") && counter == 2)) {
+            System.out.println("getmonopo 1");
+            
+            return true;
+        }
+        else if(((color == "azure" || color == "pink" || color == "orange" || color == "yellow" || color == "green") && counter == 2)) {
+            System.out.println("getmonopo 2");
+            return true;
+        }
+    
+        else return false;
+
+        
+        
+
+
+    }
+
+    public String getColor(int i){
+
+        return getSquare(i).getColor();
+    }
+
+    public boolean getMono(int i){
+        return getPropertySquare(i).getMonopolyColor();
+    }
+
+
+
+    public void resetOwner(int pos){
+
+        Object obj = this.getSquare(pos);
+        
+        if (obj instanceof PropertySquare) {
+            PropertySquare s = (PropertySquare) obj;
+            s.resetOwner();
+            
+        }
+            }
+
+
+
+    // public void setMononopolyColor(Player player, String color){
+    //     int counter=0;
+
+    //     int size =  player.getPropertySquare().size()-1 ;
+       
+        
+    //     for (int i=0; (i < size); i++){
+               
+    //              if(getColor(i) == color && getMono(i) == false){
+    //                 getPropertySquare(i).setMononopolyColor();
+    //                 getPropertySquare(i).setPriceTax(getPropertySquare(i).getPriceTax() *2);
+    //                 counter +=1;
+    //             }}
+    //     }
         
     }
 
@@ -213,7 +325,7 @@ public class Table {
 
 
 
-}
+
 
 /**
  * start (+200)
