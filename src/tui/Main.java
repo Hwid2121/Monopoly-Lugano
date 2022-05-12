@@ -1,4 +1,4 @@
-package tui;
+package src.tui;
 
 import java.util.Scanner; // Import the Scanner class
 

@@ -21,6 +21,8 @@ public class JailSquareTest {
 
     private static int days = 3;
     private static int fine = 50;
+    Player Nico = new Player("Nico");
+    JailSquare Jail = new JailSquare("Lo stampino", "red");
 
     @Test
     public void getDaysTest(){
@@ -36,5 +38,18 @@ public class JailSquareTest {
     public void getPerfectPairTest(){
         assertTrue(new Dice(5, 5).getPerfectPair());
     }
+
+    @Test
+    public void payFineTest(){
+        Jail.payFine(Nico);
+        assertEquals(1445, Nico.getMoney());
+    }
+
+    @Test
+    public void freeFromJailTest(){
+        Jail.freeFromJail(Nico);
+        assertEquals(-1, Nico.getTurnsInJail());
+    }
+
     
 }
