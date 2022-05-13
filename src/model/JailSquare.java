@@ -14,9 +14,9 @@ public class JailSquare extends Square {
 
     private Dice dice;
 
-    
+
     private static int fine = 50;
-    private static int days = 2;
+    private static int days = 3;
 
     public JailSquare(String name, String color) {
         super(name, color);

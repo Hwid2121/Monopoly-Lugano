@@ -41,11 +41,5 @@ public class PlayerTest {
         assertEquals(1, Nico.getTurn());
     }
 
-    @Test
-    public void printNickname(){
-        Nico.printNickname();
-        assertEquals("Nico", Nico.getNickname());
-    }
-
 }
 
