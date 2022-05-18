@@ -87,13 +87,13 @@ public class CardTest {
 
     public void card2Test1(){
         Nico.movePosition(7);
-        if(Nico.getPosition() > 6){
-            Card.card2(Nico);
             assertEquals(1700, Nico.getMoney());
         }
-        Card.card2(Nico);
-        assertEquals(6, Nico.getPosition());
-        }
+
+        public void card2Test2(){
+            Nico.movePosition(5);
+                assertEquals(1700, Nico.getMoney());
+            }
 
         @Test
         public void card5Test(){

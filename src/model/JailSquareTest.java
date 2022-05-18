@@ -42,7 +42,8 @@ public class JailSquareTest {
    // public void getPair1Test(){
    //     Jail.getPair1();
    //     assertEquals(6, new Dice(5, 6).getDie2());
-   // }
+   // } testare i valori in un intervallo
+   // assertTrue( die1 >= )
 
   //  @Test
   //  public void getPair2Test(){
