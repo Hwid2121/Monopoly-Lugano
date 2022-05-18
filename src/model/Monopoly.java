@@ -26,8 +26,9 @@ public class Monopoly {
 
 
 
-    public  ArrayList<Player> playerEliminated(ArrayList<Player> players, Player banned){
+    public ArrayList<Player> playerEliminated(ArrayList<Player> players, Player banned){
         players.remove(banned);
+        numOfPlayers -= 1;
         return players;
     }
 
@@ -35,7 +36,7 @@ public class Monopoly {
 
 
     public boolean MonopolyEND() {
-        return numOfPlayers >= 1;
+        return numOfPlayers > 1;
     }
 
 

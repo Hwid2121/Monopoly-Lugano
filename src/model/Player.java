@@ -105,6 +105,9 @@ public class Player {
     }
 
 
+    public int getPropertySquareNum(){
+        return listofPropertySquares.size();
+    }
 
 
     public void buyPropertySquare(PropertySquare house){

@@ -1,4 +1,4 @@
-package src.tui;
+package tui;
 
 import java.util.Scanner; // Import the Scanner class
 
@@ -74,6 +74,40 @@ public class Main {
         }
     }
 
+    public void elimininationPLAYmain(Player player, Monopoly monopoly) {
+        monopoly.playerEliminated(listOfPlayers, player);
+        numberOfPlayers -=1;
+    }
+
+    public void bankRuptPLAYmain(Player player, Monopoly monopoly) {
+        System.out.println("You are in bankrupt, you do not have money");
+        System.out.println("You must sell your properties till you balance is positive");
+
+        boolean ok = false;
+
+        while (!ok) {
+
+            while (player.getPropertySquareNum() > 0) {
+
+                if (player.getMoney() < 0) {
+                    PropertySquareSELL(player, monopoly);
+                } else {
+                    System.out.println("You are not in bankrupt now your balance is " + player.getMoney() + " chf");
+                    ok = true;
+                    break;
+                }
+            }
+
+            System.out.println("Oh no you don't have enough money to cover the debit");
+            System.out.println(player.getNickname() + "has been eliminated");
+
+            elimininationPLAYmain(player, monopoly);
+            ok = true;
+
+        }
+
+    }
+
     public void cardsPLAYmain(Player player, Monopoly monopoly) {
 
         System.out.println("You gonna take a card \n that can be a bonus card or a malus card\n ");
@@ -89,6 +123,11 @@ public class Main {
                 Card card = deck.randomCard();
                 System.out.println("CARD:" + card.getDescription());
                 deck.playCard(deck.getIndex(), player);
+
+                if (monopoly.checkbankruptStatus(player)) {
+                    bankRuptPLAYmain(player, monopoly);
+                    skip = 1;
+                }
 
                 System.out.println("next turn");
                 skip = 1;
@@ -123,6 +162,10 @@ public class Main {
             player.increaseMoney(price);
         } else {
             player.decreaseMoney(price);
+            if (monopoly.checkbankruptStatus(player)) {
+                bankRuptPLAYmain(player, monopoly);
+                skip = 1;
+            }
 
         }
         skip = 1;
@@ -149,13 +192,16 @@ public class Main {
                     JailSquare.freeFromJail(player);
 
                     System.out.println("You paid 50 chf, you can throw the dice");
+                    if (monopoly.checkbankruptStatus(player)) {
+                        bankRuptPLAYmain(player, monopoly);
+                        skip = 1;
+                    }
 
                     monopoly.throwDice();
 
                     monopoly.setPositionPlayer(player);
                     System.out.println("You are in the square: "
-                + monopoly.table.getSquareName(listOfPlayers.get(turn).getPosition()));
-
+                            + monopoly.table.getSquareName(listOfPlayers.get(turn).getPosition()));
 
                     startTurn(player, monopoly);
 
@@ -220,6 +266,11 @@ public class Main {
                     JailSquare.freeFromJail(player);
 
                     System.out.println("You paid 50 chf, you can throw the dice");
+                    
+                    if (monopoly.checkbankruptStatus(player)) {
+                        bankRuptPLAYmain(player, monopoly);
+                        skip = 1;
+                    }
 
                     monopoly.throwDice();
                     monopoly.setPositionPlayer(player);
@@ -282,7 +333,8 @@ public class Main {
 
         switch (word) {
             case "d":
-                System.out.println("\n \n" + monopoly.propertyDescr(listOfPlayers.get(turn)) +"" + monopoly.table.getSquare(position));
+                System.out.println("\n \n" + monopoly.propertyDescr(listOfPlayers.get(turn)) + ""
+                        + monopoly.table.getSquare(position));
                 break;
 
             case "b":
@@ -304,22 +356,19 @@ public class Main {
                             monopoly.setOwner(player);
                             player.buyPropertySquare(monopoly.table.getPropertySquare(position));
                             player.decreaseMoney(monopoly.table.getSquarePrice(position));
-                            
+
                             System.out.println("Square has been bought! \n");
 
-                            String color = monopoly.table.getColor(position); 
-                            if(monopoly.table.getMonopolyColor(player, color ))
-                            {
-                                System.out.println("You did monopoly, with color "+  color + " the rent price tax is double now");
+                            String color = monopoly.table.getColor(position);
+                            if (monopoly.table.getMonopolyColor(player, color)) {
+                                System.out.println(
+                                        "You did monopoly, with color " + color + " the rent price tax is double now");
                                 // monopoly.table.setMononopolyColor(player, color);
                             }
-
 
                         case "N":
                             break;
                     }
-
-                    
 
                 } else
                     System.out.println("You don't have enough money to buy the property");
@@ -327,24 +376,17 @@ public class Main {
 
             case "s":
 
+                if (player.getPropertySquare().size() < 1) {
+                    System.out.println("You do not have properties to sell!");
+                    break;
+                }
 
+                else {
 
-            if (player.getPropertySquare().size() < 1 ){
-                System.out.println("You do not have properties to sell!");
-                break;
-            }
-
-                
-                
-                else{
-            
                     System.out.println("Sell properties status: \n");
                     PropertySquareSELL(player, monopoly);
                     break;
                 }
-
-
-                
 
             case "m":
                 System.out.println("Your bank have: " + player.getMoney());
@@ -355,11 +397,11 @@ public class Main {
                         + "\nProperties: " + player.propertySquaretoString() + "\nPosition: " + player.getPosition());
                 break;
 
-            case "Mortgage":
-                if (((monopoly.table.getSquareOwner(position) == player.getNickname()))) {
+            // case "Mortgage":
+            // if (((monopoly.table.getSquareOwner(position) == player.getNickname()))) {
 
-                    System.out.println("Are you sure to mortgage your property?");
-                }
+            // System.out.println("Are you sure to mortgage your property?");
+            // }
 
             case "p":
                 skip = 1;
@@ -372,58 +414,39 @@ public class Main {
 
     }
 
-
-    public void PropertySquareSELL(Player player, Monopoly monopoly){
-
+    public void PropertySquareSELL(Player player, Monopoly monopoly) {
 
         int num = player.getPropertySquare().size();
         System.out.println("You have " + num + " properties");
 
-        
-        for ( int i = 0; i <= num-1; i++){
-            System.out.println("["+ i +"]" + " for sell "+ player.getPropertySquare().get(i).getName() + " at price sell: " + player.getPropertySquare().get(i).getPriceSell());
+        for (int i = 0; i <= num - 1; i++) {
+            System.out.println("[" + i + "]" + " for sell " + player.getPropertySquare().get(i).getName()
+                    + " at price sell: " + player.getPropertySquare().get(i).getPriceSell());
         }
 
-
-        
         int word = input.nextInt();
 
-        while( num != -420){
+        while (num != -420) {
 
-           
-
-            if(word >= 0 && word <= num-1){
+            if (word >= 0 && word <= num - 1) {
 
                 int pos = player.getPropertySquare().get(word).getPosition();
-                
-                player.sellPropertySquare(word,  player.getPropertySquare().get(word) );
-                
 
-                
-                
+                player.sellPropertySquare(word, player.getPropertySquare().get(word));
+
                 monopoly.table.resetOwner(pos);
-                
+
                 System.out.println("\n Property sold");
                 num = -420;
 
-                
             } else {
                 System.out.println("Index not valid");
                 word = input.nextInt();
             }
 
-
         }
 
-
-
-
     }
-
-
-    
-
-
 
     public void throwDiceTurn(Player player, Monopoly monopoly) {
 
@@ -460,22 +483,20 @@ public class Main {
             listOfPlayers.get(turn)
                     .decreaseMoney(monopoly.table.getSquarePriceTax(listOfPlayers.get(turn).getPosition()));
 
+                    if (monopoly.checkbankruptStatus(player)) {
+                        bankRuptPLAYmain(player, monopoly);
+                        skip = 1;
+                    }
         }
     }
-
-
-
-
-
-
-
 
     public void gameStatus() {
 
         Monopoly monopoly = new Monopoly(listOfPlayers);
 
         System.out.println("The game start!!!");
-        System.out.println("Every player start with 1500 chf \n  If you go bankrupt you lose \n Win the last player with money");
+        System.out.println(
+                "Every player start with 1500 chf \n  If you go bankrupt you lose \n Win the last player with money");
 
         while (monopoly.MonopolyEND()) {
 
@@ -484,11 +505,10 @@ public class Main {
             System.out.println(listOfPlayers.get(turn).getNickname() + " e' il tuo turno! \n");
 
             if (listOfPlayers.get(turn).getTurnsInJail() == -1) {
-                
+
                 throwDiceTurn(listOfPlayers.get(turn), monopoly);
                 startTurn(listOfPlayers.get(turn), monopoly);
 
-                
             }
 
             while (skip == 0) {
@@ -497,8 +517,8 @@ public class Main {
 
                     case "cards":
                         cardsPLAYmain(listOfPlayers.get(turn), monopoly);
+                        break;
 
-                        
                     // case "park":
                     // parkPLAYmain(listOfPlayers.get(turn), monopoly);
                     // break;

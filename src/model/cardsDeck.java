@@ -8,26 +8,17 @@ import java.util.Hashtable;
 
 import java.util.Random;
 
-
 public class cardsDeck {
-    
-
-
-   
 
     List<Card> cards = new ArrayList<>();
 
     Random rand = new Random();
-    
 
     int index;
 
-
-    public cardsDeck(){
+    public cardsDeck() {
         newCards();
     }
-
-
 
     public void newCards() {
 
@@ -38,14 +29,12 @@ public class cardsDeck {
         cards.add(new Card("Credit Suisse error in your favor. Collect 200 chf"));
 
         cards.add(new Card("Doctor's fee. Pay 50 chf"));
-        
-        cards.add(new Card("Get Out of Jail Free"));
 
+        cards.add(new Card("Get Out of Jail Free"));
 
         cards.add(new Card("Holiday fund matures. Receive 100 chf"));
 
         cards.add(new Card("Go to Jail. Go directly to jail, do not pass Go, do not collect 200 chf"));
-
 
         cards.add(new Card("Pay insurance fees of 100 chf"));
 
@@ -53,100 +42,81 @@ public class cardsDeck {
 
         cards.add(new Card("You took the best grade of PF2 project. Collect 75 chf"));
 
-
         cards.add(new Card("Advance to Parco Ciani. If you pass Go, collect 200 chf"));
 
         cards.add(new Card(
                 "Oh no you blow through a red light, you took a fine of 200 chf "));
         cards.add(new Card("You have been caugh cheating, pay 50 chf "));
-       
+
         cards.add(new Card("Pay taxes! 120 chf"));
 
     }
 
-
-
-
-    public  void getRandomNum(){
+    public void getRandomNum() {
         index = rand.nextInt(cards.size());
     }
 
-    public Card randomCard(){
+    public Card randomCard() {
         getRandomNum();
         Card card = cards.get(index);
         return card;
     }
 
-    public int getIndex(){
+    public int getIndex() {
         return index;
     }
 
-
-
-
-    public void playCard( int index, Player player){
+    public void playCard(int index, Player player) {
         this.index = index;
-        
-  
-        
-        switch(index){
+
+        switch (index) {
             case 0:
-            Card.card0(player);
-            break;
+                Card.card0(player);
+                break;
             case 1:
-            
-            Card.card1(player);
-            break;
+                Card.card1(player);
+                break;
             case 2:
-            Card.card2(player);
-            break;
+                Card.card2(player);
+                break;
             case 3:
-            Card.card3(player);
-            break;
+                Card.card3(player);
+                break;
             case 4:
-            Card.card4(player);
-            break;
+                Card.card4(player);
+                break;
             case 5:
-            Card.card5(player);
-            break;
+                Card.card5(player);
+                break;
             case 6:
-            Card.card6(player);
-            break;
+                Card.card6(player);
+                break;
             case 7:
-            Card.card7(player);
-            break;
+                Card.card7(player);
+                break;
             case 8:
-            Card.card8(player);
-            break;
+                Card.card8(player);
+                break;
             case 9:
-            Card.card9(player);
-            break;
+                Card.card9(player);
+                break;
             case 10:
-            Card.card10(player);
-            break;
+                Card.card10(player);
+                break;
             case 11:
-            Card.card11(player);
-            break;
+                Card.card11(player);
+                break;
             case 12:
-            Card.card12(player);
-            break;
+                Card.card12(player);
+                break;
             case 13:
-            Card.card13(player);
-            break;
+                Card.card13(player);
+                break;
             case 14:
-            Card.card14(player);
-            break;
+                Card.card14(player);
+                break;
         }
 
-
-
     }
-
-
-
-
-
-
-
 
 }
