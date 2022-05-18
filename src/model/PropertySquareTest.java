@@ -14,19 +14,19 @@ import org.junit.Test;
  * @author Nicolo' Tafta & Alberto Sardo
  * @version 28/04/2022
  */
-public class PropertySquareTest {
+//public class PropertySquareTest {
 //    @Test
 //public void getMortagePropertyTest(){
 //     assertFalse(new PropertySquare(100, 200, "Via delle Aie", "blue").getMortgageProperty());
 //    }
 
-    @Test
-    public void getPriceTaxtest(){
+ //   @Test
+//    public void getPriceTaxtest(){
  //       assertEquals(200, new PropertySquare(100, 200, "Via delle Aie", "blue").getPriceTax());;
     }
 
-    @Test
-    public void getPricetest(){
+ //   @Test
+ //   public void getPricetest(){
   //      assertEquals(100, new PropertySquare(100, 200, "Via delle Aie", "blue").getPrice());;
     }
 
