@@ -22,16 +22,34 @@ public class PropertySquare extends Square {
 
     private final int position;
 
+
+    private House house;
+
     // private boolean mortgage = false;
 
-    public PropertySquare(int price, int priceTax, String name, String color, int priceSell, int position) {
+    public PropertySquare(int price, int priceTax, String name, String color, int priceSell, int position, int bh,int p1, int p2, int p3, int p4, int ph ) {
         super(name, color);
         this.price = price;
         this.priceTax = priceTax;
         this.priceSell = priceSell;
         this.position = position;
         originalPrice = priceTax;
+
+        house = new House( bh,  p1,  p2,  p3,  p4,  ph );
+
+
+
     }
+
+
+
+    public House getHouse(){
+        return house;
+    }
+
+
+
+
 
     public void changeOwner(Player player) {
         owner = player;

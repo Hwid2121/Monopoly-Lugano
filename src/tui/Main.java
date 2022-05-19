@@ -3,7 +3,10 @@ package tui;
 import java.util.Scanner; // Import the Scanner class
 
 import javax.swing.plaf.synth.SynthOptionPaneUI;
+import javax.swing.plaf.synth.SynthUI;
+import javax.swing.text.Position;
 
+import java.time.chrono.MinguoChronology;
 import java.util.ArrayList;
 
 import model.JailSquare;
@@ -333,18 +336,22 @@ public class Main {
         System.out.println("[m] (to show your balance)");
         System.out.println("[i] (for all info of the player)");
         System.out.println("[c] (for show the situation of the other properties of same color");
-        System.out.println("[h] (for buy house and hotel)");
+        System.out.println("[h] (for buy house, hotel and more info");
 
 
         String word = input.next();
 
         switch (word) {
             case "d":
-                System.out.println("\nName: " + monopoly.table.getSquare(position).getName() + "\n Color: "
+                System.out.println("\nName: " + monopoly.table.getSquare(position).getName() + "\nColor: "
                         + monopoly.table.getSquare(position).getColor());
                 System.out.println("Owner: " + monopoly.table.getSquareOwnerToString(position) + "\nPrice: "
                         + monopoly.table.getSquarePrice(position));
                 System.out.println("Price tax: " + monopoly.table.getSquarePriceTax(position));
+                if(monopoly.table.getHouse(position).getCounter() <= 4) System.out.println("House: "+ monopoly.table.getHouse(position).getCounter());
+                else{
+                    System.out.println("Hotel: 1");
+                }
                 break;
 
             case "b":
@@ -383,7 +390,26 @@ public class Main {
             case "p":
                 skip = 1;
                 break;
+            
 
+            case "h":
+
+
+                if(monopoly.table.getHouse(position).getCounter() == 5){
+                System.out.println("You already bought the hotel here!");
+                }
+                else if(monopoly.table.getPropertySquare(position).getHouse().getPrice(1) == 0){
+                    System.out.println("You cannot build here");
+                }
+                else if (monopoly.checkOwnerForRent(player)){
+                    hotelBUY(player, monopoly);
+                }
+                else{
+                    System.out.println("You cannot build hotel here, not your property");
+                }
+                
+                break;
+                
             case "c":
                 System.out.println("You are in square of color:\t" + monopoly.table.getSquare(position).getColor());
                 for (PropertySquare n : monopoly.table.getOtherMonopolySquare(player)) {
@@ -399,6 +425,171 @@ public class Main {
         }
 
     }
+
+
+
+
+    public void hotelBUY(Player player, Monopoly monopoly){
+        
+    
+        System.out.println("Price for build an house: "+monopoly.table.getHouse(player.getPosition()).getPrice(6) + " chf");
+
+        for (int i=1; i <=4 ; i++){
+            System.out.println("PriceTax with " + i + " house increasing to: " + monopoly.table.getHouse(player.getPosition()).getPrice(i) + " chf");
+        }
+        System.out.println("PriceTax with hotel increasing to: "+ monopoly.table.getHouse(player.getPosition()).getPrice(5) + " chf");
+        System.out.println("For building an Hotel you have to buy 4 houses + building price");
+
+        if(monopoly.table.getHouse(player.getPosition()).getCounter() < 5 ) System.out.println("Your house: "+ monopoly.table.getHouse(player.getPosition()).getCounter());
+
+        
+
+
+        
+
+
+        System.out.println("Write:\n");
+        System.out.println("[0] For go back");
+        System.out.println("[1] For build 1 house at price of " + (monopoly.table.getHouse(player.getPosition()).getPrice(6)));
+        System.out.println("[2] For build 2 houses at price of " + (monopoly.table.getHouse(player.getPosition()).getPrice(6)) * 2);
+        System.out.println("[3] For build 3 houses at price of " + (monopoly.table.getHouse(player.getPosition()).getPrice(6)) * 3);
+        System.out.println("[4] For build 4 houses at price of " + (monopoly.table.getHouse(player.getPosition()).getPrice(6)) * 4);
+        
+        System.out.println("[5] For build an Hotel at price of " + ((5 - monopoly.table.getHouse(player.getPosition()).getCounter())) * (monopoly.table.getHouse(player.getPosition()).getPrice(6) ) );
+
+        int word = input.nextInt();
+
+        
+
+
+
+
+        if( word > 0 && word < 5){
+            if(monopoly.table.getHouse(player.getPosition()).checkNumHouses(word)){
+                System.out.println("Building" + word  + " house at the price of " + ((monopoly.table.getHouse(player.getPosition()).getPrice(6)) * word)+ " chf");
+                propertySquareBUILD(player, monopoly, word);
+                }
+                else{
+                    System.out.println("You have already " + monopoly.table.getHouse(player.getPosition()).getCounter() + " house");
+                    System.out.println("Maybe is the time for buying an hotel with 4 house + "+ monopoly.table.getHouse(player.getPosition()).getPrice(6));
+                }
+                return;
+                
+ 
+        } else if(word == 5){
+
+            int numhouse = monopoly.table.getHouse(player.getPosition()).getCounter();
+            System.out.println("You have  " + numhouse + " house");
+
+            if (numhouse < 5 ){
+                System.out.println("You have to buy " + (4 - numhouse) + " more houses");
+                
+                word = 5 - numhouse;
+
+                System.out.println("Cost: " + (monopoly.table.getHouse(player.getPosition()).getPrice(6)* word ) + " chf");
+
+
+                propertySquareBUILD(player, monopoly, word);
+
+            }
+            else {
+                System.out.println("You have to buy 4 more houses + pay the build fee ");
+                System.out.println("Cost: " + (monopoly.table.getHouse(player.getPosition()).getPrice(6)* 4)+ " chf" + " + " +(monopoly.table.getHouse(player.getPosition()).getPrice(6)) + " chf");
+                propertySquareBUILD(player, monopoly, (5 - monopoly.table.getHouse(player.getPosition()).getCounter()) * (monopoly.table.getHouse(player.getPosition()).getPrice(6)));
+            }
+            return;
+            
+           
+                    // System.out.println("Building an hotel at the price of " + ((monopoly.table.getHouse(player.getPosition()).getPrice(6)) * 5));
+                    // 
+                    
+        } else if(word == 0){
+            return;
+        }
+        else System.out.println("Input not valid");
+
+
+    }
+
+
+    public void propertySquareBUILD (Player player, Monopoly monopoly, int num){
+
+        int position = player.getPosition();
+
+        int price = monopoly.table.getHouse(player.getPosition()).getPrice(6) * num;
+
+        String word;
+
+        if ((player.getMoney() >=  price)){
+            
+
+            System.out.println("Do you confirm to buy?");
+            System.out.println("Your balance will be: " + (player.getMoney() - price));
+            System.out.println("[y] for confirm");
+            System.out.println("[n] for go back");
+
+            word = input.next();
+
+
+
+            switch(word){
+
+
+                case "y":
+
+
+                if (num >= 1 && num <= 4){
+                    System.out.println("Building " + num + " house...");
+                player.decreaseMoney(price);
+                monopoly.table.getHouse(position).buildHouse(num);
+                monopoly.table.getPropertySquare(position).setPriceTax(monopoly.table.getHouse(position).getPrice(num));
+
+
+                } else{
+
+                    
+
+
+                    System.out.println("Building your Hotel...");
+                    player.decreaseMoney(price);
+                    monopoly.table.getHouse(position).buildHouse(num);
+                    monopoly.table.getPropertySquare(position).setPriceTax(monopoly.table.getHouse(position).getPrice(5));
+                }
+
+                
+
+
+
+
+
+
+
+                case "n":
+                hotelBUY(player, monopoly);
+
+
+            }
+            
+            
+            
+
+
+
+
+
+        }
+        else{
+            System.out.println("You don't have enough money to build");
+            System.out.println("Your money: " + player.getMoney());
+            System.out.println("You need + " + price + "\n");
+        }
+
+
+
+    }
+
+
+
 
     public void PropertySquareBUY(Player player, Monopoly monopoly) {
 
@@ -465,6 +656,8 @@ public class Main {
 
         while (num != -420) {
 
+            System.out.println("[-1] for go back");
+
             if (word >= 0 && word <= num - 1) {
 
                 int pos = player.getPropertySquare().get(word).getPosition();
@@ -476,7 +669,11 @@ public class Main {
                 System.out.println("\n Property sold");
                 num = -420;
 
-            } else {
+            } else if(word == -1){
+                return;
+
+            }
+            else {
                 System.out.println("Index not valid");
                 word = input.nextInt();
             }

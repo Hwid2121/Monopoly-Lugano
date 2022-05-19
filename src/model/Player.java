@@ -168,17 +168,6 @@ public class Player {
         return listofPropertySquares;
     }
 
-    // public boolean checkMonopolyProperty(){
-
-    // if (listofPropertySquares.size() < 2) return false;
-
-    // for(int i=0; i < listofPropertySquares.size(); i++){
-    // int counter=1;
-
-    // for (int j=1; j< listOfProperty.size(); j++){
-    // if(listofPropertySquares.get(i).getColor())
-    // }
-    // }
-    // }
+   
 
 }
