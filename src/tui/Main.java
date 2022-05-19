@@ -161,7 +161,7 @@ public class Main {
 
         int price = monopoly.table.getSquareBonusPrice(player);
 
-        System.out.println("sefesfes"+ monopoly.table.getSquareBonusDescr(player.getPosition()));
+        System.out.println(monopoly.table.getSquareBonusDescr(player.getPosition()));
 
         if (monopoly.table.getSquare(player.getPosition()).getColor() == "bonus") {
 
@@ -186,8 +186,8 @@ public class Main {
         System.out.println("You are in jail");
         System.out.println("You can escape doing:");
         System.out.println("- [pay] Paying 55 chf now");
-        System.out.println("- [crd] Using the free from jail card");
-        System.out.println("- [tr] Trying to do perfect pair ");
+        System.out.println("- [c] Using the free from jail card");
+        System.out.println("- [t] Trying to do perfect pair ");
         System.out.println("After 3 turn you must pay 50 chf");
 
         String word = input.next(); 
@@ -225,7 +225,7 @@ public class Main {
 
                     break;
 
-                case ("crd"):
+                case ("c"):
                     if (JailSquare.checkFreeJailCard(player)) {
                         JailSquare.freeFromJail(player);
 
@@ -243,7 +243,7 @@ public class Main {
                         System.out.println("\n You don't have the card!\n");
                         break;
                     }
-                case ("tr"):
+                case ("t"):
 
                     monopoly.throwDice();
                     System.out.println("Your dice made: " + monopoly.die1() + " and " + monopoly.die2());
@@ -351,8 +351,8 @@ public class Main {
         switch (word) {
             case "d":
                 System.out.println("\nName: " + monopoly.table.getSquare(position).getName() + "\n Color: " + monopoly.table.getSquare(position).getColor());
-                System.out.println("\nOwner: " + monopoly.table.getSquareOwner(position) + "\nPrice" + monopoly.table.getSquarePrice(position) );
-                System.out.println("\nPrice tax: "+ monopoly.table.getSquarePriceTax(position) );
+                System.out.println("Owner: " + monopoly.table.getSquareOwnerToString(position)+ "\nPrice: " + monopoly.table.getSquarePrice(position) );
+                System.out.println("Price tax: "+ monopoly.table.getSquarePriceTax(position) );
                 break;
 
             case "b":
@@ -412,11 +412,11 @@ public class Main {
                     + "\n Your budget will be "
                     + (player.getMoney() - monopoly.table.getSquarePrice(position)));
 
-            System.out.println("Write [Y] for the confirm or [N] for return back: ");
+            System.out.println("Write [y] for the confirm or [n] for return back: ");
             inp = input.next();
 
             switch (inp) {
-                case "Y":
+                case "y":
                     monopoly.setOwner(player);
                     player.buyPropertySquare(monopoly.table.getPropertySquare(position));
                     player.decreaseMoney(monopoly.table.getSquarePrice(position));
@@ -425,7 +425,7 @@ public class Main {
                     String color = monopoly.table.getColor(position);
                     checkMonopolyProperty(player, monopoly, color);
 
-                case "N":
+                case "n":
                     break;
             }
 
@@ -436,7 +436,7 @@ public class Main {
     public void checkMonopolyProperty(Player player, Monopoly monopoly, String color) {
 
         if(monopoly.table.getMonopolyColor(player)){
-            System.out.println("\n \n You did monopoly for the color "+ color + "now the rent for these property square are doubled");
+            System.out.println("\n \n You did monopoly for the color "+ color + " now the rent for these property square are doubled \n");
             monopoly.table.getMonopolyColor(player);
         }
 

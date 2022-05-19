@@ -162,6 +162,14 @@ public class Table {
     }
 
 
+    public String getSquareOwnerToString(int pos){
+       
+       
+       if(getSquareOwner(pos) == null) return "";
+       return getSquareOwner(pos).getNickname();
+    }
+
+
 
 
 
@@ -248,8 +256,8 @@ public class Table {
         }
 
 
-        if (((color == "red" || color == "brown" || color == "blue") && counter == 3) 
-        || (color == "azure" || color == "pink" || color == "orange" || color == "yellow" || color == "green") && counter == 2){
+        if (((color == "brown" || color == "blue") && counter == 2) 
+        || (color == "red" || color == "azure" || color == "pink" || color == "orange" || color == "yellow" || color == "green") && counter == 3){
 
             for(Square pr: cell){
 
@@ -261,9 +269,11 @@ public class Table {
                     
                 }
                     }
+            return true;
+
 
             }
-            return true;
+            return false;
         }
         
         

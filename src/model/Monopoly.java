@@ -125,10 +125,6 @@ public class Monopoly {
     }
 
 
-    public String getNicknameOwner(Player player){
-        return table.getSquareOwner(player.getTurn()).getNickname();
-    }
-
 
 
 

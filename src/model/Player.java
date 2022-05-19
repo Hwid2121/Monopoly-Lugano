@@ -93,6 +93,8 @@ public class Player {
     }
 
     public String getNickname() {
+
+        if (nickname == "") return "";
         return nickname;
     }
 
