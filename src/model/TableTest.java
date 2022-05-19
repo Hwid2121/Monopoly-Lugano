@@ -14,17 +14,18 @@ import org.junit.Test;
  */
 public class TableTest {
 
-    static private final int sizeTable = 40;
-    Square[] cell = new Square[sizeTable];
+  static private final int sizeTable = 40;
+  Square[] cell = new Square[sizeTable];
 
-    @Test
-    public void newtabletest(){
-        Table table = new Table();
-    }
+  @Test
+  public void newtabletest() {
+    Table table = new Table();
+  }
 
-    @Test
-    public void getSquareTest(){
-  //      Table table = new Table();
-  //      assertTrue(new PropertySquare(400, 50, "Piazza della Riforma", "blue").getName().equals(table.getSquare(39).getName()));
-    }
+  @Test
+  public void getSquareTest() {
+    // Table table = new Table();
+    // assertTrue(new PropertySquare(400, 50, "Piazza della Riforma",
+    // "blue").getName().equals(table.getSquare(39).getName()));
+  }
 }

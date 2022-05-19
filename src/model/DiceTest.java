@@ -1,4 +1,5 @@
 package model;
+
 import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
@@ -21,22 +22,22 @@ public class DiceTest {
     private int die2;
 
     @Test
-    public void GetDie1Test(){
+    public void GetDie1Test() {
         assertEquals(die1, new Dice(die1, die2).getDie1());
     }
 
     @Test
-    public void GetDie2Test(){
-        assertEquals(die2, new Dice (die1, die2).getDie2());
+    public void GetDie2Test() {
+        assertEquals(die2, new Dice(die1, die2).getDie2());
     }
 
     @Test
-    public void getDiceTest(){
+    public void getDiceTest() {
         assertEquals(die1 + die2, new Dice(die1, die2).getDice());
     }
 
     @Test
-    public void getPerfectPairTest(){
+    public void getPerfectPairTest() {
         assertEquals(die1 == die2, new Dice(die1, die2).getPerfectPair());
-}
+    }
 }

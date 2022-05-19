@@ -40,7 +40,7 @@ public class Dice {
         return die1 + die2;
     }
 
-    public boolean getPerfectPair(){
+    public boolean getPerfectPair() {
         return this.die1 == this.die2;
     }
 

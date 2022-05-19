@@ -25,42 +25,41 @@ public class JailSquareTest {
     JailSquare Jail = new JailSquare("Lo stampino", "red");
 
     @Test
-    public void getDaysTest(){
+    public void getDaysTest() {
         assertEquals(3, Jail.getDays());
     }
 
     @Test
-    public void getFineTest(){
+    public void getFineTest() {
         assertEquals(50, new JailSquare("Via delle Aie", "blue").getFine());
     }
 
     @Test
-    public void getPerfectPairTest(){
+    public void getPerfectPairTest() {
         assertTrue(new Dice(5, 5).getPerfectPair());
     }
-   //    @Test
-   // public void getPair1Test(){
-   //     Jail.getPair1();
-   //     assertEquals(6, new Dice(5, 6).getDie2());
-   // } testare i valori in un intervallo
-   // assertTrue( die1 >= )
+    // @Test
+    // public void getPair1Test(){
+    // Jail.getPair1();
+    // assertEquals(6, new Dice(5, 6).getDie2());
+    // } testare i valori in un intervallo
+    // assertTrue( die1 >= )
 
-  //  @Test
-  //  public void getPair2Test(){
-  //      assertEquals(6, new Dice(5, 6).getDie2());
-  //  }
+    // @Test
+    // public void getPair2Test(){
+    // assertEquals(6, new Dice(5, 6).getDie2());
+    // }
 
     @Test
-    public void payFineTest(){
+    public void payFineTest() {
         Jail.payFine(Nico);
         assertEquals(1445, Nico.getMoney());
     }
 
     @Test
-    public void freeFromJailTest(){
+    public void freeFromJailTest() {
         Jail.freeFromJail(Nico);
         assertEquals(-1, Nico.getTurnsInJail());
     }
 
-    
 }

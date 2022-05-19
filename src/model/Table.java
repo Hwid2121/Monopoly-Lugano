@@ -258,7 +258,6 @@ public class Table {
 
     public ArrayList<PropertySquare> getOtherMonopolySquare(Player player) {
 
-        
         String color = getPropertySquare(player.getPosition()).getColor();
 
         ArrayList<PropertySquare> list = new ArrayList<PropertySquare>();
@@ -280,8 +279,6 @@ public class Table {
 
     }
 
-    
-
     public String getColor(int i) {
 
         return getSquare(i).getColor();
@@ -291,16 +288,17 @@ public class Table {
     // return getPropertySquare(i).getMonopolyColor();
     // }
 
-    public void resetOwner(int pos){
+    public void resetOwner(int pos) {
 
         Object obj = this.getSquare(pos);
-        
+
         if (obj instanceof PropertySquare) {
             PropertySquare s = (PropertySquare) obj;
             s.resetOwner();
-            
+
         }
-            }}
+    }
+}
 
 // public void setMononopolyColor(Player player, String color){
 // int counter=0;

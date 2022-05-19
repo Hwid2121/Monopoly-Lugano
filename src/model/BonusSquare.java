@@ -35,7 +35,7 @@ public class BonusSquare extends Square {
         return description;
     }
 
-    public int getMoney(){
+    public int getMoney() {
         return money;
     }
 

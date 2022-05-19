@@ -17,24 +17,24 @@ public class BonusSquareTest {
 
     Player Nico = new Player("Nico");
 
-    @Test 
-    public void getDescriptionTest(){
+    @Test
+    public void getDescriptionTest() {
         assertEquals("etc", EastCampus.getDescription());
     }
 
-    @Test 
-    public void getMoneyTest(){
+    @Test
+    public void getMoneyTest() {
         assertEquals(200, EastCampus.getMoney());
     }
 
-    @Test 
-    public void giveMoneyTest(){
+    @Test
+    public void giveMoneyTest() {
         EastCampus.giveMoney(Nico);
         assertEquals(1700, Nico.getMoney());
     }
 
-    @Test 
-    public void takeMoneyTest(){
+    @Test
+    public void takeMoneyTest() {
         EastCampus.takeMoney(Nico);
         assertEquals(1300, Nico.getMoney());
     }

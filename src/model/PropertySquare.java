@@ -20,9 +20,7 @@ public class PropertySquare extends Square {
     private int priceSell;
     private boolean monopolyColor = false;
 
-
-    private final int  position;
-
+    private final int position;
 
     // private boolean mortgage = false;
 
@@ -35,45 +33,37 @@ public class PropertySquare extends Square {
         originalPrice = priceTax;
     }
 
-
-
     public void changeOwner(Player player) {
         owner = player;
     }
 
-
-    public boolean getMonopolyColor(){
+    public boolean getMonopolyColor() {
         return this.monopolyColor;
     }
 
-    public void setMononopolyColor(){
+    public void setMononopolyColor() {
         monopolyColor = !monopolyColor;
     }
 
-    public void setPriceTax(int priceTax){
-        this.priceTax = priceTax; 
+    public void setPriceTax(int priceTax) {
+        this.priceTax = priceTax;
     }
 
-    public void setPriceTaxMonopoly( ){
-        this.priceTax = priceTax*2;
+    public void setPriceTaxMonopoly() {
+        this.priceTax = priceTax * 2;
     }
 
-
-
-
-    public int getPriceSell(){
+    public int getPriceSell() {
         return priceSell;
     }
 
-    public void resetOwner(){
+    public void resetOwner() {
         owner = null;
     }
 
- 
-    public int getPosition(){
+    public int getPosition() {
         return position;
     }
-    
 
     public Player getOwner() {
         return owner;
@@ -87,20 +77,16 @@ public class PropertySquare extends Square {
         return priceTax;
     }
 
-
-    public void payrent(){
+    public void payrent() {
         owner.increaseMoney(priceTax);
     }
 
-
     // public boolean getMortgageProperty(){
-    //     return mortgage;
+    // return mortgage;
     // }
 
     // public void setMortageProperty(){
-    //     mortgage = !mortgage;
+    // mortgage = !mortgage;
     // }
-    
-
 
 }

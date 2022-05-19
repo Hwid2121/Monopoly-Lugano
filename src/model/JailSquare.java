@@ -1,4 +1,5 @@
 package model;
+
 import java.util.ArrayList;
 import java.util.Iterator;
 
@@ -14,7 +15,6 @@ public class JailSquare extends Square {
 
     private Dice dice;
 
-
     private static int fine = 50;
     private static int days = 3;
 
@@ -22,60 +22,58 @@ public class JailSquare extends Square {
         super(name, color);
     }
 
-
-
-    public static void payFine(Player player){
+    public static void payFine(Player player) {
         player.decreaseMoney(55);
     }
 
-    public static void freeFromJail(Player player){
+    public static void freeFromJail(Player player) {
         player.setJail(-1);
     }
 
-    public static int getDays(){
+
+    public static void decreseDayInJail(Player player){
+        player.decreseDayInJail();
+    }
+
+    public static int getDays() {
         return days;
     }
-    public static int getFine(){
+
+    public static int getFine() {
         return fine;
     }
 
-
-    public boolean checkPrisoner(Player player){
-        for (Player prison: listOfPrisoners){
-            if (prison == player) return true;
+    public boolean checkPrisoner(Player player) {
+        for (Player prison : listOfPrisoners) {
+            if (prison == player)
+                return true;
         }
         return false;
     }
 
-    public static boolean checkFreeJailCard(Player player){
+    public static boolean checkFreeJailCard(Player player) {
 
-
-        for(Card card : player.getDeck() ){
-            if(card.getDescription() == "Get Out of Jail Free"){
+        for (Card card : player.getDeck()) {
+            if (card.getDescription() == "Get Out of Jail Free") {
                 player.deleteCard(card.getDescription());
                 return true;
             }
         }
 
         return false;
-        
 
     }
 
-    public boolean checkPerfectPair(){
+    public boolean checkPerfectPair() {
         return dice.getPerfectPair();
     }
 
-    public int getPair1(){
+    public int getPair1() {
         return dice.getDie1();
     }
-    public int getPair2(){
+
+    public int getPair2() {
         return dice.getDie2();
     }
-
-
-
-
-
 
 }

@@ -17,29 +17,29 @@ import org.junit.Test;
  * @version 18/05/2022
  */
 public class cardsDeckTest {
-    
+
     @Test
-    public void cardsDeckTest(){
+    public void cardsDeckTest() {
         cardsDeck cardsDeck = new cardsDeck();
         cardsDeck.newCards();
     }
+
     @Test
-    public void getIndex(){
+    public void getIndex() {
         assertEquals(0, new cardsDeck().getIndex());
     }
 
     @Test
-    public void getRandomNumTest(){
+    public void getRandomNumTest() {
         cardsDeck cardsDeck = new cardsDeck();
         cardsDeck.getRandomNum();
     }
 
     @Test
-    public void playCardTest(){
+    public void playCardTest() {
         int index = 0;
         Player Nico = new Player("Nico");
         cardsDeck cardsDeck = new cardsDeck();
         cardsDeck.playCard(index, Nico);
     }
 }
-
