@@ -16,27 +16,63 @@ public class Monopoly {
     public Table table = new Table();
     public Dice dice = new Dice();
 
+
+    ArrayList<Player> players;
+
     public int steps;
 
     public int numOfPlayers;
 
-    public Monopoly(ArrayList<Player> players) {
-        numOfPlayers = players.size();
+    public Monopoly() {
+        
+        players = new ArrayList<>();
+        
     }
 
 
+    public void addPlayer(Player player){
+        players.add(player);
+    }
 
-    public ArrayList<Player> playerEliminated(ArrayList<Player> players, Player banned){
-        players.remove(banned);
-        numOfPlayers -= 1;
+
+    public ArrayList<Player> getListOfPlayer(){
         return players;
     }
 
 
+    public Player getPLayer(int turn){
+        return players.get(turn);
+    }
+
+    public int getSizeOfPlayers(){
+        return players.size();
+    }
+
+
+    // public ArrayList<Player> playerEliminated(ArrayList<Player> players, Player banned){
+    //     players.remove(banned);
+    //     return players;
+    // }
+
+
+
+
+    public void playerEliminated(Player player){
+        players.remove(player);
+    }
+
+
+    public void setNumofPlayers(int num){
+        numOfPlayers = num;
+    }
+
+    // public int getNumplayers(){
+    //     return num
+    // }
 
 
     public boolean MonopolyEND() {
-        return numOfPlayers > 1;
+        return this.getSizeOfPlayers() > 1;
     }
 
 
@@ -78,9 +114,9 @@ public class Monopoly {
 
   
 
-    public String propertyDescr(Player player) {
-        return table.getDescriptionProperty(player.getPosition());
-    }
+    // public String propertyDescr(Player player) {
+    //     return table.getDescriptionProperty(player.getPosition());
+    // }
 
 
 
@@ -90,7 +126,7 @@ public class Monopoly {
 
 
     public String getNicknameOwner(Player player){
-        return table.getSquareOwner(player.getTurn());
+        return table.getSquareOwner(player.getTurn()).getNickname();
     }
 
 
@@ -103,20 +139,36 @@ public class Monopoly {
    
 
 
-    public Player checkOwnerForRent( String Nick, ArrayList<Player> players, int pos) {
-        Object obj = this.table.getSquare(pos);
+    // public Player checkOwnerForRent( String Nick, ArrayList<Player> players, int pos) {
+    //     Object obj = this.table.getSquare(pos);
+
+    //     if (obj instanceof PropertySquare) {
+    //         PropertySquare s = (PropertySquare) obj;
+            
+    //         if (s.getOwner() == "" || s.getOwner() == Nick) return null;
+    //         else{
+    //             for(int i =0; i < players.size(); i++){
+    //                 if(players.get(i).getNickname() == s.getOwner()) return players.get(i);
+    //             }
+    //         }
+    //     }
+    //     return null;
+    // }
+
+
+
+    public boolean checkOwnerForRent(Player player) {
+        Object obj = this.table.getSquare(player.getPosition());
 
         if (obj instanceof PropertySquare) {
             PropertySquare s = (PropertySquare) obj;
             
-            if (s.getOwner() == "" || s.getOwner() == Nick) return null;
-            else{
-                for(int i =0; i < players.size(); i++){
-                    if(players.get(i).getNickname() == s.getOwner()) return players.get(i);
-                }
-            }
-        }
-        return null;
+            return s.getOwner() == player;
+    }
+        else return false;
+
     }
 
+
 }
+

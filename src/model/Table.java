@@ -147,18 +147,18 @@ public class Table {
 
     public String getDescriptionProperty(int pos) {
         return "Name: " + getSquareName(pos) + "\n" + "Price: " + getSquarePrice(pos) + "\n" + "Rent value: "
-                + getSquarePriceTax(pos) + "\n Owner: " + getSquareOwner(pos) + "\n";
+                + getSquarePriceTax(pos) + "\n Owner: " + getSquareOwner(pos).getNickname() + "\n";
 
     }
 
 
-    public String getSquareOwner(int pos) {
+    public Player getSquareOwner(int pos) {
         Object obj = this.getSquare(pos);
         if (obj instanceof PropertySquare) {
             PropertySquare s = (PropertySquare) obj;
             return s.getOwner();
         }
-        return "not a property";
+        return null;
     }
 
 
@@ -238,53 +238,54 @@ public class Table {
     // }
 
 
-    public boolean getMonopolyColor(Player player, String color){
+    public boolean getMonopolyColor(Player player){
 
 
         int counter =0;
-
-        ArrayList<String> a = new ArrayList<String>();
-
-
-
-        for(PropertySquare property: player.getPropertySquare()){
-            a.add(property.getColor());
+        String color = getPropertySquare(player.getPosition()).getColor();
+        for(PropertySquare pr: player.getPropertySquare()){
+            if (pr.getColor() == color) counter++;
         }
 
-        for(int i=0; i< a.size()-1; i++){
-            if(a.get(i) == color && getMono(i)){
-                getPropertySquare(i).setMononopolyColor();
-                counter+=1;
+
+        if (((color == "red" || color == "brown" || color == "blue") && counter == 3) 
+        || (color == "azure" || color == "pink" || color == "orange" || color == "yellow" || color == "green") && counter == 2){
+
+            for(Square pr: cell){
+
+                Object obj = pr;
+        
+                if (obj instanceof PropertySquare) {
+                    PropertySquare s = (PropertySquare) obj;
+                    s.setPriceTaxMonopoly();
+                    
+                }
+                    }
+
             }
+            return true;
         }
-
         
-        if (  ((color == "red" || color == "brown" || color == "blue") && counter == 2)) {
-            System.out.println("getmonopo 1");
-            
-            return true;
-        }
-        else if(((color == "azure" || color == "pink" || color == "orange" || color == "yellow" || color == "green") && counter == 2)) {
-            System.out.println("getmonopo 2");
-            return true;
-        }
+        
+
+
     
-        else return false;
-
-        
-        
 
 
-    }
+
+
+
+ 
 
     public String getColor(int i){
 
         return getSquare(i).getColor();
     }
 
-    public boolean getMono(int i){
-        return getPropertySquare(i).getMonopolyColor();
-    }
+
+    // public boolean getMono(int i){
+    //     return getPropertySquare(i).getMonopolyColor();
+    // }
 
 
 

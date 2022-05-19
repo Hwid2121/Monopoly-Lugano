@@ -23,22 +23,22 @@ import org.junit.Test;
  //   @Test
 //    public void getPriceTaxtest(){
  //       assertEquals(200, new PropertySquare(100, 200, "Via delle Aie", "blue").getPriceTax());;
-    }
+//     }
 
- //   @Test
- //   public void getPricetest(){
-  //      assertEquals(100, new PropertySquare(100, 200, "Via delle Aie", "blue").getPrice());;
-    }
+//  //   @Test
+//  //   public void getPricetest(){
+//   //      assertEquals(100, new PropertySquare(100, 200, "Via delle Aie", "blue").getPrice());;
+//     }
 
-    @Test
-    public void getOwnertest(){
-  //      assertEquals("", new PropertySquare(100, 200, "Via delle Aie", "blue").getOwner());;
-    }
+  //   @Test
+  //   public void getOwnertest(){
+  // //      assertEquals("", new PropertySquare(100, 200, "Via delle Aie", "blue").getOwner());;
+  //   }
 
-    @Test
-    public void setMortgagePropertyTest(){
-   //     PropertySquare ViadelleAie = new PropertySquare(100, 200, "Via delle Aie", "blue");
-   //     ViadelleAie.setMortageProperty();
-   //     assertNotEquals(new PropertySquare(100, 200, "Via delle Aie", "blue").getMortgageProperty(), ViadelleAie.getMortgageProperty());
-    }
-}
+  //   @Test
+  //   public void setMortgagePropertyTest(){
+  //  //     PropertySquare ViadelleAie = new PropertySquare(100, 200, "Via delle Aie", "blue");
+  //  //     ViadelleAie.setMortageProperty();
+  //  //     assertNotEquals(new PropertySquare(100, 200, "Via delle Aie", "blue").getMortgageProperty(), ViadelleAie.getMortgageProperty());
+  //   }
+

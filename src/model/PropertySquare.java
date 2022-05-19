@@ -11,9 +11,10 @@ import javax.swing.text.Position;
  */
 public class PropertySquare extends Square {
 
-    private String owner = "";
+    private Player owner = null;
 
     private final int price;
+    private int originalPrice;
     private int priceTax;
 
     private int priceSell;
@@ -31,12 +32,13 @@ public class PropertySquare extends Square {
         this.priceTax = priceTax;
         this.priceSell = priceSell;
         this.position = position;
+        originalPrice = priceTax;
     }
 
 
 
     public void changeOwner(Player player) {
-        owner = player.getNickname();
+        owner = player;
     }
 
 
@@ -52,13 +54,19 @@ public class PropertySquare extends Square {
         this.priceTax = priceTax; 
     }
 
+    public void setPriceTaxMonopoly( ){
+        this.priceTax = priceTax*2;
+    }
+
+
+
 
     public int getPriceSell(){
         return priceSell;
     }
 
     public void resetOwner(){
-        owner = "";
+        owner = null;
     }
 
  
@@ -67,7 +75,7 @@ public class PropertySquare extends Square {
     }
     
 
-    public String getOwner() {
+    public Player getOwner() {
         return owner;
     }
 
@@ -77,6 +85,11 @@ public class PropertySquare extends Square {
 
     public int getPriceTax() {
         return priceTax;
+    }
+
+
+    public void payrent(){
+        owner.increaseMoney(priceTax);
     }
 
 
