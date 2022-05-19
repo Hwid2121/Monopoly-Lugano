@@ -333,6 +333,8 @@ public class Main {
         System.out.println("[m] (to show your balance)");
         System.out.println("[i] (for all info of the player)");
         System.out.println("[c] (for show the situation of the other properties of same color");
+        System.out.println("[h] (for buy house and hotel)");
+
 
         String word = input.next();
 
@@ -428,9 +430,15 @@ public class Main {
                     break;
             }
 
-        } else
+        } else{
             System.out.println("You don't have enough money to buy the property");
-        System.out.println("Or the property is not yours");
+            System.out.println("Or the property is not yours");
+        }
+
+
+
+    // rent to pay
+            
     }
 
     public void checkMonopolyProperty(Player player, Monopoly monopoly, String color) {
@@ -499,7 +507,8 @@ public class Main {
 
 
     public void payrent(Player player, Monopoly monopoly) {
-
+        System.out.println("Oh no, this property is owned by: " + monopoly.table.getSquareOwnerToString(player.getPosition()));
+        System.out.println("You have to pay: " + monopoly.table.getSquarePriceTax(player.getPosition()));
         monopoly.table.getPropertySquare(player.getPosition()).payrent();
         player.decreaseMoney(monopoly.table.getPropertySquare(player.getPosition()).getPriceTax());
     }
