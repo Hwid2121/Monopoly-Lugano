@@ -1,5 +1,5 @@
 package model;
-
+import java.util.ArrayList;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
@@ -21,6 +21,9 @@ public class PlayerTest {
     private int turn = 0;
     int inJail = -1;
     Player Nico = new Player("Nico");
+    Player None = new Player("");
+    private ArrayList<PropertySquare> listofPropertySquares = new ArrayList<PropertySquare>();
+    PropertySquare ViadelleAie = new PropertySquare(200, 100, "ViadelleAie", "blue", 100, position);
 
     @Test 
     public void getPlayerTest(){
@@ -28,10 +31,12 @@ public class PlayerTest {
     }
 
     @Test 
-    public void getNicknameTest(){
+    public void getNicknameTest1(){
         assertEquals("Nico", Nico.getNickname());
     }
-
+    public void getNicknameTest2(){
+        assertEquals("", None.getNickname());
+    }
     @Test 
     public void getTurnTest(){
         assertEquals(0, Nico.getTurn());
@@ -61,15 +66,24 @@ public class PlayerTest {
 
     @Test
     public void buyPropertySquareTest(){
-        PropertySquare ViadelleAie = new PropertySquare(200, 100, "ViadelleAie", "blue", 100, position);
         Nico.buyPropertySquare(ViadelleAie);
     }
 
     @Test
     public void sellPropertySquareTest(){
-        int i = 0;
-        PropertySquare ViadelleAie = new PropertySquare(200, 100, "ViadelleAie", "blue", 100, position);
-        Nico.sellPropertySquare(i, ViadelleAie);
+        Nico.setJail(0);
+        Nico.sellPropertySquare(0, ViadelleAie);
     }
+
+    @Test 
+    public void setPositionTest(){
+        Nico.setPosition(1);
+    }
+
+    @Test 
+    public void getPropertySquareTest(){
+        assertEquals(listofPropertySquares, Nico.getPropertySquare());
+    }
+
 }
 

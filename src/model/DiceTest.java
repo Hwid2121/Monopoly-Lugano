@@ -1,6 +1,8 @@
 package model;
 import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertNotEquals;
 import static org.junit.Assert.fail;
 
 import java.util.Random;
@@ -36,5 +38,5 @@ public class DiceTest {
     @Test
     public void getPerfectPairTest(){
         assertEquals(die1 == die2, new Dice(die1, die2).getPerfectPair());
-    }
+}
 }
