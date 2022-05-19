@@ -335,8 +335,9 @@ public class Main {
         System.out.println("[p] (to finish the turn) ");
         System.out.println("[m] (to show your balance)");
         System.out.println("[i] (for all info of the player)");
-        System.out.println("[c] (for show the situation of the other properties of same color");
-        System.out.println("[h] (for buy house, hotel and more info");
+        System.out.println("[c] (for show the situation of the other properties of same color)");
+        System.out.println("[h] (for buy house, hotel and more info)");
+        System.out.println("[exit] (for close the game)");
 
 
         String word = input.next();
@@ -418,6 +419,11 @@ public class Main {
                             + n.getPosition());
                 }
                 break;
+
+            case "exit": 
+                System.out.println("EXIT THE GAME");
+                System.exit(1);
+                
 
             default:
                 System.out.println("Command not allowed here.\n\n");
