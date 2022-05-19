@@ -422,7 +422,7 @@ public class Main {
 
             case "exit": 
                 System.out.println("EXIT THE GAME");
-                System.exit(1);
+                System.exit(0);
                 
 
             default:
