@@ -2,6 +2,8 @@ package tui;
 
 import java.util.Scanner; // Import the Scanner class
 
+import javax.swing.plaf.synth.SynthOptionPaneUI;
+
 import java.util.ArrayList;
 
 import model.JailSquare;
@@ -188,7 +190,6 @@ public class Main {
         System.out.println("- [pay] Paying 55 chf now");
         System.out.println("- [c] Using the free from jail card");
         System.out.println("- [t] Trying to do perfect pair ");
-        System.out.println("After 3 turn you must pay 50 chf");
 
         String word = input.next(); 
 
@@ -339,12 +340,13 @@ public class Main {
     public void PropertySquarePLAY(Player player, Monopoly monopoly) {
         int position = monopoly.getPLayer(turn).getPosition();
 
-        System.out.println("Write:\n [d] (for the description of the property) ");
+        System.out.println("Write:\n[d] (for the description of the property) ");
         System.out.println("[b] (for buying the property) ");
         System.out.println("[s] (to sell this property) ");
         System.out.println("[p] (to finish the turn) ");
         System.out.println("[m] (to show your balance)");
         System.out.println("[i] (for all info of the player)");
+        System.out.println("[c] (for show the situation of the other properties of same color");
 
         String word = input.next();
 
@@ -387,10 +389,19 @@ public class Main {
 
             // System.out.println("Are you sure to mortgage your property?");
             // }
-
-            case "p":
+            // monopoly.table.getSquareOwnerToString(position)
+            case "p":           
                 skip = 1;
                 break;
+
+            case "c":
+            System.out.println("You are in square of color:\t" + monopoly.table.getSquare(position).getColor());
+                for (PropertySquare n: monopoly.table.getOtherMonopolySquare(player) ){
+                    System.out.println("Name: " + n.getName() + "\t" + " Owner: " + monopoly.table.getSquareOwnerToString(n.getPosition()) + "\t" + " Position: "+ n.getPosition());
+                }
+            break;
+                
+
 
             default:
                 System.out.println("Command not allowed here.\n\n");
@@ -504,6 +515,15 @@ public class Main {
     }
 
 
+    public void parkPLAYmain(Player player, Monopoly monopoly){
+
+        System.out.println("You ");
+
+
+
+    }
+
+
 
 
     public void gameStatus() {
@@ -538,12 +558,12 @@ public class Main {
                         break;
 
                     // case "park":
-                    // parkPLAYmain(listOfPlayers.get(turn), monopoly);
-                    // break;
+                    //     parkPLAYmain(monopoly.getPLayer(turn), monopoly);
+                    // // break;
 
-                    // case "company":
-                    // companyPLAYmain(listOfPlayers.get(turn), monopoly);
-                    // break;
+                    // // case "company":
+                    // // companyPLAYmain(listOfPlayers.get(turn), monopoly);
+                    // // break;
 
                     case "jail":
                         jailPLAYmain(monopoly.getPLayer(turn), monopoly);

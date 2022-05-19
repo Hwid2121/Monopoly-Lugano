@@ -29,37 +29,38 @@ public class Table {
 
         cell[2] = new BonusSquare("Pick a card!", "cards", "pick a card and discover if it's good or not", -1);
 
-        cell[3] = new PropertySquare(60, 2, "Via Giuseppe Bagutti", "brown",30,3);
+        cell[3] = new PropertySquare(60, 2, "Via Giuseppe Bagutti", "brown", 30, 3);
 
         cell[4] = new BonusSquare("Income Tax", "malus", "Income tax you have to pay 200", 200);
 
-        cell[5] = new PropertySquare(200, 2, "Parco Florida", "park", 100,5);
+        cell[5] = new PropertySquare(200, 2, "Parco Florida", "park", 100, 5);
 
-        cell[6] = new PropertySquare(100, 6, "Via la Santa", "azure", 50,6);
+        cell[6] = new PropertySquare(100, 6, "Via la Santa", "azure", 50, 6);
 
         cell[7] = new BonusSquare("Casino' Lugano", "bonus", "You won at blackjack you gain  75 chf", 75);
 
-        cell[8] = new PropertySquare(100, 6, "Convento dei Cappuccini", "azure", 50,8);
+        cell[8] = new PropertySquare(100, 6, "Convento dei Cappuccini", "azure", 50, 8);
 
         cell[9] = new PropertySquare(120, 8, "Via delle Aie", "azure", 60, 9);
 
         cell[10] = new BonusSquare("Go to the jail!", "goto", "now you go to the jail!", -1);
 
-        cell[11] = new PropertySquare(140, 10, "Viale Cassarate", "pink",70, 11);
+        cell[11] = new PropertySquare(140, 10, "Viale Cassarate", "pink", 70, 11);
 
         cell[12] = new PropertySquare(150, 66, "Centrale Elettrica AIL", "company", 75, 12);
 
         cell[13] = new PropertySquare(140, 10, "Via delle Rose", "pink", 70, 13);
 
-        cell[14] = new PropertySquare(160, 12, "Piazza Molino Nuovo", "pink",80, 14);
+        cell[14] = new PropertySquare(160, 12, "Piazza Molino Nuovo", "pink", 80, 14);
 
         cell[15] = new PropertySquare(200, 25, "Villa Favorita ", "Park", 100, 15);
 
         cell[16] = new PropertySquare(180, 14, "Lugano Arte e Cultura (LAC)", "orange", 90, 16);
 
-        cell[17] = new BonusSquare("USI Campus West", "bonus", "You the best Student free schoolarship of 100 chf", 100);
+        cell[17] = new BonusSquare("USI Campus West", "bonus", "You the best Student free schoolarship of 100 chf",
+                100);
 
-        cell[18] = new PropertySquare(180, 14, "Via Maggio", "orange", 90,18);
+        cell[18] = new PropertySquare(180, 14, "Via Maggio", "orange", 90, 18);
 
         cell[19] = new PropertySquare(200, 16, "Chiesa Santa Maria degli Angeli", "orange", 100, 19);
 
@@ -90,17 +91,20 @@ public class Table {
 
         cell[32] = new PropertySquare(300, 26, "Via alla Vetta", "green", 150, 32);
 
-        cell[33] = new BonusSquare("USI Campus East", "bonus", "You the best Student free schoolarship of 150 chf", 150);
+        cell[33] = new BonusSquare("USI Campus East", "bonus", "You the best Student free schoolarship of 150 chf",
+                150);
 
         cell[34] = new PropertySquare(320, 28, "Riva Vincenzo Vela", "green", 160, 34);
 
         cell[35] = new PropertySquare(200, 25, "Parco Ciani", "Park", 100, 35);
 
-        cell[36] = new BonusSquare("Bar Oops", "malus", "You spent a lot of money in drinks, pay the bill of 200 chf", 200);
+        cell[36] = new BonusSquare("Bar Oops", "malus", "You spent a lot of money in drinks, pay the bill of 200 chf",
+                200);
 
         cell[37] = new PropertySquare(350, 35, "Via Pessina", "blue", 175, 37);
 
-        cell[38] = new BonusSquare("Dogana Chiasso!", "malus", "You brought to much food, you have been caugh and pay 100 chf of fine",
+        cell[38] = new BonusSquare("Dogana Chiasso!", "malus",
+                "You brought to much food, you have been caugh and pay 100 chf of fine",
                 100);
 
         cell[39] = new PropertySquare(400, 50, "Piazza della Riforma", "blue", 200, 39);
@@ -110,11 +114,6 @@ public class Table {
     public Square getSquare(int pos) {
         return cell[pos];
     }
-
-
-
-
-
 
     public String getSquareName(int pos) {
         return this.getSquare(pos).getName();
@@ -139,8 +138,6 @@ public class Table {
         return 0;
     }
 
-
-
     public static int getSizeofTable() {
         return sizeTable;
     }
@@ -151,7 +148,6 @@ public class Table {
 
     }
 
-
     public Player getSquareOwner(int pos) {
         Object obj = this.getSquare(pos);
         if (obj instanceof PropertySquare) {
@@ -161,18 +157,12 @@ public class Table {
         return null;
     }
 
+    public String getSquareOwnerToString(int pos) {
 
-    public String getSquareOwnerToString(int pos){
-       
-       
-       if(getSquareOwner(pos) == null) return "";
-       return getSquareOwner(pos).getNickname();
+        if (getSquareOwner(pos) == null)
+            return "";
+        return getSquareOwner(pos).getNickname();
     }
-
-
-
-
-
 
     public void setSquareOwner(Player player) {
         Object obj = this.getSquare(player.getPosition());
@@ -180,124 +170,126 @@ public class Table {
             PropertySquare s = (PropertySquare) obj;
             s.changeOwner(player);
         }
-        
 
     }
 
-
-
-    public int getSquareBonusPrice(Player player){
+    public int getSquareBonusPrice(Player player) {
         Object obj = this.getSquare(player.getPosition());
         if (obj instanceof BonusSquare) {
             BonusSquare s = (BonusSquare) obj;
             return s.getMoney();
         }
         return -1;
-        
+
     }
 
-    public String getSquareBonusDescr(int pos){
+    public String getSquareBonusDescr(int pos) {
         Object obj = this.getSquare(pos);
         if (obj instanceof BonusSquare) {
             BonusSquare s = (BonusSquare) obj;
             return s.getDescription();
         }
         return "";
-        
+
     }
 
-
-    public PropertySquare getPropertySquare(int pos){
+    public PropertySquare getPropertySquare(int pos) {
         Object obj = this.getSquare(pos);
-        
+
         if (obj instanceof PropertySquare) {
             PropertySquare s = (PropertySquare) obj;
             return s;
         }
         return new PropertySquare(0, 0, "o", "o", 0, -1);
-        
-        
+
     }
-
-
 
     // public boolean getMonopolySquare(Player player){
 
-        
-    //     if (player.getPropertySquare().size() < 1){
-    //         return false;
-    //     } else{
-            
+    // if (player.getPropertySquare().size() < 1){
+    // return false;
+    // } else{
 
-    //     ArrayList<String> a = new ArrayList<String>();
-    //     for(PropertySquare property: player.getPropertySquare()){
-    //         a.add(property.getColor());
-    //     }
-    //     Collections.sort(a);
-        
-    //     int counter = 1;
-    //     String color = a.get(0);
-    //     for(int i =1; i< player.getPropertySquare().size(); i++){
+    // ArrayList<String> a = new ArrayList<String>();
+    // for(PropertySquare property: player.getPropertySquare()){
+    // a.add(property.getColor());
+    // }
+    // Collections.sort(a);
 
-            
-    //     }
+    // int counter = 1;
+    // String color = a.get(0);
+    // for(int i =1; i< player.getPropertySquare().size(); i++){
+
+    // }
     // }
 
     // }
 
+    public boolean getMonopolyColor(Player player) {
 
-    public boolean getMonopolyColor(Player player){
-
-
-        int counter =0;
+        int counter = 0;
         String color = getPropertySquare(player.getPosition()).getColor();
-        for(PropertySquare pr: player.getPropertySquare()){
-            if (pr.getColor() == color) counter++;
+        for (PropertySquare pr : player.getPropertySquare()) {
+            if (pr.getColor() == color)
+                counter++;
         }
 
+        if (((color == "brown" || color == "blue" || color == "company") && counter == 2)
+                || (color == "red" || color == "azure" || color == "pink" || color == "orange" || color == "yellow"
+                        || color == "green") && counter == 3
+                ||
+                (color == "park") && counter == 4) {
 
-        if (((color == "brown" || color == "blue") && counter == 2) 
-        || (color == "red" || color == "azure" || color == "pink" || color == "orange" || color == "yellow" || color == "green") && counter == 3){
-
-            for(Square pr: cell){
+            for (Square pr : cell) {
 
                 Object obj = pr;
-        
+
                 if (obj instanceof PropertySquare) {
                     PropertySquare s = (PropertySquare) obj;
                     s.setPriceTaxMonopoly();
-                    
+
                 }
-                    }
+            }
             return true;
 
+        }
+        return false;
+    }
+
+    public ArrayList<PropertySquare> getOtherMonopolySquare(Player player) {
+
+        
+        String color = getPropertySquare(player.getPosition()).getColor();
+
+        ArrayList<PropertySquare> list = new ArrayList<PropertySquare>();
+
+        for (Square pr : cell) {
+
+            Object obj = pr;
+
+            if (obj instanceof PropertySquare) {
+                PropertySquare s = (PropertySquare) obj;
+
+                if (s.getColor() == color)
+                    list.add(s);
 
             }
-            return false;
         }
-        
-        
 
+        return list;
+
+    }
 
     
 
-
-
-
-
- 
-
-    public String getColor(int i){
+    public String getColor(int i) {
 
         return getSquare(i).getColor();
     }
 
-
     // public boolean getMono(int i){
-    //     return getPropertySquare(i).getMonopolyColor();
+    // return getPropertySquare(i).getMonopolyColor();
     // }
-
-
 
     public void resetOwner(int pos){
 
@@ -308,35 +300,21 @@ public class Table {
             s.resetOwner();
             
         }
-            }
+            }}
 
+// public void setMononopolyColor(Player player, String color){
+// int counter=0;
 
+// int size = player.getPropertySquare().size()-1 ;
 
-    // public void setMononopolyColor(Player player, String color){
-    //     int counter=0;
+// for (int i=0; (i < size); i++){
 
-    //     int size =  player.getPropertySquare().size()-1 ;
-       
-        
-    //     for (int i=0; (i < size); i++){
-               
-    //              if(getColor(i) == color && getMono(i) == false){
-    //                 getPropertySquare(i).setMononopolyColor();
-    //                 getPropertySquare(i).setPriceTax(getPropertySquare(i).getPriceTax() *2);
-    //                 counter +=1;
-    //             }}
-    //     }
-        
-    }
-
-
-
-
-
-
-
-
-
+// if(getColor(i) == color && getMono(i) == false){
+// getPropertySquare(i).setMononopolyColor();
+// getPropertySquare(i).setPriceTax(getPropertySquare(i).getPriceTax() *2);
+// counter +=1;
+// }}
+// }
 
 /**
  * start (+200)
