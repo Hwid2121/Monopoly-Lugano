@@ -1,8 +1,6 @@
 package model;
 
-import java.text.BreakIterator;
 import java.util.ArrayList;
-import java.util.Iterator;
 
 /**
  * Thiss class rapresents the player
@@ -18,43 +16,87 @@ public class Player {
     private int turn = 0;
 
     private int inJail = -1;
-
     private ArrayList<Card> deckOfPlayer = new ArrayList<Card>();
-
-    // private ArrayList<String> listOfProperty = new ArrayList<String>();
     private ArrayList<PropertySquare> listofPropertySquares = new ArrayList<PropertySquare>();
 
+    /**
+     * 
+     * The constructor of Player that take the nickname.
+     * set the money of default by 1500 and the positio at 0.
+     * 
+     * @param nickname the nick of the player
+     * 
+     */
     public Player(String nickname) {
         this.nickname = nickname;
         money = 1500;
         position = 0;
     }
 
+    /**
+     * Set the number of injail with the number given as input.
+     * 
+     * @param i to set the num of Injail
+     * 
+     */
     public void setJail(int i) {
         inJail = i;
     }
 
+    /**
+     * Get the value of InJail.
+     * 
+     * @return the value of Injail
+     * 
+     */
     public int getTurnsInJail() {
         return inJail;
     }
 
-
-    public void decreseDayInJail(){
+    /**
+     * Decrease inJail by 1.
+     * 
+     */
+    public void decreseDayInJail() {
         inJail -= 1;
     }
 
+    /**
+     * Check if the player is still in jail.
+     * 
+     * @return true if inJail is greater than 0, False otherwise
+     * 
+     */
     public boolean stillInJail() {
         return inJail > 0;
     }
 
+    /**
+     * Add card into the deck of the player.
+     * 
+     * @param card to add into the deck
+     * 
+     */
     public void addCardToDeck(Card card) {
         deckOfPlayer.add(card);
     }
 
+    /**
+     * Get the list of cards of the player.
+     * 
+     * @return the deckOfPlayer
+     * 
+     */
     public ArrayList<Card> getDeck() {
         return deckOfPlayer;
     }
 
+    /**
+     * Delete the card with descr given as input.
+     * 
+     * @param desc
+     * 
+     */
     public void deleteCard(String desc) {
         for (int i = 0; i < deckOfPlayer.size(); i++) {
             if (deckOfPlayer.get(i).getDescription() == desc) {
@@ -64,49 +106,86 @@ public class Player {
         }
     }
 
-    // public int getPosProperty(int i){
-    // return listofPropertySquares.get(i);
-    // }
-
+    /**
+     * Get the value of the money of the player.
+     * 
+     * @return the value of the money.
+     * 
+     */
     public int getMoney() {
         return this.money;
     }
 
-    public String getPlayer() {
-        return nickname;
-    }
-
-    // public void printNickname() {
-    // System.out.println(nickname);
-    // }
-
+    /**
+     * Get the position of the player.
+     * 
+     * @return tthe position
+     * 
+     */
     public int getPosition() {
         return position;
     }
 
+    /**
+     * Get Nickname of the player.
+     * 
+     * @return the nickname of the player
+     * 
+     */
     public String getNickname() {
 
-        if (nickname == "")
+        if (nickname.equals("")){
             return "";
+        }
+            
         return nickname;
     }
 
+    /**
+     * Decrese the money of the player by cash.
+     * 
+     */
     public void decreaseMoney(int cash) {
         this.money = getMoney() - cash;
     }
 
+    /**
+     * Increase the money of the player by cash.
+     * 
+     */
     public void increaseMoney(int cash) {
         this.money = getMoney() + cash;
     }
 
+    /**
+     * Get the size of the listofpropertySquare.
+     * 
+     * @return the size of the listOfPropertySquares
+     * 
+     */
     public int getPropertySquareNum() {
         return listofPropertySquares.size();
     }
 
+    /**
+     * Add the house in listofPropertySquares of the player.
+     * 
+     * @param house to add in the listofPropertySQure
+     * 
+     */
     public void buyPropertySquare(PropertySquare house) {
         listofPropertySquares.add(house);
     }
 
+    /**
+     * Sell the propertySquare at index i in the listOfPropertySquare.
+     * Then increase the money of the player by the price sell of the
+     * propertySquare.
+     * 
+     * @param i  as index in the listOfPropertySquare
+     * @param ps property square to remove from the listOfPropertySquare
+     * 
+     */
     public void sellPropertySquare(int i, PropertySquare ps) {
         int cash = listofPropertySquares.get(i).getPriceSell();
 
@@ -116,27 +195,61 @@ public class Player {
 
     }
 
+    /**
+     * Get the value of the turn of the player.
+     * 
+     * @return the value of the turn
+     * 
+     */
     public int getTurn() {
         return turn;
     }
 
+    /**
+     * Increase turn of the player by 1.
+     * 
+     * @return the value of the die1
+     * 
+     */
     public void turnIncrement() {
         turn += 1;
     }
 
+    /**
+     * Set the position of the player by position + pos and moduled by
+     * the size of the table.
+     * 
+     * @return the value of the die1
+     * @param pos the num to increase the position
+     * 
+     */
     public void setPosition(int pos) {
         position = (position + pos) % Table.getSizeofTable();
-        System.out.println(position);
     }
 
+    /**
+     * Set the position by the pos.
+     * 
+     * @param pos
+     * 
+     */
     public void movePosition(int pos) {
 
         position = pos;
     }
 
+    /**
+     * If the size listOfProeprtySquare is 0 then no properties else
+     * return the name of each property.
+     * This method is usefull in the TUI.
+     * 
+     * @return "No properties" if the player doesn't has properties else the
+     *         name of each property
+     */
+
     public String propertySquaretoString() {
 
-        if (listofPropertySquares.size() == 0)
+        if (listofPropertySquares.isEmpty())
             return "No properties";
         else {
             String s = listofPropertySquares.get(0).getName();
@@ -150,10 +263,21 @@ public class Player {
         }
     }
 
+    /**
+     * Get the price of each propertysquare own by the player.
+     * Usefull in the TUI.
+     * 
+     * @return "no properties" if listOfPropertySquare size is 0 else the price of
+     *         each proerty own by the player
+     * 
+     */
     public String getSellproperString() {
 
         if (listofPropertySquares.size() == 0)
+        {
             return "No properties";
+        }
+            
 
         String s = "";
         for (int i = 0; i < listofPropertySquares.size(); i++) {
@@ -164,10 +288,14 @@ public class Player {
 
     }
 
+    /**
+     * Get the listOfPropertySquare
+     * 
+     * @return listofPropertySquare
+     * 
+     */
     public ArrayList<PropertySquare> getPropertySquare() {
         return listofPropertySquares;
     }
-
-   
 
 }

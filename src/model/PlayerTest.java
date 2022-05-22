@@ -24,12 +24,12 @@ public class PlayerTest {
     Player Nico = new Player("Nico");
     Player None = new Player("");
     private ArrayList<PropertySquare> listofPropertySquares = new ArrayList<PropertySquare>();
-    PropertySquare ViadelleAie = new PropertySquare(200, 100, "ViadelleAie", "blue", 100, position, 0,0,0,0,0,0);
+    PropertySquare ViadelleAie = new PropertySquare(200, 100, "ViadelleAie", "blue", 100, position, 0, 0, 0, 0, 0, 0);
 
-    @Test
-    public void getPlayerTest() {
-        assertEquals("Nico", Nico.getPlayer());
-    }
+    // @Test
+    // public void getPlayerTest() {
+    // assertEquals("Nico", Nico.getPlayer());
+    // }
 
     @Test
     public void getNicknameTest1() {

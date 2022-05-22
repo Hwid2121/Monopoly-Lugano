@@ -2,17 +2,24 @@ package model;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import java.util.HashMap;
-import java.util.Hashtable;
-
 import java.util.Random;
 
+/**
+ * This the container for the cards.
+ * All the cards are added in the array with its description
+ * and it will be used for the random cards in the monopoly game.
+ * Through the name of the card the effect will start thanks the method play
+ * card.
+ * 
+ * @author taftan@usi.ch & sardoa@usi.ch
+ * @version 24/04/2022
+ * 
+ */
 public class cardsDeck {
 
-    List<Card> cards = new ArrayList<>();
+    private List<Card> cards = new ArrayList<>();
 
-    Random rand = new Random();
+    private Random rand = new Random();
 
     int index;
 
