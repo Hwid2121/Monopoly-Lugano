@@ -328,7 +328,9 @@ public class Main {
         System.out.println("[i] (for all info of the player)");
         System.out.println("[c] (for show the situation of the other properties of same color)");
         System.out.println("[h] (for buy house, hotel and more info)");
+        System.out.println("[o] (for see the infos for other players)");
         System.out.println("[exit] (for close the game)");
+        
 
         String word = input.next();
 
@@ -373,12 +375,16 @@ public class Main {
                         + "\nProperties: " + player.propertySquaretoString() + "\nPosition: " + player.getPosition());
                 break;
 
-            // case "Mortgage":
-            // if (((monopoly.table.getSquareOwner(position) == player.getNickname()))) {
+            case "o":
+                for (Player pl: monopoly.getListOfPlayer()){
+                    System.out.println("\nName: " + pl.getNickname() + "\nMoney: " + pl.getMoney()
+                        + "\nProperties: " + pl.propertySquaretoString() + "\nPosition: " + pl.getPosition());
 
-            // System.out.println("Are you sure to mortgage your property?");
-            // }
-            // monopoly.table.getSquareOwnerToString(position)
+                        
+                
+
+                }
+                break;
             case "p":
                 skip = 1;
                 break;
@@ -734,20 +740,7 @@ public class Main {
     public void finishStatus() {
         System.out.println("The monopoly of Lugano is " + monopoly.getPLayer(0).getNickname());
         System.exit(0);
-        // System.out.println("Do you want play again?");
-        // System.out.println("[y] for play again \n [n] for exit");
-        // String word = input.next();
-
-        // switch (word) {
-        // case "y":
-        // status = 0;
-        // case "n":
-        // System.out.println("See You :)");
-
-        // break;
-        // default:
-        // System.out.println("Input not valid");
-        // }
+        
 
     }
 
