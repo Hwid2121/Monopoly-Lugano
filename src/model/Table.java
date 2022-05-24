@@ -131,6 +131,10 @@ public class Table {
 
     }
 
+
+
+    
+
     /**
      * Get the Square at position pos into the array cell.
      * 
@@ -286,6 +290,11 @@ public class Table {
         }
         return "";
 
+    }
+
+
+    public Square[] getCell(){
+        return cell;
     }
 
     /**
