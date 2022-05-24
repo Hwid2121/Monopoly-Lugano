@@ -752,7 +752,6 @@ public class Main {
 
         Main game = new Main();
 
-        //
 
         switch (game.getStatus()) {
 
