@@ -20,7 +20,7 @@ public class CLayout extends JFrame {
 
     private JPanel panelCont = new JPanel();
     private JPanel panelPregame = new  PanelPregame();
-    private JPanel panelPlayers = new JPanel();
+    private JPanel panelPlayers = new PanelPlayers();
     private JPanel panelMonopoly = new JPanel();
     private CardLayout mainFrame = new CardLayout();
 
@@ -65,7 +65,7 @@ public class CLayout extends JFrame {
 
 
         // panelPregame.add(new JButton("ciao1"));
-        panelMonopoly.add(new JButton("ciao2"));
+        //panelMonopoly.add(new JButton("ciao2"));
 
 
         

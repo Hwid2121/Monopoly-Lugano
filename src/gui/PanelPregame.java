@@ -1,5 +1,4 @@
 package gui;
-
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -7,11 +6,12 @@ import javax.swing.SwingConstants;
 import java.awt.Insets;
 import java.awt.image.CropImageFilter;
 import java.awt.image.FilteredImageSource;
-
 import java.awt.CardLayout;
 import javax.swing.BoxLayout;
 import java.awt.BorderLayout;
 import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JComponent;
@@ -52,6 +52,31 @@ public class PanelPregame extends JPanel {
         JButton jb1 = new JButton("Play!");
         JButton jb2 = new JButton("Rules");
         JButton jb3 = new JButton("Exit");
+
+        jb3.addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+            System.out.println("EXIT THE GAME");
+            System.exit(0);
+            }
+        });
+
+        jb2.addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+            PanelPlayers playbutton = new PanelPlayers();
+            }
+        });
+
+        jb1.addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+            PanelRules rulesbutton = new PanelRules();
+            }
+        });
 
         
         BoxLayout laybut = new BoxLayout(this, BoxLayout.Y_AXIS);
