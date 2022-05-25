@@ -11,8 +11,8 @@ import java.util.ArrayList;
  */
 public class Monopoly {
 
-    public Table table = new Table();
-    public Dice dice = new Dice();
+    private Table table = new Table();
+    private Dice dice = new Dice();
 
     private ArrayList<Player> players;
 
@@ -31,6 +31,46 @@ public class Monopoly {
         players = new ArrayList<>();
 
     }
+
+
+
+    
+    
+    /**
+     * Get the table.
+     * @return table of monopoly
+     *
+     * 
+     */
+    public Table getTable(){
+        return table;
+    }
+
+    
+    
+    /**
+     * Get the dice.
+     * @return dice of monopoly
+     *
+     * 
+     */
+    public Dice getDice(){
+        return dice;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     /**
      * Add new player in the arrayList players.
