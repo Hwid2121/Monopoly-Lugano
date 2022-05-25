@@ -759,8 +759,8 @@ public class Main {
                 System.out.println("pregame status");
                 game.preGameStatus();
 
-            case 1:
-                System.out.println("Play game  status");
+             case 1:
+                 System.out.println("Play game  status");
                 game.gameStatus();
 
             case -1:

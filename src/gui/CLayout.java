@@ -71,7 +71,6 @@ public class CLayout extends JFrame {
         panelCont.add(panelPregame, "1");
         panelCont.add(panelPlayers, "2");
         panelCont.add(panelMonopoly, "3");
-
         mainFrame.show(panelCont, "1");
 
 
