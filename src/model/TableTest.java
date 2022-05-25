@@ -21,11 +21,4 @@ public class TableTest {
   public void newtabletest() {
     Table table = new Table();
   }
-
-  @Test
-  public void getSquareTest() {
-    // Table table = new Table();
-    // assertTrue(new PropertySquare(400, 50, "Piazza della Riforma",
-    // "blue").getName().equals(table.getSquare(39).getName()));
-  }
 }

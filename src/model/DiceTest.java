@@ -1,6 +1,7 @@
 package model;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 import java.util.Random;
 
@@ -16,7 +17,12 @@ public class DiceTest {
     Random rand = new Random();
     private int die1;
     private int die2;
-
+    Dice dice = new Dice(die1, die2);
+    @Test
+    public void DiceTest() {
+        Dice dice1 = new Dice(die1, die2);
+        assertTrue(dice1 instanceof Dice);
+    }
     @Test
     public void GetDie1Test() {
         assertEquals(die1, new Dice(die1, die2).getDie1());
