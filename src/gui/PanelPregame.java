@@ -41,8 +41,8 @@ public class PanelPregame extends JPanel {
     private final Dimension PRF_SIZE_IMG = new Dimension(800, 800);
     private final Dimension MIN_SIZE_IMG = new Dimension(200,200);
 
-    private final Dimension PFR_SIZE_BUTTON = new Dimension(200, 200);
-    private final Dimension MIN_SIZE_BUTTON = new Dimension(100, 100);
+    private final Dimension PFR_SIZE_BUTTON = new Dimension(100, 50);
+    private final Dimension MIN_SIZE_BUTTON = new Dimension(100, 50);
 
 
     private final MyButton BUTTON_STYLE = new MyButton();
@@ -93,11 +93,11 @@ public class PanelPregame extends JPanel {
         add(imagelabel);
         add(Box.createVerticalGlue());
         add(jb1);
-        add(Box.createRigidArea(new Dimension(0,10)));
+        add(Box.createRigidArea(new Dimension(0,50)));
         add(jb2);
-        add(Box.createRigidArea(new Dimension(0,10)));
+        add(Box.createRigidArea(new Dimension(0,50)));
         add(jb3);
-        add(Box.createRigidArea(new Dimension(0,200)));
+        add(Box.createRigidArea(new Dimension(0,400)));
 
         
         imagelabel.setAlignmentX(CENTER_ALIGNMENT);

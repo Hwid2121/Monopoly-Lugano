@@ -1,6 +1,7 @@
 package gui;
 import java.awt.Graphics;
 import javax.swing.AbstractButton;
+import javax.swing.BorderFactory;
 import javax.swing.ButtonModel;
 import javax.swing.JComponent;
 import javax.swing.plaf.basic.BasicButtonUI;
@@ -20,7 +21,7 @@ public class MyButton extends BasicButtonUI {
         ButtonModel model = b.getModel();
 
 
-        Font courier = new Font ("Courier", Font.PLAIN, 12); 
+        Font courier = new Font ("SansSerif", Font.BOLD, 22); 
         // Font system = new Font ("System", Font.BOLD, 16); 
         // Font helvetica = new Font ("Helvetica", Font.BOLD, 18);  
 
@@ -35,13 +36,21 @@ public class MyButton extends BasicButtonUI {
         
         // b.setBackground(Color.GREEN);
         b.setFont(courier);
-        b.setForeground(Color.BLACK);
+        
+        b.setForeground(CLayout.CREMISI);
         b.setVisible(true);
+        b.setBorderPainted(false);
+        b.setContentAreaFilled(false);
+        b.setOpaque(true);
+
+        b.setBorder(new RoundedBorder( 10 ));
         
 
+        
+   
+        
+        
         super.paint(g, c);
-
-
 
         // c.setColor(Color.BLACK);
 
