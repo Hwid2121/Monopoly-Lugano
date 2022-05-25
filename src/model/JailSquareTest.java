@@ -34,20 +34,24 @@ public class JailSquareTest {
     public void getPerfectPairTest() {
         assertTrue(new Dice(5, 5).getPerfectPair());
     }
-    // @Test
+
+    @Test
+    public void decreaseDayInJailTest() {
+        JailSquare Jail1 = new JailSquare("Lo stampino", "blue");
+    }
     // public void getPair1Test(){
     // Jail.getPair1();
     // assertEquals(6, new Dice(5, 6).getDie2());
     // } testare i valori in un intervallo
     // assertTrue( die1 >= )
 
-    // @Test
-    // public void getPair2Test(){
-    // assertEquals(6, new Dice(5, 6).getDie2());
-    // }
+   // @Test
+    //public void getPair2Test(){
+    //assertEquals(6, new Dice(5, 6).getDie2());
 
-    @Test
-    public void payFineTest() {
+
+ //   @Test
+ /*   public void payFineTest() {
         Jail.payFine(Nico);
         assertEquals(1445, Nico.getMoney());
     }
@@ -58,4 +62,5 @@ public class JailSquareTest {
         assertEquals(-1, Nico.getTurnsInJail());
     }
 
+}*/
 }

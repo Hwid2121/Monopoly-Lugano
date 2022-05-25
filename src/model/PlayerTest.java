@@ -26,10 +26,12 @@ public class PlayerTest {
     private ArrayList<PropertySquare> listofPropertySquares = new ArrayList<PropertySquare>();
     PropertySquare ViadelleAie = new PropertySquare(200, 100, "ViadelleAie", "blue", 100, position, 0, 0, 0, 0, 0, 0);
 
-    // @Test
-    // public void getPlayerTest() {
-    // assertEquals("Nico", Nico.getPlayer());
-    // }
+    @Test
+    public void decreaseDayInJailTest() {
+        Nico.setJail(1);
+        Nico.decreseDayInJail();
+        assertEquals(0, Nico.getTurnsInJail());
+    }
 
     @Test
     public void getNicknameTest1() {
@@ -73,9 +75,9 @@ public class PlayerTest {
     }
 
     @Test
-    public void sellPropertySquareTest() {
-        Nico.setJail(0);
-        Nico.sellPropertySquare(0, ViadelleAie);
+    public void getPropertySquareNumtest() {
+        Nico.buyPropertySquare(ViadelleAie);
+        assertEquals(1, Nico.getPropertySquareNum());
     }
 
     @Test
