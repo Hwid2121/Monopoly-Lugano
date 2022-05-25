@@ -41,8 +41,8 @@ public class PanelPregame extends JPanel {
     private final Dimension PRF_SIZE_IMG = new Dimension(800, 800);
     private final Dimension MIN_SIZE_IMG = new Dimension(200,200);
 
-    private final Dimension PFR_SIZE_BUTTON = new Dimension(100, 50);
-    private final Dimension MIN_SIZE_BUTTON = new Dimension(100, 50);
+    private final Dimension PFR_SIZE_BUTTON = new Dimension(200, 50);
+    private final Dimension MIN_SIZE_BUTTON = new Dimension(200, 50);
 
 
     private final MyButton BUTTON_STYLE = new MyButton();
