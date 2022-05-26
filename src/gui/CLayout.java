@@ -1,5 +1,6 @@
 package gui;
-
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import java.awt.CardLayout;
@@ -12,16 +13,18 @@ import java.awt.event.ActionEvent;
 import java.awt.GridLayout;
 import java.awt.Graphics;
 import javax.swing.ImageIcon;
-import java.awt.*;
+import java.awt.CardLayout;
 
-public class CLayout extends JFrame {
+
+public class CLayout extends JFrame implements ActionListener {
 
     private JFrame frame = new JFrame("Monopoly Lugano");
 
     private JPanel panelCont = new JPanel();
     private JPanel panelPregame = new  PanelPregame();
     private JPanel panelPlayers = new PanelPlayers();
-    private JPanel panelMonopoly = new JPanel();
+    private JPanel panelMonopoly = new PanelMonopoly();
+    private JPanel panelEnd = new PanelEnd();
     private CardLayout mainFrame = new CardLayout();
 
     public static final Color SFONDO = new Color(205,230,208,255);
@@ -49,39 +52,37 @@ public class CLayout extends JFrame {
         
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setLocationRelativeTo(null);
-        // frame.setBackground(ROSA);
         frame.setExtendedState(JFrame.MAXIMIZED_BOTH); 
 
 
 
 
-
-        
-
-
-
-
-
-
-
-        // panelPregame.add(new JButton("ciao1"));
-        //panelMonopoly.add(new JButton("ciao2"));
-
-
-        
         panelCont.add(panelPregame, "1");
         panelCont.add(panelPlayers, "2");
         panelCont.add(panelMonopoly, "3");
-        mainFrame.show(panelCont, "1");
+        panelCont.add(panelEnd, "4");
+
+
+
+        mainFrame.show(panelCont, "3");
 
 
 
 
         frame.add(panelCont);
-        frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         frame.pack();
         frame.setVisible(true);
 
+
     }
 
+
+
+    @Override
+    public void actionPerformed(ActionEvent arg0) {
+        mainFrame.next(panelCont);
+    }
+    
+
 }
+
