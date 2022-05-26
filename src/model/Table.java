@@ -39,7 +39,7 @@ public class Table {
      * 
      */
     public void newtable() {
-        cell[0] = new BonusSquare("Start", "bonus", "The start for every player.", 200);
+        cell[0] = new BonusSquare("Start", "bonus", "Collect 200.- salary as you pass", 200);
 
         cell[1] = new PropertySquare(60, 2, "Via Zurigo", "brown", 30, 1, 50, 10, 30, 90, 160, 250);
 
@@ -49,7 +49,7 @@ public class Table {
 
         cell[4] = new BonusSquare("Income Tax", "malus", "Income tax you have to pay 200", 200);
 
-        cell[5] = new PropertySquare(200, 2, "Parco Florida", "park", 100, 5, 0, 0, 0, 0, 0, 0);
+        cell[5] = new PropertySquare(200, 25, "Parco Florida", "park", 100, 5, 0, 0, 0, 0, 0, 0);
 
         cell[6] = new PropertySquare(100, 6, "Via la Santa", "azure", 50, 6, 50, 30, 90, 270, 400, 550);
 

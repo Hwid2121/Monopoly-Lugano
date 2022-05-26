@@ -68,7 +68,7 @@ public class CLayout extends JFrame implements ActionListener {
 
 
 
-        mainFrame.show(panelCont, "3");
+        mainFrame.show(panelCont, "1");
 
 
 

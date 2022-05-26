@@ -2,6 +2,10 @@ package gui;
 
 import javax.swing.JPanel;
 
+import model.Square;
+
+import javax.swing.JPanel;
+
 import javax.swing.JButton;
 import javax.swing.JPanel;
 import javax.swing.JFrame;
@@ -17,7 +21,8 @@ import java.awt.BorderLayout;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
+import java.awt.Graphics;
+import java.awt.Graphics2D;
 import javax.swing.JButton;
 import javax.swing.JComponent;
 import javax.swing.colorchooser.*;
@@ -30,7 +35,6 @@ import java.awt.event.ActionEvent;
 import java.awt.GridLayout;
 import java.awt.Image;
 import java.awt.Insets;
-import java.awt.Graphics;
 import javax.swing.ImageIcon;
 import javax.swing.border.Border;
 import javax.swing.border.EmptyBorder;
@@ -43,26 +47,25 @@ import java.awt.image.BufferedImage;
 
 import model.*;
 
-public class MonopolyGridPanel extends JPanel {
 
 
 
 
-    public MonopolyGridPanel(){
+public class SquareProperty extends JPanel{
+
+    public SquareProperty(){
         
-        // System.out.println(this.getSize()+ "" + this.getWidth());
-
-
-
-        
-
-    
-
-
-
-
-
+       
+        // setSize(new Dimension(100,100));
+        this.setPreferredSize(new Dimension(100,100));
 
     }
+
+    public void paint(Graphics g){
+        Graphics2D g2D = (Graphics2D) g;
+
+
+        
+    }   
 
 }
