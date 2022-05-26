@@ -27,6 +27,10 @@ public class CLayout extends JFrame implements ActionListener {
     private JPanel panelEnd = new PanelEnd();
     private CardLayout mainFrame = new CardLayout();
 
+
+
+    public final static MyButton BUTTON_STYLE = new MyButton();
+
     public static final Color SFONDO = new Color(205,230,208,255);
     public static final Color MARRONE = new Color(149,84,54,255);
     public static final Color AZZURRO = new Color (170,224,250,255);
@@ -64,7 +68,7 @@ public class CLayout extends JFrame implements ActionListener {
 
 
 
-        mainFrame.show(panelCont, "1");
+        mainFrame.show(panelCont, "3");
 
 
 

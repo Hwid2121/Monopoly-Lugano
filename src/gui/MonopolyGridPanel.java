@@ -1,5 +1,7 @@
 package gui;
 
+import javax.swing.JPanel;
+
 import javax.swing.JButton;
 import javax.swing.JPanel;
 import javax.swing.JFrame;
@@ -39,34 +41,10 @@ import javax.imageio.ImageIO;
 import javax.swing.Box;
 import java.awt.image.BufferedImage;
 
-public class PanelMonopoly extends JPanel{
+public class MonopolyGridPanel extends JPanel {
 
-    
-
-    
-
-    PanelMonopoly(){
-
-        JButton button1 = new JButton("NORTH");
-        JButton button2 = new JButton("END-LINE");
-        JButton button3 = new JButton("SOUTH");
-
-
-        JPanel monopolyGridPanel = new MonopolyGridPanel();
-
-
-        BorderLayout mainLay = new BorderLayout(10,10);
-        setLayout(mainLay);
-
-
-
-
-
-        add(monopolyGridPanel, BorderLayout.CENTER);
-        add(button2, BorderLayout.LINE_END);
-        add(button3, BorderLayout.PAGE_END);
-
-
-
+    public MonopolyGridPanel(){
+        setBackground(Color.CYAN);
     }
+
 }

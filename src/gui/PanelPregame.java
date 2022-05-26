@@ -45,7 +45,7 @@ public class PanelPregame extends JPanel  {
     private final Dimension MIN_SIZE_BUTTON = new Dimension(200, 50);
 
 
-    private final MyButton BUTTON_STYLE = new MyButton();
+    
 
     public PanelPregame() {
 
@@ -113,9 +113,9 @@ public class PanelPregame extends JPanel  {
 
         
 
-        jb1.setUI(BUTTON_STYLE);
-        jb2.setUI(BUTTON_STYLE);
-        jb3.setUI(BUTTON_STYLE);
+        jb1.setUI(CLayout.BUTTON_STYLE);
+        jb2.setUI(CLayout.BUTTON_STYLE);
+        jb3.setUI(CLayout.BUTTON_STYLE);
 
 
 
