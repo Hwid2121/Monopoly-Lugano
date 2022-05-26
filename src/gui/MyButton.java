@@ -36,16 +36,13 @@ public class MyButton extends BasicButtonUI {
         g.setFont(courier);
 
         
-        // b.setBorder(new RoundedBorder( 10 ));
+
         
         b.setBorder(raisedbevel);
         
-        // b.setBackground(Color.GREEN);
         b.setFont(courier);
         
         b.setForeground(CLayout.CREMISI);
-        // b.setBackground(Color.white);
-
 
     
         
@@ -53,13 +50,6 @@ public class MyButton extends BasicButtonUI {
         
         b.setVisible(true);
         super.paint(g, c);
-
-        // c.setColor(Color.BLACK);
-
-        
-    
-        
-        // b.setVisible(true);
 
 
 

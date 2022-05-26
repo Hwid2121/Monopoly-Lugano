@@ -12,6 +12,8 @@ import java.awt.CardLayout;
 import javax.swing.JButton;
 import javax.swing.SwingUtilities;
 
+import model.*;
+
 /**
  * DESCRIBE THIS CLASS
  * 
@@ -22,23 +24,29 @@ public class Main {
 
 
 
-
-
     // add a main method here
     public static void main(String[] args) {
         System.out.println("GUI STARRRRRRRt");
+        
 
-
+        
+    
+    
 
         
 
         EventQueue.invokeLater(new Runnable() {
+            
 
             public void run() {
                 System.out.println("creating gui...");
+                
+                new GameMain();
+                
+               
 
+                
 
-                new CLayout();
                 
                 
  

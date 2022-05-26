@@ -40,7 +40,7 @@ import javax.swing.Box;
 import java.awt.image.BufferedImage;
 import javax.swing.SpringLayout;
 
-public class PanelMonopoly extends JPanel{
+public class PanelMonopoly extends JPanel implements ActionListener{
 
     
 
@@ -82,5 +82,13 @@ public class PanelMonopoly extends JPanel{
 
 
 
+    }
+
+
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+    
+        
     }
 }

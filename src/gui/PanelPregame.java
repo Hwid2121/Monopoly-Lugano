@@ -50,7 +50,7 @@ public class PanelPregame extends JPanel  {
     public PanelPregame() {
 
         JButton jb1 = new JButton("Play!");
-        JButton jb2 = new JButton("Rules");
+        // JButton jb2 = new JButton("Rules");
         JButton jb3 = new JButton("Exit");
 
         jb3.addActionListener(new ActionListener() {
@@ -62,21 +62,26 @@ public class PanelPregame extends JPanel  {
             }
         });
 
-        jb2.addActionListener(new ActionListener() {
+        // jb2.addActionListener(new ActionListener() {
 
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                PanelRules rulesbutton = new PanelRules();
+        //     @Override
+        //     public void actionPerformed(ActionEvent e) {
+        //         PanelRules rulesbutton = new PanelRules();
             
 
-            }
-        });
+        //     }
+        // });
 
         jb1.addActionListener(new ActionListener() {
 
             @Override
             public void actionPerformed(ActionEvent e) {
-            PanelPlayers playbutton = new PanelPlayers();
+                JFrame numPlayeFrame = new NumPlayerFrame();
+
+                numPlayeFrame.setVisible(true);
+
+
+
             }
 
         });
@@ -103,8 +108,8 @@ public class PanelPregame extends JPanel  {
         jb1.setMinimumSize(MIN_SIZE_BUTTON);
         jb1.setPreferredSize(PFR_SIZE_BUTTON);
 
-        jb2.setMinimumSize(MIN_SIZE_BUTTON);
-        jb2.setPreferredSize(PFR_SIZE_BUTTON);
+        // jb2.setMinimumSize(MIN_SIZE_BUTTON);
+        // jb2.setPreferredSize(PFR_SIZE_BUTTON);
         
 
 
@@ -114,9 +119,9 @@ public class PanelPregame extends JPanel  {
 
         
 
-        jb1.setUI(CLayout.BUTTON_STYLE);
-        jb2.setUI(CLayout.BUTTON_STYLE);
-        jb3.setUI(CLayout.BUTTON_STYLE);
+        jb1.setUI(GameMain.BUTTON_STYLE);
+        // jb2.setUI(CLayout.BUTTON_STYLE);
+        jb3.setUI(GameMain.BUTTON_STYLE);
 
 
 
@@ -124,19 +129,19 @@ public class PanelPregame extends JPanel  {
         add(Box.createVerticalGlue());
         add(jb1);
         add(Box.createRigidArea(new Dimension(0,50)));
-        add(jb2);
-        add(Box.createRigidArea(new Dimension(0,50)));
+        // add(jb2);
+        // add(Box.createRigidArea(new Dimension(0,50)));
         add(jb3);
         add(Box.createRigidArea(new Dimension(0,400)));
 
         
         imagelabel.setAlignmentX(CENTER_ALIGNMENT);
         jb1.setAlignmentX(CENTER_ALIGNMENT);
-        jb2.setAlignmentX(CENTER_ALIGNMENT);
+        // jb2.setAlignmentX(CENTER_ALIGNMENT);
         jb3.setAlignmentX(CENTER_ALIGNMENT);
 
 
-        setBackground(CLayout.SFONDO);
+        setBackground(GameMain.SFONDO);
 
     }
 

@@ -16,9 +16,9 @@ public class Monopoly {
 
     private ArrayList<Player> players;
 
-    public int steps;
+    private int steps;
 
-    public int numOfPlayers;
+    private int numOfPlayers;
 
     /**
      * Constructor of the Monopoly class.
@@ -31,6 +31,12 @@ public class Monopoly {
         players = new ArrayList<>();
 
     }
+
+    public void setNumOfPlayers(int n ){
+        numOfPlayers = n;
+    }
+
+    
 
 
 

@@ -36,8 +36,14 @@ import javax.swing.BoxLayout;
 import javax.imageio.ImageIO;
 import javax.swing.Box;
 import java.awt.image.BufferedImage;
+import java.awt.Component;
+import javax.swing.JTextPane;
+import javax.swing.Popup;
+import javax.swing.PopupFactory;
 
-public class PanelPlayers extends JPanel {
+import java.awt.TextField;
+
+public class PanelPlayers extends JPanel implements ActionListener {
 
 
     private final Dimension PRF_SIZE_IMG = new Dimension(800, 800);
@@ -48,42 +54,25 @@ public class PanelPlayers extends JPanel {
     private final Dimension PFR_SIZE_TEXT = new Dimension(200, 50);
     private final Dimension MIN_SIZE_TEXT = new Dimension(200, 50);
 
-    
+    private JTextField textField = new JTextField();
+    private JButton button = new JButton("Submit");
 
     public PanelPlayers() {
 
         JButton jb1 = new JButton("Choose how many players for this match:");
-        JButton jb2 = new JButton("Let's Play!");
-        JButton jb3 = new JButton("Back to the main Menu");
 
-        jb3.addActionListener(new ActionListener() {
-
-            @Override
-            public void actionPerformed(ActionEvent e) {
-            PanelPregame menubutton = new PanelPregame();
-            }
-        });
-
-        jb2.addActionListener(new ActionListener() {
-
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                PanelMonopoly playbutton = new PanelMonopoly();
-
-            }
-        });
-
+        JFrame numPlayer = new NumPlayerFrame();
      
         
         BoxLayout laybut = new BoxLayout(this, BoxLayout.Y_AXIS);
-        // GridLayout laybut = new GridLayout(3,1);
         setLayout(laybut);
         
         
 
         ImageIcon image = new ImageIcon("src/gui/images/monopoly.png");
         Image img = image.getImage();
-        // Image img = image.getImage();
+        
+        
 
         
         image = new ImageIcon(img);
@@ -96,20 +85,11 @@ public class PanelPlayers extends JPanel {
         jb1.setMinimumSize(MIN_SIZE_BUTTON);
         jb1.setPreferredSize(PFR_SIZE_BUTTON);
 
-        jb2.setMinimumSize(MIN_SIZE_BUTTON);
-        jb2.setPreferredSize(PFR_SIZE_BUTTON);
-        
-
-
-        jb3.setMinimumSize(MIN_SIZE_BUTTON);
-        jb3.setPreferredSize(PFR_SIZE_BUTTON);
-
 
         
 
         jb1.setUI(CLayout.BUTTON_STYLE);
-        jb2.setUI(CLayout.BUTTON_STYLE);
-        jb3.setUI(CLayout.BUTTON_STYLE);
+        jb1.setBorderPainted(false);
 
 
 
@@ -117,19 +97,32 @@ public class PanelPlayers extends JPanel {
         add(Box.createVerticalGlue());
         add(jb1);
         add(Box.createRigidArea(new Dimension(0,50)));
-        add(jb2);
-        add(Box.createRigidArea(new Dimension(0,50)));
-        add(jb3);
-        add(Box.createRigidArea(new Dimension(0,400)));
 
         
         imagelabel.setAlignmentX(CENTER_ALIGNMENT);
         jb1.setAlignmentX(CENTER_ALIGNMENT);
-        jb2.setAlignmentX(CENTER_ALIGNMENT);
-        jb3.setAlignmentX(CENTER_ALIGNMENT);
 
 
         setBackground(CLayout.SFONDO);
+        Component rigidArea = Box.createRigidArea(new Dimension(0,50));
+        add(rigidArea);
+        
+
+
+        button.addActionListener(this);
+        button.setUI(CLayout.BUTTON_STYLE);
+
+
+        add(button);
+        Component rigidArea_2 = Box.createRigidArea(new Dimension(0,40));
+        add(rigidArea_2);
+        add(textField);
+
+        Component rigidArea_1 = Box.createRigidArea(new Dimension(0,400));
+        add(rigidArea_1);
+
+        
+
 
     }
 
@@ -141,6 +134,17 @@ public class PanelPlayers extends JPanel {
         // g.drawImage(image, 0, 0, this); // see javadoc for more info on the parameters            
     
 
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        if(e.getSource() == button) {
+            
+            System.out.println("num " + textField.getText() );
+            
+            
+        }
+        
     }
 
 
