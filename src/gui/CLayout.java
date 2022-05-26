@@ -21,7 +21,7 @@ public class CLayout extends JFrame implements ActionListener {
     private JFrame frame = new JFrame("Monopoly Lugano");
 
     private JPanel panelCont = new JPanel();
-    private JPanel panelPregame = new  PanelPregame();
+    private JPanel panelPregame = new PanelPregame();
     private JPanel panelPlayers = new PanelPlayers();
     private JPanel panelMonopoly = new PanelMonopoly();
     private JPanel panelEnd = new PanelEnd();
@@ -30,6 +30,7 @@ public class CLayout extends JFrame implements ActionListener {
 
 
     public final static MyButton BUTTON_STYLE = new MyButton();
+
 
     public static final Color SFONDO = new Color(205,230,208,255);
     public static final Color MARRONE = new Color(149,84,54,255);

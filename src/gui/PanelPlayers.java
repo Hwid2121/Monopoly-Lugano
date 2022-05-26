@@ -2,6 +2,7 @@ package gui;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import java.awt.Insets;
 import java.awt.image.CropImageFilter;
@@ -37,6 +38,110 @@ import javax.swing.Box;
 import java.awt.image.BufferedImage;
 
 public class PanelPlayers extends JPanel {
+
+
+    private final Dimension PRF_SIZE_IMG = new Dimension(800, 800);
+    private final Dimension MIN_SIZE_IMG = new Dimension(200,200);
+
+    private final Dimension PFR_SIZE_BUTTON = new Dimension(200, 50);
+    private final Dimension MIN_SIZE_BUTTON = new Dimension(200, 50);
+    private final Dimension PFR_SIZE_TEXT = new Dimension(200, 50);
+    private final Dimension MIN_SIZE_TEXT = new Dimension(200, 50);
+
+    
+
+    public PanelPlayers() {
+
+        JButton jb1 = new JButton("Choose how many players for this match:");
+        JButton jb2 = new JButton("Let's Play!");
+        JButton jb3 = new JButton("Back to the main Menu");
+
+        jb3.addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+            PanelPregame menubutton = new PanelPregame();
+            }
+        });
+
+        jb2.addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                PanelMonopoly playbutton = new PanelMonopoly();
+
+            }
+        });
+
+     
+        
+        BoxLayout laybut = new BoxLayout(this, BoxLayout.Y_AXIS);
+        // GridLayout laybut = new GridLayout(3,1);
+        setLayout(laybut);
+        
+        
+
+        ImageIcon image = new ImageIcon("src/gui/images/monopoly.png");
+        Image img = image.getImage();
+        // Image img = image.getImage();
+
+        
+        image = new ImageIcon(img);
+        JLabel imagelabel = new JLabel(image);
+
+        imagelabel.setMinimumSize(MIN_SIZE_IMG);
+        imagelabel.setPreferredSize(PRF_SIZE_IMG);
+
+
+        jb1.setMinimumSize(MIN_SIZE_BUTTON);
+        jb1.setPreferredSize(PFR_SIZE_BUTTON);
+
+        jb2.setMinimumSize(MIN_SIZE_BUTTON);
+        jb2.setPreferredSize(PFR_SIZE_BUTTON);
+        
+
+
+        jb3.setMinimumSize(MIN_SIZE_BUTTON);
+        jb3.setPreferredSize(PFR_SIZE_BUTTON);
+
+
+        
+
+        jb1.setUI(CLayout.BUTTON_STYLE);
+        jb2.setUI(CLayout.BUTTON_STYLE);
+        jb3.setUI(CLayout.BUTTON_STYLE);
+
+
+
+        add(imagelabel);
+        add(Box.createVerticalGlue());
+        add(jb1);
+        add(Box.createRigidArea(new Dimension(0,50)));
+        add(jb2);
+        add(Box.createRigidArea(new Dimension(0,50)));
+        add(jb3);
+        add(Box.createRigidArea(new Dimension(0,400)));
+
+        
+        imagelabel.setAlignmentX(CENTER_ALIGNMENT);
+        jb1.setAlignmentX(CENTER_ALIGNMENT);
+        jb2.setAlignmentX(CENTER_ALIGNMENT);
+        jb3.setAlignmentX(CENTER_ALIGNMENT);
+
+
+        setBackground(CLayout.SFONDO);
+
+    }
+
+    @Override
+    protected void paintComponent(Graphics g) {
+        super.paintComponent(g);
+        g.setColor(Color.RED);
+        g.drawRect(0, 0, getWidth() - 1, getHeight() - 1);
+        // g.drawImage(image, 0, 0, this); // see javadoc for more info on the parameters            
+    
+
+    }
 
 
     

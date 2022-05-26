@@ -66,6 +66,7 @@ public class PanelPregame extends JPanel  {
 
             @Override
             public void actionPerformed(ActionEvent e) {
+                PanelRules rulesbutton = new PanelRules();
             
 
             }
@@ -75,7 +76,7 @@ public class PanelPregame extends JPanel  {
 
             @Override
             public void actionPerformed(ActionEvent e) {
-            PanelRules rulesbutton = new PanelRules();
+            PanelPlayers playbutton = new PanelPlayers();
             }
 
         });
