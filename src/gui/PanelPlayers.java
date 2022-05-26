@@ -38,4 +38,34 @@ import java.awt.image.BufferedImage;
 
 public class PanelPlayers extends JPanel {
 
+
+    private BorderLayout mainlayout = new BorderLayout();
+    private JPanel mainPanel = new JPanel();
+
+
+    public PanelPlayers(){
+
+    
+    mainPanel.setLayout(mainlayout);
+    mainPanel.setBackground(Color.BLUE);
+
+    JButton button = new JButton("Button 1 (PAGE END)");
+    mainPanel.add(button, BorderLayout.PAGE_END);
+
+    button = new JButton("Button 2 (CENTER)");
+    button.setPreferredSize(new Dimension(200, 100));
+    mainPanel.add(button, BorderLayout.CENTER);
+
+
+
+    button = new JButton("5 (LINE_END)");
+    mainPanel.add(button, BorderLayout.LINE_END);
+
+
+    
+    mainPanel.setVisible(true);
+
+    }
+
+
 }

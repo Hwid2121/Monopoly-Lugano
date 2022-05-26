@@ -36,7 +36,7 @@ import javax.imageio.ImageIO;
 import javax.swing.Box;
 import java.awt.image.BufferedImage;
 
-public class PanelPregame extends JPanel {
+public class PanelPregame extends JPanel  {
 
     private final Dimension PRF_SIZE_IMG = new Dimension(800, 800);
     private final Dimension MIN_SIZE_IMG = new Dimension(200,200);
@@ -66,7 +66,8 @@ public class PanelPregame extends JPanel {
 
             @Override
             public void actionPerformed(ActionEvent e) {
-            PanelPlayers playbutton = new PanelPlayers();
+            
+
             }
         });
 
@@ -76,6 +77,7 @@ public class PanelPregame extends JPanel {
             public void actionPerformed(ActionEvent e) {
             PanelRules rulesbutton = new PanelRules();
             }
+
         });
 
         
@@ -102,6 +104,8 @@ public class PanelPregame extends JPanel {
 
         jb2.setMinimumSize(MIN_SIZE_BUTTON);
         jb2.setPreferredSize(PFR_SIZE_BUTTON);
+        
+
 
         jb3.setMinimumSize(MIN_SIZE_BUTTON);
         jb3.setPreferredSize(PFR_SIZE_BUTTON);
