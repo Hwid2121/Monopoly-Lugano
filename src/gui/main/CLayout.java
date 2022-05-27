@@ -1,9 +1,15 @@
-package gui;
+package gui.main;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+
+import gui.PanelEnd;
+import gui.PanelMonopoly;
+import gui.panels.PanelPlayers;
+import gui.panels.PanelPregame;
+import gui.pregame.PanelNickname;
 
 import java.awt.CardLayout;
 
@@ -17,7 +23,7 @@ public class CLayout extends JFrame implements ActionListener {
     private JFrame frame = new JFrame("Monopoly Lugano");
     private JPanel panelCont = new JPanel();
     private JPanel panelPregame = new PanelPregame(this);
-    private JPanel panelPlayers = new PanelPlayers(this);
+    // private JPanel panelPlayers = new PanelPlayers();
     private JPanel panelMonopoly = new PanelMonopoly();
     private JPanel panelEnd = new PanelEnd();
     private CardLayout mainFrame = new CardLayout();
@@ -36,9 +42,9 @@ public class CLayout extends JFrame implements ActionListener {
         frame.setExtendedState(JFrame.MAXIMIZED_BOTH);
 
         panelCont.add(panelPregame, "1");
-        panelCont.add(panelPlayers, "2");
-        panelCont.add(panelMonopoly, "3");
-        panelCont.add(panelEnd, "4");
+        
+        // panelCont.add(panelMonopoly, "3");
+        // panelCont.add(panelEnd, "4");
 
         mainFrame.show(panelCont, "1");
 
@@ -48,24 +54,19 @@ public class CLayout extends JFrame implements ActionListener {
 
     }
 
-    // public void nextPanel() {
-    // mainFrame.next(panelCont);
-    // mainFrame.show(panelCont, "2");
 
-    // }
-
-    public void swapView(String key) {
-        mainFrame.show(panelCont, key);
-        mainFrame.next(panelCont);
-    }
 
     public void switchCard() {
-        // CardLayout cardLayout = (CardLayout) panelCont.getLayout();
-        // cardLayout.show(panelCont, "2");
-        // cl.show(panelCont, "2");
+
+        
+        JPanel panelPlayers = new PanelPlayers();
+        panelCont.add(panelPlayers, "2");
+
         mainFrame.next(panelCont);
+        
 
     }
+
 
     @Override
     public void actionPerformed(ActionEvent arg0) {

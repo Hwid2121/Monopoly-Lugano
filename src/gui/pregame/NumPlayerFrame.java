@@ -1,7 +1,11 @@
-package gui;
+package gui.pregame;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+
+import gui.main.GameMain;
+import gui.panels.PanelPregame;
+
 import javax.swing.BoxLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;

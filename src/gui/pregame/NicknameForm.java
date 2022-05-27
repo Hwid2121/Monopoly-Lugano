@@ -1,4 +1,4 @@
-package gui;
+package gui.pregame;
 
 import javax.swing.JFrame;
 import javax.swing.JFrame;
@@ -22,6 +22,7 @@ import javax.swing.colorchooser.*;
 import javax.swing.plaf.ButtonUI;
 import javax.swing.text.LabelView;
 
+import gui.main.GameMain;
 import model.Monopoly;
 
 import java.awt.Color;

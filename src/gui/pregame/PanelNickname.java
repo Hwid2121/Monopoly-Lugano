@@ -1,4 +1,4 @@
-package gui;
+package gui.pregame;
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -22,6 +22,7 @@ import javax.swing.colorchooser.*;
 import javax.swing.plaf.ButtonUI;
 import javax.swing.plaf.ScrollBarUI;
 
+import gui.main.GameMain;
 import model.Monopoly;
 import model.Player;
 
@@ -43,24 +44,17 @@ import java.awt.Dimension;
 import javax.swing.BoxLayout;
 import javax.imageio.ImageIO;
 import javax.swing.Box;
-import java.awt.image.BufferedImage;
-import java.awt.Component;
-import javax.swing.JTextPane;
-import javax.swing.Popup;
-import javax.swing.PopupFactory;
-import javax.swing.Scrollable;
-
-import java.awt.TextField;
 
 public class PanelNickname extends JPanel {
 
-    private final int num;
+    private int num;
     private ArrayList<NicknameForm> playersList = new ArrayList<>();
 
     public PanelNickname() {
 
-        // num = GameMain.monopoly.getNumOfplayer();
-        num = 3;
+        System.out.println("Numero" +GameMain.monopoly.getNumOfplayer()  );
+        setNum();
+        
         BoxLayout layout = new BoxLayout(this, BoxLayout.PAGE_AXIS);
         setLayout(layout);
 
@@ -96,5 +90,7 @@ public class PanelNickname extends JPanel {
         });
 
     }
+
+
 
 }

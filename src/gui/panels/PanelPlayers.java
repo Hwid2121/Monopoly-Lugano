@@ -1,4 +1,4 @@
-package gui;
+package gui.panels;
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -21,6 +21,9 @@ import javax.swing.JComponent;
 import javax.swing.colorchooser.*;
 import javax.swing.plaf.ButtonUI;
 
+import gui.main.CLayout;
+import gui.main.GameMain;
+import gui.pregame.PanelNickname;
 import model.Monopoly;
 
 import java.awt.Color;
@@ -61,13 +64,13 @@ public class PanelPlayers extends JPanel implements ActionListener {
     private JTextField textField = new JTextField();
     private JButton button = new JButton("Submit");
 
-    private PanelNickname panelNick = new PanelNickname();
+    private static PanelNickname panelNick = new PanelNickname();
 
-    private CLayout parentFrame;
+    // private CLayout parentFrame;
 
-    public PanelPlayers(CLayout frame) {
+    public PanelPlayers() {
 
-        parentFrame = frame;
+        // parentFrame = frame;
 
         BoxLayout laybut = new BoxLayout(this, BoxLayout.Y_AXIS);
         setLayout(laybut);
@@ -118,5 +121,6 @@ public class PanelPlayers extends JPanel implements ActionListener {
     public void actionPerformed(ActionEvent e) {
 
     }
+
 
 }

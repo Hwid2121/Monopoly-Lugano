@@ -42,7 +42,7 @@ import javax.swing.SpringLayout;
 
 public class PanelMonopoly extends JPanel {
 
-    PanelMonopoly() {
+    public PanelMonopoly() {
 
         JButton button1 = new JButton("NORTH");
         JButton button2 = new JButton("END-LINE");

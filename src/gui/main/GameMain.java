@@ -1,4 +1,4 @@
-package gui;
+package gui.main;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -7,6 +7,9 @@ import javax.swing.JPanel;
 import java.awt.CardLayout;
 import javax.swing.JButton;
 import javax.swing.colorchooser.*;
+
+import gui.MyButton;
+
 import java.awt.Color;
 import javax.swing.SwingUtilities;
 import java.awt.geom.*;
@@ -35,7 +38,7 @@ public class GameMain {
     public static final Color BLU = new Color(0, 114, 187, 255);
     public static final Color CREMISI = new Color(192, 43, 77, 255);
 
-    static Monopoly monopoly = new Monopoly();
+    public static Monopoly monopoly = new Monopoly();
 
     private static CLayout clayout;
 

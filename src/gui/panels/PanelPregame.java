@@ -1,4 +1,4 @@
-package gui;
+package gui.panels;
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -13,11 +13,16 @@ import java.awt.BorderLayout;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.WindowListener;
 
 import javax.swing.JButton;
 import javax.swing.JComponent;
 import javax.swing.colorchooser.*;
 import javax.swing.plaf.ButtonUI;
+
+import gui.main.CLayout;
+import gui.main.GameMain;
+import gui.pregame.NumPlayerFrame;
 
 import java.awt.Color;
 import javax.swing.SwingUtilities;
@@ -65,24 +70,41 @@ public class PanelPregame extends JPanel {
             }
         });
 
-        // jb2.addActionListener(new ActionListener() {
 
-        // @Override
-        // public void actionPerformed(ActionEvent e) {
-        // PanelRules rulesbutton = new PanelRules();
-
-        // }
-        // });
 
         final JFrame numPlayeFrame = new NumPlayerFrame(this);
-
+        numPlayeFrame.setLocationRelativeTo(null);
         jb1.addActionListener(new ActionListener() {
 
             @Override
             public void actionPerformed(ActionEvent e) {
 
                 numPlayeFrame.setVisible(true);
-                // swapPanel();
+                // getRootPane().setGlassPane(new JPanel(){
+                //     @Override
+                //     public void paintComponent(Graphics g) {
+                //         g.setColor(new Color(0,0,0,125));
+                //         g.fillRect(0, 0, getWidth(), getHeight());
+                //     }
+                // });
+                // getRootPane().getGlassPane().setVisible(true);
+                // numPlayeFrame.addWindowListener(new WindowListener() {
+                //     public void windowOpened(WindowEvent e) {
+                //     }
+                //     public void windowClosing(WindowEvent e) {
+                //         getRootPane().
+                //     }
+                //     public void windowClosed(WindowEvent e) {
+                //     }
+                //     public void windowIconified(WindowEvent e) {
+                //     }
+                //     public void windowDeiconified(WindowEvent e) {
+                //     }
+                //     public void windowActivated(WindowEvent e) {
+                //     }
+                //     public void windowDeactivated(WindowEvent e) {
+                //     }
+                // });
 
             }
 
@@ -149,6 +171,7 @@ public class PanelPregame extends JPanel {
     public void swapPanel() {
 
         parentFrame.switchCard();
+        
 
     }
 

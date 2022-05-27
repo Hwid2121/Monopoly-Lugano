@@ -32,6 +32,13 @@ public class Main {
     private int skip = 0;
     private int turn = 0;
 
+
+    /**
+     * preGameStatus is the method that manage the pregame of Monopoly.
+     * Here will be asked to insert the numberOfPlayers  and then 
+     * creating the instance for each player.
+     * 
+     */
     public void preGameStatus() {
 
         System.out.println("How many players?");
@@ -72,12 +79,27 @@ public class Main {
         }
     }
 
+
+    /**
+     *  When a player is eliminated will be removed from the monopoly.
+     * And the turn will skip.
+     * @param player that play in that turn
+     * @param monopoly the main class where the game is strutured
+     *
+     */
     public void elimininationPLAYmain(Player player, Monopoly monopoly) {
         monopoly.playerEliminated(player);
         skip = 1;
     }
 
-    public void bankRuptPLAYmain(Player player, Monopoly monopoly) {
+    /**
+     *  Check if the player is under 0 chf of balance, if true then let the player to sell the properties
+     * to cover the debit. If not enough money then will be eliminated.
+     * Else will brake.
+     * @param player that play in that turn
+     * @param monopoly the main class where the game is strutured
+     *
+     */public void bankRuptPLAYmain(Player player, Monopoly monopoly) {
         System.out.println("You are in bankrupt, you do not have money");
         System.out.println("You must sell your properties till you balance is positive");
 
@@ -98,7 +120,13 @@ public class Main {
 
     }
 
-    public void cardsPLAYmain(Player player, Monopoly monopoly) {
+    /**
+     * When a player is in the square bonus where picking a card then will activate cardsPLAYmain
+     * to let the player take the card and active its effect.
+     * @param player that play in that turn
+     * @param monopoly the main class where the game is strutured
+     *
+     */public void cardsPLAYmain(Player player, Monopoly monopoly) {
 
         System.out.println("You gonna take a card \n that can be a bonus card or a malus card\n ");
         System.out.println("After the effect the card the pass will be automatically");
@@ -132,7 +160,13 @@ public class Main {
 
     }
 
-    public void gotoPLAYmain(Player player, Monopoly monopoly) {
+    /**
+     *  When a player reach the square gotoPLAYmain will be obbliged to change position
+     * and will be moved to the position 30 where is the jail.
+     * @param player that play in that turn
+     * @param monopoly the main class where the game is strutured
+     *
+     */public void gotoPLAYmain(Player player, Monopoly monopoly) {
         System.out.println("Go to the jail! \n");
 
         player.movePosition(30);
@@ -141,7 +175,16 @@ public class Main {
 
     }
 
-    public void bonusPLAYmain(Player player, Monopoly monopoly) {
+    
+    
+    
+    /**
+     *  When a player reach a bonusSquare then will activate the effect of the square
+     * if the player go under 0 chf then bankrupt will be activated.
+     * @param player that play in that turn
+     * @param monopoly the main class where the game is strutured
+     *
+     */public void bonusPLAYmain(Player player, Monopoly monopoly) {
 
         int price = monopoly.getTable().getSquareBonusPrice(player);
 
@@ -163,7 +206,16 @@ public class Main {
 
     }
 
-    public void jailPLAYmain(Player player, Monopoly monopoly) {
+    /**
+     *  When a player reach the jail Square will be in prison and he can escape only if:
+     * - pay 55 chf
+     * - using the card "free from jail" (if possesed)
+     * - trying to do a perfect pair
+     * 
+     * @param player that play in that turn
+     * @param monopoly the main class where the game is strutured
+     *
+     */public void jailPLAYmain(Player player, Monopoly monopoly) {
 
         if (player.getTurnsInJail() == -1) {
             player.setJail(JailSquare.getDays());
@@ -285,6 +337,18 @@ public class Main {
 
     }
 
+    
+    
+    
+    
+    
+    /**
+     *  When a player reach the emptySquaer will not do nothing and will not be allowed to do 
+     * some actions.
+     * @param player that play in that turn
+     * @param monopoly the main class where the game is strutured
+     *
+     */
     public void emptyPLAYmain(Player player, Monopoly monopoly) {
         System.out.println("This is an empty square \n You cannot do nothing here");
         System.out.println("[p] (to finish the turn) ");
@@ -317,6 +381,24 @@ public class Main {
 
     }
 
+    /**
+     *  When a player reach a propertySQuare could have some comands: 
+     *  - [b] (for buying the property)
+     * - [s] (to sell this property)
+     * - [m] (to show your balance)
+     * -  [p] (to finish the turn) 
+     * - [i] (for all info of the player)
+     * - [c] (for show the situation of the other properties of same color)
+     * - [h] (for buy house, hotel and more info)
+     * - [o] (for see the infos for other players)
+     * - [exit] (for close the game)
+     * 
+     * if the square is owned by another player, then the player will have to pay the rent.
+     * 
+     * @param player that play in that turn
+     * @param monopoly the main class where the game is strutured
+     *
+     */
     public void PropertySquarePLAY(Player player, Monopoly monopoly) {
         int position = monopoly.getPLayer(turn).getPosition();
 
@@ -423,7 +505,16 @@ public class Main {
 
     }
 
+    
+    
+    /**
+     *  A player can buy houses and Hotel if own the propertySquare.
+     * @param player that play in that turn
+     * @param monopoly the main class where the game is strutured
+     *
+     */
     public void hotelBUY(Player player, Monopoly monopoly) {
+        
 
         System.out.println(
                 "Price for build an house: " + monopoly.getTable().getHouse(player.getPosition()).getPrice(6) + " chf");
@@ -500,7 +591,16 @@ public class Main {
 
     }
 
-    public void propertySquareBUILD(Player player, Monopoly monopoly, int num) {
+    
+    
+    
+    
+    /**
+     *  Build in the property of the player the amount of hotel or houses  requested.
+     * @param player that play in that turn
+     * @param monopoly the main class where the game is strutured
+     *
+     */public void propertySquareBUILD(Player player, Monopoly monopoly, int num) {
 
         int position = player.getPosition();
 
@@ -553,7 +653,17 @@ public class Main {
 
     }
 
-    public void PropertySquareBUY(Player player, Monopoly monopoly) {
+    
+    
+    
+    
+    /**
+     *  When the player has enough money and the square is not own by another 
+     * player can buy the porpertysquare.
+     * @param player that play in that turn
+     * @param monopoly the main class where the game is strutured
+     *
+     */public void PropertySquareBUY(Player player, Monopoly monopoly) {
 
         int position = player.getPosition();
         String inp;
@@ -592,6 +702,15 @@ public class Main {
 
     }
 
+
+
+    /**
+     *  Check if the propertySquare own by the player 
+     * @param player that play in that turn
+     * @param monopoly the main class where the game is strutured
+     * @param color the color of the square where the player is
+     *
+     */
     public void checkMonopolyProperty(Player player, Monopoly monopoly, String color) {
 
         if (monopoly.getTable().getMonopolyColor(player)) {
