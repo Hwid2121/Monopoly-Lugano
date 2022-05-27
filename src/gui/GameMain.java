@@ -56,14 +56,13 @@ public class GameMain {
 
     }
 
-    public static void setplayer(int n){
-        monopoly.setNumOfPlayers(n);
-    }
 
-    public static void close(JFrame frame){
-        frame.dispose();
-    }
+
+    // public static void close(JFrame frame){
+    //     frame.dispose();
+    // }
     
+
 
 
 }

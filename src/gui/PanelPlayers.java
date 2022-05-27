@@ -2,6 +2,7 @@ package gui;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JScrollPane;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import java.awt.Insets;
@@ -42,6 +43,7 @@ import java.awt.Component;
 import javax.swing.JTextPane;
 import javax.swing.Popup;
 import javax.swing.PopupFactory;
+import javax.swing.ScrollPaneLayout;
 
 import java.awt.TextField;
 
@@ -58,6 +60,8 @@ public class PanelPlayers extends JPanel implements ActionListener {
 
     private JTextField textField = new JTextField();
     private JButton button = new JButton("Submit");
+
+    private PanelNickname panelNick = new PanelNickname();
 
     public PanelPlayers( ) {
 
@@ -79,18 +83,9 @@ public class PanelPlayers extends JPanel implements ActionListener {
         imagelabel.setPreferredSize(PRF_SIZE_IMG);
 
 
-        // jb1.setMinimumSize(MIN_SIZE_BUTTON);
-        // jb1.setPreferredSize(PFR_SIZE_BUTTON);
-
-
-        
-
-        // jb1.setUI(GameMain.BUTTON_STYLE);
-        // jb1.setBorderPainted(false);
-
-
-
         add(imagelabel);
+
+
         add(Box.createVerticalGlue());
         // add(jb1);
         add(Box.createRigidArea(new Dimension(0,70)));
@@ -105,11 +100,7 @@ public class PanelPlayers extends JPanel implements ActionListener {
         add(rigidArea);
         
 
-
-        button.addActionListener(this);
-        button.setUI(GameMain.BUTTON_STYLE);
-
-
+        add(panelNick);
         
         Component rigidArea_2 = Box.createRigidArea(new Dimension(0,40));
         add(rigidArea_2);

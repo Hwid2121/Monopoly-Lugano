@@ -100,7 +100,7 @@ public class FormPanel extends JPanel{
                     
                     int num =Integer.parseInt(s);
                     System.out.println("An integer");
-                    GameMain.setplayer(num);
+                    GameMain.monopoly.setNumOfPlayers(num);
                     frame.dispose();
 
                     
