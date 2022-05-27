@@ -169,15 +169,17 @@ Then open `target/site/index.html` and find the JaCoCo report.
 
 ## TUI's Key Aspects Screenshots
 
-![.](https://github.com/usi-pf2-2022/project-monopoly-dinasty/blob/main/src/gui/images/screen1readmetui.png)
 * Starting the game choosing the number and the name of the players, then let's throw the dice for the first time!
-![.](https://github.com/usi-pf2-2022/project-monopoly-dinasty/blob/main/src/gui/images/screen3readmetui.png)
+![.](https://github.com/usi-pf2-2022/project-monopoly-dinasty/blob/main/src/gui/images/screen1readmetui.png)
 * Let's buy a property square!
-![.](https://github.com/usi-pf2-2022/project-monopoly-dinasty/blob/main/src/gui/images/screen4readmetui.png)
+![.](https://github.com/usi-pf2-2022/project-monopoly-dinasty/blob/main/src/gui/images/screen3readmetui.png)
 * Let's sell a property square!
-![.](https://github.com/usi-pf2-2022/project-monopoly-dinasty/blob/main/src/gui/images/screen5readmetui.png)
+![.](https://github.com/usi-pf2-2022/project-monopoly-dinasty/blob/main/src/gui/images/screen4readmetui.png)
 * Showing current player info's.
-![.](https://github.com/usi-pf2-2022/project-monopoly-dinasty/blob/main/src/gui/images/screen6readmetui.png)
+![.](https://github.com/usi-pf2-2022/project-monopoly-dinasty/blob/main/src/gui/images/screen5readmetui.png)
 * Showing current player bank balance.
-![.](https://github.com/usi-pf2-2022/project-monopoly-dinasty/blob/main/src/gui/images/screen2readmetui.png)
+![.](https://github.com/usi-pf2-2022/project-monopoly-dinasty/blob/main/src/gui/images/screen6readmetui.png)
 * Showing other players info's
+![.](https://github.com/usi-pf2-2022/project-monopoly-dinasty/blob/main/src/gui/images/screen2readmetui.png)
+* Showing the situation of the other properties of the same colour.
+![.](https://github.com/usi-pf2-2022/project-monopoly-dinasty/blob/main/src/gui/images/screen7readmetui.png)
