@@ -32,8 +32,15 @@ public class Monopoly {
 
     }
 
+
+
     public void setNumOfPlayers(int n ){
         numOfPlayers = n;
+    }
+
+
+    public int getNumOfplayer(){
+        return numOfPlayers;
     }
 
     

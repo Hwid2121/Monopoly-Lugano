@@ -52,14 +52,18 @@ import java.awt.TextField;
 
 import model.*;
 
-public class FormPanel extends JPanel implements ActionListener{
+public class FormPanel extends JPanel{
 
 
+    private JButton button;
+    private JTextField textField;
+    private NumPlayerFrame frame;
+    
+    public FormPanel(NumPlayerFrame frameA){
 
-    JButton button;
-    JTextField textField;
-    public FormPanel(){
-
+        super();
+        this.frame = frameA;
+        
         FlowLayout lay = new FlowLayout();
         setLayout(lay);
         setComponentOrientation(ComponentOrientation.LEFT_TO_RIGHT);
@@ -71,6 +75,8 @@ public class FormPanel extends JPanel implements ActionListener{
         
         textField = new JTextField();
 
+        
+
 
         textField.setPreferredSize(new Dimension(50,40));
         textField.setAlignmentX(CENTER_ALIGNMENT);
@@ -81,23 +87,51 @@ public class FormPanel extends JPanel implements ActionListener{
         setVisible(true);
 
 
-    }
 
-    @Override
-    public void actionPerformed(ActionEvent e) {
-
-                if(e.getSource() == button){
+        button.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
 
 
+                System.out.println("number: " + textField.getText());
 
-                    button.setEnabled(false);
+                String s = textField.getText();
+                try {
+                    
+                    int num =Integer.parseInt(s);
+                    System.out.println("An integer");
+                    GameMain.setplayer(num);
+                    frame.dispose();
+
+                    
+                    
+                    
+                      
+
+
+
                     
 
+                    
+               }
+               catch (NumberFormatException error) {
+                    //Not an integer
+               }
+                 
+            }
+        });
 
 
-                }
         
-        
+
+
     }
+
+    public void closeFrame(){
+        SwingUtilities.getWindowAncestor(this).dispose(); 
+    }
+        
+        
+    
 
 }

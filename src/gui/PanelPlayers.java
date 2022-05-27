@@ -19,6 +19,8 @@ import javax.swing.JComponent;
 import javax.swing.colorchooser.*;
 import javax.swing.plaf.ButtonUI;
 
+import model.Monopoly;
+
 import java.awt.Color;
 import javax.swing.SwingUtilities;
 
@@ -57,12 +59,9 @@ public class PanelPlayers extends JPanel implements ActionListener {
     private JTextField textField = new JTextField();
     private JButton button = new JButton("Submit");
 
-    public PanelPlayers() {
+    public PanelPlayers( ) {
 
-        JButton jb1 = new JButton("Choose how many players for this match:");
 
-        JFrame numPlayer = new NumPlayerFrame();
-     
         
         BoxLayout laybut = new BoxLayout(this, BoxLayout.Y_AXIS);
         setLayout(laybut);
@@ -72,9 +71,7 @@ public class PanelPlayers extends JPanel implements ActionListener {
         ImageIcon image = new ImageIcon("src/gui/images/monopoly.png");
         Image img = image.getImage();
         
-        
 
-        
         image = new ImageIcon(img);
         JLabel imagelabel = new JLabel(image);
 
@@ -82,41 +79,41 @@ public class PanelPlayers extends JPanel implements ActionListener {
         imagelabel.setPreferredSize(PRF_SIZE_IMG);
 
 
-        jb1.setMinimumSize(MIN_SIZE_BUTTON);
-        jb1.setPreferredSize(PFR_SIZE_BUTTON);
+        // jb1.setMinimumSize(MIN_SIZE_BUTTON);
+        // jb1.setPreferredSize(PFR_SIZE_BUTTON);
 
 
         
 
-        jb1.setUI(CLayout.BUTTON_STYLE);
-        jb1.setBorderPainted(false);
+        // jb1.setUI(GameMain.BUTTON_STYLE);
+        // jb1.setBorderPainted(false);
 
 
 
         add(imagelabel);
         add(Box.createVerticalGlue());
-        add(jb1);
-        add(Box.createRigidArea(new Dimension(0,50)));
+        // add(jb1);
+        add(Box.createRigidArea(new Dimension(0,70)));
 
         
         imagelabel.setAlignmentX(CENTER_ALIGNMENT);
-        jb1.setAlignmentX(CENTER_ALIGNMENT);
+        // jb1.setAlignmentX(CENTER_ALIGNMENT);
 
 
-        setBackground(CLayout.SFONDO);
+        setBackground(GameMain.SFONDO);
         Component rigidArea = Box.createRigidArea(new Dimension(0,50));
         add(rigidArea);
         
 
 
         button.addActionListener(this);
-        button.setUI(CLayout.BUTTON_STYLE);
+        button.setUI(GameMain.BUTTON_STYLE);
 
 
-        add(button);
+        
         Component rigidArea_2 = Box.createRigidArea(new Dimension(0,40));
         add(rigidArea_2);
-        add(textField);
+        
 
         Component rigidArea_1 = Box.createRigidArea(new Dimension(0,400));
         add(rigidArea_1);
@@ -138,12 +135,7 @@ public class PanelPlayers extends JPanel implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        if(e.getSource() == button) {
-            
-            System.out.println("num " + textField.getText() );
-            
-            
-        }
+ 
         
     }
 

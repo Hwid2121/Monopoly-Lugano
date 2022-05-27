@@ -22,7 +22,6 @@ import model.*;
 public class CLayout extends JFrame implements ActionListener {
 
     private JFrame frame = new JFrame("Monopoly Lugano");
-
     private JPanel panelCont = new JPanel();
     private JPanel panelPregame = new PanelPregame();
     private JPanel panelPlayers = new PanelPlayers();
@@ -37,7 +36,11 @@ public class CLayout extends JFrame implements ActionListener {
 
     
 
-    public CLayout() {
+    public CLayout( ) {
+
+        
+
+
         panelCont.setLayout(mainFrame);
         
 
@@ -59,7 +62,7 @@ public class CLayout extends JFrame implements ActionListener {
 
 
 
-        mainFrame.show(panelCont, "1");
+        mainFrame.show(panelCont, "2");
 
 
 
@@ -75,7 +78,7 @@ public class CLayout extends JFrame implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent arg0) {
-        mainFrame.next(panelCont);
+        // mainFrame.next(panelCont);
     }
     
 

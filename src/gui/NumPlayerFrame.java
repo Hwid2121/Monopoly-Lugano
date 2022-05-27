@@ -48,13 +48,17 @@ import javax.swing.Popup;
 import javax.swing.PopupFactory;
 
 import java.awt.TextField;
+import model.*;
 
-public class NumPlayerFrame  extends JFrame  {
+public class NumPlayerFrame  extends JFrame  implements ActionListener  {
 
+    private JPanel panel = new FormPanel(this);
 
-    private JPanel panel = new FormPanel();
-    public NumPlayerFrame(){
+    public NumPlayerFrame( ){
         
+
+
+        super();
         setVisible(false);
         setPreferredSize(new Dimension(500, 150));
         setResizable(false);
@@ -72,7 +76,9 @@ public class NumPlayerFrame  extends JFrame  {
         label.setForeground(Color.WHITE);
         label.setFont(new Font ("SansSerif", Font.BOLD, 22));
         label.setSize(new Dimension(40,40));
-
+        
+        
+        
         
 
         add(label);
@@ -81,6 +87,26 @@ public class NumPlayerFrame  extends JFrame  {
         pack();
         setVisible(false);
 
+
+        
+
+        
+
+        
+
     }
+
+    @Override
+    public void actionPerformed(ActionEvent arg0) {
+
+        dispose();
+    }
+
+    
+
+
+
+
+
 
 }

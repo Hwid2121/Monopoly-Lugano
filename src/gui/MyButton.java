@@ -42,7 +42,7 @@ public class MyButton extends BasicButtonUI {
         
         b.setFont(courier);
         
-        b.setForeground(CLayout.CREMISI);
+        b.setForeground(GameMain.CREMISI);
 
     
         

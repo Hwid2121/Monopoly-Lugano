@@ -35,6 +35,7 @@ import javax.swing.BoxLayout;
 import javax.imageio.ImageIO;
 import javax.swing.Box;
 import java.awt.image.BufferedImage;
+import model.*;
 
 public class PanelPregame extends JPanel  {
 
@@ -47,7 +48,7 @@ public class PanelPregame extends JPanel  {
 
     
 
-    public PanelPregame() {
+    public PanelPregame( ) {
 
         JButton jb1 = new JButton("Play!");
         // JButton jb2 = new JButton("Rules");
@@ -72,11 +73,13 @@ public class PanelPregame extends JPanel  {
         //     }
         // });
 
+        final JFrame numPlayeFrame = new NumPlayerFrame();
+
         jb1.addActionListener(new ActionListener() {
 
             @Override
             public void actionPerformed(ActionEvent e) {
-                JFrame numPlayeFrame = new NumPlayerFrame();
+                
 
                 numPlayeFrame.setVisible(true);
 

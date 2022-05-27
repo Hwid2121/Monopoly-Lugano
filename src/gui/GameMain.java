@@ -39,12 +39,15 @@ public class GameMain {
     public static final Color CREMISI = new Color (192,43,77,255);
 
 
-    private Monopoly monopoly = new Monopoly();
+    static Monopoly monopoly = new Monopoly();
 
     public GameMain(){
 
 
+
+
         new CLayout();
+        
         
 
 
@@ -52,6 +55,15 @@ public class GameMain {
 
 
     }
+
+    public static void setplayer(int n){
+        monopoly.setNumOfPlayers(n);
+    }
+
+    public static void close(JFrame frame){
+        frame.dispose();
+    }
+    
 
 
 }
