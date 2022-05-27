@@ -3,45 +3,23 @@ package gui.panels;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.SwingConstants;
-import java.awt.Insets;
-import java.awt.image.CropImageFilter;
-import java.awt.image.FilteredImageSource;
-import java.awt.CardLayout;
 import javax.swing.BoxLayout;
-import java.awt.BorderLayout;
-import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.WindowListener;
 
 import javax.swing.JButton;
-import javax.swing.JComponent;
-import javax.swing.colorchooser.*;
-import javax.swing.plaf.ButtonUI;
 
 import gui.main.CLayout;
 import gui.main.GameMain;
 import gui.pregame.NumPlayerFrame;
 
 import java.awt.Color;
-import javax.swing.SwingUtilities;
 
-import java.awt.event.ActionEvent;
-import java.awt.GridLayout;
 import java.awt.Image;
-import java.awt.Insets;
 import java.awt.Graphics;
 import javax.swing.ImageIcon;
-import javax.swing.border.Border;
-import javax.swing.border.EmptyBorder;
-import java.io.*;
 import java.awt.Dimension;
-import javax.swing.BoxLayout;
-import javax.imageio.ImageIO;
 import javax.swing.Box;
-import java.awt.image.BufferedImage;
-import model.*;
 
 public class PanelPregame extends JPanel {
 
@@ -70,8 +48,6 @@ public class PanelPregame extends JPanel {
             }
         });
 
-
-
         final JFrame numPlayeFrame = new NumPlayerFrame(this);
         numPlayeFrame.setLocationRelativeTo(null);
         jb1.addActionListener(new ActionListener() {
@@ -81,29 +57,29 @@ public class PanelPregame extends JPanel {
 
                 numPlayeFrame.setVisible(true);
                 // getRootPane().setGlassPane(new JPanel(){
-                //     @Override
-                //     public void paintComponent(Graphics g) {
-                //         g.setColor(new Color(0,0,0,125));
-                //         g.fillRect(0, 0, getWidth(), getHeight());
-                //     }
+                // @Override
+                // public void paintComponent(Graphics g) {
+                // g.setColor(new Color(0,0,0,125));
+                // g.fillRect(0, 0, getWidth(), getHeight());
+                // }
                 // });
                 // getRootPane().getGlassPane().setVisible(true);
                 // numPlayeFrame.addWindowListener(new WindowListener() {
-                //     public void windowOpened(WindowEvent e) {
-                //     }
-                //     public void windowClosing(WindowEvent e) {
-                //         getRootPane().
-                //     }
-                //     public void windowClosed(WindowEvent e) {
-                //     }
-                //     public void windowIconified(WindowEvent e) {
-                //     }
-                //     public void windowDeiconified(WindowEvent e) {
-                //     }
-                //     public void windowActivated(WindowEvent e) {
-                //     }
-                //     public void windowDeactivated(WindowEvent e) {
-                //     }
+                // public void windowOpened(WindowEvent e) {
+                // }
+                // public void windowClosing(WindowEvent e) {
+                // getRootPane().
+                // }
+                // public void windowClosed(WindowEvent e) {
+                // }
+                // public void windowIconified(WindowEvent e) {
+                // }
+                // public void windowDeiconified(WindowEvent e) {
+                // }
+                // public void windowActivated(WindowEvent e) {
+                // }
+                // public void windowDeactivated(WindowEvent e) {
+                // }
                 // });
 
             }
@@ -171,10 +147,7 @@ public class PanelPregame extends JPanel {
     public void swapPanel() {
 
         parentFrame.switchCard();
-        
 
     }
-
-    
 
 }

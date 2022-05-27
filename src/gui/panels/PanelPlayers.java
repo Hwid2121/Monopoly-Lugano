@@ -1,68 +1,33 @@
 package gui.panels;
 
-import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.JScrollPane;
-import javax.swing.JTextField;
-import javax.swing.SwingConstants;
-import java.awt.Insets;
-import java.awt.image.CropImageFilter;
-import java.awt.image.FilteredImageSource;
-import java.awt.CardLayout;
+// import javax.swing.JTextField;
 import javax.swing.BoxLayout;
-import java.awt.BorderLayout;
-import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import javax.swing.JButton;
-import javax.swing.JComponent;
-import javax.swing.colorchooser.*;
-import javax.swing.plaf.ButtonUI;
-
+// import javax.swing.JButton;
 import gui.main.CLayout;
 import gui.main.GameMain;
 import gui.pregame.PanelNickname;
-import model.Monopoly;
-
 import java.awt.Color;
-import javax.swing.SwingUtilities;
-
-import java.awt.event.ActionEvent;
-import java.awt.GridLayout;
 import java.awt.Image;
-import java.awt.Insets;
 import java.awt.Graphics;
 import javax.swing.ImageIcon;
-import javax.swing.border.Border;
-import javax.swing.border.EmptyBorder;
-import java.io.*;
 import java.awt.Dimension;
-import javax.swing.BoxLayout;
-import javax.imageio.ImageIO;
 import javax.swing.Box;
-import java.awt.image.BufferedImage;
 import java.awt.Component;
-import javax.swing.JTextPane;
-import javax.swing.Popup;
-import javax.swing.PopupFactory;
-import javax.swing.ScrollPaneLayout;
 
-import java.awt.TextField;
 
 public class PanelPlayers extends JPanel implements ActionListener {
 
     private final Dimension PRF_SIZE_IMG = new Dimension(800, 800);
     private final Dimension MIN_SIZE_IMG = new Dimension(200, 200);
 
-    private final Dimension PFR_SIZE_BUTTON = new Dimension(200, 50);
-    private final Dimension MIN_SIZE_BUTTON = new Dimension(200, 50);
-    private final Dimension PFR_SIZE_TEXT = new Dimension(200, 50);
-    private final Dimension MIN_SIZE_TEXT = new Dimension(200, 50);
 
-    private JTextField textField = new JTextField();
-    private JButton button = new JButton("Submit");
+    // private JTextField textField = new JTextField();
+    // private JButton button = new JButton("Submit");
 
     private PanelNickname panelNick = new PanelNickname(this);
 
