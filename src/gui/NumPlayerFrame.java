@@ -52,13 +52,17 @@ import model.*;
 
 public class NumPlayerFrame  extends JFrame  implements ActionListener  {
 
-    private JPanel panel = new FormPanel(this);
+    
 
-    public NumPlayerFrame( ){
+    private PanelPregame parentPan;
+    
+
+    public NumPlayerFrame(PanelPregame parentPanel ){
         
+        parentPan = parentPanel;
+        JPanel panel = new FormPanel(parentPan, this);
 
-
-        super();
+        
         setVisible(false);
         setPreferredSize(new Dimension(500, 150));
         setResizable(false);
@@ -87,7 +91,6 @@ public class NumPlayerFrame  extends JFrame  implements ActionListener  {
         pack();
         setVisible(false);
 
-
         
 
         
@@ -98,8 +101,17 @@ public class NumPlayerFrame  extends JFrame  implements ActionListener  {
 
     @Override
     public void actionPerformed(ActionEvent arg0) {
-
+        
         dispose();
+        
+        
+        // GameMain.next();
+       
+        
+        
+
+
+        
     }
 
     

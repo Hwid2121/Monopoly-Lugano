@@ -57,12 +57,14 @@ public class FormPanel extends JPanel{
 
     private JButton button;
     private JTextField textField;
-    private NumPlayerFrame frame;
+    final private NumPlayerFrame framea;
+    final private PanelPregame frameb;
     
-    public FormPanel(NumPlayerFrame frameA){
+    public FormPanel(PanelPregame frameB, NumPlayerFrame frameA){
 
         super();
-        this.frame = frameA;
+        this.frameb = frameB;
+        this.framea = frameA;
         
         FlowLayout lay = new FlowLayout();
         setLayout(lay);
@@ -101,7 +103,10 @@ public class FormPanel extends JPanel{
                     int num =Integer.parseInt(s);
                     System.out.println("An integer");
                     GameMain.monopoly.setNumOfPlayers(num);
-                    frame.dispose();
+                    framea.dispose();
+                    frameb.swapPanel();
+
+                    
 
                     
                     

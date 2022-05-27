@@ -63,9 +63,11 @@ public class PanelPlayers extends JPanel implements ActionListener {
 
     private PanelNickname panelNick = new PanelNickname();
 
-    public PanelPlayers( ) {
+    private CLayout parentFrame;
 
+    public PanelPlayers(CLayout frame ) {
 
+        parentFrame = frame;
         
         BoxLayout laybut = new BoxLayout(this, BoxLayout.Y_AXIS);
         setLayout(laybut);

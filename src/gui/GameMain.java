@@ -41,12 +41,14 @@ public class GameMain {
 
     static Monopoly monopoly = new Monopoly();
 
+    private static CLayout  clayout;
+
     public GameMain(){
 
 
 
 
-        new CLayout();
+        clayout = new CLayout();
         
         
 
@@ -60,6 +62,11 @@ public class GameMain {
 
     // public static void close(JFrame frame){
     //     frame.dispose();
+    // }
+
+
+    // public static void next(){
+    //     clayout.nextPanel();
     // }
     
 

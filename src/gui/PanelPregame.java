@@ -37,8 +37,9 @@ import javax.swing.Box;
 import java.awt.image.BufferedImage;
 import model.*;
 
-public class PanelPregame extends JPanel  {
+public class PanelPregame extends JPanel {
 
+    
     private final Dimension PRF_SIZE_IMG = new Dimension(800, 800);
     private final Dimension MIN_SIZE_IMG = new Dimension(200,200);
 
@@ -47,8 +48,12 @@ public class PanelPregame extends JPanel  {
 
 
     
+    private CLayout parentFrame;
 
-    public PanelPregame( ) {
+
+    public PanelPregame(CLayout frame ) {
+
+        parentFrame = frame;
 
         JButton jb1 = new JButton("Play!");
         // JButton jb2 = new JButton("Rules");
@@ -73,7 +78,7 @@ public class PanelPregame extends JPanel  {
         //     }
         // });
 
-        final JFrame numPlayeFrame = new NumPlayerFrame();
+        final JFrame numPlayeFrame = new NumPlayerFrame(this);
 
         jb1.addActionListener(new ActionListener() {
 
@@ -82,6 +87,8 @@ public class PanelPregame extends JPanel  {
                 
 
                 numPlayeFrame.setVisible(true);
+                // swapPanel();
+                
 
 
 
@@ -148,14 +155,26 @@ public class PanelPregame extends JPanel  {
 
     }
 
+
+    // public void nextPanel()
+
     @Override
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
         g.setColor(Color.RED);
         g.drawRect(0, 0, getWidth() - 1, getHeight() - 1);
+
         // g.drawImage(image, 0, 0, this); // see javadoc for more info on the parameters            
     
 
+    }
+
+    public void swapPanel(){
+
+        parentFrame.switchCard();
+        
+
+        
     }
 
 }
