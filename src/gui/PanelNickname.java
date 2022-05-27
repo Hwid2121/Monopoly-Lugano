@@ -22,6 +22,7 @@ import javax.swing.plaf.ButtonUI;
 import javax.swing.plaf.ScrollBarUI;
 
 import model.Monopoly;
+import model.Player;
 
 import java.awt.Color;
 import javax.swing.SwingUtilities;
@@ -35,6 +36,7 @@ import javax.swing.ImageIcon;
 import javax.swing.border.Border;
 import javax.swing.border.EmptyBorder;
 import java.io.*;
+import java.util.ArrayList;
 import java.util.prefs.BackingStoreException;
 import java.awt.Dimension;
 import javax.swing.BoxLayout;
@@ -52,23 +54,34 @@ import java.awt.TextField;
 
 public class PanelNickname  extends JPanel{
 
+
+
+    private final int num;
+    private ArrayList<NicknameForm> playersList = new ArrayList<>();
+
     public PanelNickname (){
 
-        // int num = GameMain.monopoly.getNumOfplayer();
-        int num = 10;
+        //  num = GameMain.monopoly.getNumOfplayer();
+        num = 3;
         BoxLayout layout = new BoxLayout(this, BoxLayout.PAGE_AXIS);
         setLayout(layout);
         
 
 
         for(int i=0; i< num; i++){
-            add(new NicknameForm(i));
+            NicknameForm temp = new NicknameForm(i);
+            add(temp);
+            playersList.add(temp);
             add(Box.createRigidArea(new Dimension(10, 30)));
         }
 
+
+        
+
+
         
             
-
+   
 
         JButton button = new JButton("Confirm");
         add(Box.createRigidArea(new Dimension(50, 50)));
@@ -79,7 +92,26 @@ public class PanelNickname  extends JPanel{
         button.setMinimumSize(new Dimension(120,60));
         // button.setBackground(GameMain.);
         setVisible(true);
+
+        button.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+                int i=0;
+                for(NicknameForm x: playersList){
+                    GameMain.monopoly.addPlayer(new Player(x.getFieldText()));
+                    System.out.println(GameMain.monopoly.getPLayer(i).getNickname());
+                    i++;
+                }
+
+                  
+            }
+        });
+
+        
         
     }
+
+    
 
 }

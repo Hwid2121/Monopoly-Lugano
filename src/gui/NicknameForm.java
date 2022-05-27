@@ -101,9 +101,10 @@ public class NicknameForm  extends JPanel {
 
         
 
+    }
 
-        
-
+    public String getFieldText() {
+        return this.textField.getText();
     }
 
 }
