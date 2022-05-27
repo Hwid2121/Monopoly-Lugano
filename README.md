@@ -1,6 +1,10 @@
-# Project PROJECTNAME
+# Monopoly Lugano Edition
 
-ONE-PARAGRAPH DESCRIPTION OF YOUR GAME
+A simple monopoly game with all the squares insipired by the city of Lugano. 
+The game is possibile to play with:
+
+ - TUI ( Terminal User Interface)
+ - GUI (Graphical User Interface)
 
 ## Team Members
 
@@ -9,18 +13,9 @@ ONE-PARAGRAPH DESCRIPTION OF YOUR GAME
 
 ## Mentor
 
-* TA NAME (TA must have agreed to mentor you)
+* Diego Marcilio
 
 ## Project Structure
-
-This project is both a Maven project and a BlueJ project.
-You can open, compile, test, and run the code within BlueJ
-by opening `src/package.bluej`.
-
-You can use Maven to compile, test, and check the code
-by running `mvn` in this top-level directory (see below).
-
-You can run the code compiled by Maven from the terminal (see below).
 
 The code is structured into three packages:
 
@@ -28,17 +23,62 @@ The code is structured into three packages:
 * `tui` - text user interface (works in a terminal)
 * `gui` - Swing-based graphical user interface (opens a window)
 
-Note that the classes in the `model` package MUST NOT refer to any
-classes in the `tui` or `gui` packages.
+Inside of the `Model` the code is structured with different classes with its own tests:
 
-The classes in the `tui` package must not refer to any classes in the `gui` package.
+ - BonusSquare
+ - Card
+ - CardsDeck
+ - Dice
+ - House
+ - JailSquare
+ - Monopoly
+ - Player
+ - PropertySquare
+ - Square
+ - Table
 
-The classes in the `gui` package must not refer to any classes in the `tui` package.
+The `tui` is composed by:
 
-The classes in the `tui` and `gui` packages SHOULD refer to classes in the `model` package.
+ - Main
+ Inside of the Main there are all the methods for the interactions with the user and the strcucture of monopoly.
 
-The classes in the `model` package need to come with unit tests.
-(The classes in the `tui` and `gui` packages do not need to be covered with tests.)
+The `GUI` is composed by:
+
+ - Images (package)
+ - CLayout
+ - FormPanel
+ - GameFrame
+ - GameMain
+ - GamePanel
+ - Main
+ - MonopolyCommandsPanel
+ - MonopolyGridPanel
+ - MonopolyPanel
+ - MonopolyPlayerPanel
+ - MyButton
+ - NicknameForm
+ - NumPlayerFrame
+ - PanelEnd
+ - PanelMonopoly
+ - PanelNickname
+ - PanelPlayers
+ - PanelPregame
+---
+You can use Maven to compile, test, and check the code
+by running `mvn` in this top-level directory (see below).
+
+
+The classes in the `model` package are not refer to any
+classes in the `tui` or `gui` packages. But instead TUI and GUI refer to model for take the structure of Monopoly game.
+
+
+
+In the `model` package is covered by unit tests.
+
+## Known problems
+The project has trouble with the execution with BlueJ:
+	The imports inside of the classes will be broken.
+
 
 ## How build using Maven
 
@@ -48,10 +88,16 @@ In this top-level directory:
 mvn compile
 ```
 
+
+
 ## How to run the application
 
 To run the application from outside BlueJ, first build it with Maven.
 This generates the compiled classes in the directory `target/classes`.
+
+Using an IDE will be helpful to play quickly. 
+For the Visual Studio Code IDE and InteliJ just import the project and compile it.
+We can choose between compile the `tui`  or the `gui`
 
 ### Running the TUI
 
@@ -61,7 +107,7 @@ To run this application, with the TUI, from the command line:
 java -cp target/classes tui.Main ARG ARG ARG
 ```
 
-DESCRIPTION OF COMMAND LINE ARGUMENTS
+#### Commands  of the TUI
 
 ### Running the GUI
 
@@ -71,9 +117,21 @@ To run this application, with the GUI, from the command line:
 java -cp target/classes gui.Main ARG ARG ARG
 ```
 
-DESCRIPTION OF COMMAND LINE ARGUMENTS
+#### Commands  of the TUI
+
+
 
 ### How run the JUnit tests with Maven
+ THe JUnit test are usefull to cover all the corner cases and let you know if your code is going well. 
+ For running them we can use:
+
+ - `mvn test` for see the test that run and pass or fail.
+ - `mvn site` for watch also the coverage for each class with JUnit tests.
+ 
+
+ 
+	 
+    
 
 ```bash
 mvn test
