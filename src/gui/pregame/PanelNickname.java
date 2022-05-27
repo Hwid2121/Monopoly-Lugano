@@ -53,7 +53,6 @@ public class PanelNickname extends JPanel {
     public PanelNickname() {
 
         System.out.println("Numero" +GameMain.monopoly.getNumOfplayer()  );
-        setNum();
         
         BoxLayout layout = new BoxLayout(this, BoxLayout.PAGE_AXIS);
         setLayout(layout);
