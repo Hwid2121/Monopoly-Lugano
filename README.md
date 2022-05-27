@@ -167,7 +167,6 @@ mvn site
 
 Then open `target/site/index.html` and find the JaCoCo report.
 
-## TUI's Key Aspects
+## TUI's Key Aspects Screenshots
 
-![enter image description here](https://github.com/usi-pf2-2022/project-monopoly-dinasty/blob/main/src/gui/images/icon.png)
-
+![Starting the game choosing the number and the name of the players, then let's throw the dice for the first time!](https://github.com/usi-pf2-2022/project-monopoly-dinasty/blob/main/src/gui/images/screen1readmetui.png)![Let's buy a property square!](https://github.com/usi-pf2-2022/project-monopoly-dinasty/blob/main/src/gui/images/screen3readmetui.png)![Let's sell a property square!](https://github.com/usi-pf2-2022/project-monopoly-dinasty/blob/main/src/gui/images/screen4readmetui.png)![Showing current player info's](https://github.com/usi-pf2-2022/project-monopoly-dinasty/blob/main/src/gui/images/screen5readmetui.png)![Showing current player bank balance](https://github.com/usi-pf2-2022/project-monopoly-dinasty/blob/main/src/gui/images/screen6readmetui.png)![Showing other players info's](https://github.com/usi-pf2-2022/project-monopoly-dinasty/blob/main/src/gui/images/screen2readmetui.png)
