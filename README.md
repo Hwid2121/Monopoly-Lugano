@@ -1,3 +1,4 @@
+
 # Monopoly Lugano Edition
 
 A simple monopoly game with all the squares insipired by the city of Lugano. 
@@ -165,3 +166,8 @@ mvn site
 ```
 
 Then open `target/site/index.html` and find the JaCoCo report.
+
+## TUI's Key Aspects
+
+![enter image description here](https://github.com/usi-pf2-2022/project-monopoly-dinasty/blob/main/src/gui/images/icon.png)
+
