@@ -1,4 +1,5 @@
 package gui;
+
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -49,9 +50,8 @@ import java.awt.TextField;
 
 public class PanelPlayers extends JPanel implements ActionListener {
 
-
     private final Dimension PRF_SIZE_IMG = new Dimension(800, 800);
-    private final Dimension MIN_SIZE_IMG = new Dimension(200,200);
+    private final Dimension MIN_SIZE_IMG = new Dimension(200, 200);
 
     private final Dimension PFR_SIZE_BUTTON = new Dimension(200, 50);
     private final Dimension MIN_SIZE_BUTTON = new Dimension(200, 50);
@@ -65,18 +65,15 @@ public class PanelPlayers extends JPanel implements ActionListener {
 
     private CLayout parentFrame;
 
-    public PanelPlayers(CLayout frame ) {
+    public PanelPlayers(CLayout frame) {
 
         parentFrame = frame;
-        
+
         BoxLayout laybut = new BoxLayout(this, BoxLayout.Y_AXIS);
         setLayout(laybut);
-        
-        
 
         ImageIcon image = new ImageIcon("src/gui/images/monopoly.png");
         Image img = image.getImage();
-        
 
         image = new ImageIcon(img);
         JLabel imagelabel = new JLabel(image);
@@ -84,35 +81,26 @@ public class PanelPlayers extends JPanel implements ActionListener {
         imagelabel.setMinimumSize(MIN_SIZE_IMG);
         imagelabel.setPreferredSize(PRF_SIZE_IMG);
 
-
         add(imagelabel);
-
 
         add(Box.createVerticalGlue());
         // add(jb1);
-        add(Box.createRigidArea(new Dimension(0,70)));
+        add(Box.createRigidArea(new Dimension(0, 70)));
 
-        
         imagelabel.setAlignmentX(CENTER_ALIGNMENT);
         // jb1.setAlignmentX(CENTER_ALIGNMENT);
 
-
         setBackground(GameMain.SFONDO);
-        Component rigidArea = Box.createRigidArea(new Dimension(0,50));
+        Component rigidArea = Box.createRigidArea(new Dimension(0, 50));
         add(rigidArea);
-        
 
         add(panelNick);
-        
-        Component rigidArea_2 = Box.createRigidArea(new Dimension(0,40));
+
+        Component rigidArea_2 = Box.createRigidArea(new Dimension(0, 40));
         add(rigidArea_2);
-        
 
-        Component rigidArea_1 = Box.createRigidArea(new Dimension(0,400));
+        Component rigidArea_1 = Box.createRigidArea(new Dimension(0, 400));
         add(rigidArea_1);
-
-        
-
 
     }
 
@@ -121,19 +109,14 @@ public class PanelPlayers extends JPanel implements ActionListener {
         super.paintComponent(g);
         g.setColor(Color.RED);
         g.drawRect(0, 0, getWidth() - 1, getHeight() - 1);
-        // g.drawImage(image, 0, 0, this); // see javadoc for more info on the parameters            
-    
+        // g.drawImage(image, 0, 0, this); // see javadoc for more info on the
+        // parameters
 
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
- 
-        
+
     }
-
-
-    
-
 
 }

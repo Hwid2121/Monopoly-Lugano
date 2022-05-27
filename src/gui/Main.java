@@ -22,44 +22,18 @@ import model.*;
 
 public class Main {
 
-
-
     // add a main method here
     public static void main(String[] args) {
         System.out.println("GUI STARRRRRRRt");
-        
-
-        
-    
-    
-
-        
 
         EventQueue.invokeLater(new Runnable() {
-            
 
             public void run() {
                 System.out.println("creating gui...");
-                
+
                 new GameMain();
-                
-               
 
-                
-
-                
-                
- 
-
-
-                
-        }
-
-
-
-
-                
-            
+            }
 
         });
     }

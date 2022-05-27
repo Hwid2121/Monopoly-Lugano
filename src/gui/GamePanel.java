@@ -21,51 +21,39 @@ import java.awt.FlowLayout;
 import java.awt.event.*;
 import java.util.ArrayList;
 
-
 import model.Monopoly;
 
-public class GamePanel extends JPanel implements Runnable{
-
+public class GamePanel extends JPanel implements Runnable {
 
     private static final int X_LEN = 100;
     private static final int Y_LEN = 100;
 
-
     // private SquareCell[] cell = new SquareCell[Table.getSizeofTable()];
 
-     
-
-
-
-
-    public GamePanel(){
-        GridLayout layoutMonopoly = new GridLayout(10,10);
+    public GamePanel() {
+        GridLayout layoutMonopoly = new GridLayout(10, 10);
         JPanel monopolyPanel = new JPanel(layoutMonopoly);
 
+    }
+
+    public void newSquare() {
 
     }
 
-    public void newSquare(){
-        
+    public void paint(Graphics g) {
 
     }
 
-    public void paint(Graphics g){
+    public void draw(Graphics g) {
 
     }
 
-    public void draw(Graphics g){
+    public void run() {
 
     }
 
-    public void run(){
+    public class AL extends KeyAdapter {
 
     }
 
-    public class AL extends KeyAdapter{
-
-    }
-
-
-    
 }

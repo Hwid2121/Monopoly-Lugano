@@ -45,23 +45,9 @@ import model.*;
 
 public class MonopolyGridPanel extends JPanel {
 
+    public MonopolyGridPanel() {
 
-
-
-    public MonopolyGridPanel(){
-        
         // System.out.println(this.getSize()+ "" + this.getWidth());
-
-
-
-        
-
-    
-
-
-
-
-
 
     }
 

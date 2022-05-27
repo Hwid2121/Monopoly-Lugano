@@ -49,29 +49,24 @@ import javax.swing.PopupFactory;
 
 import java.awt.TextField;
 
-
-
-public class NicknameForm  extends JPanel {
-    
+public class NicknameForm extends JPanel {
 
     private JTextField textField;
-    public NicknameForm(int i){
 
+    public NicknameForm(int i) {
 
         setBackground(GameMain.SFONDO);
         GridBagLayout layout = new GridBagLayout();
         GridBagConstraints c = new GridBagConstraints();
         c.fill = GridBagConstraints.HORIZONTAL;
-    
 
         setLayout(layout);
 
-        JLabel label = new JLabel("Player " +i+ ": ");
-        label.setFont(new Font ("SansSerif", Font.BOLD, 22));
+        JLabel label = new JLabel("Player " + i + ": ");
+        label.setFont(new Font("SansSerif", Font.BOLD, 22));
         label.setForeground(GameMain.CREMISI);
         // label.setPreferredSize(new Dimension(50,40));
 
-        
         c.gridx = 1;
         c.gridy = 0;
         // c.weightx = 0.1;
@@ -79,10 +74,9 @@ public class NicknameForm  extends JPanel {
 
         textField = new JTextField();
 
-        
-        textField.setMinimumSize(new Dimension(100,40));
-        textField.setPreferredSize(new Dimension(100,40));
-        textField.setFont(new Font ("SansSerif", Font.BOLD, 22));
+        textField.setMinimumSize(new Dimension(100, 40));
+        textField.setPreferredSize(new Dimension(100, 40));
+        textField.setFont(new Font("SansSerif", Font.BOLD, 22));
         textField.setForeground(GameMain.CREMISI);
         textField.setBackground(Color.white);
 
@@ -91,15 +85,8 @@ public class NicknameForm  extends JPanel {
         // c.gridwidth = 2;
         // c.weightx = 5;
         add(textField, c);
-        
-
 
         setVisible(true);
-
-
-        
-
-        
 
     }
 

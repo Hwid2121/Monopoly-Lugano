@@ -1,4 +1,5 @@
 package gui;
+
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -51,45 +52,32 @@ import javax.swing.Scrollable;
 
 import java.awt.TextField;
 
-
-public class PanelNickname  extends JPanel{
-
-
+public class PanelNickname extends JPanel {
 
     private final int num;
     private ArrayList<NicknameForm> playersList = new ArrayList<>();
 
-    public PanelNickname (){
+    public PanelNickname() {
 
-        //  num = GameMain.monopoly.getNumOfplayer();
+        // num = GameMain.monopoly.getNumOfplayer();
         num = 3;
         BoxLayout layout = new BoxLayout(this, BoxLayout.PAGE_AXIS);
         setLayout(layout);
-        
 
-
-        for(int i=0; i< num; i++){
+        for (int i = 0; i < num; i++) {
             NicknameForm temp = new NicknameForm(i);
             add(temp);
             playersList.add(temp);
             add(Box.createRigidArea(new Dimension(10, 30)));
         }
 
-
-        
-
-
-        
-            
-   
-
         JButton button = new JButton("Confirm");
         add(Box.createRigidArea(new Dimension(50, 50)));
         add(button);
         button.setUI(GameMain.BUTTON_STYLE);
         setBackground(GameMain.SFONDO);
-        button.setPreferredSize(new Dimension(120,60));
-        button.setMinimumSize(new Dimension(120,60));
+        button.setPreferredSize(new Dimension(120, 60));
+        button.setMinimumSize(new Dimension(120, 60));
         // button.setBackground(GameMain.);
         setVisible(true);
 
@@ -97,21 +85,16 @@ public class PanelNickname  extends JPanel{
             @Override
             public void actionPerformed(ActionEvent e) {
 
-                int i=0;
-                for(NicknameForm x: playersList){
+                int i = 0;
+                for (NicknameForm x : playersList) {
                     GameMain.monopoly.addPlayer(new Player(x.getFieldText()));
                     System.out.println(GameMain.monopoly.getPLayer(i).getNickname());
                     i++;
                 }
 
-                  
             }
         });
 
-        
-        
     }
-
-    
 
 }

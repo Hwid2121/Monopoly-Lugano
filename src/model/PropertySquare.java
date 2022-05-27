@@ -14,7 +14,6 @@ public class PropertySquare extends Square {
     private Player owner = null;
 
     private final int price;
-    private int originalPrice;
     private int priceTax;
     private int priceSell;
     private boolean monopolyColor = false;
@@ -46,8 +45,6 @@ public class PropertySquare extends Square {
         this.priceTax = priceTax;
         this.priceSell = priceSell;
         this.position = position;
-        originalPrice = priceTax;
-
         house = new House(bh, p1, p2, p3, p4, ph);
 
     }

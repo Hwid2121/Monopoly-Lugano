@@ -1,8 +1,4 @@
 package model;
-
-import java.util.ArrayList;
-import java.util.Iterator;
-
 /**
  * Jailsquare rapresent the prison where a player could reach in 2 ways:
  *  - By card
