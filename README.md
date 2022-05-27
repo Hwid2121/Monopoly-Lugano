@@ -192,5 +192,5 @@ Then open `target/site/index.html` and find the JaCoCo report.
 * Pregame Panel, choosing the number of players.
 ![.](https://github.com/usi-pf2-2022/project-monopoly-dinasty/blob/main/src/gui/images/screen2readmegui.png)
 
-* Pregame Panel, choosing the names of the chosen players. 
+* Pregame Panel, choosing the names of the players. 
 ![.](https://github.com/usi-pf2-2022/project-monopoly-dinasty/blob/main/src/gui/images/screen2readmegui.png)
