@@ -183,3 +183,14 @@ Then open `target/site/index.html` and find the JaCoCo report.
 ![.](https://github.com/usi-pf2-2022/project-monopoly-dinasty/blob/main/src/gui/images/screen2readmetui.png)
 * Showing the situation of the other properties of the same colour.
 ![.](https://github.com/usi-pf2-2022/project-monopoly-dinasty/blob/main/src/gui/images/screen7readmetui.png)
+
+## GUI's Key Aspects Screenshots
+
+* Initial Main Menu
+![.](https://github.com/usi-pf2-2022/project-monopoly-dinasty/blob/main/src/gui/images/screen1readmegui.png)
+
+* Pregame Panel, choosing the number of players.
+![.](https://github.com/usi-pf2-2022/project-monopoly-dinasty/blob/main/src/gui/images/screen2readmegui.png)
+
+* Pregame Panel, choosing the names of the chosen players. 
+![.](https://github.com/usi-pf2-2022/project-monopoly-dinasty/blob/main/src/gui/images/screen2readmegui.png)
