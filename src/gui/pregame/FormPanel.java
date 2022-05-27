@@ -68,7 +68,8 @@ public class FormPanel extends JPanel {
 
 
                 } catch (NumberFormatException error) {
-                    // Not an integer
+                    // TO DO
+                    
                 }
 
             }

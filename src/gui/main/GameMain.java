@@ -44,6 +44,7 @@ public class GameMain {
 
     public GameMain() {
 
+        
         clayout = new CLayout();
 
     }

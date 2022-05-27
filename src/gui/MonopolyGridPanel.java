@@ -6,7 +6,7 @@ import javax.swing.JButton;
 import javax.swing.JPanel;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
-import javax.swing.JPanel;
+import java.awt.Graphics2D;
 import javax.swing.SwingConstants;
 import java.awt.Insets;
 import java.awt.image.CropImageFilter;
@@ -45,10 +45,27 @@ import model.*;
 
 public class MonopolyGridPanel extends JPanel {
 
+
+    Image backgroundImage;
+
     public MonopolyGridPanel() {
+        backgroundImage = new ImageIcon("/home/paperino/Desktop/project-monopoly-dinasty/src/gui/images/monopolygrid2.png").getImage();
 
-        // System.out.println(this.getSize()+ "" + this.getWidth());
 
+        // ImageResizer.resize(backgroundImage, outputImagePath2, percent);
+
+        
+        
+
+    }
+
+
+    public void paint(Graphics g) {
+        super.paint(g);
+        Graphics2D g2D = (Graphics2D) g;
+
+        Image img = backgroundImage.getScaledInstance(1000  , 1000, Image.SCALE_AREA_AVERAGING);
+        g2D.drawImage(img,0 ,0 , null);
     }
 
 }

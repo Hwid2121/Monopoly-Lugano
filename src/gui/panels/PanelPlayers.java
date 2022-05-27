@@ -64,13 +64,13 @@ public class PanelPlayers extends JPanel implements ActionListener {
     private JTextField textField = new JTextField();
     private JButton button = new JButton("Submit");
 
-    private static PanelNickname panelNick = new PanelNickname();
+    private PanelNickname panelNick = new PanelNickname(this);
 
-    // private CLayout parentFrame;
+    private CLayout parentFrame;
 
-    public PanelPlayers() {
+    public PanelPlayers(CLayout frame) {
 
-        // parentFrame = frame;
+        parentFrame = frame;
 
         BoxLayout laybut = new BoxLayout(this, BoxLayout.Y_AXIS);
         setLayout(laybut);
@@ -112,8 +112,6 @@ public class PanelPlayers extends JPanel implements ActionListener {
         super.paintComponent(g);
         g.setColor(Color.RED);
         g.drawRect(0, 0, getWidth() - 1, getHeight() - 1);
-        // g.drawImage(image, 0, 0, this); // see javadoc for more info on the
-        // parameters
 
     }
 
@@ -122,5 +120,8 @@ public class PanelPlayers extends JPanel implements ActionListener {
 
     }
 
+    public void endPregame() {
+        parentFrame.endPreGame();
+    }
 
 }

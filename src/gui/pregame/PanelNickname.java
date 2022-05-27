@@ -22,7 +22,10 @@ import javax.swing.colorchooser.*;
 import javax.swing.plaf.ButtonUI;
 import javax.swing.plaf.ScrollBarUI;
 
+import org.junit.runners.ParentRunner;
+
 import gui.main.GameMain;
+import gui.panels.PanelPlayers;
 import model.Monopoly;
 import model.Player;
 
@@ -49,11 +52,16 @@ public class PanelNickname extends JPanel {
 
     private int num;
     private ArrayList<NicknameForm> playersList = new ArrayList<>();
+    private PanelPlayers panel;
+    
+    public PanelNickname(PanelPlayers pan) {
 
-    public PanelNickname() {
+         panel = pan;
 
-        System.out.println("Numero" +GameMain.monopoly.getNumOfplayer()  );
-        
+        System.out.println("Numero di giocatoei in panelNick " + GameMain.monopoly.getNumOfplayer());
+
+        num = GameMain.monopoly.getNumOfplayer();
+
         BoxLayout layout = new BoxLayout(this, BoxLayout.PAGE_AXIS);
         setLayout(layout);
 
@@ -71,12 +79,16 @@ public class PanelNickname extends JPanel {
         setBackground(GameMain.SFONDO);
         button.setPreferredSize(new Dimension(120, 60));
         button.setMinimumSize(new Dimension(120, 60));
+
         // button.setBackground(GameMain.);
+        // PanelPlayers topFrame = (PanelPlayers) SwingUtilities.getRootPane(this);
+
         setVisible(true);
 
         button.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                
 
                 int i = 0;
                 for (NicknameForm x : playersList) {
@@ -85,11 +97,12 @@ public class PanelNickname extends JPanel {
                     i++;
                 }
 
+                panel.endPregame();
+               
+
             }
         });
 
     }
-
-
 
 }

@@ -1,4 +1,4 @@
-package gui;
+package gui.main;
 
 import java.awt.EventQueue;
 
@@ -12,7 +12,6 @@ import java.awt.CardLayout;
 import javax.swing.JButton;
 import javax.swing.SwingUtilities;
 
-import gui.main.GameMain;
 import model.*;
 
 /**

@@ -24,9 +24,11 @@ public class CLayout extends JFrame implements ActionListener {
     private JPanel panelCont = new JPanel();
     private JPanel panelPregame = new PanelPregame(this);
     // private JPanel panelPlayers = new PanelPlayers();
-    private JPanel panelMonopoly = new PanelMonopoly();
-    private JPanel panelEnd = new PanelEnd();
+    // private JPanel panelMonopoly = new PanelMonopoly();
+
     private CardLayout mainFrame = new CardLayout();
+
+    private JPanel clayoutforgame = new CLayoutForGame();
 
     ImageIcon img = new ImageIcon("/home/paperino/Desktop/project-monopoly-dinasty/src/gui/images/icon.png");
 
@@ -42,31 +44,36 @@ public class CLayout extends JFrame implements ActionListener {
         frame.setExtendedState(JFrame.MAXIMIZED_BOTH);
 
         panelCont.add(panelPregame, "1");
-        
-        // panelCont.add(panelMonopoly, "3");
-        // panelCont.add(panelEnd, "4");
+
+        // panelCont.add(panelPlayers, "2");
+
+        // panelCont.add(clayoutforgame, "3");
 
         mainFrame.show(panelCont, "1");
 
         frame.add(panelCont);
         frame.pack();
         frame.setVisible(true);
+        PanelMonopoly.mamma();
 
     }
-
-
 
     public void switchCard() {
 
-        
-        JPanel panelPlayers = new PanelPlayers();
+        JPanel panelPlayers = new PanelPlayers(this);
         panelCont.add(panelPlayers, "2");
 
         mainFrame.next(panelCont);
-        
-
     }
 
+
+    public void endPreGame(){
+
+        JPanel panelMonopoly = new PanelMonopoly();
+        panelCont.add(panelMonopoly, "3");
+
+        mainFrame.next(panelCont);
+    }
 
     @Override
     public void actionPerformed(ActionEvent arg0) {
