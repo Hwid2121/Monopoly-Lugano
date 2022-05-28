@@ -28,7 +28,15 @@ public class GameMain extends JFrame {
     public static final Font COURIER = new Font("SansSerif", Font.BOLD, 22);
 
     public static Monopoly monopoly = new Monopoly();
-    private ImageIcon img = new ImageIcon("/project-monopoly-dinasty/src/gui/images/icon.png");
+
+    private CLayout clayout;
+
+    private CLayoutForGame monopolyGUI;
+
+    private int status = 0;
+
+    private CardLayout mainframe = new CardLayout();
+    ImageIcon img = new ImageIcon("src/gui/images/icon.png");
 
     // private JFrame frame = new JFrame("Monopoly Lugano");
 
