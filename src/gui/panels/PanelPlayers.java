@@ -34,7 +34,7 @@ public class PanelPlayers extends JPanel implements ActionListener {
     private CLayout parentFrame;
 
     public PanelPlayers(CLayout frame) {
-
+        super();
         parentFrame = frame;
 
         BoxLayout laybut = new BoxLayout(this, BoxLayout.Y_AXIS);

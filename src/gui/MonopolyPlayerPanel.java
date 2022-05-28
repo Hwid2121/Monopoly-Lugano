@@ -4,18 +4,29 @@ import javax.swing.JPanel;
 import java.awt.GridLayout;
 import gui.main.GameMain;
 import model.*;
+
+/**
+ * This class rappresents the Monopoly game board player panel.
+ * 
+ *
+ * @author Nicolo' Tafta & Alberto Sardo
+ * @version 28/05/2022
+ */
+
+
 public class MonopolyPlayerPanel extends JPanel {
 
-    Monopoly monopoly = GameMain.monopoly;
-    int numPlayers = monopoly.getNumOfplayer();
+    private Monopoly monopoly = GameMain.monopoly;
+    private int numPlayers = monopoly.getNumOfplayer();
 
     // JPanel statPanel = new PlayerStatPanel();
 
 
 
-    GridLayout layout = new GridLayout(numPlayers, 2);
+    private GridLayout layout = new GridLayout(numPlayers, 2);
 
     public MonopolyPlayerPanel (){
+        super();    
         setLayout(layout);
 
         // setSize(new DimensionUIResource(, height));

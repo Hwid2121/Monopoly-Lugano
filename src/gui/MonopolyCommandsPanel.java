@@ -2,13 +2,11 @@
 package gui;
 import javax.swing.JButton;
 import javax.swing.JPanel;
-import java.awt.Font;
 import gui.main.GameMain;
 import java.awt.FlowLayout;
 import java.awt.Dimension;
-import javax.swing.border.Border;
 import java.awt.ComponentOrientation;
-import javax.swing.BorderFactory;
+
 
 
 public class MonopolyCommandsPanel extends JPanel {
@@ -17,8 +15,8 @@ public class MonopolyCommandsPanel extends JPanel {
 
 
     
-
-    Dimension dim = new Dimension(130,80);
+    //Dimension of the command panel
+    private Dimension dim = new Dimension(130,80);
     // Border  BLACKLINE = BorderFactory.createLineBorder(GameMain.CREMISI);
     // Font COURIER = new Font("SansSerif", Font.BOLD, 22);
 
@@ -26,7 +24,7 @@ public class MonopolyCommandsPanel extends JPanel {
     // JButton button5;
 
     public MonopolyCommandsPanel(){
-
+        super();
         // setSize(new Dimension(600,300));
         FlowLayout layout  = new FlowLayout(FlowLayout.CENTER,50,20 );
         this.setComponentOrientation(ComponentOrientation.LEFT_TO_RIGHT);

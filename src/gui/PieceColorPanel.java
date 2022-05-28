@@ -2,7 +2,6 @@ package gui;
 
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.plaf.DimensionUIResource;
 
 import gui.main.GameMain;
 
@@ -15,7 +14,7 @@ public class PieceColorPanel extends JPanel {
     
 
     public PieceColorPanel(Player player){
-
+        super();
         setLayout(layout);
         setBackground(GameMain.SFONDO);
         // setSize(new DimensionUIResource(100, 100));

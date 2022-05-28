@@ -7,7 +7,6 @@ import javax.swing.border.Border;
 import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
-import java.awt.CardLayout;
 
 public class GameMain extends JFrame {
 
@@ -32,11 +31,8 @@ public class GameMain extends JFrame {
     private CLayout clayout;
 
     private CLayoutForGame monopolyGUI;
-
-    private int status = 0;
-
-    private CardLayout mainframe = new CardLayout();
-    ImageIcon img = new ImageIcon("src/gui/images/icon.png");
+    //img import
+    private ImageIcon img = new ImageIcon("src/gui/images/icon.png");
 
     // private JFrame frame = new JFrame("Monopoly Lugano");
 

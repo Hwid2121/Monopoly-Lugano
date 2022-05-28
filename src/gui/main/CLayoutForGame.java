@@ -7,9 +7,6 @@ import java.awt.CardLayout;
 
 public class CLayoutForGame extends JPanel  {
 
-    
-    private JPanel panelMonopoly;
-
     private CardLayout mainFrame  = new CardLayout();
 
     private GameMain main;
@@ -33,7 +30,7 @@ public class CLayoutForGame extends JPanel  {
 
 
     public void comand() {
-        panelMonopoly = new PanelMonopoly(main);
+        PanelMonopoly panelMonopoly = new PanelMonopoly(main);
         add(panelMonopoly, "dice");
         mainFrame.show(this, "dice");
     }

@@ -21,14 +21,11 @@ public class PanelMonopoly extends JPanel {
 
 
     private static JPanel monopolyGridPanel;
-    private GameMain main;
      
     public PanelMonopoly(GameMain game) {
 
 
-        main = game;
-        
-        JButton button1 = new JButton("NORTH");
+        GameMain main = game;
         JButton button2 = new JButton("END-LINE");
 
 

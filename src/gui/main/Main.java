@@ -4,16 +4,16 @@ import java.awt.EventQueue;
 
 
 /**
- * DESCRIBE THIS CLASS
+ * in this class we create the main frame of the game gui.
  * 
- * @author YOUR_USI_EMAIL
+ * @author Alberto Sardo & Nicolo' Tafta
  */
 
 public class Main {
 
     // add a main method here
     public static void main(String[] args) {
-        System.out.println("GUI STARRRRRRRt");
+        System.out.println("GUI STARRRRRRRT");
 
         EventQueue.invokeLater(new Runnable() {
 

@@ -23,7 +23,7 @@ import model.Card;
  */
 public class Main {
 
-    Monopoly monopoly = new Monopoly();
+    private Monopoly monopoly = new Monopoly();
     private Scanner input = new Scanner(System.in);
 
     private int numberOfPlayers = 0;

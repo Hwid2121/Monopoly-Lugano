@@ -9,13 +9,22 @@ import java.awt.Image;
 import java.awt.Graphics;
 import javax.swing.ImageIcon;
 
+/**
+ * This class rappresents the Monopoly grid panel.
+ * 
+ *
+ * @author Nicolo' Tafta & Alberto Sardo
+ * @version 28/05/2022
+ */
+
 public class MonopolyGridPanel extends JPanel {
 
-
-    Image backgroundImage;
+    //background image.
+    private Image backgroundImage;
 
     public MonopolyGridPanel() {
-        backgroundImage = new ImageIcon("/home/paperino/Desktop/project-monopoly-dinasty/src/gui/images/monopolygrid1000.png").getImage();
+        super();
+        backgroundImage = new ImageIcon("/src/gui/images/monopolygrid1000.png").getImage();
 
         
 
