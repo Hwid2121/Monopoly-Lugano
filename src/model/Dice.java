@@ -12,7 +12,7 @@ import java.util.Random;
  */
 
 public class Dice {
-    Random rand = new Random();
+    private Random rand = new Random();
     private int die1;
     private int die2;
 
@@ -80,12 +80,12 @@ public class Dice {
     }
 
     /**
-     * Getperfectpair is a method used for jail method for know if the value of die1
+     * isPerfectPair is a method used for jail method for know if the value of die1
      * and die2 are equal.
      * 
      * @return true if the die1 and die2 are the same number, false otherwise.
      */
-    public boolean getPerfectPair() {
+    public boolean isPerfectPair() {
         return this.die1 == this.die2;
     }
 

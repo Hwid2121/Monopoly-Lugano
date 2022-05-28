@@ -28,7 +28,8 @@ public class Main {
 
     private int numberOfPlayers = 0;
     private int status = 0;
-
+    private String chf = " chf";
+    private String nName = "\nName: ";
     private int skip = 0;
     private int turn = 0;
 
@@ -108,7 +109,7 @@ public class Main {
             if (player.getMoney() < 0) {
                 PropertySquareSELL(player, monopoly);
             } else {
-                System.out.println("You are not in bankrupt now your balance is " + player.getMoney() + " chf");
+                System.out.println("You are not in bankrupt now your balance is " + player.getMoney() + chf);
                 return;
             }
         }
@@ -190,7 +191,7 @@ public class Main {
 
         System.out.println(monopoly.getTable().getSquareBonusDescr(player.getPosition()));
 
-        if (monopoly.getTable().getSquare(player.getPosition()).getColor() == "bonus") {
+        if (monopoly.getTable().getSquare(player.getPosition()).getColor().equals("bonus")) {
 
             player.increaseMoney(price);
         } else {
@@ -236,7 +237,7 @@ public class Main {
         if (player.getTurnsInJail() > 0) {
 
             switch (word) {
-                case ("pay"):
+                case "pay":
                     JailSquare.payFine(player);
                     JailSquare.freeFromJail(player);
 
@@ -259,7 +260,7 @@ public class Main {
 
                     break;
 
-                case ("c"):
+                case "c":
                     if (JailSquare.checkFreeJailCard(player)) {
                         JailSquare.freeFromJail(player);
 
@@ -277,11 +278,11 @@ public class Main {
                         System.out.println("\n You don't have the card!\n");
                         break;
                     }
-                case ("t"):
+                case "t":
 
                     monopoly.throwDice();
                     System.out.println("Your dice made: " + monopoly.die1() + " and " + monopoly.die2());
-                    if (monopoly.getDice().getPerfectPair()) {
+                    if (monopoly.getDice().isPerfectPair()) {
                         JailSquare.freeFromJail(player);
                         System.out.println("You did perfect pair, you gonna forward for " + (monopoly.die1() * 2));
 
@@ -315,7 +316,7 @@ public class Main {
             word = input.next();
 
             switch (word) {
-                case ("pay"):
+                case "pay":
                     JailSquare.payFine(player);
                     JailSquare.freeFromJail(player);
 
@@ -359,12 +360,12 @@ public class Main {
 
         switch (word) {
 
-            case ("m"):
+            case "m":
                 System.out.println("Your bank have: " + player.getMoney());
                 break;
 
             case "i":
-                System.out.println("\nName: " + player.getNickname() + "\nMoney: " + player.getMoney()
+                System.out.println(nName + player.getNickname() + "\nMoney: " + player.getMoney()
                         + "\nProperties: " + player.getPropertySquare() + "\nPosition: " + player.getPosition());
 
                 break;
@@ -418,13 +419,14 @@ public class Main {
 
         switch (word) {
             case "d":
-                System.out.println("\nName: " + monopoly.getTable().getSquare(position).getName() + "\nColor: "
+                System.out.println(nName + monopoly.getTable().getSquare(position).getName() + "\nColor: "
                         + monopoly.getTable().getSquare(position).getColor());
                 System.out.println("Owner: " + monopoly.getTable().getSquareOwnerToString(position) + "\nPrice: "
                         + monopoly.getTable().getSquarePrice(position));
                 System.out.println("Price tax: " + monopoly.getTable().getSquarePriceTax(position));
-                if (monopoly.getTable().getHouse(position).getCounter() <= 4)
+                if (monopoly.getTable().getHouse(position).getCounter() <= 4) {
                     System.out.println("House: " + monopoly.getTable().getHouse(position).getCounter());
+                }
                 else {
                     System.out.println("Hotel: 1");
                 }
@@ -453,13 +455,13 @@ public class Main {
                 break;
 
             case "i":
-                System.out.println("\nName: " + player.getNickname() + "\nMoney: " + player.getMoney()
+                System.out.println(nName + player.getNickname() + "\nMoney: " + player.getMoney()
                         + "\nProperties: " + player.propertySquaretoString() + "\nPosition: " + player.getPosition());
                 break;
 
             case "o":
                 for (Player pl: monopoly.getListOfPlayer()){
-                    System.out.println("\nName: " + pl.getNickname() + "\nMoney: " + pl.getMoney()
+                    System.out.println(nName + pl.getNickname() + "\nMoney: " + pl.getMoney()
                         + "\nProperties: " + pl.propertySquaretoString() + "\nPosition: " + pl.getPosition());
 
                         
@@ -517,19 +519,19 @@ public class Main {
         
 
         System.out.println(
-                "Price for build an house: " + monopoly.getTable().getHouse(player.getPosition()).getPrice(6) + " chf");
+                "Price for build an house: " + monopoly.getTable().getHouse(player.getPosition()).getPrice(6) + chf);
 
         for (int i = 1; i <= 4; i++) {
             System.out.println("PriceTax with " + i + " house increasing to: "
-                    + monopoly.getTable().getHouse(player.getPosition()).getPrice(i) + " chf");
+                    + monopoly.getTable().getHouse(player.getPosition()).getPrice(i) + chf);
         }
         System.out.println("PriceTax with hotel increasing to: "
-                + monopoly.getTable().getHouse(player.getPosition()).getPrice(5) + " chf");
+                + monopoly.getTable().getHouse(player.getPosition()).getPrice(5) + chf);
         System.out.println("For building an Hotel you have to buy 4 houses + building price");
 
-        if (monopoly.getTable().getHouse(player.getPosition()).getCounter() < 5)
+        if (monopoly.getTable().getHouse(player.getPosition()).getCounter() < 5) {
             System.out.println("Your house: " + monopoly.getTable().getHouse(player.getPosition()).getCounter());
-
+        }
         System.out.println("Write:\n");
         System.out.println("[0] For go back");
         System.out.println(
@@ -550,7 +552,7 @@ public class Main {
         if (word > 0 && word < 5) {
             if (monopoly.getTable().getHouse(player.getPosition()).checkNumHouses(word)) {
                 System.out.println("Building" + word + " house at the price of "
-                        + ((monopoly.getTable().getHouse(player.getPosition()).getPrice(6)) * word) + " chf");
+                        + ((monopoly.getTable().getHouse(player.getPosition()).getPrice(6)) * word) + chf);
                 propertySquareBUILD(player, monopoly, word);
             } else {
                 System.out.println(
@@ -571,14 +573,14 @@ public class Main {
                 word = 5 - numhouse;
 
                 System.out.println(
-                        "Cost: " + (monopoly.getTable().getHouse(player.getPosition()).getPrice(6) * word) + " chf");
+                        "Cost: " + (monopoly.getTable().getHouse(player.getPosition()).getPrice(6) * word) + chf);
 
                 propertySquareBUILD(player, monopoly, word);
 
             } else {
                 System.out.println("You have to buy 4 more houses + pay the build fee ");
-                System.out.println("Cost: " + (monopoly.getTable().getHouse(player.getPosition()).getPrice(6) * 4) + " chf"
-                        + " + " + (monopoly.getTable().getHouse(player.getPosition()).getPrice(6)) + " chf");
+                System.out.println("Cost: " + (monopoly.getTable().getHouse(player.getPosition()).getPrice(6) * 4) + chf
+                        + " + " + (monopoly.getTable().getHouse(player.getPosition()).getPrice(6)) + chf);
                 propertySquareBUILD(player, monopoly, (5 - monopoly.getTable().getHouse(player.getPosition()).getCounter())
                         * (monopoly.getTable().getHouse(player.getPosition()).getPrice(6)));
             }
@@ -586,8 +588,10 @@ public class Main {
 
         } else if (word == 0) {
             return;
-        } else
+        } 
+        else {
             System.out.println("Input not valid");
+        }
 
     }
 
@@ -608,7 +612,7 @@ public class Main {
 
         String word;
 
-        if ((player.getMoney() >= price)) {
+        if (player.getMoney() >= price) {
 
             System.out.println("Do you confirm to buy?");
             System.out.println("Your balance will be: " + (player.getMoney() - price));
@@ -667,8 +671,8 @@ public class Main {
 
         int position = player.getPosition();
         String inp;
-        if ((player.getMoney() >= monopoly.getTable().getSquarePrice(position) &&
-                (monopoly.getTable().getSquareOwner(position) == null)))
+        if (player.getMoney() >= monopoly.getTable().getSquarePrice(position) &&
+                monopoly.getTable().getSquareOwner(position) == null)
 
         {
             System.out.println("Confirm to buy the property?"

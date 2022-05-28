@@ -97,7 +97,7 @@ public class JailSquare extends Square {
     public static boolean checkFreeJailCard(Player player) {
 
         for (Card card : player.getDeck()) {
-            if (card.getDescription() == "Get Out of Jail Free") {
+            if (card.getDescription().equals("Get Out of Jail Free")) {
                 player.deleteCard(card.getDescription());
                 return true;
             }
@@ -115,7 +115,7 @@ public class JailSquare extends Square {
      *  
      */
     public boolean checkPerfectPair() {
-        return dice.getPerfectPair();
+        return dice.isPerfectPair();
     }
 
     /**

@@ -5,13 +5,13 @@ import java.util.Random;
 
 public class Piece {
 
-    Random rand = new Random();
+    private Random rand = new Random();
     private float r = rand.nextFloat();
     private float g = rand.nextFloat();
     private float b = rand.nextFloat();
-    Color randomColor;
+    private Color randomColor;
 
-    ArrayList<Player> players = new ArrayList<>();
+    private ArrayList<Player> players = new ArrayList<>();
 
 
 

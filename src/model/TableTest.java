@@ -14,8 +14,8 @@ import org.junit.Test;
  */
 public class TableTest {
 
-  static private final int sizeTable = 40;
-  Square[] cell = new Square[sizeTable];
+  static private final int SIZETABLE = 40;
+  Square[] cell = new Square[SIZETABLE];
 
   @Test
   public void newtabletest() {

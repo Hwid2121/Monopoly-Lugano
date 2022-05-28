@@ -31,8 +31,8 @@ public class JailSquareTest {
     }
 
     @Test
-    public void getPerfectPairTest() {
-        assertTrue(new Dice(5, 5).getPerfectPair());
+    public void isPerfectPairTest() {
+        assertTrue(new Dice(5, 5).isPerfectPair());
     }
 
     @Test

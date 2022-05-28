@@ -39,7 +39,7 @@ public class DiceTest {
     }
 
     @Test
-    public void getPerfectPairTest() {
-        assertEquals(die1 == die2, new Dice(die1, die2).getPerfectPair());
+    public void isPerfectPairTest() {
+        assertEquals(die1 == die2, new Dice(die1, die2).isPerfectPair());
     }
 }
