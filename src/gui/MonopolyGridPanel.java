@@ -12,7 +12,7 @@ public class MonopolyGridPanel extends JPanel {
     Image backgroundImage;
 
     public MonopolyGridPanel() {
-        backgroundImage = new ImageIcon("/home/paperino/Desktop/project-monopoly-dinasty/src/gui/images/monopolygrid2.png").getImage();
+        backgroundImage = new ImageIcon("/home/paperino/Desktop/project-monopoly-dinasty/src/gui/images/monopolygrid1000.png").getImage();
 
 
         // ImageResizer.resize(backgroundImage, outputImagePath2, percent);

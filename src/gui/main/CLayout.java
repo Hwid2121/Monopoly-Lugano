@@ -74,6 +74,8 @@ public class CLayout extends JFrame implements ActionListener {
 
         mainFrame.next(panelCont);
         PanelMonopoly.mamma();
+        System.out.println("heigh tot" + panelMonopoly.getHeight());
+        System.out.println("width tot" + panelMonopoly.getWidth());
     }
 
     @Override
