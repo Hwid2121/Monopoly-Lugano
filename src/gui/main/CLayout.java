@@ -1,22 +1,14 @@
 package gui.main;
-
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
-
-import gui.PanelEnd;
 import gui.panels.PanelMonopoly;
 import gui.panels.PanelPlayers;
 import gui.panels.PanelPregame;
-import gui.pregame.PanelNickname;
-
 import java.awt.CardLayout;
-
 import javax.swing.ImageIcon;
-import java.awt.CardLayout;
 
-import model.*;
 
 public class CLayout extends JFrame implements ActionListener {
 
@@ -30,10 +22,10 @@ public class CLayout extends JFrame implements ActionListener {
 
     private JPanel clayoutforgame = new CLayoutForGame();
 
-    ImageIcon img = new ImageIcon("/home/paperino/Desktop/project-monopoly-dinasty/src/gui/images/icon.png");
+    private ImageIcon img = new ImageIcon("/home/paperino/Desktop/project-monopoly-dinasty/src/gui/images/icon.png");
 
     public CLayout() {
-
+        super();
         panelCont.setLayout(mainFrame);
 
         frame.setTitle("Monopoly Lugano");

@@ -14,12 +14,12 @@ import java.awt.Dimension;
 import javax.swing.Box;
 
 public class PanelNickname extends JPanel {
-
-    private int num;
+    
     private ArrayList<NicknameForm> playersList = new ArrayList<>();
     private PanelPlayers panel;
     
     public PanelNickname(PanelPlayers pan) {
+        @super();
 
          panel = pan;
 

@@ -23,15 +23,16 @@ import javax.swing.Box;
 
 public class PanelPregame extends JPanel {
 
-    private final Dimension PRF_SIZE_IMG = new Dimension(800, 800);
-    private final Dimension MIN_SIZE_IMG = new Dimension(200, 200);
+    private final Dimension   prfsizeimg = new Dimension(800, 800);
+    private final Dimension  minsizeimg = new Dimension(200, 200);
 
-    private final Dimension PFR_SIZE_BUTTON = new Dimension(200, 50);
-    private final Dimension MIN_SIZE_BUTTON = new Dimension(200, 50);
+    private final Dimension  pfrsizebutton = new Dimension(200, 50);
+    private final Dimension  minsizebutton = new Dimension(200, 50);
 
     private CLayout parentFrame;
 
     public PanelPregame(CLayout frame) {
+        super();
 
         parentFrame = frame;
 
@@ -97,17 +98,17 @@ public class PanelPregame extends JPanel {
         image = new ImageIcon(img);
         JLabel imagelabel = new JLabel(image);
 
-        imagelabel.setMinimumSize(MIN_SIZE_IMG);
-        imagelabel.setPreferredSize(PRF_SIZE_IMG);
+        imagelabel.setMinimumSize( minsizeimg);
+        imagelabel.setPreferredSize(  prfsizeimg);
 
-        jb1.setMinimumSize(MIN_SIZE_BUTTON);
-        jb1.setPreferredSize(PFR_SIZE_BUTTON);
+        jb1.setMinimumSize( minsizebutton);
+        jb1.setPreferredSize( pfrsizebutton);
 
-        // jb2.setMinimumSize(MIN_SIZE_BUTTON);
-        // jb2.setPreferredSize(PFR_SIZE_BUTTON);
+        // jb2.setMinimumSize( minsizebutton);
+        // jb2.setPreferredSize( pfrsizebutton);
 
-        jb3.setMinimumSize(MIN_SIZE_BUTTON);
-        jb3.setPreferredSize(PFR_SIZE_BUTTON);
+        jb3.setMinimumSize( minsizebutton);
+        jb3.setPreferredSize( pfrsizebutton);
 
         jb1.setUI(GameMain.BUTTON_STYLE);
         // jb2.setUI(CLayout.BUTTON_STYLE);

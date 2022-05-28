@@ -87,8 +87,9 @@ public class House {
 
         counter += num;
 
-        if (counter > 5)
+        if (counter > 5) {
             counter = 5;
+        }
 
     }
 

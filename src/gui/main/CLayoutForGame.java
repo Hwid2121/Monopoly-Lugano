@@ -14,6 +14,7 @@ public class CLayoutForGame extends JPanel  {
 
 
     public CLayoutForGame() {
+        super();
 
         setLayout(mainFrame);
         add(panelMonopoly, "1");
