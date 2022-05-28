@@ -16,9 +16,9 @@ public class MonopolyCommandsPanel extends JPanel {
 
 
 
-    JButton button1 = new JButton("Trow the dice");
+    
 
-    Dimension dim = new Dimension(130,100);
+    Dimension dim = new Dimension(130,80);
     // Border blackline = BorderFactory.createLineBorder(GameMain.CREMISI);
     // Font courier = new Font("SansSerif", Font.BOLD, 22);
 
@@ -28,7 +28,7 @@ public class MonopolyCommandsPanel extends JPanel {
     public MonopolyCommandsPanel(){
 
         // setSize(new Dimension(600,300));
-        FlowLayout layout  = new FlowLayout(FlowLayout.CENTER,10,50 );
+        FlowLayout layout  = new FlowLayout(FlowLayout.CENTER,50,20 );
         this.setComponentOrientation(ComponentOrientation.LEFT_TO_RIGHT);
 
         setBackground(GameMain.SFONDO);
@@ -37,14 +37,10 @@ public class MonopolyCommandsPanel extends JPanel {
         setLayout(layout);
         setFont(GameMain.courier);
 
-        button1.setPreferredSize(dim);
+        // trowDice();
 
 
-
-
-        this.add(button1);
-
-
+        propertySquareEMPTY();
 
 
         setVisible(true);
@@ -56,6 +52,102 @@ public class MonopolyCommandsPanel extends JPanel {
 
 
     }
+
+
+
+
+    public void trowDice(){
+
+        JButton button1 = new JButton("Trow the dice");
+        
+        button1.setPreferredSize(dim);
+
+        this.add(button1);
+
+
+         
+    }
+
+
+    public void propertySquareEMPTY(){
+            
+            JButton buy = new JButton("BUY");
+            buy.setPreferredSize(dim);
+
+            JButton pass = new JButton("PASS");
+            pass.setPreferredSize(dim);
+
+ 
+
+
+            this.add(buy);
+            this.add(pass);
+    
+    }
+
+
+    public void propertySquareOwned(){
+            JButton sell = new JButton("SELL");
+            sell.setPreferredSize(dim);
+
+            JButton build = new JButton("BUILD");
+            build.setPreferredSize(dim);
+
+            JButton pass = new JButton("PASS");
+            pass.setPreferredSize(dim);
+
+            this.add(sell);
+            this.add(build);
+            this.add(pass);
+
+    }
+
+
+
+    public void emptySquare(){
+            JButton pass = new JButton("PASS");
+            pass.setPreferredSize(dim);
+        
+            this.add(pass);
+
+    }
+
+
+    public void jailSquare(){
+
+        JButton pay = new JButton("PAY FINE");
+        pay.setPreferredSize(dim);
+
+        JButton dice = new JButton("TROW DICE");
+        dice.setPreferredSize(dim);
+
+        JButton card = new JButton("USE CARD");
+        card.setPreferredSize(dim);
+
+
+        JButton pass = new JButton("PASS");
+        pass.setPreferredSize(dim);
+
+
+        this.add(pay);
+        this.add(dice);
+        this.add(card);
+        this.add(pass);
+
+
+    }
+
+
+    public void goToJailSquare(){
+
+        JButton pass = new JButton("PASS");
+        pass.setPreferredSize(dim);
+
+        this.add(pass);
+
+    }
+
+
 
 
 }

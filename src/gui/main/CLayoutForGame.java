@@ -19,14 +19,21 @@ public class CLayoutForGame extends JPanel  {
         main = game;
         setLayout(mainFrame);
 
-        panelMonopoly = new PanelMonopoly(main);
-        add(panelMonopoly, "1");
-        mainFrame.show(this, "1");
-        // System.out.println("il problema quia");
-        // mainFrame.next(this);
+        
+        comand();
+
+        mainFrame.show(this, "dice");
+        
 
         
         
+    }
+
+
+    public void comand() {
+        panelMonopoly = new PanelMonopoly(main);
+        add(panelMonopoly, "dice");
+        mainFrame.show(this, "dice");
     }
     
 }
