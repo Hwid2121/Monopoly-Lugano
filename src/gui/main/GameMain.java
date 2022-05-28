@@ -1,26 +1,6 @@
 package gui.main;
-
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import javax.swing.JFrame;
-import javax.swing.JPanel;
-import java.awt.CardLayout;
-import javax.swing.JButton;
-import javax.swing.colorchooser.*;
-
 import gui.MyButton;
-
 import java.awt.Color;
-import javax.swing.SwingUtilities;
-import java.awt.geom.*;
-import java.awt.event.ActionEvent;
-import java.awt.GridLayout;
-import java.awt.Graphics;
-import javax.swing.ImageIcon;
-import java.awt.CardLayout;
-
-import javax.swing.JFrame;
-
 import model.*;
 
 public class GameMain {
