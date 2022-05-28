@@ -18,13 +18,13 @@ public class MyButton extends BasicButtonUI {
         ButtonModel model = b.getModel();
 
         Border raisedbevel = BorderFactory.createRaisedBevelBorder();
-        Font courier = new Font("SansSerif", Font.BOLD, 22);
+        Font COURIER = new Font("SansSerif", Font.BOLD, 22);
 
-        g.setFont(courier);
+        g.setFont(COURIER);
 
         b.setBorder(raisedbevel);
 
-        b.setFont(courier);
+        b.setFont(COURIER);
 
         b.setForeground(GameMain.CREMISI);
 

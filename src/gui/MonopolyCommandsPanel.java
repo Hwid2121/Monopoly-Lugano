@@ -19,8 +19,8 @@ public class MonopolyCommandsPanel extends JPanel {
     
 
     Dimension dim = new Dimension(130,80);
-    // Border blackline = BorderFactory.createLineBorder(GameMain.CREMISI);
-    // Font courier = new Font("SansSerif", Font.BOLD, 22);
+    // Border  BLACKLINE = BorderFactory.createLineBorder(GameMain.CREMISI);
+    // Font COURIER = new Font("SansSerif", Font.BOLD, 22);
 
     // JButton button4;
     // JButton button5;
@@ -33,9 +33,9 @@ public class MonopolyCommandsPanel extends JPanel {
 
         setBackground(GameMain.SFONDO);
 
-        setBorder(GameMain.blackline);
+        setBorder(GameMain. BLACKLINE);
         setLayout(layout);
-        setFont(GameMain.courier);
+        setFont(GameMain.COURIER);
 
         // trowDice();
 

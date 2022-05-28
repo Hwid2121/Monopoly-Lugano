@@ -37,9 +37,9 @@ public class PlayerStatPanel extends JPanel {
         position = player.getPosition();
 
         setBackground(GameMain.SFONDO);
-        setBorder(GameMain.blackline);
+        setBorder(GameMain. BLACKLINE);
         
-        setFont(GameMain.courier);
+        setFont(GameMain.COURIER);
 
         // JPanel piece = new PieceColor(player);
         
@@ -55,13 +55,13 @@ public class PlayerStatPanel extends JPanel {
 
 
         JLabel nickname = new JLabel("Nickname: " + name);
-        nickname.setFont(GameMain.courier);
+        nickname.setFont(GameMain.COURIER);
         JLabel cash = new JLabel("Money: " + money);
-        cash.setFont(GameMain.courier);
+        cash.setFont(GameMain.COURIER);
         JLabel pos = new JLabel("Position: " + position);
-        pos.setFont(GameMain.courier);
+        pos.setFont(GameMain.COURIER);
         // JLabel icon = new JLabel("Color: ");
-        // icon.setFont(GameMain.courier);
+        // icon.setFont(GameMain.COURIER);
 
 
 

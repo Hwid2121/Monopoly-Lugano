@@ -21,9 +21,9 @@ public class MonopolyPlayerPanel extends JPanel {
         // setSize(new DimensionUIResource(, height));
 
         setBackground(GameMain.SFONDO);
-        setBorder(GameMain.blackline);
+        setBorder(GameMain. BLACKLINE);
         
-        setFont(GameMain.courier);
+        setFont(GameMain.COURIER);
 
         for(Player x: monopoly.getListOfPlayer()){
 

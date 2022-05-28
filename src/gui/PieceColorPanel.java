@@ -24,7 +24,7 @@ public class PieceColorPanel extends JPanel {
         
 
         JLabel icon = new JLabel("Color: ");
-        icon.setFont(GameMain.courier);
+        icon.setFont(GameMain.COURIER);
 
 
         add(icon, BorderLayout.CENTER);
