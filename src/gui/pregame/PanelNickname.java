@@ -6,7 +6,6 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 
-
 import gui.main.GameMain;
 import gui.panels.PanelPlayers;
 import model.Player;

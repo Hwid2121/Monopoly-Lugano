@@ -2,16 +2,13 @@ package gui.main;
 
 import javax.swing.JPanel;
 
-import gui.PanelMonopoly;
-
-
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
 import gui.PanelEnd;
-import gui.PanelMonopoly;
+import gui.panels.PanelMonopoly;
 import gui.panels.PanelPlayers;
 import gui.panels.PanelPregame;
 import gui.pregame.PanelNickname;

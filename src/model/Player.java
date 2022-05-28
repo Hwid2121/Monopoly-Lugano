@@ -14,11 +14,14 @@ public class Player {
     private final String nickname;
     private int position;
     private int turn = 0;
-
+    private Piece piece;
     private int inJail = -1;
     private ArrayList<Card> deckOfPlayer = new ArrayList<Card>();
     private ArrayList<PropertySquare> listofPropertySquares = new ArrayList<PropertySquare>();
 
+
+
+    
     /**
      * 
      * The constructor of Player that take the nickname.
@@ -31,7 +34,23 @@ public class Player {
         this.nickname = nickname;
         money = 1500;
         position = 0;
+        piece = new Piece();
     }
+
+
+
+    /**
+     * 
+     * Used for get the piece that rapresent the player in the GUI.
+     * 
+     * @return the piece of the player
+     * 
+     */
+    public Piece getPiece(){
+        return piece;
+    }
+
+
 
     /**
      * Set the number of injail with the number given as input.

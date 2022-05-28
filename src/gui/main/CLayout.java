@@ -6,7 +6,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 
 import gui.PanelEnd;
-import gui.PanelMonopoly;
+import gui.panels.PanelMonopoly;
 import gui.panels.PanelPlayers;
 import gui.panels.PanelPregame;
 import gui.pregame.PanelNickname;

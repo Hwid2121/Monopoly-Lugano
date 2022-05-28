@@ -1,5 +1,5 @@
-package gui;
 
+package gui;
 import javax.swing.JButton;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;

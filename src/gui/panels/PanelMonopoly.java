@@ -1,4 +1,4 @@
-package gui;
+package gui.panels;
 
 import javax.swing.JButton;
 import javax.swing.JPanel;
@@ -23,6 +23,12 @@ import javax.swing.JButton;
 import javax.swing.JComponent;
 import javax.swing.colorchooser.*;
 import javax.swing.plaf.ButtonUI;
+import gui.MonopolyPlayerPanel;
+import gui.MonopolyCommandsPanel;
+
+
+import gui.MonopolyGridPanel;
+import gui.MonopolyPlayerPanel;
 
 import java.awt.Color;
 import javax.swing.SwingUtilities;
