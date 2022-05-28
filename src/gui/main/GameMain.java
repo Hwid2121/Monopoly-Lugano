@@ -2,7 +2,9 @@ package gui.main;
 import gui.MyButton;
 import java.awt.Color;
 import model.*;
-
+import java.awt.Font;
+import javax.swing.border.Border;
+import javax.swing.BorderFactory;
 public class GameMain {
 
     public final static MyButton BUTTON_STYLE = new MyButton();
@@ -18,9 +20,16 @@ public class GameMain {
     public static final Color BLU = new Color(0, 114, 187, 255);
     public static final Color CREMISI = new Color(192, 43, 77, 255);
 
+
+    public static final Border blackline = BorderFactory.createLineBorder(GameMain.CREMISI);
+    public static final Font courier = new Font("SansSerif", Font.BOLD, 22);
+
+
     public static Monopoly monopoly = new Monopoly();
 
     private static CLayout clayout;
+
+
 
     public GameMain() {
 

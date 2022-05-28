@@ -54,7 +54,7 @@ public class CLayout extends JFrame implements ActionListener {
         frame.add(panelCont);
         frame.pack();
         frame.setVisible(true);
-        PanelMonopoly.mamma();
+        
 
     }
 
@@ -73,6 +73,7 @@ public class CLayout extends JFrame implements ActionListener {
         panelCont.add(panelMonopoly, "3");
 
         mainFrame.next(panelCont);
+        PanelMonopoly.mamma();
     }
 
     @Override

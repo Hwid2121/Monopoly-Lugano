@@ -60,7 +60,6 @@ public class PanelMonopoly extends JPanel {
         // System.out.println(this);
 
         add(monopolyGridPanel, BorderLayout.CENTER);
-
         add(monopolyPlayerPanel, BorderLayout.LINE_END);
         add(monopolyCommandsPanel, BorderLayout.PAGE_END);
 

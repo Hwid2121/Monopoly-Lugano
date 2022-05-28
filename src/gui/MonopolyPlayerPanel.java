@@ -1,8 +1,7 @@
 package gui;
 
 import javax.swing.JPanel;
-
-
+import javax.swing.plaf.DimensionUIResource;
 import javax.swing.JLabel;
 import java.awt.GridLayout;
 // import javax.swing.JTextField;
@@ -34,8 +33,14 @@ public class MonopolyPlayerPanel extends JPanel {
     GridLayout layout = new GridLayout(numPlayers, 2);
 
     public MonopolyPlayerPanel (){
-
         setLayout(layout);
+
+        // setSize(new DimensionUIResource(, height));
+
+        setBackground(GameMain.SFONDO);
+        setBorder(GameMain.blackline);
+        
+        setFont(GameMain.courier);
 
         for(Player x: monopoly.getListOfPlayer()){
 

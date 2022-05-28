@@ -27,8 +27,9 @@ public class MonopolyGridPanel extends JPanel {
         super.paint(g);
         Graphics2D g2D = (Graphics2D) g;
 
-        Image img = backgroundImage.getScaledInstance(1000  , 1000, Image.SCALE_AREA_AVERAGING);
-        g2D.drawImage(img,0 ,0 , null);
+        // Image img = backgroundImage.getScaledInstance(924  , 1664, Image.SCALE_SMOOTH);
+        g2D.drawImage(backgroundImage,0 ,0 , null);
     }
+
 
 }

@@ -19,23 +19,23 @@ public class MonopolyCommandsPanel extends JPanel {
     JButton button1 = new JButton("Trow the dice");
 
     Dimension dim = new Dimension(130,100);
-    Border blackline = BorderFactory.createLineBorder(GameMain.CREMISI);
-    Font courier = new Font("SansSerif", Font.BOLD, 22);
+    // Border blackline = BorderFactory.createLineBorder(GameMain.CREMISI);
+    // Font courier = new Font("SansSerif", Font.BOLD, 22);
 
     // JButton button4;
     // JButton button5;
 
     public MonopolyCommandsPanel(){
 
-
+        // setSize(new Dimension(600,300));
         FlowLayout layout  = new FlowLayout(FlowLayout.CENTER,10,50 );
         this.setComponentOrientation(ComponentOrientation.LEFT_TO_RIGHT);
 
         setBackground(GameMain.SFONDO);
 
-        setBorder(blackline);
+        setBorder(GameMain.blackline);
         setLayout(layout);
-        setFont(courier);
+        setFont(GameMain.courier);
 
         button1.setPreferredSize(dim);
 
