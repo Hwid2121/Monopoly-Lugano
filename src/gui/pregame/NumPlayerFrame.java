@@ -21,7 +21,7 @@ public class NumPlayerFrame extends JFrame implements ActionListener {
 
     public NumPlayerFrame(PanelPregame parentPanel) {
         super();
-        parentPan = parentPanel;
+        PanelPregame parentPan = parentPanel;
         JPanel panel = new FormPanel(parentPan, this);
 
         setVisible(false);

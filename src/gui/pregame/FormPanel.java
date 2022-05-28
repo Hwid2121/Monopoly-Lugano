@@ -20,6 +20,7 @@ public class FormPanel extends JPanel {
     private JTextField textField;
     final private NumPlayerFrame framea;
     final private PanelPregame frameb;
+    private JButton button;
 
     public FormPanel(PanelPregame frameB, NumPlayerFrame frameA) {
 

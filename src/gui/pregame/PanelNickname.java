@@ -19,13 +19,13 @@ public class PanelNickname extends JPanel {
     private PanelPlayers panel;
     
     public PanelNickname(PanelPlayers pan) {
-        @super();
+        super();
 
-         panel = pan;
+        panel = pan;
 
         System.out.println("Numero di giocatoei in panelNick " + GameMain.monopoly.getNumOfplayer());
 
-        num = GameMain.monopoly.getNumOfplayer();
+        int num = GameMain.monopoly.getNumOfplayer();
 
         BoxLayout layout = new BoxLayout(this, BoxLayout.PAGE_AXIS);
         setLayout(layout);
