@@ -1,6 +1,9 @@
 package gui;
 
 import javax.swing.JPanel;
+
+import gui.main.GameMain;
+
 import java.awt.Graphics2D;
 import java.awt.Image;
 import java.awt.Graphics;
@@ -14,10 +17,6 @@ public class MonopolyGridPanel extends JPanel {
     public MonopolyGridPanel() {
         backgroundImage = new ImageIcon("/home/paperino/Desktop/project-monopoly-dinasty/src/gui/images/monopolygrid1000.png").getImage();
 
-
-        // ImageResizer.resize(backgroundImage, outputImagePath2, percent);
-
-        
         
 
     }
@@ -25,11 +24,20 @@ public class MonopolyGridPanel extends JPanel {
 
     public void paint(Graphics g) {
         super.paint(g);
-        Graphics2D g2D = (Graphics2D) g;
+        Graphics2D pan = (Graphics2D) g;
+
 
         // Image img = backgroundImage.getScaledInstance(924  , 1664, Image.SCALE_SMOOTH);
-        g2D.drawImage(backgroundImage,0 ,0 , null);
+        pan.drawImage(backgroundImage,0 ,0 , null);
+
+        pan.setPaint(GameMain.AZZURRO);
+        pan.fillOval(10,10 , 30, 30);
+
+        
     }
+
+
+
 
 
 }
