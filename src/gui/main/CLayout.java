@@ -10,42 +10,40 @@ import java.awt.CardLayout;
 import javax.swing.ImageIcon;
 
 
-public class CLayout extends JFrame implements ActionListener {
+public class CLayout extends JPanel implements ActionListener {
 
-    private JFrame frame = new JFrame("Monopoly Lugano");
-    private JPanel panelCont = new JPanel();
-    private JPanel panelPregame = new PanelPregame(this);
+    // private JFrame frame = new JFrame("Monopoly Lugano");
+    // private JPanel panelCont = new JPanel();
+    private JPanel panelPregame;
     // private JPanel panelPlayers = new PanelPlayers();
     // private JPanel panelMonopoly = new PanelMonopoly();
 
     private CardLayout mainFrame = new CardLayout();
 
-    private JPanel clayoutforgame = new CLayoutForGame();
+    // private JPanel clayoutforgame = new CLayoutForGame();
 
-    private ImageIcon img = new ImageIcon("/home/paperino/Desktop/project-monopoly-dinasty/src/gui/images/icon.png");
+    private GameMain main;
+    // ImageIcon img = new ImageIcon("/home/paperino/Desktop/project-monopoly-dinasty/src/gui/images/icon.png");
 
-    public CLayout() {
-        super();
-        panelCont.setLayout(mainFrame);
+    public CLayout(GameMain game) {
 
-        frame.setTitle("Monopoly Lugano");
-        frame.setIconImage(img.getImage());
+        main = game;
 
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setLocationRelativeTo(null);
-        frame.setExtendedState(JFrame.MAXIMIZED_BOTH);
+        this.setLayout(mainFrame);
+        panelPregame = new PanelPregame(this);
+        // frame.setTitle("Monopoly Lugano");
+        // frame.setIconImage(img.getImage());
 
-        panelCont.add(panelPregame, "1");
+        // frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        // frame.setLocationRelativeTo(null);
+        // frame.setExtendedState(JFrame.MAXIMIZED_BOTH);
 
-        // panelCont.add(panelPlayers, "2");
+        this.add(panelPregame, "1");
+        mainFrame.show(this, "1");
 
-        // panelCont.add(clayoutforgame, "3");
-
-        mainFrame.show(panelCont, "1");
-
-        frame.add(panelCont);
-        frame.pack();
-        frame.setVisible(true);
+        // frame.add(panelCont);
+        // frame.pack();
+        // frame.setVisible(true);
         
 
     }
@@ -53,21 +51,35 @@ public class CLayout extends JFrame implements ActionListener {
     public void switchCard() {
 
         JPanel panelPlayers = new PanelPlayers(this);
-        panelCont.add(panelPlayers, "2");
+        this.add(panelPlayers, "2");
 
-        mainFrame.next(panelCont);
+        mainFrame.next(this);
     }
 
 
     public void endPreGame(){
 
-        JPanel panelMonopoly = new PanelMonopoly();
-        panelCont.add(panelMonopoly, "3");
 
-        mainFrame.next(panelCont);
-        PanelMonopoly.mamma();
-        System.out.println("heigh tot" + panelMonopoly.getHeight());
-        System.out.println("width tot" + panelMonopoly.getWidth());
+        // main.setStatus(1)
+
+        // JPanel panelMonopoly = new PanelMonopoly();
+        // panelCont.add(panelMonopoly, "3");
+
+        // mainFrame.next(panelCont);
+        // PanelMonopoly.mamma();
+        // System.out.println("heigh tot" + panelMonopoly.getHeight());
+        // System.out.println("width tot" + panelMonopoly.getWidth());
+        // this.dispose();
+        this.setVisible(false); 
+        
+
+        // main.setStatus(1);
+
+        main.mainGame();
+        
+
+
+
     }
 
     @Override
