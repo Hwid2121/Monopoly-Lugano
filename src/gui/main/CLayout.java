@@ -1,22 +1,14 @@
 package gui.main;
-
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
-
-import gui.PanelEnd;
 import gui.panels.PanelMonopoly;
 import gui.panels.PanelPlayers;
 import gui.panels.PanelPregame;
-import gui.pregame.PanelNickname;
-
 import java.awt.CardLayout;
-
 import javax.swing.ImageIcon;
-import java.awt.CardLayout;
 
-import model.*;
 
 public class CLayout extends JPanel implements ActionListener {
 

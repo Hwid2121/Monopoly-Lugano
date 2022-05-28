@@ -16,8 +16,7 @@ import java.awt.FlowLayout;
 import java.awt.Font;
 
 public class FormPanel extends JPanel {
-
-    private JButton button;
+    
     private JTextField textField;
     final private NumPlayerFrame framea;
     final private PanelPregame frameb;

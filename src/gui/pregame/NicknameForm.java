@@ -19,6 +19,7 @@ public class NicknameForm extends JPanel {
     private JTextField textField;
 
     public NicknameForm(int i) {
+        super();
 
         setBackground(GameMain.SFONDO);
         GridBagLayout layout = new GridBagLayout();

@@ -15,6 +15,8 @@ public class CLayoutForGame extends JPanel  {
     private GameMain main;
     public CLayoutForGame(GameMain game) {
 
+    public CLayoutForGame() {
+        super();
 
         main = game;
         setLayout(mainFrame);

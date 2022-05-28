@@ -22,8 +22,8 @@ import java.awt.Component;
 
 public class PanelPlayers extends JPanel implements ActionListener {
 
-    private final Dimension PRF_SIZE_IMG = new Dimension(800, 800);
-    private final Dimension MIN_SIZE_IMG = new Dimension(200, 200);
+    private final Dimension   prfsizeimg = new Dimension(800, 800);
+    private final Dimension  minsizeimg = new Dimension(200, 200);
 
 
     // private JTextField textField = new JTextField();
@@ -46,8 +46,8 @@ public class PanelPlayers extends JPanel implements ActionListener {
         image = new ImageIcon(img);
         JLabel imagelabel = new JLabel(image);
 
-        imagelabel.setMinimumSize(MIN_SIZE_IMG);
-        imagelabel.setPreferredSize(PRF_SIZE_IMG);
+        imagelabel.setMinimumSize( minsizeimg);
+        imagelabel.setPreferredSize(  prfsizeimg);
 
         add(imagelabel);
 

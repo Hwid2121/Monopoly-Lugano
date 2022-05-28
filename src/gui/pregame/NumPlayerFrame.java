@@ -19,10 +19,8 @@ import java.awt.Font;
 
 public class NumPlayerFrame extends JFrame implements ActionListener {
 
-    private PanelPregame parentPan;
-
     public NumPlayerFrame(PanelPregame parentPanel) {
-
+        super();
         parentPan = parentPanel;
         JPanel panel = new FormPanel(parentPan, this);
 

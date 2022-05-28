@@ -153,7 +153,7 @@ public class Player {
      */
     public String getNickname() {
 
-        if (nickname.equals("")){
+        if ("".equals(nickname)){
             return "";
         }
             
@@ -268,8 +268,9 @@ public class Player {
 
     public String propertySquaretoString() {
 
-        if (listofPropertySquares.isEmpty())
+        if (listofPropertySquares.isEmpty()) {
             return "No properties";
+        }
         else {
             String s = listofPropertySquares.get(0).getName();
 
@@ -292,7 +293,7 @@ public class Player {
      */
     public String getSellproperString() {
 
-        if (listofPropertySquares.size() == 0)
+        if (listofPropertySquares.isEmpty())
         {
             return "No properties";
         }
