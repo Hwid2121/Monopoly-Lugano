@@ -6,6 +6,7 @@ import javax.swing.JPanel;
 import gui.MonopolyCommandsPanel;
 import gui.MonopolyGridPanel;
 import gui.MonopolyPlayerPanel;
+import gui.main.GameMain;
 
 import java.awt.BorderLayout;
 import java.awt.Dimension;
@@ -20,9 +21,13 @@ public class PanelMonopoly extends JPanel {
 
 
     private static JPanel monopolyGridPanel;
+    private GameMain main;
      
-    public PanelMonopoly() {
+    public PanelMonopoly(GameMain game) {
 
+
+        main = game;
+        
         JButton button1 = new JButton("NORTH");
         JButton button2 = new JButton("END-LINE");
 
