@@ -3,11 +3,11 @@ import gui.MyButton;
 import java.awt.Color;
 import model.*;
 import java.awt.Font;
+import java.awt.CardLayout;
 import javax.swing.border.Border;
 import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
-import java.awt.CardLayout;
 
 public class GameMain extends JFrame {
 
@@ -37,7 +37,7 @@ public class GameMain extends JFrame {
 
     private CardLayout mainframe = new CardLayout();
     
-    ImageIcon img = new ImageIcon("src/gui/images/icon.png");
+    private ImageIcon img = new ImageIcon("src/gui/images/icon.png");
 
     // private JFrame frame = new JFrame("Monopoly Lugano");
 

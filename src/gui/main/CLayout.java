@@ -1,13 +1,11 @@
 package gui.main;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import javax.swing.JFrame;
 import javax.swing.JPanel;
-import gui.panels.PanelMonopoly;
 import gui.panels.PanelPlayers;
 import gui.panels.PanelPregame;
 import java.awt.CardLayout;
-import javax.swing.ImageIcon;
+
 
 
 public class CLayout extends JPanel implements ActionListener {
@@ -23,10 +21,10 @@ public class CLayout extends JPanel implements ActionListener {
     // private JPanel clayoutforgame = new CLayoutForGame();
 
     private GameMain main;
-    // ImageIcon img = new ImageIcon("/home/paperino/Desktop/project-monopoly-dinasty/src/gui/images/icon.png");
+    // ImageIcon img = new ImageIcon("/src/gui/images/icon.png");
 
     public CLayout(GameMain game) {
-
+        super();
         main = game;
 
         this.setLayout(mainFrame);

@@ -1,10 +1,5 @@
 package gui;
-
-import javax.swing.JFrame;
 import javax.swing.JPanel;
-
-import model.Piece;
-
 import java.awt.Graphics2D;
 import java.awt.Graphics;
 import java.awt.Dimension;
@@ -17,7 +12,7 @@ public class PieceColor extends JPanel {
     private Color color;
 
     public PieceColor(Player player) {
-
+        super(); 
 
         color = player.getPiece().getColor();
         this.setPreferredSize(new Dimension(30, 30));

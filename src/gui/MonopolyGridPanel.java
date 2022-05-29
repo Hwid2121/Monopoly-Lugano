@@ -37,13 +37,12 @@ public class MonopolyGridPanel extends JPanel  implements ActionListener{
 	private Position pos;
 
 
-
-    Image backgroundImage;
+    //background image.
+    private Image backgroundImage;
 
     public MonopolyGridPanel() {
-        backgroundImage = new ImageIcon("/home/paperino/Desktop/project-monopoly-dinasty/src/gui/images/monopolygrid1000.png").getImage();
-        // timer  = new Timer();
-        // add(move);
+        super();
+        backgroundImage = new ImageIcon("/src/gui/images/monopolygrid1000.png").getImage();
 
         // setStep(2);
         // timer = new Timer(5, this);

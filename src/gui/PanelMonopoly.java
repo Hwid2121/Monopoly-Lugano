@@ -6,6 +6,14 @@ import java.awt.BorderLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+/**
+ * This class rappresents the Monopoly panel.
+ * 
+ *
+ * @author Nicolo' Tafta & Alberto Sardo
+ * @version 28/05/2022
+ */
+
 public class PanelMonopoly extends JPanel {
 
 
@@ -13,11 +21,13 @@ public class PanelMonopoly extends JPanel {
     // private final Dimension  minsizeimg = new Dimension(200, 200);
 
 
-    static JPanel monopolyGridPanel;
+    private static JPanel monopolyGridPanel;
      
     public PanelMonopoly() {
+        super();
 
-        JButton button1 = new JButton("NORTH");
+
+    
         JButton button2 = new JButton("END-LINE");
 
 

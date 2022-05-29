@@ -11,6 +11,7 @@ public class GamePanel extends JPanel implements Runnable {
     // private SquareCell[] cell = new SquareCell[Table.getSizeofTable()];
 
     public GamePanel() {
+        super();
         GridLayout layoutMonopoly = new GridLayout(10, 10);
 
     }

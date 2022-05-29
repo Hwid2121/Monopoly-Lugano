@@ -7,16 +7,15 @@ import java.awt.GridBagConstraints;
 import gui.main.GameMain;
 import model.*;
 import java.awt.GridBagLayout;
-import java.awt.Color;
 import java.awt.Insets;
 
 public class PlayerStatPanel extends JPanel {
 
-    private String name;
-    private int money;
-    // private Piece piece;
-    private int position;
-    private Color color;
+    // private String name;
+    // private int money;
+    // // private Piece piece;
+    // private int position;
+    // private Color color;
 
 
     // private PropertySquare propertySquare;
@@ -28,13 +27,12 @@ public class PlayerStatPanel extends JPanel {
 
 
     public PlayerStatPanel(Player player){
-
+        super();
         JPanel  pieceColorPanel = new  PieceColorPanel(player);
 
-        name = player.getNickname();
-        money = player.getMoney();
-        color = player.getPiece().getColor();
-        position = player.getPosition();
+        String name = player.getNickname();
+        int money = player.getMoney();
+        int position = player.getPosition();
 
         setBackground(GameMain.SFONDO);
         setBorder(GameMain. BLACKLINE);

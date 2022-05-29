@@ -28,7 +28,7 @@ Inside of the `Model` the code is structured with different classes with its own
 
  - BonusSquare
  - Card
- - CardsDeck
+ - cardsDeck
  - Dice
  - House
  - JailSquare
@@ -126,7 +126,7 @@ java -cp target/classes gui.Main ARG ARG ARG
  THe JUnit test are usefull to cover all the corner cases and let you know if your code is going well. 
  For running them we can use:
 
- - `mvn test` for see the test that run and pass or fail.
+ - `mvn test` for see the test that run and passstring or fail.
  - `mvn site` for watch also the coverage for each class with JUnit tests.
  
 

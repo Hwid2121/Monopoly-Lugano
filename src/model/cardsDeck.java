@@ -21,7 +21,7 @@ public class cardsDeck {
 
     private Random rand = new Random();
 
-    int index;
+    private int index;
 
     public cardsDeck() {
         newCards();
@@ -31,7 +31,7 @@ public class cardsDeck {
 
         cards.add(new Card("Advance to LAC"));
         cards.add(new Card("Advance to Go (Collect 200 chf)"));
-        cards.add(new Card("Advance to Via la Santa. If you pass Go, collect 200 chf"));
+        cards.add(new Card("Advance to Via la Santa. If you passstring Go, collect 200 chf"));
 
         cards.add(new Card("Credit Suisse error in your favor. Collect 200 chf"));
 
@@ -41,7 +41,7 @@ public class cardsDeck {
 
         cards.add(new Card("Holiday fund matures. Receive 100 chf"));
 
-        cards.add(new Card("Go to Jail. Go directly to jail, do not pass Go, do not collect 200 chf"));
+        cards.add(new Card("Go to Jail. Go directly to jail, do not passstring Go, do not collect 200 chf"));
 
         cards.add(new Card("Pay insurance fees of 100 chf"));
 
@@ -49,7 +49,7 @@ public class cardsDeck {
 
         cards.add(new Card("You took the best grade of PF2 project. Collect 75 chf"));
 
-        cards.add(new Card("Advance to Parco Ciani. If you pass Go, collect 200 chf"));
+        cards.add(new Card("Advance to Parco Ciani. If you passstring Go, collect 200 chf"));
 
         cards.add(new Card(
                 "Oh no you blow through a red light, you took a fine of 200 chf "));
