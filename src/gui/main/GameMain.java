@@ -3,6 +3,7 @@ import gui.MyButton;
 import java.awt.Color;
 import model.*;
 import java.awt.Font;
+import java.awt.CardLayout;
 import javax.swing.border.Border;
 import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
@@ -27,7 +28,19 @@ public class GameMain extends JFrame {
     public static final Font COURIER = new Font("SansSerif", Font.BOLD, 22);
 
     public static Monopoly monopoly = new Monopoly();
+<<<<<<< HEAD
     //img import
+=======
+
+    private CLayout clayout;
+
+    private CLayoutForGame monopolyGUI;
+
+    private int status = 0;
+
+    private CardLayout mainframe = new CardLayout();
+    
+>>>>>>> 216e741d6e71a80c9fa88df1a22e6483d66f378a
     private ImageIcon img = new ImageIcon("src/gui/images/icon.png");
 
     // private JFrame frame = new JFrame("Monopoly Lugano");
@@ -44,8 +57,8 @@ public class GameMain extends JFrame {
         // clayout = new CLayout(this);
         // add(clayout);
 
-        preGame();
-        // mainGame();
+        // preGame();
+        mainGame();
         this.pack();
         this.setVisible(true);
 
