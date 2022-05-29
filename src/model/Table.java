@@ -2,6 +2,7 @@
 package model;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 /**
  * The table is composed by Squares that can be:
@@ -47,7 +48,7 @@ public class Table {
      * 
      */
     public void newtable() {
-        cell[0] = new BonusSquare("Start", bonus, "Collect 200.- salary as you passstring", 200);
+        cell[0] = new BonusSquare("Start", bonus, "Collect 200.- salary as you pass", 200);
 
         cell[1] = new PropertySquare(60, 2, "Via Zurigo", "brown", 30, 1, 50, 10, 30, 90, 160, 250);
 
@@ -298,7 +299,7 @@ public class Table {
     }
 
     public Square[] getCell() {
-        return this.cell;
+        return cell;
     }
 
     /**
