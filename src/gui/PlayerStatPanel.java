@@ -58,13 +58,15 @@ public class PlayerStatPanel extends JPanel {
         cash.setFont(GameMain.COURIER);
         JLabel pos = new JLabel("Position: " + position);
         pos.setFont(GameMain.COURIER);
+        JLabel properties = new JLabel("Properties: "+ player.propertySquaretoString());
+        properties.setFont(GameMain.COURIER);
         // JLabel icon = new JLabel("Color: ");
         // icon.setFont(GameMain.COURIER);
 
 
 
     
-        c.insets = new Insets(10,0,30,50); 
+        c.insets = new Insets(10,0,10,50); 
         c.gridx = 0;
         c.gridy = 0;
         c.fill = GridBagConstraints.HORIZONTAL;
@@ -73,17 +75,27 @@ public class PlayerStatPanel extends JPanel {
 
         
         // c.fill = GridBagConstraints.HORIZONTAL;
-        c.insets = new Insets(10,0,30,50); 
+        c.insets = new Insets(10,0,10,50); 
         c.gridx = 0;
         c.gridy = 1;
         c.fill = GridBagConstraints.HORIZONTAL;
         add(cash, c);
 
+
+
         // c.fill = GridBagConstraints.HORIZONTAL;
-        c.insets = new Insets(10,0,30,50); 
+        c.insets = new Insets(10,0,10,50); 
         c.gridx = 0;
         c.gridy = 2;
-        c.weighty = 1.0; 
+        c.fill = GridBagConstraints.HORIZONTAL;
+        // add(cash, c);
+        add(properties, c);
+
+        // c.fill = GridBagConstraints.HORIZONTAL;
+        c.insets = new Insets(10,0,10,50); 
+        c.gridx = 0;
+        c.gridy = 3;
+        // c.weighty = 1.0; 
         c.fill = GridBagConstraints.HORIZONTAL;
         add(pos, c);
 
@@ -91,13 +103,14 @@ public class PlayerStatPanel extends JPanel {
 
         
         c.fill = GridBagConstraints.HORIZONTAL;
-        c.insets = new Insets(10,0,30,50); 
-        // c.ipady = 40;      
-        c.weightx = 0.0;
-        c.gridwidth = 3;
+        c.insets = new Insets(10,0,10,50); 
+        c.gridwidth = 2;
         c.gridx = 0;
-        c.gridy = 3;
+        c.gridy = 4;
         add(pieceColorPanel, c);
+
+
+
 
 
 

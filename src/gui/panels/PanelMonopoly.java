@@ -26,10 +26,12 @@ public class PanelMonopoly extends JPanel {
     private CLayoutForGame main ;
 
 
-    private int fase = 0;
+    private int fase;
      private Player player;
-    public PanelMonopoly(CLayoutForGame game, Player players) {
+    public PanelMonopoly(CLayoutForGame game, Player players, int phase) {
 
+
+        fase = phase;
         player = players;
          main = game;
         int width = getWidth();
@@ -56,9 +58,6 @@ public class PanelMonopoly extends JPanel {
 
 
     public void refreshplayerStats(){
-        // removeAll();
-        // monopolyPlayerPanel.refreshPage();
-        // main.refresh();
         main.refresh();
     }
 
@@ -70,6 +69,13 @@ public class PanelMonopoly extends JPanel {
 
     public void incrementFase(){
         fase +=1;
+    }
+
+
+
+    public void nextPage(){
+
+        main.nextPage();
     }
 
 

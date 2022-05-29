@@ -167,8 +167,12 @@ public class MonopolyCommandsPanel extends JPanel implements ActionListener{
 
             monopoly.throwDice();
             monopoly.setPositionPlayer(player);
+
             System.out.println("SI FUNZ " + monopoly.getListOfPlayer().get(0).getPosition());
+            main.nextPage();
             main.incrementFase();
+            
+
             // dice.addActionListener(click);
             // close();         
             }

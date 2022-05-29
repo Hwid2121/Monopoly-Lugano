@@ -22,6 +22,8 @@ public class CLayoutForGame extends JPanel  {
     private int skip = 0;
 
     private Player player;
+
+    int fase =0;
     
     public CLayoutForGame(GameMain game) {
 
@@ -32,24 +34,25 @@ public class CLayoutForGame extends JPanel  {
         setLayout(mainFrame);
 
         
-        player =  monopoly.getPLayer(turn);
+        
 
 
         // while(GameMain.monopoly.monopolyEND()){
 
             
-            // monopoly.getPLayer(turn);
+            
+  
+            
+            player =  monopoly.getPLayer(turn);
             turn = turn % numberOfPlayers;
+            monopoly(monopoly.getPLayer(turn), fase);
+
+            
 
 
-
-            monopoly(monopoly.getPLayer(turn));
-
-
-       
-
-
+// 
         // }
+        
         
 
 
@@ -60,34 +63,31 @@ public class CLayoutForGame extends JPanel  {
     }
 
 
-    public void monopoly(Player player) {
-        PanelMonopoly panelMonopoly = new PanelMonopoly(this, player);
-        add(panelMonopoly, "monopoly");
+    public void monopoly(Player player, int i) {
+        PanelMonopoly panelMonopoly = new PanelMonopoly(this, player, fase);
+        add(panelMonopoly, "1");
         
-        mainFrame.show(this, "monopoly");
+        mainFrame.show(this, "1");
         
     }   
 
 
     public void refresh(){
 
-
-        monopoly(player);
        System.out.println("POSIXIONE PLA" + monopoly.getListOfPlayer().get(0).getPosition());
+
     }
 
 
     public void nextPage(){
 
-        PanelMonopoly panelMonopoly = new PanelMonopoly(this, player);
-        add(panelMonopoly, "monopoly");
-        // mainFrame.
+        PanelMonopoly panelMonopoly = new PanelMonopoly(this, player, fase);
+        add(panelMonopoly, "2");
+        mainFrame.next(this);
     }
 
 
-    // public void finishGame(){
-    //     end
-    // }
+
 
      
 }
