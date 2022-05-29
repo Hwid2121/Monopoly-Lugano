@@ -2,14 +2,26 @@
 package gui;
 import javax.swing.JButton;
 import javax.swing.JPanel;
+
+import gui.main.CLayout;
+import gui.main.CLayoutForGame;
 import gui.main.GameMain;
+import gui.panels.PanelMonopoly;
+import model.Monopoly;
+import model.Player;
+
 import java.awt.FlowLayout;
 import java.awt.Dimension;
 import java.awt.ComponentOrientation;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.WindowListener;
+import java.nio.channels.ClosedSelectorException;
 
 
-public class MonopolyCommandsPanel extends JPanel {
+
+public class MonopolyCommandsPanel extends JPanel implements ActionListener{
 
 
 
@@ -23,9 +35,31 @@ public class MonopolyCommandsPanel extends JPanel {
     // JButton button4;
     // JButton button5;
 
-    public MonopolyCommandsPanel(){
+
+    private Clicklistener click = new Clicklistener();
+    private JButton buy = new JButton("BUY");
+    private JButton pass = new JButton("PASS");
+    private JButton sell = new JButton("SELL");
+    private JButton build = new JButton("BUILD");
+    private JButton pay = new JButton("PAY FINE");
+    private JButton dice = new JButton("TROW DICE");
+    private JButton card = new JButton("USE CARD");
+    private Player player;
+
+    private Monopoly monopoly = GameMain.monopoly;
+
+    // private  JPanel gridPanel;
+    // private JPanel playersPanel;
+
+
+    private PanelMonopoly main;
+
+    private int skip = 0;
+    public MonopolyCommandsPanel(PanelMonopoly maina, Player playerx  ){
         super();
-        // setSize(new Dimension(600,300));
+        this.player = playerx;
+        main = maina;
+
         FlowLayout layout  = new FlowLayout(FlowLayout.CENTER,50,20 );
         this.setComponentOrientation(ComponentOrientation.LEFT_TO_RIGHT);
 
@@ -35,10 +69,133 @@ public class MonopolyCommandsPanel extends JPanel {
         setLayout(layout);
         setFont(GameMain.COURIER);
 
-        // trowDice();
 
 
-        propertySquareEMPTY();
+
+        if(main.getFase() == 0){
+            trowDice();
+            
+        } else if( main.getFase() == 1){
+            propertySquareOwned();
+        }
+
+
+        // while (skip == 0){
+
+        //     trowDice();
+        //     main.refreshplayerStats();
+
+
+
+        //     skip =1;
+        // }
+
+
+        buy.addActionListener(new ActionListener(){
+
+
+            public void actionPerformed(ActionEvent arg){
+
+                    
+
+
+            }
+
+
+        });
+
+
+        sell.addActionListener(new ActionListener(){
+
+
+            public void actionPerformed(ActionEvent arg){
+
+
+
+
+            }
+
+
+        });
+
+
+        pass.addActionListener(new ActionListener(){
+
+
+            public void actionPerformed(ActionEvent arg){
+
+
+
+
+            }
+
+
+        });
+
+        build.addActionListener(new ActionListener(){
+
+
+            public void actionPerformed(ActionEvent arg){
+
+
+
+
+            }
+
+
+        });
+
+        pay.addActionListener(new ActionListener(){
+
+
+            public void actionPerformed(ActionEvent arg){
+
+
+
+
+            }
+
+
+        });
+
+
+        dice.addActionListener(new ActionListener(){
+
+
+            public void actionPerformed(ActionEvent arg){
+
+
+            monopoly.throwDice();
+            monopoly.setPositionPlayer(player);
+            System.out.println("SI FUNZ " + monopoly.getListOfPlayer().get(0).getPosition());
+            main.incrementFase();
+            // dice.addActionListener(click);
+            // close();         
+            }
+
+
+        });
+
+
+        card.addActionListener(new ActionListener(){
+
+
+            public void actionPerformed(ActionEvent arg){
+
+
+
+
+            }
+
+
+        });
+
+
+
+        
+
+
+
 
 
         setVisible(true);
@@ -51,16 +208,21 @@ public class MonopolyCommandsPanel extends JPanel {
 
     }
 
+    public void close(){
+       removeAll();
+    }
 
 
 
     public void trowDice(){
 
-        JButton button1 = new JButton("Trow the dice");
         
-        button1.setPreferredSize(dim);
+        
 
-        this.add(button1);
+
+        dice.setPreferredSize(dim);
+
+        this.add(dice);
 
 
          
@@ -69,10 +231,10 @@ public class MonopolyCommandsPanel extends JPanel {
 
     public void propertySquareEMPTY(){
             
-            JButton buy = new JButton("BUY");
+           
             buy.setPreferredSize(dim);
 
-            JButton pass = new JButton("PASS");
+           
             pass.setPreferredSize(dim);
 
  
@@ -85,13 +247,13 @@ public class MonopolyCommandsPanel extends JPanel {
 
 
     public void propertySquareOwned(){
-            JButton sell = new JButton("SELL");
+            
             sell.setPreferredSize(dim);
 
-            JButton build = new JButton("BUILD");
+            
             build.setPreferredSize(dim);
 
-            JButton pass = new JButton("PASS");
+     
             pass.setPreferredSize(dim);
 
             this.add(sell);
@@ -103,7 +265,7 @@ public class MonopolyCommandsPanel extends JPanel {
 
 
     public void emptySquare(){
-            JButton pass = new JButton("PASS");
+         
             pass.setPreferredSize(dim);
         
             this.add(pass);
@@ -113,17 +275,15 @@ public class MonopolyCommandsPanel extends JPanel {
 
     public void jailSquare(){
 
-        JButton pay = new JButton("PAY FINE");
         pay.setPreferredSize(dim);
 
-        JButton dice = new JButton("TROW DICE");
         dice.setPreferredSize(dim);
 
-        JButton card = new JButton("USE CARD");
+
         card.setPreferredSize(dim);
 
 
-        JButton pass = new JButton("PASS");
+        
         pass.setPreferredSize(dim);
 
 
@@ -138,7 +298,6 @@ public class MonopolyCommandsPanel extends JPanel {
 
     public void goToJailSquare(){
 
-        JButton pass = new JButton("PASS");
         pass.setPreferredSize(dim);
 
         this.add(pass);
@@ -148,4 +307,35 @@ public class MonopolyCommandsPanel extends JPanel {
 
 
 
+    @Override
+    public void actionPerformed(ActionEvent e) {
+
+        // if (e.getSource() == dice)
+        // {
+        //   this.removeAll();
+        //   setVisible(false);
+        //   System.out.println("arrivo fino a qua ");
+        // }
+        
+    }
+
+
+    private class Clicklistener implements ActionListener
+  {
+    public void actionPerformed(ActionEvent e)
+    {
+      if (e.getSource() == dice)
+      {
+        System.out.println("sono finoa  quaaawdaa");
+        // close();
+      }
+      
+      
+    }
+  }
 }
+
+
+
+
+

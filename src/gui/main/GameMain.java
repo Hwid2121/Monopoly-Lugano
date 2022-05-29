@@ -53,8 +53,8 @@ public class GameMain extends JFrame {
         // clayout = new CLayout(this);
         // add(clayout);
 
-        // preGame();
-        mainGame();
+        preGame();
+        // mainGame();
         this.pack();
         this.setVisible(true);
 

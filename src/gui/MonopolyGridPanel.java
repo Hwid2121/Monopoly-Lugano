@@ -11,6 +11,7 @@ import java.awt.Shape;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.event.*;
+import java.util.ArrayList;
 
 import javax.swing.Action;
 import javax.swing.ImageIcon;
@@ -42,26 +43,30 @@ public class MonopolyGridPanel extends JPanel  implements ActionListener{
 
     private Monopoly monopoly = GameMain.monopoly;
 
-
-    Player player = new Player("nico");
     
+    private Player player;
+
 
     //background image.
     private Image backgroundImage;
 
-    public MonopolyGridPanel() {
+    public MonopolyGridPanel(Player playerz) {
         super();
         backgroundImage = new ImageIcon("src/gui/images/monopolygrid1000.png").getImage();
+        this.player = playerz;
 
         // setStep(2);
         // timer = new Timer(5, this);
 		// timer.start();
-        player.setPosition(5);
+        // player.setPosition(5);
         
        
         
 
     }
+
+
+
 
 
 
@@ -74,26 +79,34 @@ public class MonopolyGridPanel extends JPanel  implements ActionListener{
 
         pan.drawImage(backgroundImage,0 ,0 , null);
 
-        pan.fillOval(gridpos.getPosition(player.getPosition()).getX(), gridpos.getPosition(player.getPosition()).getY(), 30, 30);
-
+        
         // pan.fillOval(x, , arg2, arg3);
+
+
+        for (Player player: monopoly.getListOfPlayer()){
+
+
+            pan.setPaint(player.getPiece().getColor());
+            pan.fillOval(gridpos.getPosition(player.getPosition()).getX(), gridpos.getPosition(player.getPosition()).getY(), 30, 30);
+
+
+        }
+
+
+
+
     }
 
 
 
-    public void setPlayerPosition(Player player){
+    // public void setPlayerPosition(Player player){
             
-        casella = player.getPosition();
+    //     casella = player.getPosition();
 
-    }
+    // }
 
     public void setStep(int i){
-        // step = 45*i;
 
-        // step = i * -76;
-        //  -61 - 15
-        step = i * 76;
-        step = step - 30;
 
     }
 
@@ -102,63 +115,12 @@ public class MonopolyGridPanel extends JPanel  implements ActionListener{
     public void actionPerformed(ActionEvent arg0) {
         
 
-
-        
-        if(y== 61 && x <  909){
-            
-            if (x != step){
-                // step = step - x;
-                xVelocity = 1;
-                x = x + xVelocity;
-                repaint();
-            }
-        } 
-
-        if(x == 909 && y < 909){
-           
-            if (y != step){
-                // step = step - y;
-                yVelocity = 1;
-                y = y + yVelocity;
-                repaint();
-            }
-        }
-
-
-
-        if( y == 909  && x > 61)
-        {
-            
-            if(x != step){
-                // step = step - x;
-                xVelocity = -1;
-                x = x + xVelocity;
-                repaint();
-            }
-        }
-
-        if ( x == 61 && y > 61){
-            // step = step - y;
-            if(y != step){
-                // step = step - x;
-                yVelocity = -1;
-                y = y + yVelocity;
-                repaint();
-            }
-        }
-
-        
-
-
-
-
-
-        
-
-
-
-		// repaint();
+        // while()
+       
     }
+
+
+    
 
 
 

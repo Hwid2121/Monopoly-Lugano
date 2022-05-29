@@ -6,7 +6,10 @@ import javax.swing.JPanel;
 import gui.MonopolyCommandsPanel;
 import gui.MonopolyGridPanel;
 import gui.MonopolyPlayerPanel;
+import gui.main.CLayout;
+import gui.main.CLayoutForGame;
 import gui.main.GameMain;
+import model.Player;
 
 import java.awt.BorderLayout;
 import java.awt.Dimension;
@@ -16,59 +19,34 @@ import java.awt.event.ActionListener;
 public class PanelMonopoly extends JPanel {
 
 
-    // private final Dimension   prfsizeimg = new Dimension(800, 800);
-    // private final Dimension  minsizeimg = new Dimension(200, 200);
+    private  MonopolyGridPanel monopolyGridPanel;
+    private MonopolyPlayerPanel monopolyPlayerPanel;
+    private MonopolyCommandsPanel monopolyCommandsPanel;
+
+    private CLayoutForGame main ;
 
 
-    private static JPanel monopolyGridPanel;
-     
-    public PanelMonopoly(GameMain game) {
+    private int fase = 0;
+     private Player player;
+    public PanelMonopoly(CLayoutForGame game, Player players) {
 
-
-        GameMain main = game;
-        JButton button2 = new JButton("END-LINE");
-
-
-       
-
-    
- 
-    
-
-
-
-
-
-
-
-
-
-
-        button2.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent arg0) {
-            }
-        });
-
-
+        player = players;
+         main = game;
         int width = getWidth();
         int heigh = getHeight();
         
-        monopolyGridPanel = new MonopolyGridPanel();
-        JPanel monopolyPlayerPanel = new MonopolyPlayerPanel();
-        JPanel monopolyCommandsPanel = new MonopolyCommandsPanel();
+
+        monopolyGridPanel = new MonopolyGridPanel(player);
+        monopolyPlayerPanel = new MonopolyPlayerPanel();
+
+        monopolyCommandsPanel = new MonopolyCommandsPanel(this, player);
 
         BorderLayout mainLay = new BorderLayout(0,0);
         monopolyGridPanel.setPreferredSize(new Dimension(1000,1000));
         monopolyPlayerPanel.setPreferredSize(new Dimension(920, 800));
         monopolyCommandsPanel.setPreferredSize(new Dimension(width, 136));
 
-
-        // monopolyGridPanel.minimumSize(new Dimension(1000,1000));
         setLayout(mainLay);
-
-
-        
-        // System.out.println(this);
 
         add(monopolyGridPanel, BorderLayout.CENTER);
         add(monopolyPlayerPanel, BorderLayout.LINE_END);
@@ -77,13 +55,37 @@ public class PanelMonopoly extends JPanel {
     }
 
 
-        public static void mamma(){
-            System.out.println("heigh" + monopolyGridPanel.getHeight());
-            System.out.println("width" + monopolyGridPanel.getWidth());
+    public void refreshplayerStats(){
+        // removeAll();
+        // monopolyPlayerPanel.refreshPage();
+        // main.refresh();
+        main.refresh();
+    }
 
-                        // System.out.println("heigh total" + this.getHeight());
-        }
+
+
+    public int getFase(){
+        return fase;
+    }
+
+    public void incrementFase(){
+        fase +=1;
+    }
+
+
+
+
+
 
 
 
 }
+
+
+        // JButton button2 = new JButton("END-LINE");
+
+
+        // button2.addActionListener(new ActionListener() {
+        //     public void actionPerformed(ActionEvent arg0) {
+        //     }
+        // });

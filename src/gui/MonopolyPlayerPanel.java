@@ -46,4 +46,11 @@ public class MonopolyPlayerPanel extends JPanel {
 
     }
 
+
+
+    public  void refreshPage(){
+        revalidate();
+        repaint();
+    }
+
 }
