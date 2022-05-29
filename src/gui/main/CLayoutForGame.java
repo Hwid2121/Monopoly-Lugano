@@ -113,6 +113,15 @@ public class CLayoutForGame extends JPanel  {
 
 
 
+    public void passTurn(){
+        skip = 1;
+    }
+
+    public void resetTurn(){
+        skip = 0;
+    }
+
+
 
      
 }

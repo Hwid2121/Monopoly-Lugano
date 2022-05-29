@@ -43,7 +43,7 @@ public class PanelMonopoly extends JPanel {
 
         monopolyGridPanel = new MonopolyGridPanel(player);
         monopolyPlayerPanel = new MonopolyPlayerPanel();
-        monopolyCommandsPanel = new MonopolyCommandsPanel(this, player);
+        monopolyCommandsPanel = new MonopolyCommandsPanel( player, main, this);
 
 
 
@@ -62,30 +62,32 @@ public class PanelMonopoly extends JPanel {
     }
 
 
-    public void refreshplayerStats(){
-        main.refresh();
-    }
+    // public void refreshplayerStats(){
+    //     main.refresh();
+    // }
 
 
 
-    public int getFase(){
-        return main.getFase();
-    }
+    // public int getFase(){
+    //     return main.getFase();
+    // }
 
-    public void incrementFase(){
-        main.incrementFase();
-    }
-
-
-
-    public void nextPage(){
-        main.nextPage();
-    }
+    // public void incrementFase(){
+    //     main.incrementFase();
+    // }
 
 
-    public void setfase(int i){
-        main.setFase(i);
-    }
+
+    // public void nextPage(){
+    //     main.nextPage();
+    // }
+
+
+    // public void setfase(int i){
+    //     main.setFase(i);
+    // }
+    
+
 
 
 

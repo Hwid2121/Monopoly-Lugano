@@ -32,7 +32,6 @@ public class GameMain extends JFrame {
 
     // private CLayout clayout;
 
-    private CLayoutForGame monopolyGUI ;
 
     private int status = 0;
 

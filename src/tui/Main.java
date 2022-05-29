@@ -799,7 +799,7 @@ public class Main {
         while (monopoly.monopolyEND()) {
 
             turn = turn % monopoly.getSizeOfPlayers();
-
+            
             System.out.println(monopoly.getPLayer(turn).getNickname() + " e' il tuo turno! \n");
 
 
