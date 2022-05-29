@@ -10,6 +10,9 @@ import java.awt.CardLayout;
 
 public class CLayoutForGame extends JPanel  {
 
+
+
+    public   static int puttana = 0;
     private CardLayout mainFrame  = new CardLayout();
 
     private GameMain main;
@@ -23,7 +26,10 @@ public class CLayoutForGame extends JPanel  {
 
     private Player player;
 
-    int fase =0;
+    private int fase = 0;
+
+
+
     
     public CLayoutForGame(GameMain game) {
 
@@ -47,10 +53,10 @@ public class CLayoutForGame extends JPanel  {
             turn = turn % numberOfPlayers;
             monopoly(monopoly.getPLayer(turn), fase);
 
-            
 
 
-// 
+
+
         // }
         
         
@@ -64,7 +70,7 @@ public class CLayoutForGame extends JPanel  {
 
 
     public void monopoly(Player player, int i) {
-        PanelMonopoly panelMonopoly = new PanelMonopoly(this, player, fase);
+        PanelMonopoly panelMonopoly = new PanelMonopoly(this, player);
         add(panelMonopoly, "1");
         
         mainFrame.show(this, "1");
@@ -81,9 +87,28 @@ public class CLayoutForGame extends JPanel  {
 
     public void nextPage(){
 
-        PanelMonopoly panelMonopoly = new PanelMonopoly(this, player, fase);
-        add(panelMonopoly, "2");
-        mainFrame.next(this);
+        PanelMonopoly panelMonopolys = new PanelMonopoly(this, player);
+        add(panelMonopolys, "2");
+        incrementFase();
+        // setFase(1);
+
+        // mainFrame.next(this);
+        mainFrame.show(this, "2");
+
+    }
+
+
+    public int getFase() {
+        return fase;
+    }
+
+
+    public void incrementFase() {
+        fase = fase +1;
+    }
+
+    public void setFase(int i){
+        fase = i;
     }
 
 

@@ -70,13 +70,39 @@ public class MonopolyCommandsPanel extends JPanel implements ActionListener{
         setFont(GameMain.COURIER);
 
 
+        if(main.getFase() == 0) CLayoutForGame.puttana = CLayoutForGame.puttana +1;
+        if(CLayoutForGame.puttana == 2){
+            System.out.println("LA PUTTANA ");
+            System.out.println("fase puttna" + main.getFase());
+        }
 
 
-        if(main.getFase() == 0){
-            trowDice();
+
+
+
+        // if(main.getFase() == 0){
+        //     trowDice();
+        //     System.out.println(main.getFase());
             
-        } else if( main.getFase() == 1){
+        // } else if( main.getFase() == 1){
+        //     propertySquareOwned();
+        // }
+
+
+        switch (main.getFase()){
+
+
+            case 0:
+            trowDice();
+            System.out.println(main.getFase());
+            main.setfase(1);
+            break;
+
+            case 1:
             propertySquareOwned();
+            System.out.println("PROPERTYYYY");
+            break;
+
         }
 
 
@@ -171,6 +197,8 @@ public class MonopolyCommandsPanel extends JPanel implements ActionListener{
             System.out.println("SI FUNZ " + monopoly.getListOfPlayer().get(0).getPosition());
             main.nextPage();
             main.incrementFase();
+            // main.setfase(1);
+
             
 
             // dice.addActionListener(click);
