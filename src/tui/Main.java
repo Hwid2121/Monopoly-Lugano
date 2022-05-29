@@ -244,6 +244,8 @@ public class Main {
                     System.out.println("You paid 50 chf, you can throw the dice");
 
                     monopoly.throwDice();
+                    System.out.println("Your dice made: " + monopoly.die1() + " and " + monopoly.die2());
+                    System.out.println("Go forward by: " + (monopoly.die1() + monopoly.die2()));
 
                     if (monopoly.checkbankruptStatus(player)) {
                         System.out.println("\n You do not have enough money to pay the fi");
@@ -799,6 +801,7 @@ public class Main {
             turn = turn % monopoly.getSizeOfPlayers();
 
             System.out.println(monopoly.getPLayer(turn).getNickname() + " e' il tuo turno! \n");
+
 
             if (monopoly.getPLayer(turn).getTurnsInJail() == -1) {
 

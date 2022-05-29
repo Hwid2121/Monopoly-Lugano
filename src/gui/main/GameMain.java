@@ -36,6 +36,7 @@ public class GameMain extends JFrame {
     private int status = 0;
 
     private CardLayout mainframe = new CardLayout();
+    
     ImageIcon img = new ImageIcon("src/gui/images/icon.png");
 
     // private JFrame frame = new JFrame("Monopoly Lugano");
@@ -52,8 +53,8 @@ public class GameMain extends JFrame {
         // clayout = new CLayout(this);
         // add(clayout);
 
-        preGame();
-        // mainGame();
+        // preGame();
+        mainGame();
         this.pack();
         this.setVisible(true);
 
