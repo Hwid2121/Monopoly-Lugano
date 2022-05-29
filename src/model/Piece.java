@@ -1,7 +1,11 @@
 package model;
+
 import java.util.ArrayList;
 import java.util.Random;
- import java.awt.Color;
+import java.awt.Color;
+
+import java.awt.Graphics2D;
+import java.awt.Graphics;
 
 public class Piece {
 
@@ -11,30 +15,38 @@ public class Piece {
     private float b = rand.nextFloat();
     private Color randomColor;
 
+
+    // private Graphics2D circle;
+
     private ArrayList<Player> players = new ArrayList<>();
 
+    public Piece() {
 
 
-    public Piece(){
+
+        // circle = (Graphics2D) circle.create();
+        
 
         generatePiece();
         checkPiece();
+
 
     }
 
 
 
-    public void generatePiece(){
+
+
+    public void generatePiece() {
         r = rand.nextFloat();
         g = rand.nextFloat();
         b = rand.nextFloat();
     }
 
+    public void checkPiece() {
 
-    public void checkPiece(){
-        
-        for(Player x: players){
-            if(x.getPiece() == this){
+        for (Player x : players) {
+            if (x.getPiece() == this) {
                 generatePiece();
                 checkPiece();
                 break;
@@ -44,16 +56,13 @@ public class Piece {
 
     }
 
-
-
-    public void setPiece(){
+    public void setPiece() {
         randomColor = new Color(r, g, b);
 
     }
 
-
-    public Color getColor(){
+    public Color getColor() {
         return randomColor;
     }
-    
+
 }

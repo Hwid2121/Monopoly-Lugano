@@ -18,13 +18,15 @@ import javax.swing.ImageIcon;
 import javax.swing.Timer;
 import javax.swing.text.Position;
 
+import model.*;
+
 public class MonopolyGridPanel extends JPanel  implements ActionListener{
 
 
     
     private int casella;
     
-    private movement move = new movement(); 
+    // private movement move = new movement(); 
 
     private Timer timer;
 	private int xVelocity = 1;
@@ -36,22 +38,33 @@ public class MonopolyGridPanel extends JPanel  implements ActionListener{
     private int step;
 	private Position pos;
 
+    private GridPosition gridpos = new GridPosition();
+
+    private Monopoly monopoly = GameMain.monopoly;
+
+
+    Player player = new Player("nico");
+    
 
     //background image.
     private Image backgroundImage;
 
     public MonopolyGridPanel() {
         super();
-        backgroundImage = new ImageIcon("/src/gui/images/monopolygrid1000.png").getImage();
+        backgroundImage = new ImageIcon("src/gui/images/monopolygrid1000.png").getImage();
 
         // setStep(2);
         // timer = new Timer(5, this);
 		// timer.start();
+        player.setPosition(5);
         
        
         
 
     }
+
+
+
 
 
     public void paint(Graphics g) {
@@ -61,11 +74,9 @@ public class MonopolyGridPanel extends JPanel  implements ActionListener{
 
         pan.drawImage(backgroundImage,0 ,0 , null);
 
+        pan.fillOval(gridpos.getPosition(player.getPosition()).getX(), gridpos.getPosition(player.getPosition()).getY(), 30, 30);
 
-        pan.setPaint(GameMain.AZZURRO);
-        pan.fillOval(x,y , 30, 30);
-
-
+        // pan.fillOval(x, , arg2, arg3);
     }
 
 
