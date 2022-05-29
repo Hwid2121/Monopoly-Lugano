@@ -23,6 +23,7 @@ public class PanelMonopoly extends JPanel {
     private static JPanel monopolyGridPanel;
      
     public PanelMonopoly(GameMain game) {
+        super();
 
 
         GameMain main = game;

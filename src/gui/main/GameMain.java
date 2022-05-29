@@ -27,10 +27,6 @@ public class GameMain extends JFrame {
     public static final Font COURIER = new Font("SansSerif", Font.BOLD, 22);
 
     public static Monopoly monopoly = new Monopoly();
-
-    private CLayout clayout;
-
-    private CLayoutForGame monopolyGUI;
     //img import
     private ImageIcon img = new ImageIcon("src/gui/images/icon.png");
 
@@ -57,7 +53,7 @@ public class GameMain extends JFrame {
 
     public void preGame() {
 
-        clayout = new CLayout(this);
+        CLayout clayout = new CLayout(this);
         add(clayout);
 
         this.pack();
@@ -65,7 +61,7 @@ public class GameMain extends JFrame {
     }
 
     public void mainGame() {
-        monopolyGUI = new CLayoutForGame(this);
+        CLayoutForGame monopolyGUI = new CLayoutForGame(this);
         add(monopolyGUI);
         pack();
     }

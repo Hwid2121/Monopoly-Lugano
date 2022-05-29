@@ -12,7 +12,7 @@ public class CLayout extends JPanel implements ActionListener {
 
     // private JFrame frame = new JFrame("Monopoly Lugano");
     // private JPanel panelCont = new JPanel();
-    private JPanel panelPregame;
+    //private JPanel panelPregame;
     // private JPanel panelPlayers = new PanelPlayers();
     // private JPanel panelMonopoly = new PanelMonopoly();
 
@@ -28,7 +28,7 @@ public class CLayout extends JPanel implements ActionListener {
         main = game;
 
         this.setLayout(mainFrame);
-        panelPregame = new PanelPregame(this);
+        JPanel panelPregame = new PanelPregame(this);
         // frame.setTitle("Monopoly Lugano");
         // frame.setIconImage(img.getImage());
 

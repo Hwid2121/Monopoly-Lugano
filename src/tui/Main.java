@@ -107,7 +107,7 @@ public class Main {
         while (player.getPropertySquareNum() > 0) {
 
             if (player.getMoney() < 0) {
-                PropertySquareSELL(player, monopoly);
+                propertysquaresell(player, monopoly);
             } else {
                 System.out.println("You are not in bankrupt now your balance is " + player.getMoney() + chf);
                 return;
@@ -400,7 +400,7 @@ public class Main {
      * @param monopoly the main class where the game is strutured
      *
      */
-    public void PropertySquarePLAY(Player player, Monopoly monopoly) {
+    public void propertysquareplay(Player player, Monopoly monopoly) {
         int position = monopoly.getPLayer(turn).getPosition();
 
         System.out.println("Write:\n[d] (for the description of the property) ");
@@ -433,7 +433,7 @@ public class Main {
                 break;
 
             case "b":
-                PropertySquareBUY(player, monopoly);
+                propertysquarebuy(player, monopoly);
                 break;
 
             case "s":
@@ -446,7 +446,7 @@ public class Main {
                 else {
 
                     System.out.println("Sell properties status: \n");
-                    PropertySquareSELL(player, monopoly);
+                    propertysquaresell(player, monopoly);
                     break;
                 }
 
@@ -502,7 +502,7 @@ public class Main {
 
             default:
                 System.out.println("Command not allowed here.\n\n");
-                PropertySquarePLAY(player, monopoly);
+                propertysquareplay(player, monopoly);
         }
 
     }
@@ -667,7 +667,7 @@ public class Main {
      * @param player that play in that turn
      * @param monopoly the main class where the game is strutured
      *
-     */public void PropertySquareBUY(Player player, Monopoly monopoly) {
+     */public void propertysquarebuy(Player player, Monopoly monopoly) {
 
         int position = player.getPosition();
         String inp;
@@ -725,7 +725,7 @@ public class Main {
 
     }
 
-    public void PropertySquareSELL(Player player, Monopoly monopoly) {
+    public void propertysquaresell(Player player, Monopoly monopoly) {
 
         int num = player.getPropertySquare().size();
         System.out.println("You have " + num + " properties");
@@ -836,7 +836,7 @@ public class Main {
                         break;
 
                     default:
-                        PropertySquarePLAY(monopoly.getPLayer(turn), monopoly);
+                        propertysquareplay(monopoly.getPLayer(turn), monopoly);
                         break;
 
                 }
