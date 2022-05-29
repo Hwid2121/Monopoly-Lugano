@@ -668,9 +668,9 @@ public class Main {
 
         while (auxmain.monopoly.monopolyEND()) {
 
-            turn = turn % auxmain.monopoly.getSizeOfPlayers();
-
-            System.out.println(auxmain.monopoly.getPLayer(turn).getNickname() + " e' il tuo turno! \n");
+            turn = turn % monopoly.getSizeOfPlayers();
+            
+            System.out.println(monopoly.getPLayer(turn).getNickname() + " e' il tuo turno! \n");
 
 
             if (auxmain.monopoly.getPLayer(turn).getTurnsInJail() == -1) {

@@ -26,22 +26,27 @@ public class PanelMonopoly extends JPanel {
     private CLayoutForGame main ;
 
 
-    private int fase;
-     private Player player;
-    public PanelMonopoly(CLayoutForGame game, Player players, int phase) {
+    private Player player;
+    public PanelMonopoly(CLayoutForGame game, Player players) {
 
 
-        fase = phase;
+    
         player = players;
          main = game;
         int width = getWidth();
         int heigh = getHeight();
         
+        // if (main.getFase() == 0){
+        //     monopolyGridPanel = new MonopolyGridPanel(player);
+        // }
+
 
         monopolyGridPanel = new MonopolyGridPanel(player);
         monopolyPlayerPanel = new MonopolyPlayerPanel();
+        monopolyCommandsPanel = new MonopolyCommandsPanel( player, main, this);
 
-        monopolyCommandsPanel = new MonopolyCommandsPanel(this, player);
+
+
 
         BorderLayout mainLay = new BorderLayout(0,0);
         monopolyGridPanel.setPreferredSize(new Dimension(1000,1000));
@@ -57,26 +62,32 @@ public class PanelMonopoly extends JPanel {
     }
 
 
-    public void refreshplayerStats(){
-        main.refresh();
-    }
+    // public void refreshplayerStats(){
+    //     main.refresh();
+    // }
 
 
 
-    public int getFase(){
-        return fase;
-    }
+    // public int getFase(){
+    //     return main.getFase();
+    // }
 
-    public void incrementFase(){
-        fase +=1;
-    }
+    // public void incrementFase(){
+    //     main.incrementFase();
+    // }
 
 
 
-    public void nextPage(){
+    // public void nextPage(){
+    //     main.nextPage();
+    // }
 
-        main.nextPage();
-    }
+
+    // public void setfase(int i){
+    //     main.setFase(i);
+    // }
+    
+
 
 
 

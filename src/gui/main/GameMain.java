@@ -8,6 +8,7 @@ import javax.swing.border.Border;
 import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
+import javax.swing.JPanel;
 
 public class GameMain extends JFrame {
 
@@ -29,11 +30,14 @@ public class GameMain extends JFrame {
 
     public static Monopoly monopoly = new Monopoly();
 
-    private CLayout clayout;
+    // private CLayout clayout;
 
-    private CLayoutForGame monopolyGUI;
 
     private int status = 0;
+
+    private CLayout clayout = new CLayout(this);
+
+    private JPanel pannello = new JPanel();
 
     private CardLayout mainframe = new CardLayout();
     
@@ -49,30 +53,56 @@ public class GameMain extends JFrame {
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setLocationRelativeTo(null);
         this.setExtendedState(JFrame.MAXIMIZED_BOTH);
+        
+
+        pannello.setLayout(mainframe);
+
+        // pannello.add(, "1");
+        pannello.add(clayout, "1");
+        
+
+        this.add(pannello);
+
+        
+
+
+        mainframe.show(pannello, "1");
+
+
+
+        
+
+
+
 
         // clayout = new CLayout(this);
         // add(clayout);
 
-        preGame();
+        
         // mainGame();
         this.pack();
         this.setVisible(true);
 
     }
 
-    public void preGame() {
+    // public void preGame() {
 
-        CLayout clayout = new CLayout(this);
-        add(clayout);
+    //     CLayout clayout = new CLayout(this);
+    //     add(clayout);
 
-        this.pack();
+    //     this.pack();
 
-    }
+    // }
 
     public void mainGame() {
+        // private CLayoutForGame monopolyGUI = new CLayoutForGame(this);
         CLayoutForGame monopolyGUI = new CLayoutForGame(this);
-        add(monopolyGUI);
-        pack();
+        // add(monopolyGUI);
+        // pack();
+        pannello.add(monopolyGUI, "2");
+        mainframe.show(pannello, "2");
+        // mainframe.next(pannello);
+
     }
 
 }
