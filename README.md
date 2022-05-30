@@ -175,52 +175,14 @@ When the player buy every square of same color then the player will do Monopoly 
 The game finish when only one player have still money.
 
 
+## GUI 
+The game is the of TUI, some feature is in update.
 
 
-### How run the JUnit tests with Maven
- THe JUnit test are usefull to cover all the corner cases and let you know if your code is going well. 
- For running them we can use:
-
- - `mvn test` for see the test that run and passstring or fail.
- - `mvn site` for watch also the coverage for each class with JUnit tests.
- 
-
- 
+## GUI - to know
+Every stage is refresh at each turn. Then for every update it will be show 
 	 
     
-
-```bash
-mvn test
-```
-
-### How to run Checkstyle with Maven
-
-```bash
-mvn compile
-mvn checkstyle:check
-```
-
-### How to run PMD with Maven
-
-```bash
-mvn compile
-mvn pmd:check
-```
-
-### How to run PMD's CPD with Maven
-
-```bash
-mvn compile
-mvn pmd:cpd-check
-```
-
-### How to determine test coverage with Maven
-
-```bash
-mvn site
-```
-
-Then open `target/site/index.html` and find the JaCoCo report.
 
 ## TUI's Key Aspects Screenshots
 
