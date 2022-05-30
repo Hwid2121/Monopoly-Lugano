@@ -232,8 +232,8 @@ public class Table {
     public Player getSquareOwner(int pos) {
         Object obj = this.getSquare(pos);
         if (obj instanceof PropertySquare) {
-            PropertySquare s = (PropertySquare) obj;
-            return s.getOwner();
+            PropertySquare string = (PropertySquare) obj;
+            return string.getOwner();
         }
         return null;
     }
@@ -257,13 +257,12 @@ public class Table {
      * Set the Owner of the propertySquare.
      * 
      * @param player for setting the player as owner
-     * @return true if the die1 and die2 are the same number, false otherwise.
      */
     public void setSquareOwner(Player player) {
         Object obj = this.getSquare(player.getPosition());
         if (obj instanceof PropertySquare) {
-            PropertySquare s = (PropertySquare) obj;
-            s.changeOwner(player);
+            PropertySquare string = (PropertySquare) obj;
+            string.changeOwner(player);
         }
 
     }
@@ -278,8 +277,8 @@ public class Table {
     public int getSquareBonusPrice(Player player) {
         Object obj = this.getSquare(player.getPosition());
         if (obj instanceof BonusSquare) {
-            BonusSquare s = (BonusSquare) obj;
-            return s.getMoney();
+            BonusSquare string = (BonusSquare) obj;
+            return string.getMoney();
         }
         return -1;
 

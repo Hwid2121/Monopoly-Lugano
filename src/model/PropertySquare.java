@@ -6,7 +6,7 @@ package model;
  * A proeprty can be bought and sold.
  * Composed also by the House, that the player can build.
  *
- * @author Nicolo' Tafta & Alberto Sardo
+ * @author taftan@usi.ch & saordoa@usi.ch
  * @version 28/04/2022
  */
 public class PropertySquare extends Square {

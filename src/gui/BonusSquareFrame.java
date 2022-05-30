@@ -36,7 +36,7 @@ public class BonusSquareFrame extends JFrame {
 
         player = playera;
         MonopolyCommandsPanel parentPan = parentPanel;
-        JPanel panel = new BonusSquarePanel(parentPan, this, player);
+
 
         setVisible(false);
         setPreferredSize(new Dimension(500, 150));
@@ -53,6 +53,7 @@ public class BonusSquareFrame extends JFrame {
         label.setFont(new Font("SansSerif", Font.BOLD, 22));
         label.setSize(new Dimension(40, 40));
         label.setAlignmentX(Component.CENTER_ALIGNMENT);
+        JPanel panel = new BonusSquarePanel(parentPan, this, player);
         panel.setAlignmentX(Component.CENTER_ALIGNMENT);
 
         add(label);

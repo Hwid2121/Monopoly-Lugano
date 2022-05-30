@@ -16,8 +16,10 @@ import javax.swing.JPanel;
 
 
 /**
- * 
  * InfoSquarePanel panel that show a popup for pick a card.
+ * 
+ * @author taftan@usi.ch & sardoa@usi.ch
+ * @version 24/05/2022
  */
 public class InfoSquarePanel extends JPanel implements ActionListener {
 

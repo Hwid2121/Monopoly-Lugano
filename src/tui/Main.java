@@ -32,7 +32,7 @@ public class Main {
         RefactorMain = new RefactorMain();
     }
 
-    
+
     public RefactorMain RefactorMain;
 
     /**
@@ -828,9 +828,6 @@ public class Main {
                 System.out.println("Game finished status");
                 game.finishStatus();
 
-            default:
-                System.out.println("Error status");
-                break;
 
         }
 
