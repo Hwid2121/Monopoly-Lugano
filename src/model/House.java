@@ -49,7 +49,7 @@ public class House {
      * This method get the price for every variable of the class.
      * Given an input as id of the price that we want see.
      *
-     * @param i id of the price that we want to see
+     * @param index id of the price that we want to see
      * 
      * 
      * @return the price of the field requested
@@ -114,8 +114,7 @@ public class House {
     }
 
     /**
-     * Check if the number of the houses
-     * 
+     * Check if the number of the houses.
      * @param num that rapresenr the num of the houses that we want to build
      * @return true if the counter + num is smaller or equal than 4
      *

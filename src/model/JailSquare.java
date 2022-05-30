@@ -63,7 +63,7 @@ public class JailSquare extends Square {
      * @param player where to decrese the money   
      * 
      */
-    public static void decreseDayInJail(Player player){
+    public static void decreseDayInJail(Player player) {
         player.decreseDayInJail();
     }
 

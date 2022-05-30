@@ -22,7 +22,6 @@ public class Player {
     /**
      * The constructor of Player that take the nickname.
      * set the money of default by 1500 and the positio at 0.
-     * 
      * @param nickname the nick of the player
      * 
      */
@@ -34,9 +33,7 @@ public class Player {
     }
 
     /**
-     * 
      * Used for get the piece that rapresent the player in the GUI.
-     * 
      * @return the piece of the player
      * 
      */
@@ -46,7 +43,6 @@ public class Player {
 
     /**
      * Set the number of injail with the number given as input.
-     * 
      * @param index to set the num of Injail
      * 
      */
@@ -56,7 +52,6 @@ public class Player {
 
     /**
      * Get the value of InJail.
-     * 
      * @return the value of Injail
      * 
      */

@@ -1,11 +1,13 @@
 package tui;
 
-import java.util.Scanner;
-
 import model.Card;
+import model.CardsDeck;
 import model.Monopoly;
 import model.Player;
-import model.CardsDeck;
+
+import java.util.Scanner;
+
+
 
 /**
  * This is the auxiliary main of the TUI created for refactoring.
@@ -25,7 +27,7 @@ public class RefactorMain {
     public int status = 0;
     public int skip = 0;
     private String chf = " chf";
-    private String nName = "\nName: ";
+    private String nameTap = "\nameTap: ";
 
     /**
      * Constructor of the pregame class.
@@ -48,24 +50,24 @@ public class RefactorMain {
             System.out.println("Number of player not allowed, insert a number of player greater than 2");
             preGameStatus();
             return;
-        }   else {
+        } else {
 
-                while (monopoly.getSizeOfPlayers() < numberOfPlayers) {
+            while (monopoly.getSizeOfPlayers() < numberOfPlayers) {
 
-                    System.out.println("Nickname player " + (monopoly.getSizeOfPlayers() + 1));
+                System.out.println("Nickname player " + (monopoly.getSizeOfPlayers() + 1));
 
-                    String nickname = input.next();
-                    if (input.hasNextLine()) {
+                String nickname = input.next();
+                if (input.hasNextLine()) {
 
-                        monopoly.addPlayer(new Player(nickname));
-                    }
-
+                    monopoly.addPlayer(new Player(nickname));
                 }
 
-                System.out.println("Pregame ready, now let's play!");
-                status = 1;
+            }
 
-                 }
+            System.out.println("Pregame ready, now let's play!");
+            status = 1;
+
+        }
 
     }
 
@@ -229,10 +231,10 @@ public class RefactorMain {
     /**
      * Get chf name.
      * 
-     * @return nName
+     * @return nameTap
      */
-    public String getnName() {
-        return nName;
+    public String getnameTap() {
+        return nameTap;
     }
 
 }

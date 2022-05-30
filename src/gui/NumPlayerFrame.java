@@ -26,7 +26,6 @@ public class NumPlayerFrame extends JFrame implements ActionListener {
      */
     public NumPlayerFrame(PanelPregame parentPanel) {
         super();
-        PanelPregame parentPan = parentPanel;
 
         setVisible(false);
         setPreferredSize(new Dimension(500, 150));
@@ -42,6 +41,7 @@ public class NumPlayerFrame extends JFrame implements ActionListener {
         label.setForeground(Color.WHITE);
         label.setFont(new Font("SansSerif", Font.BOLD, 22));
         label.setSize(new Dimension(40, 40));
+        PanelPregame parentPan = parentPanel;
         JPanel panel = new FormPanel(parentPan, this);
         add(label);
         add(panel);

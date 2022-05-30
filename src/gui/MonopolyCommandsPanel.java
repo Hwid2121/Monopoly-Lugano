@@ -1,11 +1,10 @@
 package gui;
 
-import model.Player;
 import model.Card;
 import model.CardsDeck;
 import model.JailSquare;
 import model.Monopoly;
-
+import model.Player;
 
 import java.awt.ComponentOrientation;
 import java.awt.Dimension;
@@ -14,6 +13,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JPanel;
+
 
 
 

@@ -5,7 +5,7 @@ package model;
  * - PropertySquare
  * - BonusSquare
  *
- * @author Nicolo' Tafta & Alberto Sardo
+ * @author taftan@usi.ch & sardoa@usi.ch
  * @version 28/04/2022
  */
 public class Square {
