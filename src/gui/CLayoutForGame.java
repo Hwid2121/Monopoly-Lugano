@@ -3,18 +3,14 @@ package gui;
 import model.Monopoly;
 import model.Player;
 
-
 import java.awt.CardLayout;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
 
 /**
- *
  * Main panel of the gameplay of monopoly.
  * Recursive call to refresh the page.
- * 
- * 
  * 
  * @author taftan@usi.ch & sardoa@usiu.ch
  * @version 24/05/2022
@@ -77,6 +73,7 @@ public class CLayoutForGame extends JPanel {
 
         if (skip == 0) {
             playerEliminate(monopoly.getPLayer(turn));
+            checkEndGame();
             PanelMonopoly panelMonopolysa = new PanelMonopoly(this, monopoly.getPLayer(turn));
             add(panelMonopolysa, "2");
 
@@ -144,23 +141,21 @@ public class CLayoutForGame extends JPanel {
      * Check if the game is over.
      */
     public void checkEndGame() {
-        if (monopoly.monopolyEND()) {
+        if (!monopoly.monopolyEND()) {
 
-            JPanel end = new PanelPlayers(null);
-            // ENDPANEL panelMonopolysa = new PanelMonopoly(this, monopoly.getPLayer(turn));
-            // add(ENDPANE, "3");
-            add(end, "3");
+            JPanel panelMonopolysa = new PanelEnd(monopoly.getPLayer(0));
+            add(panelMonopolysa, "3");
 
             mainFrame.show(this, "3");
-        } else {
-            // Generate End Panel
-            JFrame frame = new JFrame("CONGRATULATIONS!");
-            frame.getContentPane().setBackground(GameMain.SFONDO);
-            frame.setLocationRelativeTo(null);
-            frame.add(new PanelEnd());
-            frame.setSize(400, 400);
-            frame.setVisible(true);
-            frame.pack();
+
+
+            // JFrame frame = new JFrame("CONGRATULATIONS!");
+            // frame.getContentPane().setBackground(GameMain.SFONDO);
+            // frame.setLocationRelativeTo(null);
+            // frame.add(new PanelEnd());
+            // frame.setSize(400, 400);
+            // frame.setVisible(true);
+            // frame.pack();
         }
 
     }

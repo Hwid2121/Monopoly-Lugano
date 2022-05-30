@@ -286,16 +286,15 @@ public class Table {
 
     /**
      * Get the decription of the BonusSquare.
-     * 
+     * @param pos for the index in the table
      * @return the description if the Square at index pos is a BonusSquare
      *         else return ""
-     * @param pos for the index in the table
      */
     public String getSquareBonusDescr(int pos) {
         Object obj = this.getSquare(pos);
         if (obj instanceof BonusSquare) {
-            BonusSquare s = (BonusSquare) obj;
-            return s.getDescription();
+            BonusSquare string = (BonusSquare) obj;
+            return string.getDescription();
         }
         return "";
 

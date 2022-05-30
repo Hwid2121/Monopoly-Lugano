@@ -3,7 +3,7 @@ package model;
 import java.util.ArrayList;
 
 /**
- * Thiss class rapresents the player
+ * Thiss class rapresents the player.
  *
  * @author taftan@usi.ch & sardoa@usi.ch
  * @version 28/04/2022
@@ -27,7 +27,7 @@ public class Player {
      */
     public Player(String nickname) {
         this.nickname = nickname;
-        money = 1500;
+        money = 5;
         position = 0;
         piece = new Piece();
     }
