@@ -77,8 +77,8 @@ public class FormPanel extends JPanel {
 
     }
 
-    public void closeFrame() {
-        SwingUtilities.getWindowAncestor(this).dispose();
-    }
+    // public void closeFrame() {
+    //     SwingUtilities.getWindowAncestor(this).dispose();
+    // }
 
 }

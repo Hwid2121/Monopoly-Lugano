@@ -23,6 +23,7 @@ public class NumPlayerFrame extends JFrame implements ActionListener {
         super();
         PanelPregame parentPan = parentPanel;
         JPanel panel = new FormPanel(parentPan, this);
+        // JPanel panel = new PopUpPickCardPanel(parentPan,)
 
         setVisible(false);
         setPreferredSize(new Dimension(500, 150));

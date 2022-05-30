@@ -2,6 +2,7 @@
 package gui;
 
 import javax.swing.JButton;
+import javax.swing.JFrame;
 import javax.swing.JPanel;
 
 import gui.main.CLayout;
@@ -20,6 +21,8 @@ import java.awt.event.ActionListener;
 import java.awt.event.WindowListener;
 import java.nio.channels.ClosedSelectorException;
 
+import model.*;
+
 public class MonopolyCommandsPanel extends JPanel implements ActionListener {
 
     // Dimension of the command panel
@@ -29,7 +32,8 @@ public class MonopolyCommandsPanel extends JPanel implements ActionListener {
 
     // JButton button4;
     // JButton button5;
-
+    private PopUpPickCardFrame pop ;
+    private EmptySquarePopUpFrame emp;
     private Clicklistener click = new Clicklistener();
     private JButton buy = new JButton("BUY");
     private JButton pass = new JButton("PASS");
@@ -43,6 +47,9 @@ public class MonopolyCommandsPanel extends JPanel implements ActionListener {
     private Player player;
 
     private Monopoly monopoly = GameMain.monopoly;
+
+
+    // private PopUpPickCard pop;
 
     // private JPanel gridPanel;
     // private JPanel playersPanel;
@@ -88,30 +95,32 @@ public class MonopolyCommandsPanel extends JPanel implements ActionListener {
 
                 switch (monopoly.getTable().getSquare(player.getPosition()).getColor()) {
 
-                    case "cards":
-                        pickCard();
-                        break;
+                    // case "cards":
+                    //     pickCard();
+                    //     break;
 
-                    case "jail":
-                        jailSquare();
-                        break;
+                    // case "jail":
+                    //     jailSquare();
+                    //     break;
 
-                    case "empty":
+                    // case "empty":
+                    //     emptySquare();
+                    //     break;
+                    // case "goto":
+                    //     goToJailSquare();
+                    //     break;
+                    // case "bonus":
+                    //     bonusSquare();
+                    //     break;
+                    // case "malus":
+                    //     bonusSquare();
+                    //     break;
+                    default:
+                        // if(monopoly.getTable().getPropertySquare(player.getPosition()).getOwner() == null){
+                        //     propertySquareEMPTY();
+                        // } else propertySquareOwned();
                         emptySquare();
                         break;
-                    case "goto":
-                        goToJailSquare();
-                        break;
-                    case "bonus":
-                        bonusSquare();
-                        break;
-                    case "malus":
-                        bonusSquare();
-                        break;
-                    default:
-                        if(monopoly.getTable().getPropertySquare(player.getPosition()).getOwner() == null){
-                            propertySquareEMPTY();
-                        } else propertySquareOwned();
 
 
 
@@ -173,6 +182,33 @@ public class MonopolyCommandsPanel extends JPanel implements ActionListener {
 
         });
 
+        pick.addActionListener(new ActionListener() {
+
+
+            
+            public void actionPerformed(ActionEvent arg) {
+
+                
+                
+                cardsDeck deck = new cardsDeck();
+                Card card = deck.randomCard();
+                System.out.println("CARD: " + card.getDescription());
+
+                deck.playCard(deck.getIndex(), player);
+
+                pop = new PopUpPickCardFrame(card, (MonopolyCommandsPanel) pick.getParent());
+                
+                pop.setVisible(true);
+
+                main.nextPage();
+
+
+
+
+            }
+
+        });
+
         dice.addActionListener(new ActionListener() {
 
             public void actionPerformed(ActionEvent arg) {
@@ -195,17 +231,28 @@ public class MonopolyCommandsPanel extends JPanel implements ActionListener {
 
             public void actionPerformed(ActionEvent arg) {
 
+
+
             }
 
         });
+
+
+
+
 
         setVisible(true);
 
     }
 
-    public void close() {
-        removeAll();
-    }
+
+
+
+
+
+
+
+
 
     public void trowDice() {
 
@@ -225,11 +272,9 @@ public class MonopolyCommandsPanel extends JPanel implements ActionListener {
 
     public void propertySquareEMPTY() {
 
-        buy.setPreferredSize(dim);
+       
 
         pass.setPreferredSize(dim);
-
-        this.add(buy);
         this.add(pass);
 
     }
@@ -250,9 +295,19 @@ public class MonopolyCommandsPanel extends JPanel implements ActionListener {
 
     public void emptySquare() {
 
+        
+        emp = new EmptySquarePopUpFrame((MonopolyCommandsPanel) pick.getParent());
+                
+        // emp.setVisible(true);
+
+      
+        emptySquareON();
         pass.setPreferredSize(dim);
 
+        this.add(emp);
         this.add(pass);
+        // main.nextPage();
+        
 
     }
 
@@ -291,6 +346,8 @@ public class MonopolyCommandsPanel extends JPanel implements ActionListener {
 
     }
 
+
+
     @Override
     public void actionPerformed(ActionEvent e) {
 
@@ -311,5 +368,10 @@ public class MonopolyCommandsPanel extends JPanel implements ActionListener {
             }
 
         }
+    }
+
+
+    public void emptySquareON(){
+        emp.setVisible(true);
     }
 }

@@ -140,7 +140,7 @@ public class Main {
         switch (word) {
             case "pi":
                 Card card = deck.randomCard();
-                System.out.println("CARD:" + card.getDescription());
+                System.out.println("CARD: " + card.getDescription());
                 deck.playCard(deck.getIndex(), player);
 
                 System.out.println("next turn\n\n");
