@@ -1,23 +1,29 @@
 
 package gui;
 
-import javax.swing.JButton;
-import javax.swing.JPanel;
-import gui.main.CLayoutForGame;
-import gui.main.GameMain;
-import gui.panels.PanelMonopoly;
-import model.Monopoly;
-import model.Player;
-
-import java.awt.FlowLayout;
-import java.awt.Dimension;
 import java.awt.ComponentOrientation;
-
+import java.awt.Dimension;
+import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import javax.swing.JButton;
+import javax.swing.JPanel;
 
-import model.*;
+import model.Card;
+import model.JailSquare;
+import model.Monopoly;
+import model.Player;
+import model.cardsDeck;
 
+/**
+ * MonopolyCommandsPanel panel that conintas all the comands that a player can
+ * do.
+ * 
+ * 
+ * 
+ * @author taftan@usi.ch & sardoa@usiu.ch
+ * @version 24/05/2022
+ */
 public class MonopolyCommandsPanel extends JPanel implements ActionListener {
 
     private Dimension dim = new Dimension(130, 80);
@@ -48,6 +54,12 @@ public class MonopolyCommandsPanel extends JPanel implements ActionListener {
 
     private CLayoutForGame main;
 
+    /**
+     * Constructor MonopolyCommandsPanel.
+     * 
+     * @param playerz the player that is playing the game
+     * @param main    the main panel of the game
+     */
     public MonopolyCommandsPanel(Player playerx, CLayoutForGame mainb, PanelMonopoly panell) {
         super();
         this.player = playerx;
@@ -288,6 +300,9 @@ public class MonopolyCommandsPanel extends JPanel implements ActionListener {
 
     }
 
+    /**
+     * TrowDice  that make the player roll the dice
+     */
     public void trowDice() {
 
         dice.setPreferredSize(dim);
@@ -296,6 +311,9 @@ public class MonopolyCommandsPanel extends JPanel implements ActionListener {
 
     }
 
+    /**
+     * JailSquare that make the player go to jail.
+     */
     public void bonusSquare() {
 
         pass.setPreferredSize(dim);
@@ -305,6 +323,9 @@ public class MonopolyCommandsPanel extends JPanel implements ActionListener {
 
     }
 
+    /**
+     * ProperSquareEmpty thaat make the player do nothing.
+     */
     public void propertySquareEMPTY() {
 
         info.setPreferredSize(dim);
@@ -320,6 +341,10 @@ public class MonopolyCommandsPanel extends JPanel implements ActionListener {
 
     }
 
+
+    /**
+     * ProperSquareOwned that activate the comand for buy and sell.
+     */
     public void propertySquareOwned() {
 
         sell.setPreferredSize(dim);
@@ -334,6 +359,10 @@ public class MonopolyCommandsPanel extends JPanel implements ActionListener {
 
     }
 
+
+    /**
+     * EMptySquare that make the player do nothing.
+     */
     public void emptySquare() {
 
         pass.setPreferredSize(dim);
@@ -341,6 +370,10 @@ public class MonopolyCommandsPanel extends JPanel implements ActionListener {
 
     }
 
+
+    /**
+     * JailSquare that make the player go to jail.
+     */
     public void jailSquare() {
 
         pay.setPreferredSize(dim);
@@ -357,6 +390,10 @@ public class MonopolyCommandsPanel extends JPanel implements ActionListener {
 
     }
 
+
+    /**
+     * GoToJailSquare that move the player to the jail.
+     */
     public void goToJailSquare() {
 
         pass.setPreferredSize(dim);
@@ -365,6 +402,11 @@ public class MonopolyCommandsPanel extends JPanel implements ActionListener {
 
     }
 
+
+
+    /**
+     * PickCard let the player pick a card.
+     */
     public void pickCard() {
 
         pick.setPreferredSize(dim);
@@ -375,11 +417,17 @@ public class MonopolyCommandsPanel extends JPanel implements ActionListener {
 
     }
 
+
+    
     @Override
     public void actionPerformed(ActionEvent e) {
 
     }
 
+
+    /**
+     * Refresh the panel.
+     */
     public void refresh() {
         main.nextPage();
     }

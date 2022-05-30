@@ -25,7 +25,11 @@ import model.Monopoly;
 public class PanelEnd extends JPanel {
     private Monopoly monopoly;
 
-    public PanelEnd(Monopoly monopoly) {
+    /**
+     * PanelEnd constructor.
+     * 
+     */
+    public PanelEnd() {
         super();
         this.monopoly = monopoly;
         String nick = monopoly.getListOfPlayer().get(0).getNickname();

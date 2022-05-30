@@ -1,26 +1,36 @@
 package gui;
 
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.Box;
-import javax.swing.BoxLayout;
-import java.awt.Font;
 import java.awt.Color;
 import java.awt.Component;
-
-import javax.swing.JPanel;
-
-import gui.main.GameMain;
-
 import java.awt.Dimension;
-
+import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import javax.swing.Box;
+import javax.swing.BoxLayout;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
 
+
+
+/**
+ * 
+ * EmptySquarePopUpFrame that contains the the emptySquare popup.
+ * 
+ * @author taftan@usi.ch & sardoa@usiu.ch
+ * @version 24/05/2022
+ */
 public class EmptySquarePopUpFrame extends JFrame implements ActionListener {
 
     private MonopolyCommandsPanel parentPan;
 
+
+    /**
+     * Construcotr of the frame EmptySquarePopUpFrame.
+     * 
+     * @param parentPanel the parent panel
+     */
     public EmptySquarePopUpFrame(MonopolyCommandsPanel parentPanel) {
 
         super();

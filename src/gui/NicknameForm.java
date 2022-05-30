@@ -1,18 +1,13 @@
-package gui.pregame;
+package gui;
 
+import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.Font;
+import java.awt.GridBagConstraints;
+import java.awt.GridBagLayout;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
-
-import gui.main.GameMain;
-
-import java.awt.Color;
-
-import java.awt.GridBagConstraints;
-import java.awt.GridBagLayout;
-import java.awt.Font;
-
-import java.awt.Dimension;
 
 /**
  * NicknameFOrm where inser the nicknames of the players.
@@ -25,23 +20,27 @@ public class NicknameForm extends JPanel {
 
     private JTextField textField;
 
-    public NicknameForm(int i) {
+    /**
+     * Constructor of the nicknames form.
+     * @param indexForm the index of the form
+     */
+    public NicknameForm(int indexForm) {
         super();
 
         setBackground(GameMain.SFONDO);
         GridBagLayout layout = new GridBagLayout();
-        GridBagConstraints c = new GridBagConstraints();
-        c.fill = GridBagConstraints.HORIZONTAL;
+        GridBagConstraints gridBagLayout = new GridBagConstraints();
+        gridBagLayout.fill = GridBagConstraints.HORIZONTAL;
 
         setLayout(layout);
 
-        JLabel label = new JLabel("Player " + i + ": ");
+        JLabel label = new JLabel("Player " + indexForm + ": ");
         label.setFont(new Font("SansSerif", Font.BOLD, 22));
         label.setForeground(GameMain.CREMISI);
 
-        c.gridx = 1;
-        c.gridy = 0;
-        add(label, c);
+        gridBagLayout.gridx = 1;
+        gridBagLayout.gridy = 0;
+        add(label, gridBagLayout);
 
         textField = new JTextField();
 
@@ -51,15 +50,21 @@ public class NicknameForm extends JPanel {
         textField.setForeground(GameMain.CREMISI);
         textField.setBackground(Color.white);
 
-        c.gridx = 2;
-        c.gridy = 0;
+        gridBagLayout.gridx = 2;
+        gridBagLayout.gridy = 0;
 
-        add(textField, c);
+        add(textField, gridBagLayout);
 
         setVisible(true);
 
     }
 
+
+
+    /**
+     * Getter of the textField.
+     * @return the textField
+     */
     public String getFieldText() {
         return this.textField.getText();
     }

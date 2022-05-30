@@ -1,15 +1,16 @@
-package gui.main;
+package gui;
 
-import gui.MyButton;
-import java.awt.Color;
-import model.*;
-import java.awt.Font;
 import java.awt.CardLayout;
-import javax.swing.border.Border;
+import java.awt.Color;
+import java.awt.Font;
+
 import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+import javax.swing.border.Border;
+
+import model.Monopoly;
 
 /**
  * Main frame where monopoly is shown.
@@ -46,6 +47,13 @@ public class GameMain extends JFrame {
 
     private ImageIcon img = new ImageIcon("src/gui/images/icon.png");
 
+
+
+
+
+    /**
+     * Constructor of the main frame.
+     */
     public GameMain() {
         super();
 

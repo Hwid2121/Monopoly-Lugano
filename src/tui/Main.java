@@ -4,6 +4,7 @@ import model.Monopoly;
 import model.Player;
 import model.PropertySquare;
 
+
 /**
  * This is the main of the TUI
  * inside of this class is present the class main and the main for start with
@@ -743,7 +744,7 @@ public class Main {
     }
 
     public void finishStatus() {
-        System.out.println("The auxmain.monopoly of Lugano is " + auxmain.monopoly.getPLayer(0).getNickname());
+        System.out.println("The monopoly of Lugano is " + auxmain.monopoly.getPLayer(0).getNickname());
         System.exit(0);
 
     }

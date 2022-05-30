@@ -1,32 +1,53 @@
 package gui;
 
+import java.awt.Font;
 import java.awt.Graphics;
+
 import javax.swing.AbstractButton;
 import javax.swing.BorderFactory;
 import javax.swing.JComponent;
-import javax.swing.plaf.basic.BasicButtonUI;
-import gui.main.GameMain;
-import java.awt.Font;
 import javax.swing.border.Border;
+import javax.swing.plaf.basic.BasicButtonUI;
 
+
+
+
+/**
+ * 
+ * My button class.
+ * 
+ * @author taftan@usi.ch & sardoa@usiu.ch
+ * @version 24/05/2022
+ */
 public class MyButton extends BasicButtonUI {
+
+
+
+
+
+    /**
+     * 
+     * Constructor of the MyButton.
+     * @param  graphicsVar the graphics variable
+     * @param componentJ the component
+     */
     @Override
-    public void paint(Graphics g, JComponent c) {
-        AbstractButton b = (AbstractButton) c;
+    public void paint(Graphics graphicsVar, JComponent componentJ) {
+        AbstractButton buttonAbs = (AbstractButton) componentJ;
 
         Border raisedbevel = BorderFactory.createRaisedBevelBorder();
         Font COURIER = new Font("SansSerif", Font.BOLD, 22);
 
-        g.setFont(COURIER);
+        graphicsVar.setFont(COURIER);
 
-        b.setBorder(raisedbevel);
+        buttonAbs.setBorder(raisedbevel);
 
-        b.setFont(COURIER);
+        buttonAbs.setFont(COURIER);
 
-        b.setForeground(GameMain.CREMISI);
+        buttonAbs.setForeground(GameMain.CREMISI);
 
-        b.setVisible(true);
-        super.paint(g, c);
+        buttonAbs.setVisible(true);
+        super.paint(graphicsVar, componentJ);
 
     }
 }

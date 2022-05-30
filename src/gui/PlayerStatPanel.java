@@ -1,18 +1,37 @@
 package gui;
 
+import java.awt.GridBagConstraints;
+import java.awt.GridBagLayout;
+import java.awt.Insets;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-import java.awt.GridBagConstraints;
-import gui.main.GameMain;
-import model.*;
-import java.awt.GridBagLayout;
-import java.awt.Insets;
+import model.Player;
 
+
+
+
+/**
+ * PlayersStatPanel where the players are showned:
+ * - PlayerName.
+ * - PlayerMoney.
+ * - PlayerPiece.
+ * - PlayerPosition.
+ * - PlayerProperties.
+ * 
+ * 
+ * @author taftan@usi.ch & sardoa@usiu.ch
+ * @version 24/05/2022
+ */
 public class PlayerStatPanel extends JPanel {
 
     private GridBagLayout layout = new GridBagLayout();
 
+
+    /**
+     * Constructor of the PlayerStatPanel.
+     * @param player the player that have to be showned.
+     */
     public PlayerStatPanel(Player player) {
         super();
         JPanel pieceColorPanel = new PieceColorPanel(player);
@@ -26,8 +45,8 @@ public class PlayerStatPanel extends JPanel {
 
         setFont(GameMain.COURIER);
 
-        GridBagConstraints c = new GridBagConstraints();
-        c.fill = GridBagConstraints.HORIZONTAL;
+        GridBagConstraints gridBagLay = new GridBagConstraints();
+        gridBagLay.fill = GridBagConstraints.HORIZONTAL;
 
         setLayout(layout);
 
@@ -40,36 +59,36 @@ public class PlayerStatPanel extends JPanel {
         JLabel properties = new JLabel("Properties: " + player.propertySquaretoString());
         properties.setFont(GameMain.COURIER);
 
-        c.insets = new Insets(10, 0, 10, 50);
-        c.gridx = 0;
-        c.gridy = 0;
-        c.fill = GridBagConstraints.HORIZONTAL;
-        add(nickname, c);
+        gridBagLay.insets = new Insets(10, 0, 10, 50);
+        gridBagLay.gridx = 0;
+        gridBagLay.gridy = 0;
+        gridBagLay.fill = GridBagConstraints.HORIZONTAL;
+        add(nickname, gridBagLay);
 
-        c.insets = new Insets(10, 0, 10, 50);
-        c.gridx = 0;
-        c.gridy = 1;
-        c.fill = GridBagConstraints.HORIZONTAL;
-        add(cash, c);
+        gridBagLay.insets = new Insets(10, 0, 10, 50);
+        gridBagLay.gridx = 0;
+        gridBagLay.gridy = 1;
+        gridBagLay.fill = GridBagConstraints.HORIZONTAL;
+        add(cash, gridBagLay);
 
-        c.insets = new Insets(10, 0, 10, 50);
-        c.gridx = 0;
-        c.gridy = 2;
-        c.fill = GridBagConstraints.HORIZONTAL;
-        add(properties, c);
+        gridBagLay.insets = new Insets(10, 0, 10, 50);
+        gridBagLay.gridx = 0;
+        gridBagLay.gridy = 2;
+        gridBagLay.fill = GridBagConstraints.HORIZONTAL;
+        add(properties, gridBagLay);
 
-        c.insets = new Insets(10, 0, 10, 50);
-        c.gridx = 0;
-        c.gridy = 3;
-        c.fill = GridBagConstraints.HORIZONTAL;
-        add(pos, c);
+        gridBagLay.insets = new Insets(10, 0, 10, 50);
+        gridBagLay.gridx = 0;
+        gridBagLay.gridy = 3;
+        gridBagLay.fill = GridBagConstraints.HORIZONTAL;
+        add(pos, gridBagLay);
 
-        c.fill = GridBagConstraints.HORIZONTAL;
-        c.insets = new Insets(10, 0, 10, 50);
-        c.gridwidth = 2;
-        c.gridx = 0;
-        c.gridy = 4;
-        add(pieceColorPanel, c);
+        gridBagLay.fill = GridBagConstraints.HORIZONTAL;
+        gridBagLay.insets = new Insets(10, 0, 10, 50);
+        gridBagLay.gridwidth = 2;
+        gridBagLay.gridx = 0;
+        gridBagLay.gridy = 4;
+        add(pieceColorPanel, gridBagLay);
 
     }
 

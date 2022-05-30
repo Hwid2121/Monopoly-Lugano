@@ -1,27 +1,33 @@
 package gui;
 
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-
-import javax.swing.BoxLayout;
-
-import java.awt.Font;
 import java.awt.Color;
 import java.awt.Component;
-
-import javax.swing.JPanel;
-
-import gui.main.GameMain;
-
-import model.Card;
-
 import java.awt.Dimension;
-
+import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import javax.swing.BoxLayout;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+
+import model.Card;
+
+/**
+ * PopuuPickcardFrame frame that show a popup for pick a card.
+ * 
+ * 
+ * @author taftan@usi.ch & sardoa@usiu.ch
+ * @version 24/05/2022
+ */
 public class PopUpPickCardFrame extends JFrame implements ActionListener {
 
+    /**
+     * Construcotr of the frame PopUpPickCardFrame.
+     * 
+     * @param parentPanel the parent panel
+     */
     public PopUpPickCardFrame(Card card, MonopolyCommandsPanel parentPanel) {
 
         super();
@@ -53,6 +59,11 @@ public class PopUpPickCardFrame extends JFrame implements ActionListener {
 
     }
 
+
+
+
+
+    
     @Override
     public void actionPerformed(ActionEvent arg0) {
 

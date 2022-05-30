@@ -1,27 +1,38 @@
 package gui;
 
-import javax.swing.JFrame;
-import javax.swing.JLabel;
 import java.awt.BorderLayout;
-import java.awt.Font;
 import java.awt.Color;
 import java.awt.Component;
-
-import javax.swing.JPanel;
-
-import gui.main.GameMain;
-
 import java.awt.Dimension;
-
+import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
 
 import model.Dice;
 
+
+
+/**
+ *  DiceFrame frame that shows the value of the DIce.
+ * 
+ * 
+ * @author taftan@usi.ch & sardoa@usiu.ch
+ * @version 24/05/2022
+ */
 public class DiceFrame extends JFrame implements ActionListener {
 
     private Dice dice;
 
+
+    /**
+     * Constructor of the DiceFrame.
+     * 
+     * @param game the parent of the frame
+     * @param dic the dice that have to be showned.
+     */
     public DiceFrame(MonopolyCommandsPanel game, Dice dic) {
 
         super();

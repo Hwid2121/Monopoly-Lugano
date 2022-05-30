@@ -2,16 +2,31 @@ package gui;
 
 import java.util.ArrayList;
 
+/**
+ * 
+ * GridPosition class contain all the positon of the squares.
+ * 
+ * @author taftan@usi.ch & sardoa@usiu.ch
+ * @version 24/05/2022
+ */
 public class GridPosition {
 
     ArrayList<Position> positionSquare = new ArrayList<>();
 
+    /**
+     * Constructor of the GridPosition class.
+     * 
+     */
     public GridPosition() {
 
         setPositionSquare();
 
     }
 
+    /**
+     * 
+     * SetPositonSquare method set the position of the squares.
+     */
     public void setPositionSquare() {
 
         positionSquare.add(new Position(909, 909));
@@ -57,6 +72,13 @@ public class GridPosition {
 
     }
 
+
+    /**
+     * 
+     * GetPositionSquare method return the position of the squares.
+     * 
+     * @return the position of the squares.
+     */
     public Position getPosition(int index) {
 
         return positionSquare.get(index);

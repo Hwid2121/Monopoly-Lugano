@@ -1,30 +1,37 @@
 package gui;
 
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-
-import javax.swing.BoxLayout;
-
-import java.awt.Font;
 import java.awt.Color;
 import java.awt.Component;
-
+import java.awt.Dimension;
+import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import javax.swing.BoxLayout;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
-
-import gui.main.GameMain;
 
 import model.Monopoly;
 import model.Player;
 
-import java.awt.Dimension;
-
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-
+/**
+ * 
+ * InfoSquareFrame frame tjat show info of the square.
+ * 
+ * @author taftan@usi.ch & sardoa@usiu.ch
+ * @version 24/05/2022
+ */
 public class InfoSquareFrame extends JFrame implements ActionListener {
 
     private JPanel panel;
 
+    /**
+     * Construcotr of the frame InfoSquareFrame.
+     * 
+     * @param parentPanel the parent panel
+     * @param player the player
+     * @param monopolya the monopoly
+     */
     public InfoSquareFrame(MonopolyCommandsPanel parentPanel, Player player, Monopoly monopolya) {
 
         super();

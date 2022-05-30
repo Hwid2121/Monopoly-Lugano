@@ -1,25 +1,18 @@
-package gui.panels;
+package gui;
 
+import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.Graphics;
+import java.awt.Image;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import javax.swing.Box;
+import javax.swing.BoxLayout;
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.BoxLayout;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-
-import javax.swing.JButton;
-
-import gui.main.CLayout;
-import gui.main.GameMain;
-import gui.pregame.NumPlayerFrame;
-
-import java.awt.Color;
-
-import java.awt.Image;
-import java.awt.Graphics;
-import javax.swing.ImageIcon;
-import java.awt.Dimension;
-import javax.swing.Box;
 
 /**
  * PanelPregame the first panel that the user will
@@ -40,6 +33,10 @@ public class PanelPregame extends JPanel {
 
     private CLayout parentFrame;
 
+    /**
+     * Constructor of the PanelPregame.
+     * @param frame the parent frame
+     */
     public PanelPregame(CLayout frame) {
         super();
 
@@ -51,7 +48,7 @@ public class PanelPregame extends JPanel {
         jb3.addActionListener(new ActionListener() {
 
             @Override
-            public void actionPerformed(ActionEvent e) {
+            public void actionPerformed(ActionEvent actionEvent) {
                 System.out.println("EXIT THE GAME");
                 System.exit(0);
             }
@@ -62,7 +59,7 @@ public class PanelPregame extends JPanel {
         jb1.addActionListener(new ActionListener() {
 
             @Override
-            public void actionPerformed(ActionEvent e) {
+            public void actionPerformed(ActionEvent actionEvent) {
 
                 numPlayeFrame.setVisible(true);
 
@@ -107,10 +104,10 @@ public class PanelPregame extends JPanel {
     }
 
     @Override
-    protected void paintComponent(Graphics g) {
-        super.paintComponent(g);
-        g.setColor(Color.RED);
-        g.drawRect(0, 0, getWidth() - 1, getHeight() - 1);
+    protected void paintComponent(Graphics graphicVAR) {
+        super.paintComponent(graphicVAR);
+        graphicVAR.setColor(Color.RED);
+        graphicVAR.drawRect(0, 0, getWidth() - 1, getHeight() - 1);
 
     }
 

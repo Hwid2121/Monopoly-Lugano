@@ -1,4 +1,4 @@
-package gui.pregame;
+package gui;
 import java.awt.ComponentOrientation;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
@@ -6,9 +6,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
-
-import gui.main.GameMain;
-import gui.panels.PanelPregame;
 
 import java.awt.Dimension;
 import java.awt.FlowLayout;
@@ -27,6 +24,15 @@ public class FormPanel extends JPanel {
     final private PanelPregame frameb;
     private JButton button;
 
+
+
+
+    /**
+     * Construcotr of the frame FormPanel.
+     * 
+     * @param frameB the parent of the parent frame
+     * @param frameA the parent frame
+     */
     public FormPanel(PanelPregame frameB, NumPlayerFrame frameA) {
 
         super();
@@ -54,14 +60,14 @@ public class FormPanel extends JPanel {
 
         button.addActionListener(new ActionListener() {
             @Override
-            public void actionPerformed(ActionEvent e) {
+            public void actionPerformed(ActionEvent actionEvent) {
 
                 System.out.println("number: " + textField.getText());
 
-                String s = textField.getText();
+                String stringField = textField.getText();
                 try {
 
-                    int num = Integer.parseInt(s);
+                    int num = Integer.parseInt(stringField);
                     System.out.println("An integer");
                     GameMain.monopoly.setNumOfPlayers(num);
                     framea.dispose();
