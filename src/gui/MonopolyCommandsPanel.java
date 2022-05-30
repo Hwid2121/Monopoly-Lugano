@@ -278,7 +278,7 @@ public class MonopolyCommandsPanel extends JPanel implements ActionListener {
 
                 System.out.println("SI FUNZ " + monopoly.getListOfPlayer().get(0).getPosition());
 
-                if (monopoly.getTable().getColor(player.getPosition()) == "jail") {
+                if (monopoly.getTable().getColor(player.getPosition()).equals("jail")) {
                     player.setJail(JailSquare.getDays());
                 }
 
