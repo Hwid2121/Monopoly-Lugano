@@ -32,10 +32,25 @@ public class Monopoly {
 
     }
 
-    public void setNumOfPlayers(int n) {
-        numOfPlayers = n;
+
+
+
+    /**
+     * Add a player to the arrayList players.
+     *
+     * @param index the index of the player in the arrayList players
+     */
+    public void setNumOfPlayers(int index) {
+        numOfPlayers = index;
     }
 
+
+
+    /**
+     * Get num of the player that are playing.
+     *
+     * @return the num of the player playing
+     */
     public int getNumOfplayer() {
         return numOfPlayers;
     }
@@ -117,16 +132,6 @@ public class Monopoly {
         players.remove(player);
     }
 
-    /**
-     * Sr
-     * 
-     * @param num player to add in the arrayList player
-     *
-     * 
-     */
-    // public void setNumofPlayers(int num) {
-    // numOfPlayers = num;
-    // }
 
     /**
      * Check if the size of the list of the players is greater than 1.
