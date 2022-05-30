@@ -1,4 +1,4 @@
-package gui.pregame;
+package gui;
 
 import javax.swing.JPanel;
 import javax.swing.BoxLayout;
@@ -7,8 +7,6 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 
-import gui.main.GameMain;
-import gui.panels.PanelPlayers;
 import model.Player;
 import java.util.ArrayList;
 import java.awt.Dimension;

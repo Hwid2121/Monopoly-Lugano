@@ -12,8 +12,6 @@ import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-import gui.main.GameMain;
-
 
 /**
  * Panel that pops up when the user clicks on an empty square.

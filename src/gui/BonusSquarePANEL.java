@@ -13,7 +13,6 @@ import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-import gui.main.GameMain;
 import model.Monopoly;
 import model.Player;
 

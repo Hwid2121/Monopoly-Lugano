@@ -9,8 +9,6 @@ import javax.swing.JComponent;
 import javax.swing.border.Border;
 import javax.swing.plaf.basic.BasicButtonUI;
 
-import gui.main.GameMain;
-
 public class MyButton extends BasicButtonUI {
     @Override
     public void paint(Graphics graphicsVar, JComponent componentJ) {

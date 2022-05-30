@@ -10,7 +10,6 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-import gui.main.GameMain;
 import model.Player;
 /**
  * BonusSquare frame to show the description of the bonusSQUare.

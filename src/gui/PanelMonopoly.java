@@ -1,14 +1,10 @@
-package gui.panels;
+package gui;
 
 import java.awt.BorderLayout;
 import java.awt.Dimension;
 
 import javax.swing.JPanel;
 
-import gui.MonopolyCommandsPanel;
-import gui.MonopolyGridPanel;
-import gui.MonopolyPlayerPanel;
-import gui.main.CLayoutForGame;
 import model.Player;
 
 public class PanelMonopoly extends JPanel {

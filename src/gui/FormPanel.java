@@ -1,4 +1,4 @@
-package gui.pregame;
+package gui;
 import java.awt.ComponentOrientation;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
@@ -6,9 +6,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
-
-import gui.main.GameMain;
-import gui.panels.PanelPregame;
 
 import java.awt.Dimension;
 import java.awt.FlowLayout;

@@ -12,7 +12,6 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-import gui.main.GameMain;
 import model.Dice;
 
 public class DiceFrame extends JFrame implements ActionListener {

@@ -1,4 +1,4 @@
-package gui.panels;
+package gui;
 
 import java.awt.Color;
 import java.awt.Component;
@@ -13,10 +13,6 @@ import javax.swing.BoxLayout;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-
-import gui.main.CLayout;
-import gui.main.GameMain;
-import gui.pregame.PanelNickname;
 
 /**
  * Panel Players is the panel where nickname of the players have to be

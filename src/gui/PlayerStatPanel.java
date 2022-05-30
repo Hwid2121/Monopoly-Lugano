@@ -7,7 +7,6 @@ import java.awt.Insets;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-import gui.main.GameMain;
 import model.Player;
 
 public class PlayerStatPanel extends JPanel {

@@ -10,9 +10,6 @@ import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JPanel;
 
-import gui.main.CLayoutForGame;
-import gui.main.GameMain;
-import gui.panels.PanelMonopoly;
 import model.Card;
 import model.JailSquare;
 import model.Monopoly;

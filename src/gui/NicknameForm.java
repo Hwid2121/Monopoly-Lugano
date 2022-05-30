@@ -1,10 +1,8 @@
-package gui.pregame;
+package gui;
 
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
-
-import gui.main.GameMain;
 
 import java.awt.Color;
 

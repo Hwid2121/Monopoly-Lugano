@@ -9,7 +9,6 @@ import java.awt.event.ActionListener;
 import javax.swing.ImageIcon;
 import javax.swing.JPanel;
 
-import gui.main.GameMain;
 import model.Monopoly;
 import model.Player;
 

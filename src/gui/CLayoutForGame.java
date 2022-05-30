@@ -1,12 +1,10 @@
 
-package gui.main;
+package gui;
 
 import java.awt.CardLayout;
 
 import javax.swing.JPanel;
 
-import gui.panels.PanelMonopoly;
-import gui.panels.PanelPlayers;
 import model.Monopoly;
 import model.Player;
 

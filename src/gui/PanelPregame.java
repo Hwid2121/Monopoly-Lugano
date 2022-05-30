@@ -1,4 +1,4 @@
-package gui.panels;
+package gui;
 
 import java.awt.Color;
 import java.awt.Dimension;
@@ -14,10 +14,6 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-
-import gui.main.CLayout;
-import gui.main.GameMain;
-import gui.pregame.NumPlayerFrame;
 
 /**
  * PanelPregame the first panel that the user will
