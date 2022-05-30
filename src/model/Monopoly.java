@@ -101,10 +101,8 @@ public class Monopoly {
 
     /**
      * Get the player in the arraylist at the number of the turn in that moment.
-     * 
      * @param turn turn number.
-     *
-     * 
+     * @return the player in the arraylist at the number of the turn in that moment.
      */
     public Player getPLayer(int turn) {
         return players.get(turn);
@@ -209,9 +207,9 @@ public class Monopoly {
      * Check if the owner of a property square is the same of the player
      * given as input.
      * 
+     * @param player to check with owner
      * @return true if the player is the owner of the propertysquare
      *         false otherwise
-     * @param player to check with owner
      * 
      */
     public boolean checkOwnerForRent(Player player) {

@@ -8,7 +8,7 @@ package model;
  * for escape have to do a perfect pair and after can throw again the dice or
  * pay 50 chf or by the card "Free from jail".
  *
- * @author Nicolo' Tafta & Alberto Sardo
+ * @author taftan@usi.ch & sardoa@usi.ch
  * @version 28/04/2022
  */
 

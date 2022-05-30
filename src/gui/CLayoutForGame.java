@@ -3,18 +3,14 @@ package gui;
 import model.Monopoly;
 import model.Player;
 
-
 import java.awt.CardLayout;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
 
 /**
- *
  * Main panel of the gameplay of monopoly.
  * Recursive call to refresh the page.
- * 
- * 
  * 
  * @author taftan@usi.ch & sardoa@usiu.ch
  * @version 24/05/2022

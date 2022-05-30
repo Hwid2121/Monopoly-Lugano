@@ -81,7 +81,7 @@ public class Main {
     }
 
     /**
-     * When a player reach the square gotoPLAYmain will be obbliged to change
+     * When a player reach the square gotoPlaymain will be obbliged to change
      * position
      * and will be moved to the position 30 where is the jail.
      * 
@@ -89,7 +89,7 @@ public class Main {
      * @param monopoly the main class where the game is strutured
      *
      */
-    public void gotoPLAYmain(Player player, Monopoly monopoly) {
+    public void gotoPlaymain(Player player, Monopoly monopoly) {
         System.out.println("Go to the jail! \n");
 
         player.movePosition(30);
@@ -165,11 +165,11 @@ public class Main {
 
                     refactorMain.monopoly.setPositionPlayer(player);
                     System.out.println("You are in the square: " 
-                    +   refactorMain.monopoly.getTable()
-                                    .getSquareName(refactorMain.monopoly.getPLayer(turn).getPosition()));
-
+                        +   refactorMain.monopoly.getTable()
+                        .getSquareName(refactorMain.monopoly.getPLayer(turn).getPosition()));
+    
                     startTurn(player, refactorMain.monopoly);
-
+    
                     break;
 
                 case "c":
@@ -179,7 +179,7 @@ public class Main {
                         System.out.println("You used the card, you can throw the dice\n ");
                         refactorMain.monopoly.setPositionPlayer(refactorMain.monopoly.getPLayer(turn));
                         System.out.println("You are in the square: " 
-                        +   refactorMain.monopoly.getTable()
+                            +   refactorMain.monopoly.getTable()
                                         .getSquareName(refactorMain.monopoly.getPLayer(turn).getPosition()));
 
                         startTurn(player, refactorMain.monopoly);
@@ -410,6 +410,7 @@ public class Main {
             case "exit":
                 System.out.println("EXIT THE GAME");
                 System.exit(0);
+                break;
 
             default:
                 System.out.println("Command not allowed here.\n\n");
@@ -466,7 +467,7 @@ public class Main {
         if (word > 0 && word < 5) {
             if (refactorMain.monopoly.getTable().getHouse(player.getPosition()).checkNumHouses(word)) {
                 System.out.println("Building" + word + " house at the price of " 
-                +   ((refactorMain.monopoly.getTable().getHouse(player.getPosition()).getPrice(6)) * word) + chf);
+                    +   ((refactorMain.monopoly.getTable().getHouse(player.getPosition()).getPrice(6)) * word) + chf);
                 propertySquareBuild(player, refactorMain.monopoly, word);
             } else {
                 System.out.println(
@@ -597,8 +598,8 @@ public class Main {
                 && refactorMain.monopoly.getTable().getSquareOwner(position) == null)
 
         {
-            System.out.println("Confirm to buy the property?" +
-                    refactorMain.monopoly.getTable().getSquareName(position)
+            System.out.println("Confirm to buy the property?"
+                 +  refactorMain.monopoly.getTable().getSquareName(position)
                     + "\n Your budget will be "
                     + (player.getMoney() - refactorMain.monopoly.getTable().getSquarePrice(position)));
 
@@ -614,7 +615,7 @@ public class Main {
                     System.out.println("Square has been bought! \n");
                     String color = refactorMain.monopoly.getTable().getColor(position);
                     checkmonopolyProperty(player, refactorMain.monopoly, color);
-
+                    break;
                 case "n":
                     break;
 
@@ -631,7 +632,7 @@ public class Main {
     }
 
     /**
-     * Check if the propertySquare own by the player
+     * Check if the propertySquare own by the player.
      * 
      * @param player   that play in that turn
      * @param monopoly the main class where the game is strutured
@@ -675,7 +676,7 @@ public class Main {
 
         refactorMain.monopoly.setPositionPlayer(refactorMain.monopoly.getPLayer(turn));
         System.out.println("You are in the square: " 
-        +   refactorMain.monopoly.getTable().getSquareName(refactorMain.monopoly.getPLayer(turn).getPosition()));
+            +   refactorMain.monopoly.getTable().getSquareName(refactorMain.monopoly.getPLayer(turn).getPosition()));
 
     }
 
@@ -745,7 +746,7 @@ public class Main {
                         break;
 
                     case "goto":
-                        gotoPLAYmain(refactorMain.monopoly.getPLayer(turn), refactorMain.monopoly);
+                        gotoPlaymain(refactorMain.monopoly.getPLayer(turn), refactorMain.monopoly);
                         break;
 
                     case "bonus":
