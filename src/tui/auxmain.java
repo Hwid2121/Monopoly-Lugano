@@ -1,10 +1,11 @@
 package tui;
 
 import java.util.Scanner;
+
+import model.Card;
 import model.Monopoly;
 import model.Player;
 import model.cardsDeck;
-import model.Card;
 
 /**
  * This is the auxiliary main of the TUI created for refactoring.

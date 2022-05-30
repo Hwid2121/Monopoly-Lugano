@@ -1,22 +1,23 @@
 
 package gui;
 
-import javax.swing.JButton;
-import javax.swing.JPanel;
-import gui.main.CLayoutForGame;
-import gui.main.GameMain;
-import gui.panels.PanelMonopoly;
-import model.Monopoly;
-import model.Player;
-
-import java.awt.FlowLayout;
-import java.awt.Dimension;
 import java.awt.ComponentOrientation;
-
+import java.awt.Dimension;
+import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import model.*;
+import javax.swing.JButton;
+import javax.swing.JPanel;
+
+import gui.main.CLayoutForGame;
+import gui.main.GameMain;
+import gui.panels.PanelMonopoly;
+import model.Card;
+import model.JailSquare;
+import model.Monopoly;
+import model.Player;
+import model.cardsDeck;
 
 public class MonopolyCommandsPanel extends JPanel implements ActionListener {
 

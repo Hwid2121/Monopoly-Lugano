@@ -1,21 +1,20 @@
 package gui;
 
+import java.awt.Component;
 import java.awt.ComponentOrientation;
-import javax.swing.JPanel;
+import java.awt.Dimension;
+import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.Component;
 
 import javax.swing.Box;
 import javax.swing.BoxLayout;
 import javax.swing.JButton;
 import javax.swing.JLabel;
+import javax.swing.JPanel;
 
 import gui.main.GameMain;
 import model.Card;
-
-import java.awt.Dimension;
-import java.awt.Font;
 
 public class PopUpPickCardPanel extends JPanel implements ActionListener {
 

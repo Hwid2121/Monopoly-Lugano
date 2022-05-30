@@ -1,19 +1,19 @@
 package gui;
 
 import java.awt.ComponentOrientation;
-import javax.swing.JPanel;
+import java.awt.Dimension;
+import java.awt.Font;
+import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+
 import javax.swing.JButton;
 import javax.swing.JLabel;
+import javax.swing.JPanel;
 
 import gui.main.GameMain;
 import model.Monopoly;
 import model.Player;
-
-import java.awt.Dimension;
-import java.awt.GridLayout;
-import java.awt.Font;
 
 public class InfoSquarePanel extends JPanel implements ActionListener {
 

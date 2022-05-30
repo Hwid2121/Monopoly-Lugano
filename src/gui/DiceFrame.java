@@ -1,21 +1,18 @@
 package gui;
 
-import javax.swing.JFrame;
-import javax.swing.JLabel;
 import java.awt.BorderLayout;
-import java.awt.Font;
 import java.awt.Color;
 import java.awt.Component;
-
-import javax.swing.JPanel;
-
-import gui.main.GameMain;
-
 import java.awt.Dimension;
-
+import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+
+import gui.main.GameMain;
 import model.Dice;
 
 public class DiceFrame extends JFrame implements ActionListener {

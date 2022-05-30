@@ -1,11 +1,13 @@
 package gui;
 
-import javax.swing.JPanel;
-import java.awt.Graphics2D;
-import java.awt.Graphics;
-import java.awt.Dimension;
 import java.awt.Color;
-import model.*;
+import java.awt.Dimension;
+import java.awt.Graphics;
+import java.awt.Graphics2D;
+
+import javax.swing.JPanel;
+
+import model.Player;
 
 public class PieceColor extends JPanel {
 

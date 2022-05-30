@@ -1,11 +1,13 @@
 package gui.main;
 
+import java.awt.CardLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+
 import javax.swing.JPanel;
+
 import gui.panels.PanelPlayers;
 import gui.panels.PanelPregame;
-import java.awt.CardLayout;
 
 /**
  * 

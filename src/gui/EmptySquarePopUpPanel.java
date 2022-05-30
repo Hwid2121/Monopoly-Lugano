@@ -1,18 +1,19 @@
 package gui;
 
+import java.awt.Component;
 import java.awt.ComponentOrientation;
-import javax.swing.JPanel;
+import java.awt.Dimension;
+import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.Component;
-
 import javax.swing.Box;
 import javax.swing.BoxLayout;
 import javax.swing.JButton;
 import javax.swing.JLabel;
+import javax.swing.JPanel;
+
 import gui.main.GameMain;
-import java.awt.Dimension;
-import java.awt.Font;
+
 
 /**
  * Panel that pops up when the user clicks on an empty square.
@@ -22,15 +23,15 @@ import java.awt.Font;
  */
 public class EmptySquarePopUpPanel extends JPanel implements ActionListener {
 
-    private  EmptySquarePopUpFrame framea;
+    private EmptySquarePopUpFrame framea;
     private JButton button;
     private Font sansSerif = new Font("SansSerif", Font.BOLD, 14);
 
     /**
      * Panel that pops up when the user clicks on an empty square.
      * 
-     * @param frameB    the frame that contains the panel
-     * @param pare     the parent panel
+     * @param frameB the frame that contains the panel
+     * @param pare   the parent panel
      */
     public EmptySquarePopUpPanel(MonopolyCommandsPanel frameB, EmptySquarePopUpFrame pare) {
 

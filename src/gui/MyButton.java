@@ -1,13 +1,15 @@
 package gui;
 
+import java.awt.Font;
 import java.awt.Graphics;
+
 import javax.swing.AbstractButton;
 import javax.swing.BorderFactory;
 import javax.swing.JComponent;
-import javax.swing.plaf.basic.BasicButtonUI;
-import gui.main.GameMain;
-import java.awt.Font;
 import javax.swing.border.Border;
+import javax.swing.plaf.basic.BasicButtonUI;
+
+import gui.main.GameMain;
 
 public class MyButton extends BasicButtonUI {
     @Override

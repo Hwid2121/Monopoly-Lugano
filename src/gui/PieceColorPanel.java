@@ -1,12 +1,12 @@
 package gui;
 
+import java.awt.BorderLayout;
+
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 import gui.main.GameMain;
-
-import java.awt.BorderLayout;
-import model.*;
+import model.Player;
 
 public class PieceColorPanel extends JPanel {
 

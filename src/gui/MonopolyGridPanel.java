@@ -1,17 +1,17 @@
 package gui;
 
+import java.awt.Graphics;
+import java.awt.Graphics2D;
+import java.awt.Image;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.ImageIcon;
 import javax.swing.JPanel;
 
 import gui.main.GameMain;
+import model.Monopoly;
 import model.Player;
-
-import java.awt.Graphics2D;
-import java.awt.Image;
-import java.awt.Graphics;
-import java.awt.event.*;
-import javax.swing.ImageIcon;
-
-import model.*;
 
 public class MonopolyGridPanel extends JPanel implements ActionListener {
 

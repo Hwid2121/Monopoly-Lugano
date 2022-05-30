@@ -1,25 +1,23 @@
 package gui.panels;
 
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
-import javax.swing.BoxLayout;
+import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.Graphics;
+import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import javax.swing.Box;
+import javax.swing.BoxLayout;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
 
 import gui.main.CLayout;
 import gui.main.GameMain;
 import gui.pregame.NumPlayerFrame;
-
-import java.awt.Color;
-
-import java.awt.Image;
-import java.awt.Graphics;
-import javax.swing.ImageIcon;
-import java.awt.Dimension;
-import javax.swing.Box;
 
 /**
  * PanelPregame the first panel that the user will
