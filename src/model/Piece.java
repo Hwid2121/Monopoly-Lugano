@@ -45,6 +45,12 @@ public class Piece {
         blueColor = rand.nextFloat();
     }
 
+
+
+
+    /**
+     * Check if the piece is already used.
+     */
     public void checkPiece() {
 
         for (Player player : players) {
@@ -58,11 +64,24 @@ public class Piece {
 
     }
 
+
+
+
+    /**
+     * Set the piece of the player.
+     */
     public void setPiece() {
         randomColor = new Color(redColor, greenColor, blueColor);
 
     }
 
+
+
+
+    /**
+     * Get the color of the piece.
+     * @return the color of the piece
+     */
     public Color getColor() {
         return randomColor;
     }

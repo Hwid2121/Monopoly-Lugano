@@ -153,8 +153,9 @@ public class Table {
     /**
      * Get the name of Square at position pos.
      * 
-     * @return the name of the square
      * @param pos for the index
+     * @return the name of the square
+     * 
      */
     public String getSquareName(int pos) {
         return this.getSquare(pos).getName();
@@ -163,8 +164,10 @@ public class Table {
     /**
      * Get the Square price if the Square is a propertySquare.
      * 
-     * @return the price if it is a propertySquare else 0
+     * 
      * @param pos for the index
+     * @return the price if it is a propertySquare else 0
+     * 
      */
     public int getSquarePrice(int pos) {
         Object obj = this.getSquare(pos);
@@ -178,8 +181,10 @@ public class Table {
     /**
      * Get the array house if the Square is a propertySquare.
      * 
-     * @return the array House if it is a propertySquare else null
+     * 
      * @param pos for the index of Square
+     * @return the array House if it is a propertySquare else null
+     * 
      */
     public House getHouse(int pos) {
 
@@ -196,8 +201,9 @@ public class Table {
     /**
      * Get the price of the Square if it is a propertySquare.
      * 
-     * @return the price of Square if it is a propertySquare else 0
      * @param pos for the index of the Square in the Table
+     * @return the price of Square if it is a propertySquare else 0
+     * 
      */
     public int getSquarePriceTax(int pos) {
         Object obj = this.getSquare(pos);
@@ -221,8 +227,9 @@ public class Table {
     /**
      * Get the Owner of the propertySquare.
      * 
-     * @return the Owner of the Square if it is a propertySquare else null
      * @param for the index of the Square in the Table
+     * @return the Owner of the Square if it is a propertySquare else null
+     * 
      */
     public Player getSquareOwner(int pos) {
         Object obj = this.getSquare(pos);
@@ -236,8 +243,7 @@ public class Table {
     /**
      * Get the nickname of the owner of the propertySquare.
      * 
-     * @return the nickname of Owner of the propertySquare if it has
-     *         else return ""\
+     * @return the nickname of the owner
      * @param pos for the index of the Square in the table
      */
     public String getSquareOwnerToString(int pos) {
@@ -251,8 +257,8 @@ public class Table {
     /**
      * Set the Owner of the propertySquare.
      * 
-     * @return true if the die1 and die2 are the same number, false otherwise.
      * @param player for setting the player as owner
+     * @return true if the die1 and die2 are the same number, false otherwise.
      */
     public void setSquareOwner(Player player) {
         Object obj = this.getSquare(player.getPosition());
@@ -368,10 +374,9 @@ public class Table {
      * the same of other propertySquare owned by the player.
      * Method usefull for the monopoly color.
      * 
-     * @return a list of the propertySquare with same color of the player position
-     *         if none then r
-     *         return an empty list
      * @param player where to check the positon and the list of the propertySquare
+     * @return listofpropertysquare of the player
+     * 
      */
     public ArrayList<PropertySquare> getOtherMonopolySquare(Player player) {
 
@@ -401,15 +406,18 @@ public class Table {
     /**
      * Get the color of the Square at inde i in the table.
      * 
+     * @param index for the index of the Square in the table
      * @return the color of the Square at index I on the table
      */
-    public String getColor(int i) {
+    public String getColor(int index) {
 
-        return getSquare(i).getColor();
+        return getSquare(index).getColor();
     }
 
     /**
      * Call the method ressetOwner for the proeprtySquare at index pos in the table.
+     * 
+     * @param pos for the index of the Square in the table
      */
     public void resetOwner(int pos) {
 

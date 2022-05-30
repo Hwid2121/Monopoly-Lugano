@@ -1,9 +1,9 @@
 package tui;
+
 import model.JailSquare;
 import model.Monopoly;
 import model.Player;
 import model.PropertySquare;
-
 
 /**
  * This is the main of the TUI
@@ -619,8 +619,6 @@ public class Main {
             System.out.println("Or the property is not yours");
         }
 
-        // rent to pay
-
     }
 
     /**
@@ -641,11 +639,25 @@ public class Main {
 
     }
 
+    /**
+     * Sell the porperty square of the player.
+     * 
+     * @param player   that play in that turn
+     * @param monopoly the main class where the game is strutured
+     *
+     */
     public void propertysquaresell(Player player, Monopoly monopoly) {
         auxmain.propertysquaresell(player, monopoly);
 
     }
 
+    /**
+     * Let the player roll the dice.
+     * 
+     * @param player   that play in that turn
+     * @param monopoly the main class where the game is strutured
+     *
+     */
     public void throwDiceTurn(Player player, Monopoly monopoly) {
 
         auxmain.monopoly.throwDice();
@@ -658,6 +670,12 @@ public class Main {
 
     }
 
+    /**
+     * Start the turn.
+     * 
+     * @param player   that play in that turn
+     * @param monopoly the main class where the game is strutured
+     */
     public void startTurn(Player player, Monopoly monopoly) {
 
         if (auxmain.monopoly.checkOwnerForRent(player)) {
@@ -666,6 +684,12 @@ public class Main {
 
     }
 
+    /**
+     * Payrent of the player.
+     * 
+     * @param player   that play in that turn
+     * @param monopoly the main class where the game is strutured
+     */
     public void payrent(Player player, Monopoly monopoly) {
         System.out.println(
                 "Oh no, this property is owned by: "
@@ -675,6 +699,9 @@ public class Main {
         player.decreaseMoney(auxmain.monopoly.getTable().getPropertySquare(player.getPosition()).getPriceTax());
     }
 
+    /**
+     * GamestatusPlay the main method of the class.
+     */
     public void gameStatusPLAY() {
 
         while (auxmain.monopoly.monopolyEND()) {
@@ -733,6 +760,9 @@ public class Main {
         }
     }
 
+    /**
+     * Gamestaus for the player that play in the game.
+     */
     public void gameStatus() {
 
         System.out.println("The game start!!!");
@@ -743,16 +773,29 @@ public class Main {
 
     }
 
+    /**
+     * Finish the state of player.
+     */
     public void finishStatus() {
         System.out.println("The monopoly of Lugano is " + auxmain.monopoly.getPLayer(0).getNickname());
         System.exit(0);
 
     }
 
+    /**
+     * Get the status.
+     * 
+     * @return the status
+     */
     public int getStatus() {
         return auxmain.status;
     }
 
+    /**
+     * Run the game.
+     * 
+     * @param args the command line arguments
+     */
     public static void main(String[] args) {
 
         Main game = new Main();
