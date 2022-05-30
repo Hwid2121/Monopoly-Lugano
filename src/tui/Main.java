@@ -1,5 +1,4 @@
 package tui;
-
 import model.JailSquare;
 import model.Monopoly;
 import model.Player;

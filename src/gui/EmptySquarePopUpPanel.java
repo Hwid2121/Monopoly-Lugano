@@ -16,7 +16,6 @@ import java.awt.Font;
 
 public class EmptySquarePopUpPanel extends JPanel implements ActionListener {
 
-    private JLabel desc;
     final private EmptySquarePopUpFrame framea;
     private JButton button;
     private Font s = new Font("SansSerif", Font.BOLD, 14);
@@ -37,7 +36,7 @@ public class EmptySquarePopUpPanel extends JPanel implements ActionListener {
         button.setMinimumSize(new Dimension(120, 40));
         button.setPreferredSize(new Dimension(120, 40));
 
-        desc = new JLabel("EMPTY SQUARE, NOTHING TO DO HERE!");
+        JLabel desc = new JLabel("EMPTY SQUARE, NOTHING TO DO HERE!");
         desc.setFont(s);
         desc.setAlignmentX(Component.CENTER_ALIGNMENT);
         add(desc);
