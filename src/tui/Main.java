@@ -5,6 +5,8 @@ import model.Monopoly;
 import model.Player;
 import model.PropertySquare;
 
+public RefactorMain RefactorMain;
+
 /**
  * This is the main of the TUI
  * inside of this class is present the class main and the main for start with
@@ -31,9 +33,6 @@ public class Main {
     public Main() {
         RefactorMain = new RefactorMain();
     }
-
-    
-    public RefactorMain RefactorMain;
 
     /**
      * preGameStatus is the method that manage the pregame of RefactorMain.monopoly.
