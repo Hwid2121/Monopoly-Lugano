@@ -19,9 +19,6 @@ public class Player {
     private ArrayList<Card> deckOfPlayer = new ArrayList<Card>();
     private ArrayList<PropertySquare> listofPropertySquares = new ArrayList<PropertySquare>();
 
-
-
-    
     /**
      * 
      * The constructor of Player that take the nickname.
@@ -37,8 +34,6 @@ public class Player {
         piece = new Piece();
     }
 
-
-
     /**
      * 
      * Used for get the piece that rapresent the player in the GUI.
@@ -46,11 +41,9 @@ public class Player {
      * @return the piece of the player
      * 
      */
-    public Piece getPiece(){
+    public Piece getPiece() {
         return piece;
     }
-
-
 
     /**
      * Set the number of injail with the number given as input.
@@ -153,10 +146,10 @@ public class Player {
      */
     public String getNickname() {
 
-        if ("".equals(nickname)){
+        if ("".equals(nickname)) {
             return "";
         }
-            
+
         return nickname;
     }
 
@@ -270,8 +263,7 @@ public class Player {
 
         if (listofPropertySquares.isEmpty()) {
             return "No properties";
-        }
-        else {
+        } else {
             String s = listofPropertySquares.get(0).getName();
 
             for (int i = 1; i < listofPropertySquares.size(); i++) {
@@ -283,9 +275,6 @@ public class Player {
         }
     }
 
-
-
-
     /**
      * Remove the propertysqure Square from the list of propertySQuare owned by
      * player.
@@ -293,10 +282,10 @@ public class Player {
      * @param square to remove from the list of the propertySquares
      * 
      */
-    public void removePropertySquare(PropertySquare square){
+    public void removePropertySquare(PropertySquare square) {
 
-        for (PropertySquare x: listofPropertySquares){
-            if (x == square){
+        for (PropertySquare x : listofPropertySquares) {
+            if (x == square) {
                 listofPropertySquares.remove(x);
             }
         }
@@ -313,11 +302,9 @@ public class Player {
      */
     public String getSellproperString() {
 
-        if (listofPropertySquares.isEmpty())
-        {
+        if (listofPropertySquares.isEmpty()) {
             return "No properties";
         }
-            
 
         String s = "";
         for (int i = 0; i < listofPropertySquares.size(); i++) {

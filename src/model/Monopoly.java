@@ -32,58 +32,35 @@ public class Monopoly {
 
     }
 
-
-
-    public void setNumOfPlayers(int n ){
+    public void setNumOfPlayers(int n) {
         numOfPlayers = n;
     }
 
-
-    public int getNumOfplayer(){
+    public int getNumOfplayer() {
         return numOfPlayers;
     }
 
-    
-
-
-
-    
-    
     /**
      * Get the table.
+     * 
      * @return table of monopoly
      *
      * 
      */
-    public Table getTable(){
+    public Table getTable() {
         return table;
     }
 
-    
-    
     /**
      * Get the dice.
+     * 
      * @return dice of monopoly
      *
      * 
      */
-    public Dice getDice(){
+    public Dice getDice() {
         return dice;
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     /**
      * Add new player in the arrayList players.
@@ -239,11 +216,10 @@ public class Monopoly {
             PropertySquare s = (PropertySquare) obj;
 
             return s.getOwner() == player;
-        } else{
+        } else {
             return false;
 
         }
-            
 
     }
 

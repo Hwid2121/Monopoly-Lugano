@@ -15,19 +15,18 @@ import org.junit.Test;
 
 public class JailSquareTest {
 
-    private static int days = 3;
-    private static int fine = 50;
     Player Nico = new Player("Nico");
     JailSquare Jail = new JailSquare("Lo stampino", "red");
 
     @Test
     public void getDaysTest() {
-        assertEquals(3, Jail.getDays());
+        assertEquals(3, JailSquare.getDays());
     }
 
     @Test
     public void getFineTest() {
-        assertEquals(50, new JailSquare("Via delle Aie", "blue").getFine());
+        new JailSquare("Via delle Aie", "blue");
+        assertEquals(50, JailSquare.getFine());
     }
 
     @Test
@@ -35,32 +34,33 @@ public class JailSquareTest {
         assertTrue(new Dice(5, 5).isPerfectPair());
     }
 
-    @Test
-    public void decreaseDayInJailTest() {
-        JailSquare Jail1 = new JailSquare("Lo stampino", "blue");
-    }
+    // @Test
+    // public void decreaseDayInJailTest() {
+    // JailSquare Jail1 = new JailSquare("Lo stampino", "blue");
+    // }
     // public void getPair1Test(){
     // Jail.getPair1();
     // assertEquals(6, new Dice(5, 6).getDie2());
     // } testare i valori in un intervallo
     // assertTrue( die1 >= )
 
-   // @Test
-    //public void getPair2Test(){
-    //assertEquals(6, new Dice(5, 6).getDie2());
+    // @Test
+    // public void getPair2Test(){
+    // assertEquals(6, new Dice(5, 6).getDie2());
 
-
- //   @Test
- /*   public void payFineTest() {
-        Jail.payFine(Nico);
-        assertEquals(1445, Nico.getMoney());
-    }
-
-    @Test
-    public void freeFromJailTest() {
-        Jail.freeFromJail(Nico);
-        assertEquals(-1, Nico.getTurnsInJail());
-    }
-
-}*/
+    // @Test
+    /*
+     * public void payFineTest() {
+     * Jail.payFine(Nico);
+     * assertEquals(1445, Nico.getMoney());
+     * }
+     * 
+     * @Test
+     * public void freeFromJailTest() {
+     * Jail.freeFromJail(Nico);
+     * assertEquals(-1, Nico.getTurnsInJail());
+     * }
+     * 
+     * }
+     */
 }

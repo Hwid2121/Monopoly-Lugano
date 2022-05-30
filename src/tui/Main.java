@@ -1,11 +1,9 @@
 package tui;
-import java.util.Scanner; // Import the Scanner class
+
 import model.JailSquare;
 import model.Monopoly;
 import model.Player;
 import model.PropertySquare;
-import model.cardsDeck;
-import model.Card;
 
 /**
  * This is the main of the TUI
@@ -20,27 +18,30 @@ import model.Card;
  */
 public class Main {
 
-  /**  private auxmain.monopoly auxmain.monopoly = new auxmain.monopoly();
-    private Scanner input = new Scanner(System.in);
-
-    private int numberOfPlayers = 0;
-    private int status = 0;
+    /**
+     * private auxmain.monopoly auxmain.monopoly = new auxmain.monopoly();
+     * private Scanner input = new Scanner(System.in);
+     * 
+     * private int numberOfPlayers = 0;
+     * private int status = 0;
+     * private String chf = " chf";
+     * private String nName = "\nName: ";
+     * private int skip = 0;
+     * private int turn = 0;
+     */
     private String chf = " chf";
     private String nName = "\nName: ";
-    private int skip = 0;
-    private int turn = 0;
-    */
-    private String chf = " chf";
-    private String nName = "\nName: ";
     private int turn = 0;
 
-    public Main(){
+    public Main() {
         auxmain = new auxmain();
     }
+
     public auxmain auxmain;
+
     /**
      * preGameStatus is the method that manage the pregame of auxmain.monopoly.
-     * Here will be asked to insert the numberOfPlayers  and then 
+     * Here will be asked to insert the numberOfPlayers and then
      * creating the instance for each player.
      * 
      */
@@ -48,11 +49,11 @@ public class Main {
         auxmain.preGameStatus();
     }
 
-
     /**
-     *  When a player is eliminated will be removed from the auxmain.monopoly.
+     * When a player is eliminated will be removed from the auxmain.monopoly.
      * And the turn will skip.
-     * @param player that play in that turn
+     * 
+     * @param player           that play in that turn
      * @param auxmain.monopoly the main class where the game is strutured
      *
      */
@@ -61,33 +62,42 @@ public class Main {
     }
 
     /**
-     *  Check if the player is under 0 chf of balance, if true then let the player to sell the properties
+     * Check if the player is under 0 chf of balance, if true then let the player to
+     * sell the properties
      * to cover the debit. If not enough money then will be eliminated.
      * Else will brake.
-     * @param player that play in that turn
+     * 
+     * @param player           that play in that turn
      * @param auxmain.monopoly the main class where the game is strutured
      *
-     */public void bankRuptPLAYmain(Player player, Monopoly monopoly) {
+     */
+    public void bankRuptPLAYmain(Player player, Monopoly monopoly) {
         auxmain.bankRuptPLAYmain(player, monopoly);
     }
 
     /**
-     * When a player is in the square bonus where picking a card then will activate cardsPLAYmain
+     * When a player is in the square bonus where picking a card then will activate
+     * cardsPLAYmain
      * to let the player take the card and active its effect.
-     * @param player that play in that turn
+     * 
+     * @param player           that play in that turn
      * @param auxmain.monopoly the main class where the game is strutured
      *
-     */public void cardsPLAYmain(Player player, Monopoly monopoly) {
-         auxmain.cardsPLAYmain(player, monopoly);
+     */
+    public void cardsPLAYmain(Player player, Monopoly monopoly) {
+        auxmain.cardsPLAYmain(player, monopoly);
     }
 
     /**
-     *  When a player reach the square gotoPLAYmain will be obbliged to change position
+     * When a player reach the square gotoPLAYmain will be obbliged to change
+     * position
      * and will be moved to the position 30 where is the jail.
-     * @param player that play in that turn
+     * 
+     * @param player           that play in that turn
      * @param auxmain.monopoly the main class where the game is strutured
      *
-     */public void gotoPLAYmain(Player player, Monopoly monopoly) {
+     */
+    public void gotoPLAYmain(Player player, Monopoly monopoly) {
         System.out.println("Go to the jail! \n");
 
         player.movePosition(30);
@@ -96,27 +106,27 @@ public class Main {
 
     }
 
-    
-    
-    
     /**
-     *  When a player reach a bonusSquare then will activate the effect of the square
+     * When a player reach a bonusSquare then will activate the effect of the square
      * if the player go under 0 chf then bankrupt will be activated.
-     * @param player that play in that turn
+     * 
+     * @param player           that play in that turn
      * @param auxmain.monopoly the main class where the game is strutured
      *
-     */public void bonusPLAYmain(Player player, Monopoly monopoly) {
-         auxmain.bonusPLAYmain(player, monopoly);
-         
+     */
+    public void bonusPLAYmain(Player player, Monopoly monopoly) {
+        auxmain.bonusPLAYmain(player, monopoly);
+
     }
 
     /**
-     *  When a player reach the jail Square will be in prison and he can escape only if:
+     * When a player reach the jail Square will be in prison and he can escape only
+     * if:
      * - pay 55 chf
      * - using the card "free from jail" (if possesed)
      * - trying to do a perfect pair
      * 
-     * @param player that play in that turn
+     * @param player           that play in that turn
      * @param auxmain.monopoly the main class where the game is strutured
      *
      */
@@ -148,7 +158,8 @@ public class Main {
                     System.out.println("You paid 50 chf, you can throw the dice");
 
                     auxmain.monopoly.throwDice();
-                    System.out.println("Your dice made: " + auxmain.monopoly.die1() + " and " + auxmain.monopoly.die2());
+                    System.out
+                            .println("Your dice made: " + auxmain.monopoly.die1() + " and " + auxmain.monopoly.die2());
                     System.out.println("Go forward by: " + (auxmain.monopoly.die1() + auxmain.monopoly.die2()));
 
                     if (auxmain.monopoly.checkbankruptStatus(player)) {
@@ -160,7 +171,8 @@ public class Main {
 
                     auxmain.monopoly.setPositionPlayer(player);
                     System.out.println("You are in the square: "
-                            + auxmain.monopoly.getTable().getSquareName(auxmain.monopoly.getPLayer(turn).getPosition()));
+                            + auxmain.monopoly.getTable()
+                                    .getSquareName(auxmain.monopoly.getPLayer(turn).getPosition()));
 
                     startTurn(player, auxmain.monopoly);
 
@@ -173,7 +185,8 @@ public class Main {
                         System.out.println("You used the card, you can throw the dice\n ");
                         auxmain.monopoly.setPositionPlayer(auxmain.monopoly.getPLayer(turn));
                         System.out.println("You are in the square: "
-                                + auxmain.monopoly.getTable().getSquareName(auxmain.monopoly.getPLayer(turn).getPosition()));
+                                + auxmain.monopoly.getTable()
+                                        .getSquareName(auxmain.monopoly.getPLayer(turn).getPosition()));
 
                         startTurn(player, auxmain.monopoly);
 
@@ -187,14 +200,17 @@ public class Main {
                 case "t":
 
                     auxmain.monopoly.throwDice();
-                    System.out.println("Your dice made: " + auxmain.monopoly.die1() + " and " + auxmain.monopoly.die2());
+                    System.out
+                            .println("Your dice made: " + auxmain.monopoly.die1() + " and " + auxmain.monopoly.die2());
                     if (auxmain.monopoly.getDice().isPerfectPair()) {
                         JailSquare.freeFromJail(player);
-                        System.out.println("You did perfect pair, you gonna forward for " + (auxmain.monopoly.die1() * 2));
+                        System.out.println(
+                                "You did perfect pair, you gonna forward for " + (auxmain.monopoly.die1() * 2));
 
                         // auxmain.monopoly.setPositionPlayer(auxmain.monopoly.getPLayer(turn));
                         // System.out.println("You are in the square: "
-                        // + auxmain.monopoly.getTable().getSquareName(auxmain.monopoly.getPLayer(turn).getPosition()));
+                        // +
+                        // auxmain.monopoly.getTable().getSquareName(auxmain.monopoly.getPLayer(turn).getPosition()));
 
                         // startTurn(player, auxmain.monopoly);
                         gameStatusPLAY();
@@ -244,15 +260,12 @@ public class Main {
 
     }
 
-    
-    
-    
-    
-    
     /**
-     *  When a player reach the emptySquaer will not do nothing and will not be allowed to do 
+     * When a player reach the emptySquaer will not do nothing and will not be
+     * allowed to do
      * some actions.
-     * @param player that play in that turn
+     * 
+     * @param player           that play in that turn
      * @param auxmain.monopoly the main class where the game is strutured
      *
      */
@@ -289,20 +302,21 @@ public class Main {
     }
 
     /**
-     *  When a player reach a propertySQuare could have some comands: 
-     *  - [b] (for buying the property)
+     * When a player reach a propertySQuare could have some comands:
+     * - [b] (for buying the property)
      * - [s] (to sell this property)
      * - [m] (to show your balance)
-     * -  [p] (to finish the turn) 
+     * - [p] (to finish the turn)
      * - [i] (for all info of the player)
      * - [c] (for show the situation of the other properties of same color)
      * - [h] (for buy house, hotel and more info)
      * - [o] (for see the infos for other players)
      * - [exit] (for close the game)
      * 
-     * if the square is owned by another player, then the player will have to pay the rent.
+     * if the square is owned by another player, then the player will have to pay
+     * the rent.
      * 
-     * @param player that play in that turn
+     * @param player           that play in that turn
      * @param auxmain.monopoly the main class where the game is strutured
      *
      */
@@ -319,7 +333,6 @@ public class Main {
         System.out.println("[h] (for buy house, hotel and more info)");
         System.out.println("[o] (for see the infos for other players)");
         System.out.println("[exit] (for close the game)");
-        
 
         String word = auxmain.input.next();
 
@@ -327,13 +340,13 @@ public class Main {
             case "d":
                 System.out.println(nName + auxmain.monopoly.getTable().getSquare(position).getName() + "\nColor: "
                         + auxmain.monopoly.getTable().getSquare(position).getColor());
-                System.out.println("Owner: " + auxmain.monopoly.getTable().getSquareOwnerToString(position) + "\nPrice: "
-                        + auxmain.monopoly.getTable().getSquarePrice(position));
+                System.out
+                        .println("Owner: " + auxmain.monopoly.getTable().getSquareOwnerToString(position) + "\nPrice: "
+                                + auxmain.monopoly.getTable().getSquarePrice(position));
                 System.out.println("Price tax: " + auxmain.monopoly.getTable().getSquarePriceTax(position));
                 if (auxmain.monopoly.getTable().getHouse(position).getCounter() <= 4) {
                     System.out.println("House: " + auxmain.monopoly.getTable().getHouse(position).getCounter());
-                }
-                else {
+                } else {
                     System.out.println("Hotel: 1");
                 }
                 break;
@@ -366,12 +379,9 @@ public class Main {
                 break;
 
             case "o":
-                for (Player pl: auxmain.monopoly.getListOfPlayer()){
+                for (Player pl : auxmain.monopoly.getListOfPlayer()) {
                     System.out.println(nName + pl.getNickname() + "\nMoney: " + pl.getMoney()
-                        + "\nProperties: " + pl.propertySquaretoString() + "\nPosition: " + pl.getPosition());
-
-                        
-                
+                            + "\nProperties: " + pl.propertySquaretoString() + "\nPosition: " + pl.getPosition());
 
                 }
                 break;
@@ -394,7 +404,8 @@ public class Main {
                 break;
 
             case "c":
-                System.out.println("You are in square of color:\t" + auxmain.monopoly.getTable().getSquare(position).getColor());
+                System.out.println(
+                        "You are in square of color:\t" + auxmain.monopoly.getTable().getSquare(position).getColor());
                 for (PropertySquare n : auxmain.monopoly.getTable().getOtherMonopolySquare(player)) {
                     System.out.println("Name: " + n.getName() + "\t" + " Owner: "
                             + auxmain.monopoly.getTable().getSquareOwnerToString(n.getPosition()) + "\t" + " Position: "
@@ -413,19 +424,18 @@ public class Main {
 
     }
 
-    
-    
     /**
-     *  A player can buy houses and Hotel if own the propertySquare.
-     * @param player that play in that turn
+     * A player can buy houses and Hotel if own the propertySquare.
+     * 
+     * @param player           that play in that turn
      * @param auxmain.monopoly the main class where the game is strutured
      *
      */
     public void hotelBUY(Player player, Monopoly monopoly) {
-        
 
         System.out.println(
-                "Price for build an house: " + auxmain.monopoly.getTable().getHouse(player.getPosition()).getPrice(6) + chf);
+                "Price for build an house: " + auxmain.monopoly.getTable().getHouse(player.getPosition()).getPrice(6)
+                        + chf);
 
         for (int i = 1; i <= 4; i++) {
             System.out.println("PriceTax with " + i + " house increasing to: "
@@ -436,12 +446,14 @@ public class Main {
         System.out.println("For building an Hotel you have to buy 4 houses + building price");
 
         if (auxmain.monopoly.getTable().getHouse(player.getPosition()).getCounter() < 5) {
-            System.out.println("Your house: " + auxmain.monopoly.getTable().getHouse(player.getPosition()).getCounter());
+            System.out
+                    .println("Your house: " + auxmain.monopoly.getTable().getHouse(player.getPosition()).getCounter());
         }
         System.out.println("Write:\n");
         System.out.println("[0] For go back");
         System.out.println(
-                "[1] For build 1 house at price of " + (auxmain.monopoly.getTable().getHouse(player.getPosition()).getPrice(6)));
+                "[1] For build 1 house at price of "
+                        + (auxmain.monopoly.getTable().getHouse(player.getPosition()).getPrice(6)));
         System.out.println("[2] For build 2 houses at price of "
                 + (auxmain.monopoly.getTable().getHouse(player.getPosition()).getPrice(6)) * 2);
         System.out.println("[3] For build 3 houses at price of "
@@ -462,7 +474,8 @@ public class Main {
                 propertySquareBUILD(player, auxmain.monopoly, word);
             } else {
                 System.out.println(
-                        "You have already " + auxmain.monopoly.getTable().getHouse(player.getPosition()).getCounter() + " house");
+                        "You have already " + auxmain.monopoly.getTable().getHouse(player.getPosition()).getCounter()
+                                + " house");
                 System.out.println("Maybe is the time for buying an hotel with 4 house + "
                         + auxmain.monopoly.getTable().getHouse(player.getPosition()).getPrice(6));
             }
@@ -479,38 +492,38 @@ public class Main {
                 word = 5 - numhouse;
 
                 System.out.println(
-                        "Cost: " + (auxmain.monopoly.getTable().getHouse(player.getPosition()).getPrice(6) * word) + chf);
+                        "Cost: " + (auxmain.monopoly.getTable().getHouse(player.getPosition()).getPrice(6) * word)
+                                + chf);
 
                 propertySquareBUILD(player, auxmain.monopoly, word);
 
             } else {
                 System.out.println("You have to buy 4 more houses + pay the build fee ");
-                System.out.println("Cost: " + (auxmain.monopoly.getTable().getHouse(player.getPosition()).getPrice(6) * 4) + chf
+                System.out.println("Cost: "
+                        + (auxmain.monopoly.getTable().getHouse(player.getPosition()).getPrice(6) * 4) + chf
                         + " + " + (auxmain.monopoly.getTable().getHouse(player.getPosition()).getPrice(6)) + chf);
-                propertySquareBUILD(player, auxmain.monopoly, (5 - auxmain.monopoly.getTable().getHouse(player.getPosition()).getCounter())
-                        * (auxmain.monopoly.getTable().getHouse(player.getPosition()).getPrice(6)));
+                propertySquareBUILD(player, auxmain.monopoly,
+                        (5 - auxmain.monopoly.getTable().getHouse(player.getPosition()).getCounter())
+                                * (auxmain.monopoly.getTable().getHouse(player.getPosition()).getPrice(6)));
             }
             return;
 
         } else if (word == 0) {
             return;
-        } 
-        else {
+        } else {
             System.out.println("Input not valid");
         }
 
     }
 
-    
-    
-    
-    
     /**
-     *  Build in the property of the player the amount of hotel or houses  requested.
-     * @param player that play in that turn
+     * Build in the property of the player the amount of hotel or houses requested.
+     * 
+     * @param player           that play in that turn
      * @param auxmain.monopoly the main class where the game is strutured
      *
-     */public void propertySquareBUILD(Player player, Monopoly monopoly, int num) {
+     */
+    public void propertySquareBUILD(Player player, Monopoly monopoly, int num) {
 
         int position = player.getPosition();
 
@@ -563,17 +576,15 @@ public class Main {
 
     }
 
-    
-    
-    
-    
     /**
-     *  When the player has enough money and the square is not own by another 
+     * When the player has enough money and the square is not own by another
      * player can buy the porpertysquare.
-     * @param player that play in that turn
+     * 
+     * @param player           that play in that turn
      * @param auxmain.monopoly the main class where the game is strutured
      *
-     */public void propertysquarebuy(Player player, Monopoly monopoly) {
+     */
+    public void propertysquarebuy(Player player, Monopoly monopoly) {
 
         int position = player.getPosition();
         String inp;
@@ -612,13 +623,12 @@ public class Main {
 
     }
 
-
-
     /**
-     *  Check if the propertySquare own by the player 
-     * @param player that play in that turn
+     * Check if the propertySquare own by the player
+     * 
+     * @param player           that play in that turn
      * @param auxmain.monopoly the main class where the game is strutured
-     * @param color the color of the square where the player is
+     * @param color            the color of the square where the player is
      *
      */
     public void checkmonopolyProperty(Player player, Monopoly monopoly, String color) {
@@ -658,7 +668,8 @@ public class Main {
 
     public void payrent(Player player, Monopoly monopoly) {
         System.out.println(
-                "Oh no, this property is owned by: " + auxmain.monopoly.getTable().getSquareOwnerToString(player.getPosition()));
+                "Oh no, this property is owned by: "
+                        + auxmain.monopoly.getTable().getSquareOwnerToString(player.getPosition()));
         System.out.println("You have to pay: " + auxmain.monopoly.getTable().getSquarePriceTax(player.getPosition()));
         auxmain.monopoly.getTable().getPropertySquare(player.getPosition()).payrent();
         player.decreaseMoney(auxmain.monopoly.getTable().getPropertySquare(player.getPosition()).getPriceTax());
@@ -669,9 +680,8 @@ public class Main {
         while (auxmain.monopoly.monopolyEND()) {
 
             turn = turn % auxmain.monopoly.getSizeOfPlayers();
-            
-            System.out.println(auxmain.monopoly.getPLayer(turn).getNickname() + " e' il tuo turno! \n");
 
+            System.out.println(auxmain.monopoly.getPLayer(turn).getNickname() + " e' il tuo turno! \n");
 
             if (auxmain.monopoly.getPLayer(turn).getTurnsInJail() == -1) {
 
@@ -682,7 +692,8 @@ public class Main {
 
             while (auxmain.skip == 0) {
 
-                switch (auxmain.monopoly.getTable().getSquare(auxmain.monopoly.getPLayer(turn).getPosition()).getColor()) {
+                switch (auxmain.monopoly.getTable().getSquare(auxmain.monopoly.getPLayer(turn).getPosition())
+                        .getColor()) {
 
                     case "cards":
                         cardsPLAYmain(auxmain.monopoly.getPLayer(turn), auxmain.monopoly);
@@ -735,7 +746,6 @@ public class Main {
     public void finishStatus() {
         System.out.println("The auxmain.monopoly of Lugano is " + auxmain.monopoly.getPLayer(0).getNickname());
         System.exit(0);
-        
 
     }
 
@@ -747,15 +757,14 @@ public class Main {
 
         Main game = new Main();
 
-
         switch (game.getStatus()) {
 
             case 0:
                 System.out.println("pregame status");
                 game.preGameStatus();
 
-             case 1:
-                 System.out.println("Play game  status");
+            case 1:
+                System.out.println("Play game  status");
                 game.gameStatus();
 
             case -1:

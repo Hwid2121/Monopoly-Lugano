@@ -1,11 +1,11 @@
 package tui;
-import java.util.Scanner; // Import the Scanner class
-import model.JailSquare;
+
+import java.util.Scanner;
 import model.Monopoly;
 import model.Player;
-import model.PropertySquare;
 import model.cardsDeck;
 import model.Card;
+
 /**
  * This is the auxiliary main of the TUI created for refactoring.
  * inside of this class is present the class main and the main for start with
@@ -24,10 +24,9 @@ public class auxmain {
     public int status = 0;
     public int skip = 0;
     private String chf = " chf";
-    private int turn = 0;
     private String nName = "\nName: ";
 
-    public void preGameStatus(){
+    public void preGameStatus() {
 
         System.out.println("How many players?");
 
@@ -67,7 +66,7 @@ public class auxmain {
         }
 
     }
-    
+
     public void elimininationPLAYmain(Player player, Monopoly monopoly2) {
         monopoly.playerEliminated(player);
         skip = 1;
@@ -91,7 +90,6 @@ public class auxmain {
         System.out.println(player.getNickname() + " has been eliminated");
 
         elimininationPLAYmain(player, monopoly);
-
 
     }
 
@@ -165,7 +163,6 @@ public class auxmain {
 
         }
 
-
     }
 
     public void bonusPLAYmain(Player player, Monopoly monopoly) {
@@ -187,4 +184,13 @@ public class auxmain {
         }
         skip = 1;
     }
+
+    public String getCHF() {
+        return chf;
+    }
+
+    public String getnName() {
+        return nName;
+    }
+
 }

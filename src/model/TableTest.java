@@ -1,9 +1,5 @@
 package model;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
-import static org.junit.Assert.fail;
-
 import org.junit.Test;
 
 /**
@@ -20,5 +16,6 @@ public class TableTest {
   @Test
   public void newtabletest() {
     Table table = new Table();
+    table.resetOwner(1);
   }
 }

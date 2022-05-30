@@ -15,10 +15,8 @@ import org.junit.Test;
  */
 public class PlayerTest {
 
-    private int money;
     // private final String nickname;
     private int position;
-    private int turn = 0;
     int inJail = -1;
     Player Nico = new Player("Nico");
     Player None = new Player("");
