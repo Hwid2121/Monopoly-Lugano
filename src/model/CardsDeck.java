@@ -15,7 +15,7 @@ import java.util.Random;
  * @version 24/04/2022
  * 
  */
-public class cardsDeck {
+public class CardsDeck {
 
     private List<Card> cards = new ArrayList<>();
 
@@ -23,10 +23,16 @@ public class cardsDeck {
 
     private int index;
 
-    public cardsDeck() {
+    /**
+     * CardsDeck constructor.
+     */
+    public CardsDeck() {
         newCards();
     }
 
+    /**
+     * This method will create the cards and add them in the array.
+     */
     public void newCards() {
 
         cards.add(new Card("Advance to LAC"));
@@ -59,20 +65,37 @@ public class cardsDeck {
 
     }
 
+    /**
+     * This method will return a random card from the array.
+     */
     public void getRandomNum() {
         index = rand.nextInt(cards.size());
     }
 
+    /**
+     * Random card.
+     * 
+     * @return the card with the index
+     */
     public Card randomCard() {
         getRandomNum();
         Card card = cards.get(index);
         return card;
     }
 
+    /**
+     * getIndex of the card.
+     */
     public int getIndex() {
         return index;
     }
 
+    /**
+     * Play the card.
+     * 
+     * @param index the index of the card
+     * @param player the player who play the card
+     */
     public void playCard(int index, Player player) {
         this.index = index;
 

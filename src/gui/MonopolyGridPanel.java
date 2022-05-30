@@ -61,7 +61,7 @@ public class MonopolyGridPanel extends JPanel implements ActionListener {
     /**
      * Action performed when the user click on the grid.
      * 
-     * @param actionEvent the action event
+     * @param arg0 the action event
      */
     @Override
     public void actionPerformed(ActionEvent arg0) {

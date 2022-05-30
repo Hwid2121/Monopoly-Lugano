@@ -3,7 +3,6 @@ package gui;
 import java.util.ArrayList;
 
 /**
- * 
  * GridPosition class contain all the positon of the squares.
  * 
  * @author taftan@usi.ch & sardoa@usiu.ch
@@ -24,7 +23,6 @@ public class GridPosition {
     }
 
     /**
-     * 
      * SetPositonSquare method set the position of the squares.
      */
     public void setPositionSquare() {
@@ -74,7 +72,6 @@ public class GridPosition {
 
 
     /**
-     * 
      * GetPositionSquare method return the position of the squares.
      * 
      * @return the position of the squares.

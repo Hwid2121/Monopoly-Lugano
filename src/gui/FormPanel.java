@@ -1,4 +1,5 @@
 package gui;
+
 import java.awt.ComponentOrientation;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
@@ -12,20 +13,17 @@ import java.awt.FlowLayout;
 import java.awt.Font;
 
 /**
- * Formpanel where inset nickname. 
+ * Formpanel where inset nickname.
  * 
  * @author taftan@usi.ch & sardoa@usiu.ch
  * @version 24/05/2022
  */
 public class FormPanel extends JPanel {
-    
+
     private JTextField textField;
-    final private NumPlayerFrame framea;
-    final private PanelPregame frameb;
+    private final NumPlayerFrame framea;
+    private final PanelPregame frameb;
     private JButton button;
-
-
-
 
     /**
      * Construcotr of the frame FormPanel.
@@ -73,19 +71,13 @@ public class FormPanel extends JPanel {
                     framea.dispose();
                     frameb.swapPanel();
 
-                    
-
-
-
-
                 } catch (NumberFormatException error) {
-                    
+
                 }
 
             }
         });
 
     }
-
 
 }

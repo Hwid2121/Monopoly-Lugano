@@ -7,9 +7,7 @@ import java.awt.event.ActionListener;
 import javax.swing.JPanel;
 
 /**
- * 
  * Panel of the Pregame.
- * 
  * 
  * @author taftan@usi.ch & sardoa@usiu.ch
  * @version 24/05/2022

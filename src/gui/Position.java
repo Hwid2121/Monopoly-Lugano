@@ -9,8 +9,8 @@ package gui;
  */
 public class Position {
 
-    private int x;
-    private int y;
+    private int posX;
+    private int posY;
 
     /**
      * Constructor of the Position class.
@@ -18,9 +18,9 @@ public class Position {
      * @param x the x coordinate
      * @param y the y coordinate
      */
-    public Position(int x, int y) {
-        this.x = x;
-        this.y = y;
+    public Position(int xPos, int yPos) {
+        posX = xPos;
+        posY = yPos;
     }
 
     /**
@@ -29,7 +29,7 @@ public class Position {
      * @return the x coordinate
      */
     public int getX() {
-        return x;
+        return posX;
     }
 
     /**
@@ -38,6 +38,6 @@ public class Position {
      * @return the y coordinate
      */
     public int getY() {
-        return y;
+        return posY;
     }
 }

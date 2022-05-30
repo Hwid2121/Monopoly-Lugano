@@ -2,7 +2,6 @@ package gui;
 
 import java.awt.Font;
 import java.awt.Graphics;
-
 import javax.swing.AbstractButton;
 import javax.swing.BorderFactory;
 import javax.swing.JComponent;
@@ -13,7 +12,6 @@ import javax.swing.plaf.basic.BasicButtonUI;
 
 
 /**
- * 
  * My button class.
  * 
  * @author taftan@usi.ch & sardoa@usiu.ch
@@ -26,7 +24,6 @@ public class MyButton extends BasicButtonUI {
 
 
     /**
-     * 
      * Constructor of the MyButton.
      * @param  graphicsVar the graphics variable
      * @param componentJ the component
@@ -36,13 +33,13 @@ public class MyButton extends BasicButtonUI {
         AbstractButton buttonAbs = (AbstractButton) componentJ;
 
         Border raisedbevel = BorderFactory.createRaisedBevelBorder();
-        Font COURIER = new Font("SansSerif", Font.BOLD, 22);
+        Font courierFont = new Font("SansSerif", Font.BOLD, 22);
 
-        graphicsVar.setFont(COURIER);
+        graphicsVar.setFont(courierFont);
 
         buttonAbs.setBorder(raisedbevel);
 
-        buttonAbs.setFont(COURIER);
+        buttonAbs.setFont(courierFont);
 
         buttonAbs.setForeground(GameMain.CREMISI);
 

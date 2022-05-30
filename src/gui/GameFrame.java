@@ -7,7 +7,6 @@ import javax.swing.JFrame;
 
 
 /**
- * 
  * GameFrame frame where the game is showned.
  * 
  * @author taftan@usi.ch & sardoa@usiu.ch

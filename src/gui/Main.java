@@ -18,6 +18,7 @@ public class Main {
 
     /**
      * Launch the application.
+     * @param args the arguments
      */
     public static void main(String[] args) {
         System.out.println("GUI STARRRRRRRT");

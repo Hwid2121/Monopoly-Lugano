@@ -11,30 +11,30 @@ import org.junit.Test;
  * @author Nicolo' Tafta & Alberto Sardo
  * @version 18/05/2022
  */
-public class cardsDeckTest {
+public class CardsDeckTest {
 
     @Test
-    public void cardsDecksTest() {
-        cardsDeck cardsDeck = new cardsDeck();
-        cardsDeck.newCards();
+    public void CardsDecksTest() {
+        CardsDeck CardsDeck = new CardsDeck();
+        CardsDeck.newCards();
     }
 
     @Test
     public void getIndex() {
-        assertEquals(0, new cardsDeck().getIndex());
+        assertEquals(0, new CardsDeck().getIndex());
     }
 
     @Test
     public void getRandomNumTest() {
-        cardsDeck cardsDeck = new cardsDeck();
-        cardsDeck.getRandomNum();
+        CardsDeck CardsDeck = new CardsDeck();
+        CardsDeck.getRandomNum();
     }
 
     @Test
     public void playCardTest() {
         int index = 0;
         Player Nico = new Player("Nico");
-        cardsDeck cardsDeck = new cardsDeck();
-        cardsDeck.playCard(index, Nico);
+        CardsDeck CardsDeck = new CardsDeck();
+        CardsDeck.playCard(index, Nico);
     }
 }

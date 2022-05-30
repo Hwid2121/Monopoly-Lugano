@@ -11,7 +11,7 @@ import model.Player;
  * This class rappresents the Monopoly game board player panel.
  * 
  *
- * @author Nicolo' Tafta & Alberto Sardo
+ * @author taftan@usi.ch & sardoa@usi.ch
  * @version 28/05/2022
  */
 

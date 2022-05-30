@@ -219,9 +219,6 @@ public class Player {
 
     /**
      * Increase turn of the player by 1.
-     * 
-     * @return the value of the die1
-     * 
      */
     public void turnIncrement() {
         turn += 1;
@@ -231,9 +228,7 @@ public class Player {
      * Set the position of the player by position + pos and moduled by
      * the size of the table.
      * 
-     * @return the value of the die1
      * @param pos the num to increase the position
-     * 
      */
     public void setPosition(int pos) {
         position = (position + pos) % Table.getSizeofTable();

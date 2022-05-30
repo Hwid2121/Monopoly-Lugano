@@ -36,10 +36,7 @@ public class PlayerStatPanel extends JPanel {
         super();
         JPanel pieceColorPanel = new PieceColorPanel(player);
 
-        String name = player.getNickname();
-        int money = player.getMoney();
-        int position = player.getPosition();
-
+ 
         setBackground(GameMain.SFONDO);
         setBorder(GameMain.BLACKLINE);
 
@@ -49,6 +46,11 @@ public class PlayerStatPanel extends JPanel {
         gridBagLay.fill = GridBagConstraints.HORIZONTAL;
 
         setLayout(layout);
+
+
+        String name = player.getNickname();
+        int money = player.getMoney();
+        int position = player.getPosition();
 
         JLabel nickname = new JLabel("Nickname: " + name);
         nickname.setFont(GameMain.COURIER);

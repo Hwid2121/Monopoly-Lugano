@@ -28,7 +28,7 @@ Inside of the `Model` the code is structured with different classes with its own
 
  - BonusSquare
  - Card
- - cardsDeck
+ - CardsDeck
  - Dice
  - House
  - JailSquare

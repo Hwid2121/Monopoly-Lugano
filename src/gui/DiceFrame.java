@@ -39,8 +39,6 @@ public class DiceFrame extends JFrame implements ActionListener {
 
         dice = dic;
 
-        JPanel dicePanel = new DicePanel(this, dice);
-        JLabel label = new JLabel("YOUR DICE IS:  ");
 
         setVisible(false);
         setPreferredSize(new Dimension(500, 150));
@@ -51,6 +49,9 @@ public class DiceFrame extends JFrame implements ActionListener {
         BorderLayout laymain = new BorderLayout();
         setLayout(laymain);
         setUndecorated(true);
+
+        JPanel dicePanel = new DicePanel(this, dice);
+        JLabel label = new JLabel("YOUR DICE IS:  ");
 
         label.setForeground(Color.BLACK);
         label.setFont(new Font("SansSerif", Font.BOLD, 22));

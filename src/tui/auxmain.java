@@ -5,7 +5,7 @@ import java.util.Scanner;
 import model.Card;
 import model.Monopoly;
 import model.Player;
-import model.cardsDeck;
+import model.CardsDeck;
 
 /**
  * This is the auxiliary main of the TUI created for refactoring.
@@ -100,7 +100,7 @@ public class auxmain {
         System.out.println("After the effect the card the pass will be automatically");
         System.out.println("Good luck!\n");
 
-        cardsDeck deck = new cardsDeck();
+        CardsDeck deck = new CardsDeck();
         System.out.println("[pi] (for picking a card)");
         String word = input.next();
 

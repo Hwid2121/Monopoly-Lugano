@@ -28,22 +28,19 @@ public class BonusSquarePANEL extends JPanel implements ActionListener {
     private JLabel desc;
     final private BonusSquareFrame framea;
     private JButton button;
-    private Font sansSerif= new Font("SansSerif", Font.BOLD, 14);
+    private Font sansSerif = new Font("SansSerif", Font.BOLD, 14);
 
     private Player player;
     private int price;
 
     private Monopoly monopoly = GameMain.monopoly;
 
-
-
-
     /**
      * Construcotr of the frame BonusSquareFrame.
      * 
-     * @param frameB the parent of the parent frame
-     * @param frameA the parent frame
-     * @param player the player
+     * @param frameB  the parent of the parent frame
+     * @param frameA  the parent frame
+     * @param players the player
      */
     public BonusSquarePANEL(MonopolyCommandsPanel frameB, BonusSquareFrame frameA, Player players) {
         super();
@@ -84,9 +81,6 @@ public class BonusSquarePANEL extends JPanel implements ActionListener {
         });
 
     }
-
-
-
 
     /**
      * Method that plays the bonus.

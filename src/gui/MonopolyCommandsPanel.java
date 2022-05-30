@@ -13,7 +13,7 @@ import model.Card;
 import model.JailSquare;
 import model.Monopoly;
 import model.Player;
-import model.cardsDeck;
+import model.CardsDeck;
 
 /**
  * MonopolyCommandsPanel panel that conintas all the comands that a player can
@@ -57,8 +57,9 @@ public class MonopolyCommandsPanel extends JPanel implements ActionListener {
     /**
      * Constructor MonopolyCommandsPanel.
      * 
-     * @param playerz the player that is playing the game
-     * @param main    the main panel of the game
+     * @param playerx the player that is playing the game
+     * @param mainb    the main panel of the game
+     * @param panell  the panel of the game
      */
     public MonopolyCommandsPanel(Player playerx, CLayoutForGame mainb, PanelMonopoly panell) {
         super();
@@ -111,7 +112,7 @@ public class MonopolyCommandsPanel extends JPanel implements ActionListener {
 
                         default:
                             if (monopoly.getTable().getPropertySquare(player.getPosition()).getOwner() == null) {
-                                propertySquareEMPTY();
+                                propertySquareEmpty();
                             } else
                                 propertySquareOwned();
                             System.out.println(monopoly.getTable().getSquare(player.getPosition()).getName());
@@ -123,6 +124,9 @@ public class MonopolyCommandsPanel extends JPanel implements ActionListener {
                     jailSquare();
 
                 }
+
+            default:
+                break;
 
         }
 
@@ -224,7 +228,7 @@ public class MonopolyCommandsPanel extends JPanel implements ActionListener {
 
             public void actionPerformed(ActionEvent arg) {
 
-                cardsDeck deck = new cardsDeck();
+                CardsDeck deck = new CardsDeck();
                 Card card = deck.randomCard();
                 System.out.println("CARD: " + card.getDescription());
 
@@ -288,8 +292,6 @@ public class MonopolyCommandsPanel extends JPanel implements ActionListener {
 
                 if (JailSquare.checkFreeJailCard(player)) {
                     JailSquare.freeFromJail(player);
-                } else {
-
                 }
 
             }
@@ -301,7 +303,7 @@ public class MonopolyCommandsPanel extends JPanel implements ActionListener {
     }
 
     /**
-     * TrowDice  that make the player roll the dice
+     * TrowDice that make the player roll the dice.
      */
     public void trowDice() {
 
@@ -326,7 +328,7 @@ public class MonopolyCommandsPanel extends JPanel implements ActionListener {
     /**
      * ProperSquareEmpty thaat make the player do nothing.
      */
-    public void propertySquareEMPTY() {
+    public void propertySquareEmpty() {
 
         info.setPreferredSize(dim);
         buy.setPreferredSize(dim);
@@ -340,7 +342,6 @@ public class MonopolyCommandsPanel extends JPanel implements ActionListener {
         this.add(pass);
 
     }
-
 
     /**
      * ProperSquareOwned that activate the comand for buy and sell.
@@ -359,7 +360,6 @@ public class MonopolyCommandsPanel extends JPanel implements ActionListener {
 
     }
 
-
     /**
      * EMptySquare that make the player do nothing.
      */
@@ -369,7 +369,6 @@ public class MonopolyCommandsPanel extends JPanel implements ActionListener {
         this.add(pass);
 
     }
-
 
     /**
      * JailSquare that make the player go to jail.
@@ -390,7 +389,6 @@ public class MonopolyCommandsPanel extends JPanel implements ActionListener {
 
     }
 
-
     /**
      * GoToJailSquare that move the player to the jail.
      */
@@ -401,8 +399,6 @@ public class MonopolyCommandsPanel extends JPanel implements ActionListener {
         this.add(pass);
 
     }
-
-
 
     /**
      * PickCard let the player pick a card.
@@ -417,13 +413,10 @@ public class MonopolyCommandsPanel extends JPanel implements ActionListener {
 
     }
 
-
-    
     @Override
     public void actionPerformed(ActionEvent e) {
 
     }
-
 
     /**
      * Refresh the panel.

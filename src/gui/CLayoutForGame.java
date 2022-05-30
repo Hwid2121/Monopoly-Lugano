@@ -94,31 +94,56 @@ public class CLayoutForGame extends JPanel {
         }
     }
 
+    /**
+     * Get the fase.
+     * 
+     * @return fase
+     */
     public int getFase() {
         return fase;
     }
 
+    /**
+     * Increment the fase.
+     */
     public void incrementFase() {
         fase = fase + 1;
     }
 
-    public void setFase(int i) {
-        fase = i;
+    /**
+     * Set the fase.
+     * 
+     * @param index
+     */
+    public void setFase(int index) {
+        fase = index;
     }
 
+    /**
+     * Pass the turn.
+     */
     public void passTurn() {
         skip = 1;
         nextPage();
     }
 
+    /**
+     * Reset the turn.
+     */
     public void resetTurn() {
         skip = 0;
     }
 
+    /**
+     * Reset the fase.
+     */
     public void resetfase() {
         fase = 0;
     }
 
+    /**
+     * Check if the game is over.
+     */
     public void checkEndGame() {
         if (monopoly.monopolyEND()) {
 
@@ -132,6 +157,11 @@ public class CLayoutForGame extends JPanel {
 
     }
 
+    /**
+     * Eliminate the player if he is eliminated.
+     * 
+     * @param player the player to check
+     */
     public void playerEliminate(Player player) {
         if (player.getMoney() < 0) {
             monopoly.playerEliminated(player);

@@ -11,7 +11,6 @@ import javax.swing.JPanel;
 import model.Dice;
 
 /**
- * 
  * DicePanel that contains the frameDice.
  * 
  * @author taftan@usi.ch & sardoa@usiu.ch

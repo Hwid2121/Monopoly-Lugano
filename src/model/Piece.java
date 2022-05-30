@@ -4,16 +4,29 @@ import java.util.ArrayList;
 import java.util.Random;
 import java.awt.Color;
 
+
+
+
+
+/**
+ * Piece class that indetify the player.
+ * @author Alberto Sardo & Nicolo' Tafta
+ * @version 24/05/2022
+ */
 public class Piece {
 
     private Random rand = new Random();
-    private float r = rand.nextFloat();
-    private float g = rand.nextFloat();
-    private float b = rand.nextFloat();
+    private float redColor = rand.nextFloat();
+    private float greenColor = rand.nextFloat();
+    private float blueColor = rand.nextFloat();
     private Color randomColor;
 
     private ArrayList<Player> players = new ArrayList<>();
 
+
+    /**
+     * Constructor of the Piece class.
+     */
     public Piece() {
 
         generatePiece();
@@ -21,16 +34,21 @@ public class Piece {
 
     }
 
+
+
+    /**
+     * Generate the piece of the player.
+     */
     public void generatePiece() {
-        r = rand.nextFloat();
-        g = rand.nextFloat();
-        b = rand.nextFloat();
+        redColor = rand.nextFloat();
+        greenColor = rand.nextFloat();
+        blueColor = rand.nextFloat();
     }
 
     public void checkPiece() {
 
-        for (Player x : players) {
-            if (x.getPiece() == this) {
+        for (Player player : players) {
+            if (player.getPiece() == this) {
                 generatePiece();
                 checkPiece();
                 break;
@@ -41,7 +59,7 @@ public class Piece {
     }
 
     public void setPiece() {
-        randomColor = new Color(r, g, b);
+        randomColor = new Color(redColor, greenColor, blueColor);
 
     }
 
