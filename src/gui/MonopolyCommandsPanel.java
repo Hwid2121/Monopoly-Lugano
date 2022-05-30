@@ -58,7 +58,7 @@ public class MonopolyCommandsPanel extends JPanel implements ActionListener {
      * Constructor MonopolyCommandsPanel.
      * 
      * @param playerx the player that is playing the game
-     * @param mainb    the main panel of the game
+     * @param mainb   the main panel of the game
      * @param panell  the panel of the game
      */
     public MonopolyCommandsPanel(Player playerx, CLayoutForGame mainb, PanelMonopoly panell) {
@@ -113,16 +113,19 @@ public class MonopolyCommandsPanel extends JPanel implements ActionListener {
                         default:
                             if (monopoly.getTable().getPropertySquare(player.getPosition()).getOwner() == null) {
                                 propertySquareEmpty();
-                            } else
+                                break;
+                            } else {
                                 propertySquareOwned();
-                            System.out.println(monopoly.getTable().getSquare(player.getPosition()).getName());
+                                System.out.println(monopoly.getTable().getSquare(player.getPosition()).getName());
+                                break;
 
-                            break;
+                            }
 
                     }
-                } else {
-                    jailSquare();
+                }
 
+                else {
+                    jailSquare();
                 }
 
             default:

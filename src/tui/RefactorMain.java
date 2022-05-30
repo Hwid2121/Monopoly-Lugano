@@ -18,7 +18,7 @@ import model.CardsDeck;
  * @author taftan@usi.ch & sardoa@usiu.ch
  * @version 29/05/2022
  */
-public class auxmain {
+public class RefactorMain {
 
     public Monopoly monopoly = new Monopoly();
     public Scanner input = new Scanner(System.in);
@@ -27,6 +27,9 @@ public class auxmain {
     private String chf = " chf";
     private String nName = "\nName: ";
 
+    /**
+     * Constructor of the pregame class.
+     */
     public void preGameStatus() {
 
         System.out.println("How many players?");
@@ -53,10 +56,10 @@ public class auxmain {
 
                 System.out.println("Nickname player " + (monopoly.getSizeOfPlayers() + 1));
 
-                String Nickname = input.next();
+                String nickname = input.next();
                 if (input.hasNextLine()) {
 
-                    monopoly.addPlayer(new Player(Nickname));
+                    monopoly.addPlayer(new Player(nickname));
                 }
 
             }
@@ -68,11 +71,23 @@ public class auxmain {
 
     }
 
+    /**
+     * EliminationPlaymain method for eliminate a player.
+     * 
+     * @param player    the player that have to be eliminated
+     * @param monopoly2 the monopoly
+     */
     public void elimininationPLAYmain(Player player, Monopoly monopoly2) {
         monopoly.playerEliminated(player);
         skip = 1;
     }
 
+    /**
+     * Activate the bankrupt status for the player.
+     * 
+     * @param player   the player that have to be eliminated
+     * @param monopoly the monopoly
+     */
     public void bankRuptPLAYmain(Player player, Monopoly monopoly) {
         System.out.println("You are in bankrupt, you do not have money");
         System.out.println("You must sell your properties till you balance is positive");
@@ -94,6 +109,12 @@ public class auxmain {
 
     }
 
+    /**
+     * Activate picka card for the player.
+     * 
+     * @param player   the player that have to be eliminated
+     * @param monopoly the monopoly
+     */
     public void cardsPLAYmain(Player player, Monopoly monopoly) {
 
         System.out.println("You gonna take a card \n that can be a bonus card or a malus card\n ");
@@ -128,6 +149,12 @@ public class auxmain {
 
     }
 
+    /**
+     * Propertysquaresell method for sell a property square.
+     * 
+     * @param player   the player that have to be eliminated
+     * @param monopoly the monopoly
+     */
     public void propertysquaresell(Player player, Monopoly monopoly) {
 
         int num = player.getPropertySquare().size();
@@ -166,6 +193,12 @@ public class auxmain {
 
     }
 
+    /**
+     * Activate the method for the bonus square.
+     * 
+     * @param player   the player that have to be eliminated
+     * @param monopoly the monopoly
+     */
     public void bonusPLAYmain(Player player, Monopoly monopoly) {
         int price = monopoly.getTable().getSquareBonusPrice(player);
 
@@ -186,10 +219,20 @@ public class auxmain {
         skip = 1;
     }
 
+    /**
+     * Get chf string.
+     * 
+     * @return chf
+     */
     public String getCHF() {
         return chf;
     }
 
+    /**
+     * Get chf name.
+     * 
+     * @return nName
+     */
     public String getnName() {
         return nName;
     }
