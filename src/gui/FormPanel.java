@@ -24,6 +24,15 @@ public class FormPanel extends JPanel {
     final private PanelPregame frameb;
     private JButton button;
 
+
+
+
+    /**
+     * Construcotr of the frame FormPanel.
+     * 
+     * @param frameB the parent of the parent frame
+     * @param frameA the parent frame
+     */
     public FormPanel(PanelPregame frameB, NumPlayerFrame frameA) {
 
         super();

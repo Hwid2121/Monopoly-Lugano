@@ -5,13 +5,19 @@ import java.awt.Graphics2D;
 import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
 import javax.swing.ImageIcon;
 import javax.swing.JPanel;
 
 import model.Monopoly;
 import model.Player;
 
+/**
+ * MonopolyGridPanel the panel that contains the grid of the game.
+ * 
+ * 
+ * @author taftan@usi.ch & sardoa@usiu.ch
+ * @version 24/05/2022
+ */
 public class MonopolyGridPanel extends JPanel implements ActionListener {
 
     private GridPosition gridpos = new GridPosition();
@@ -20,15 +26,25 @@ public class MonopolyGridPanel extends JPanel implements ActionListener {
 
     private Image backgroundImage;
 
+    /**
+     * Constructor MonopolyGridPanel.
+     * 
+     * @param playerz the player that is playing the game
+     */
     public MonopolyGridPanel(Player playerz) {
         super();
         backgroundImage = new ImageIcon("src/gui/images/monopolygrid1000.png").getImage();
 
     }
 
-    public void paint(Graphics g) {
-        super.paint(g);
-        Graphics2D pan = (Graphics2D) g;
+    /**
+     * Paint the grid of the game.
+     * 
+     * @param graphicsVar the graphics of the panel
+     */
+    public void paint(Graphics graphicsVar) {
+        super.paint(graphicsVar);
+        Graphics2D pan = (Graphics2D) graphicsVar;
 
         pan.drawImage(backgroundImage, 0, 0, null);
 
@@ -42,10 +58,11 @@ public class MonopolyGridPanel extends JPanel implements ActionListener {
 
     }
 
-    public void setStep(int i) {
-
-    }
-
+    /**
+     * Action performed when the user click on the grid.
+     * 
+     * @param actionEvent the action event
+     */
     @Override
     public void actionPerformed(ActionEvent arg0) {
 

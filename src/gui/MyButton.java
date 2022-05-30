@@ -9,7 +9,28 @@ import javax.swing.JComponent;
 import javax.swing.border.Border;
 import javax.swing.plaf.basic.BasicButtonUI;
 
+
+
+
+/**
+ * 
+ * My button class.
+ * 
+ * @author taftan@usi.ch & sardoa@usiu.ch
+ * @version 24/05/2022
+ */
 public class MyButton extends BasicButtonUI {
+
+
+
+
+
+    /**
+     * 
+     * Constructor of the MyButton.
+     * @param  graphicsVar the graphics variable
+     * @param componentJ the component
+     */
     @Override
     public void paint(Graphics graphicsVar, JComponent componentJ) {
         AbstractButton buttonAbs = (AbstractButton) componentJ;

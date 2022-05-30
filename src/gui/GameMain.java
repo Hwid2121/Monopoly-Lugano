@@ -47,6 +47,13 @@ public class GameMain extends JFrame {
 
     private ImageIcon img = new ImageIcon("src/gui/images/icon.png");
 
+
+
+
+
+    /**
+     * Constructor of the main frame.
+     */
     public GameMain() {
         super();
 

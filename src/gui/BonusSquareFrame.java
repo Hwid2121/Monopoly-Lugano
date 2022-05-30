@@ -21,6 +21,15 @@ public class BonusSquareFrame extends JFrame {
 
     private Player player;
 
+
+
+
+    /**
+     * Constructor of the BonusSquareFrame.
+     * 
+     * @param parentPanel the parent of frame
+     * @param playera the player
+     */
     public BonusSquareFrame(MonopolyCommandsPanel parentPanel, Player playera) {
         super();
 

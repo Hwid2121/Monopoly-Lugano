@@ -1,16 +1,13 @@
 package gui;
 
+import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.Font;
+import java.awt.GridBagConstraints;
+import java.awt.GridBagLayout;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
-
-import java.awt.Color;
-
-import java.awt.GridBagConstraints;
-import java.awt.GridBagLayout;
-import java.awt.Font;
-
-import java.awt.Dimension;
 
 /**
  * NicknameFOrm where inser the nicknames of the players.
@@ -23,6 +20,10 @@ public class NicknameForm extends JPanel {
 
     private JTextField textField;
 
+    /**
+     * Constructor of the nicknames form.
+     * @param indexForm the index of the form
+     */
     public NicknameForm(int indexForm) {
         super();
 
@@ -58,6 +59,12 @@ public class NicknameForm extends JPanel {
 
     }
 
+
+
+    /**
+     * Getter of the textField.
+     * @return the textField
+     */
     public String getFieldText() {
         return this.textField.getText();
     }

@@ -35,6 +35,16 @@ public class BonusSquarePANEL extends JPanel implements ActionListener {
 
     private Monopoly monopoly = GameMain.monopoly;
 
+
+
+
+    /**
+     * Construcotr of the frame BonusSquareFrame.
+     * 
+     * @param frameB the parent of the parent frame
+     * @param frameA the parent frame
+     * @param player the player
+     */
     public BonusSquarePANEL(MonopolyCommandsPanel frameB, BonusSquareFrame frameA, Player players) {
         super();
 
@@ -75,6 +85,12 @@ public class BonusSquarePANEL extends JPanel implements ActionListener {
 
     }
 
+
+
+
+    /**
+     * Method that plays the bonus.
+     */
     public void bonusPlay() {
 
         if (monopoly.getTable().getSquare(player.getPosition()).getColor().equals("bonus")) {

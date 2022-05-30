@@ -20,6 +20,14 @@ public class CLayout extends JPanel implements ActionListener {
 
     private GameMain main;
 
+
+
+
+    /**
+     * Constructor of the CLayout.
+     * 
+     * @param game the main of the game
+     */
     public CLayout(GameMain game) {
         super();
         main = game;

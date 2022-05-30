@@ -14,8 +14,20 @@ import javax.swing.JPanel;
 
 import model.Card;
 
+/**
+ * PopuuPickcardFrame frame that show a popup for pick a card.
+ * 
+ * 
+ * @author taftan@usi.ch & sardoa@usiu.ch
+ * @version 24/05/2022
+ */
 public class PopUpPickCardFrame extends JFrame implements ActionListener {
 
+    /**
+     * Construcotr of the frame PopUpPickCardFrame.
+     * 
+     * @param parentPanel the parent panel
+     */
     public PopUpPickCardFrame(Card card, MonopolyCommandsPanel parentPanel) {
 
         super();
@@ -47,6 +59,11 @@ public class PopUpPickCardFrame extends JFrame implements ActionListener {
 
     }
 
+
+
+
+
+    
     @Override
     public void actionPerformed(ActionEvent arg0) {
 

@@ -30,6 +30,15 @@ public class PanelPlayers extends JPanel implements ActionListener {
 
     private CLayout parentFrame;
 
+
+
+
+
+    /**
+     * Constructor PanelPlayers.
+     * 
+     * @param frame  the parent frame
+     */
     public PanelPlayers(CLayout frame) {
         super();
         parentFrame = frame;

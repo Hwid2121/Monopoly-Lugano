@@ -14,6 +14,10 @@ import javax.swing.JPanel;
 import model.Monopoly;
 import model.Player;
 
+/**
+ * 
+ * InfoSquarePanel panel that show a popup for pick a card.
+ */
 public class InfoSquarePanel extends JPanel implements ActionListener {
 
         private GridLayout lay = new GridLayout(3, 5, 2, 2);
@@ -40,6 +44,15 @@ public class InfoSquarePanel extends JPanel implements ActionListener {
         private InfoSquareFrame frame;
         private Monopoly monopoly;
 
+
+
+        /**
+         * Construcotr of the frame InfoSquareFrame.
+         * 
+         * @param player the player
+         * @param framea parent  frame
+         * @param monopolya the game
+         */
         public InfoSquarePanel(Player player, InfoSquareFrame framea, Monopoly monopolya) {
                 super();
 

@@ -7,6 +7,12 @@ import javax.swing.JPanel;
 
 import model.Player;
 
+/**
+ * PanelMonopoly panel that show the monopoly game.
+ * 
+ * @author taftan@usi.ch & sardoa@usiu.ch
+ * @version 24/05/2022
+ */
 public class PanelMonopoly extends JPanel {
 
     private MonopolyGridPanel monopolyGridPanel;
@@ -14,20 +20,14 @@ public class PanelMonopoly extends JPanel {
     private MonopolyCommandsPanel monopolyCommandsPanel;
 
     private CLayoutForGame main;
-
-    /**
-     * PanelMonopoly  where the gameplay 
-     * grid are showned:
-     *  - MonopolyGridPanel
-     *  - MonopolyPlayerPanel
-     *  - MonopolyCommandsPanel
-     * 
-     * 
-     * @author taftan@usi.ch & sardoa@usiu.ch
-     * @version 24/05/2022
-     */
     private Player player;
 
+    /**
+     * Constructor of the PanelMonopoly.
+     * 
+     * @param game    main class of the game
+     * @param players the players of the game
+     */
     public PanelMonopoly(CLayoutForGame game, Player players) {
 
         player = players;

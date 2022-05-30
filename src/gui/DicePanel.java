@@ -4,13 +4,19 @@ import java.awt.FlowLayout;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 import model.Dice;
 
+/**
+ * 
+ * DicePanel that contains the frameDice.
+ * 
+ * @author taftan@usi.ch & sardoa@usiu.ch
+ * @version 24/05/2022
+ */
 public class DicePanel extends JPanel implements ActionListener {
 
     private JLabel dicenum;
@@ -22,12 +28,18 @@ public class DicePanel extends JPanel implements ActionListener {
 
     private FlowLayout lay = new FlowLayout(FlowLayout.CENTER, 15, 50);
 
-    public DicePanel(DiceFrame buc, Dice dic) {
+    /**
+     * Construcotr of the panel DicePanel.
+     * 
+     * @param frameDice the parent frame
+     * @param dicefrom  the dice
+     */
+    public DicePanel(DiceFrame frameDice, Dice dicefrom) {
 
         super();
-        parenta = buc;
+        parenta = frameDice;
 
-        dice = dic;
+        dice = dicefrom;
 
         setLayout(lay);
 

@@ -6,7 +6,6 @@ import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
 import javax.swing.Box;
 import javax.swing.BoxLayout;
 import javax.swing.JButton;
@@ -15,13 +14,27 @@ import javax.swing.JPanel;
 
 import model.Card;
 
+/**
+ * PopUpPickCardPanel panel that show a popup for pick a card.
+ * 
+ * 
+ * @author taftan@usi.ch & sardoa@usiu.ch
+ * @version 24/05/2022
+ */
 public class PopUpPickCardPanel extends JPanel implements ActionListener {
 
     private JLabel desc;
-    final private PopUpPickCardFrame framea;
+    private PopUpPickCardFrame framea;
     private JButton button;
-    private Font SansSerif  = new Font("SansSerif", Font.BOLD, 14);
+    private Font sansSerif = new Font("SansSerif", Font.BOLD, 14);
 
+    /**
+     * Construcotr of the frame PopUpPickCardFrame.
+     * 
+     * @param frameB the parent of the parent frame
+     * @param frameA the parent frame
+     * @param card   the card
+     */
     public PopUpPickCardPanel(MonopolyCommandsPanel frameB, PopUpPickCardFrame frameA, Card card) {
 
         super();
@@ -35,12 +48,12 @@ public class PopUpPickCardPanel extends JPanel implements ActionListener {
 
         button = new JButton("CONTINUE");
         button.setForeground(GameMain.CREMISI);
-        button.setFont(SansSerif);
+        button.setFont(sansSerif);
         button.setMinimumSize(new Dimension(120, 40));
         button.setPreferredSize(new Dimension(120, 40));
 
         desc = new JLabel(card.getDescription());
-        desc.setFont(SansSerif);
+        desc.setFont(sansSerif);
         desc.setAlignmentX(Component.CENTER_ALIGNMENT);
         // button.setAlignmentX(Component.CENTER_ALIGNMENT);
         // desc.
@@ -59,6 +72,10 @@ public class PopUpPickCardPanel extends JPanel implements ActionListener {
         });
 
     }
+
+
+
+
 
     @Override
     public void actionPerformed(ActionEvent arg0) {

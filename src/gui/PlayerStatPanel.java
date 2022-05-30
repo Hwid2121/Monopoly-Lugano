@@ -3,16 +3,35 @@ package gui;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.Insets;
-
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 import model.Player;
 
+
+
+
+/**
+ * PlayersStatPanel where the players are showned:
+ * - PlayerName.
+ * - PlayerMoney.
+ * - PlayerPiece.
+ * - PlayerPosition.
+ * - PlayerProperties.
+ * 
+ * 
+ * @author taftan@usi.ch & sardoa@usiu.ch
+ * @version 24/05/2022
+ */
 public class PlayerStatPanel extends JPanel {
 
     private GridBagLayout layout = new GridBagLayout();
 
+
+    /**
+     * Constructor of the PlayerStatPanel.
+     * @param player the player that have to be showned.
+     */
     public PlayerStatPanel(Player player) {
         super();
         JPanel pieceColorPanel = new PieceColorPanel(player);
