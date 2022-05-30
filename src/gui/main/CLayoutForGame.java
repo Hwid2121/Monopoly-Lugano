@@ -55,7 +55,7 @@ public class CLayoutForGame extends JPanel {
  */
     public void monopoly(Player player, int i) {
 
-
+        playerEliminate(player);
         checkEndGame();
         turn = turn % numberOfPlayers;
         player = monopoly.getPLayer(turn);
@@ -77,7 +77,7 @@ public class CLayoutForGame extends JPanel {
     public void nextPage() {
 
         if (skip == 0) {
-
+            playerEliminate( monopoly.getPLayer(turn));
             PanelMonopoly panelMonopolysa = new PanelMonopoly(this, monopoly.getPLayer(turn));
             add(panelMonopolysa, "2");
 
@@ -143,6 +143,14 @@ public class CLayoutForGame extends JPanel {
 
 
 
+    }
+
+
+
+    public void playerEliminate(Player player){
+        if(player.getMoney()<0){
+            monopoly.playerEliminated(player);
+        }
     }
 
 }

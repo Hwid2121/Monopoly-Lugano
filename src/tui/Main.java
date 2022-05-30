@@ -744,7 +744,7 @@ public class Main {
     }
 
     public void finishStatus() {
-        System.out.println("The auxmain.monopoly of Lugano is " + auxmain.monopoly.getPLayer(0).getNickname());
+        System.out.println("The monopoly of Lugano is " + auxmain.monopoly.getPLayer(0).getNickname());
         System.exit(0);
 
     }
