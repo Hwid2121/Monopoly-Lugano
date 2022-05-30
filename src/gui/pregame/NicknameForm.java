@@ -25,23 +25,23 @@ public class NicknameForm extends JPanel {
 
     private JTextField textField;
 
-    public NicknameForm(int i) {
+    public NicknameForm(int indexForm) {
         super();
 
         setBackground(GameMain.SFONDO);
         GridBagLayout layout = new GridBagLayout();
-        GridBagConstraints c = new GridBagConstraints();
-        c.fill = GridBagConstraints.HORIZONTAL;
+        GridBagConstraints gridBagLayout = new GridBagConstraints();
+        gridBagLayout.fill = GridBagConstraints.HORIZONTAL;
 
         setLayout(layout);
 
-        JLabel label = new JLabel("Player " + i + ": ");
+        JLabel label = new JLabel("Player " + indexForm + ": ");
         label.setFont(new Font("SansSerif", Font.BOLD, 22));
         label.setForeground(GameMain.CREMISI);
 
-        c.gridx = 1;
-        c.gridy = 0;
-        add(label, c);
+        gridBagLayout.gridx = 1;
+        gridBagLayout.gridy = 0;
+        add(label, gridBagLayout);
 
         textField = new JTextField();
 
@@ -51,10 +51,10 @@ public class NicknameForm extends JPanel {
         textField.setForeground(GameMain.CREMISI);
         textField.setBackground(Color.white);
 
-        c.gridx = 2;
-        c.gridy = 0;
+        gridBagLayout.gridx = 2;
+        gridBagLayout.gridy = 0;
 
-        add(textField, c);
+        add(textField, gridBagLayout);
 
         setVisible(true);
 

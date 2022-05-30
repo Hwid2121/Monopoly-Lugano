@@ -18,7 +18,7 @@ public class DicePanel extends JPanel implements ActionListener {
     private DiceFrame parenta;
     private JButton button;
     private Dice dice;
-    private Font s = new Font("SansSerif", Font.BOLD, 14);
+    private Font sansSerif = new Font("SansSerif", Font.BOLD, 14);
 
     private FlowLayout lay = new FlowLayout(FlowLayout.CENTER, 15, 50);
 
@@ -35,13 +35,13 @@ public class DicePanel extends JPanel implements ActionListener {
 
         die = new JLabel("DIE 1: " + dice.getDie1() + "     DIE 2: " + dice.getDie2());
 
-        dicenum.setFont(s);
-        die.setFont(s);
+        dicenum.setFont(sansSerif);
+        die.setFont(sansSerif);
         setBackground(GameMain.SFONDO);
 
         button = new JButton("CONTINUE");
         button.setForeground(GameMain.CREMISI);
-        button.setFont(s);
+        button.setFont(sansSerif);
         add(dicenum);
         add(die);
 
@@ -50,7 +50,7 @@ public class DicePanel extends JPanel implements ActionListener {
 
         button.addActionListener(new ActionListener() {
             @Override
-            public void actionPerformed(ActionEvent e) {
+            public void actionPerformed(ActionEvent eg) {
 
                 parenta.dispose();
 

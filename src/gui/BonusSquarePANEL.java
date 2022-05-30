@@ -30,7 +30,7 @@ public class BonusSquarePANEL extends JPanel implements ActionListener {
     private JLabel desc;
     final private BonusSquareFrame framea;
     private JButton button;
-    private Font s = new Font("SansSerif", Font.BOLD, 14);
+    private Font sansSerif= new Font("SansSerif", Font.BOLD, 14);
 
     private Player player;
     private int price;
@@ -53,12 +53,12 @@ public class BonusSquarePANEL extends JPanel implements ActionListener {
 
         button = new JButton("CONTINUE");
         button.setForeground(GameMain.CREMISI);
-        button.setFont(s);
+        button.setFont(sansSerif);
         button.setMinimumSize(new Dimension(120, 40));
         button.setPreferredSize(new Dimension(120, 40));
 
         desc = new JLabel(GameMain.monopoly.getTable().getSquareBonusDescr(player.getPosition()));
-        desc.setFont(s);
+        desc.setFont(sansSerif);
         desc.setAlignmentX(Component.CENTER_ALIGNMENT);
         bonusPlay();
         add(desc);
@@ -68,7 +68,7 @@ public class BonusSquarePANEL extends JPanel implements ActionListener {
 
         button.addActionListener(new ActionListener() {
             @Override
-            public void actionPerformed(ActionEvent e) {
+            public void actionPerformed(ActionEvent eG) {
 
                 framea.dispose();
 

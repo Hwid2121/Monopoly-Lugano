@@ -11,22 +11,22 @@ import javax.swing.border.Border;
 
 public class MyButton extends BasicButtonUI {
     @Override
-    public void paint(Graphics g, JComponent c) {
-        AbstractButton b = (AbstractButton) c;
+    public void paint(Graphics graphicsVar, JComponent componentJ) {
+        AbstractButton buttonAbs = (AbstractButton) componentJ;
 
         Border raisedbevel = BorderFactory.createRaisedBevelBorder();
         Font COURIER = new Font("SansSerif", Font.BOLD, 22);
 
-        g.setFont(COURIER);
+        graphicsVar.setFont(COURIER);
 
-        b.setBorder(raisedbevel);
+        buttonAbs.setBorder(raisedbevel);
 
-        b.setFont(COURIER);
+        buttonAbs.setFont(COURIER);
 
-        b.setForeground(GameMain.CREMISI);
+        buttonAbs.setForeground(GameMain.CREMISI);
 
-        b.setVisible(true);
-        super.paint(g, c);
+        buttonAbs.setVisible(true);
+        super.paint(graphicsVar, componentJ);
 
     }
 }

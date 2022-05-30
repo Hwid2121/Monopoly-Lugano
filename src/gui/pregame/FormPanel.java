@@ -54,14 +54,14 @@ public class FormPanel extends JPanel {
 
         button.addActionListener(new ActionListener() {
             @Override
-            public void actionPerformed(ActionEvent e) {
+            public void actionPerformed(ActionEvent actionEvent) {
 
                 System.out.println("number: " + textField.getText());
 
-                String s = textField.getText();
+                String stringField = textField.getText();
                 try {
 
-                    int num = Integer.parseInt(s);
+                    int num = Integer.parseInt(stringField);
                     System.out.println("An integer");
                     GameMain.monopoly.setNumOfPlayers(num);
                     framea.dispose();

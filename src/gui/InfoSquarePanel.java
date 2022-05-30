@@ -37,7 +37,7 @@ public class InfoSquarePanel extends JPanel implements ActionListener {
 
         private JButton button;
 
-        private Font s = new Font("SansSerif", Font.BOLD, 12);
+        private Font sansSerif = new Font("SansSerif", Font.BOLD, 12);
         private InfoSquareFrame frame;
         private Monopoly monopoly;
 
@@ -85,22 +85,22 @@ public class InfoSquarePanel extends JPanel implements ActionListener {
 
                 button = new JButton("CLOSE");
                 button.setForeground(GameMain.CREMISI);
-                button.setFont(s);
+                button.setFont(sansSerif);
                 button.setMinimumSize(new Dimension(50, 15));
                 button.setPreferredSize(new Dimension(50, 15));
 
-                name.setFont(s);
-                color.setFont(s);
-                price.setFont(s);
-                priceTax.setFont(s);
-                priceSell.setFont(s);
-                owner.setFont(s);
-                priceh1.setFont(s);
-                priceh2.setFont(s);
-                priceh3.setFont(s);
-                priceh4.setFont(s);
-                priceHotel.setFont(s);
-                priceBuilding.setFont(s);
+                name.setFont(sansSerif);
+                color.setFont(sansSerif);
+                price.setFont(sansSerif);
+                priceTax.setFont(sansSerif);
+                priceSell.setFont(sansSerif);
+                owner.setFont(sansSerif);
+                priceh1.setFont(sansSerif);
+                priceh2.setFont(sansSerif);
+                priceh3.setFont(sansSerif);
+                priceh4.setFont(sansSerif);
+                priceHotel.setFont(sansSerif);
+                priceBuilding.setFont(sansSerif);
 
                 name.setHorizontalTextPosition(JLabel.CENTER);
                 color.setHorizontalTextPosition(JLabel.CENTER);
@@ -132,7 +132,7 @@ public class InfoSquarePanel extends JPanel implements ActionListener {
 
                 button.addActionListener(new ActionListener() {
                         @Override
-                        public void actionPerformed(ActionEvent e) {
+                        public void actionPerformed(ActionEvent eGet) {
 
                                 frame.dispose();
 

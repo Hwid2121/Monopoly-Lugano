@@ -22,7 +22,7 @@ public class PopUpPickCardPanel extends JPanel implements ActionListener {
     private JLabel desc;
     final private PopUpPickCardFrame framea;
     private JButton button;
-    private Font s = new Font("SansSerif", Font.BOLD, 14);
+    private Font SansSerif  = new Font("SansSerif", Font.BOLD, 14);
 
     public PopUpPickCardPanel(MonopolyCommandsPanel frameB, PopUpPickCardFrame frameA, Card card) {
 
@@ -37,12 +37,12 @@ public class PopUpPickCardPanel extends JPanel implements ActionListener {
 
         button = new JButton("CONTINUE");
         button.setForeground(GameMain.CREMISI);
-        button.setFont(s);
+        button.setFont(SansSerif);
         button.setMinimumSize(new Dimension(120, 40));
         button.setPreferredSize(new Dimension(120, 40));
 
         desc = new JLabel(card.getDescription());
-        desc.setFont(s);
+        desc.setFont(SansSerif);
         desc.setAlignmentX(Component.CENTER_ALIGNMENT);
         // button.setAlignmentX(Component.CENTER_ALIGNMENT);
         // desc.
@@ -53,7 +53,7 @@ public class PopUpPickCardPanel extends JPanel implements ActionListener {
 
         button.addActionListener(new ActionListener() {
             @Override
-            public void actionPerformed(ActionEvent e) {
+            public void actionPerformed(ActionEvent actionEve) {
 
                 framea.dispose();
 
