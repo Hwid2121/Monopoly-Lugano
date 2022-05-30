@@ -55,11 +55,11 @@ public class PanelNickname extends JPanel {
 
         button.addActionListener(new ActionListener() {
             @Override
-            public void actionPerformed(ActionEvent e) {
+            public void actionPerformed(ActionEvent actionEvent) {
 
                 int indexAction = 0;
-                for (NicknameForm x : playersList) {
-                    GameMain.monopoly.addPlayer(new Player(x.getFieldText()));
+                for (NicknameForm nick : playersList) {
+                    GameMain.monopoly.addPlayer(new Player(nick.getFieldText()));
                     System.out.println(GameMain.monopoly.getPLayer(indexAction).getNickname());
                     indexAction += 1;
                 }

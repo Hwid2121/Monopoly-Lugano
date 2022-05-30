@@ -34,7 +34,7 @@ public class PlayerStatPanel extends JPanel {
      */
     public PlayerStatPanel(Player player) {
         super();
-        JPanel pieceColorPanel = new PieceColorPanel(player);
+        
 
  
         setBackground(GameMain.SFONDO);
@@ -85,6 +85,7 @@ public class PlayerStatPanel extends JPanel {
         gridBagLay.fill = GridBagConstraints.HORIZONTAL;
         add(pos, gridBagLay);
 
+        JPanel pieceColorPanel = new PieceColorPanel(player);
         gridBagLay.fill = GridBagConstraints.HORIZONTAL;
         gridBagLay.insets = new Insets(10, 0, 10, 50);
         gridBagLay.gridwidth = 2;

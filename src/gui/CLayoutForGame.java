@@ -3,6 +3,7 @@ package gui;
 
 import java.awt.CardLayout;
 
+import javax.swing.JFrame;
 import javax.swing.JPanel;
 
 import model.Monopoly;
@@ -159,7 +160,7 @@ public class CLayoutForGame extends JPanel {
             JFrame f = new JFrame("CONGRATULATIONS!");
             f.getContentPane().setBackground(GameMain.SFONDO);
             f.setLocationRelativeTo(null);
-            f.add(new PanelEnd(monopoly));
+            f.add(new PanelEnd());
             f.setSize(400, 400);
             f.setVisible(true);
             f.pack();

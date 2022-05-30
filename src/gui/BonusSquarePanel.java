@@ -23,7 +23,7 @@ import model.Player;
  * @author taftan@usi.ch & sardoa@usiu.ch
  * @version 24/05/2022
  */
-public class BonusSquarePANEL extends JPanel implements ActionListener {
+public class BonusSquarePanel extends JPanel implements ActionListener {
 
     private JLabel desc;
     final private BonusSquareFrame framea;
@@ -42,7 +42,7 @@ public class BonusSquarePANEL extends JPanel implements ActionListener {
      * @param frameA  the parent frame
      * @param players the player
      */
-    public BonusSquarePANEL(MonopolyCommandsPanel frameB, BonusSquareFrame frameA, Player players) {
+    public BonusSquarePanel(MonopolyCommandsPanel frameB, BonusSquareFrame frameA, Player players) {
         super();
 
         this.player = players;

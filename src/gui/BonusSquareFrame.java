@@ -35,7 +35,7 @@ public class BonusSquareFrame extends JFrame {
 
         player = playera;
         MonopolyCommandsPanel parentPan = parentPanel;
-        JPanel panel = new BonusSquarePANEL(parentPan, this, player);
+        JPanel panel = new BonusSquarePanel(parentPan, this, player);
 
         setVisible(false);
         setPreferredSize(new Dimension(500, 150));
