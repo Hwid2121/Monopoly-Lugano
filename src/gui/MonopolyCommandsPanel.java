@@ -27,19 +27,10 @@ public class MonopolyCommandsPanel extends JPanel implements ActionListener {
 
     // Dimension of the command panel
     private Dimension dim = new Dimension(130, 80);
-    // Border BLACKLINE = BorderFactory.createLineBorder(GameMain.CREMISI);
-    // Font COURIER = new Font("SansSerif", Font.BOLD, 22);
-
-    // JButton button4;
-    // JButton button5;
+ 
     private PopUpPickCardFrame pop ;
     private InfoSquareFrame infoFrame;
     private EmptySquarePopUpFrame emp;
-
-    // private PropretySquareEMPTY empanel;
-
-
-    // private EmptySquarePopUpFrame emp;
 
     private Clicklistener click = new Clicklistener();
     private JButton buy = new JButton("BUY");
@@ -51,6 +42,9 @@ public class MonopolyCommandsPanel extends JPanel implements ActionListener {
     private JButton card = new JButton("USE CARD");
     private JButton info = new JButton("INFO SQUARE");
 
+
+
+    private BonusSquareFrame bonusFrame;
 
     private JButton cont = new JButton("CONTINUE...");
     
@@ -87,6 +81,9 @@ public class MonopolyCommandsPanel extends JPanel implements ActionListener {
         setLayout(layout);
         setFont(GameMain.COURIER);
 
+
+        
+
         // if(main.getFase() == 0){
         // trowDice();
         // System.out.println(main.getFase());
@@ -111,16 +108,20 @@ public class MonopolyCommandsPanel extends JPanel implements ActionListener {
                         pickCard();
                         break;
 
-                    // case "jail":
-                    //     jailSquare();
-                    //     break;
+                    case "jail":
+                        jailSquare();
+                        break;
 
                     case "empty":
                         emptySquare();
                         break;
+
+                        
                     // case "goto":
                     //     goToJailSquare(); 
                     //     break;
+
+
                     case "bonus":
                         bonusSquare();
                     //     break;
@@ -134,8 +135,9 @@ public class MonopolyCommandsPanel extends JPanel implements ActionListener {
                             propertySquareEMPTY();
                         } else propertySquareOwned();
                         System.out.println(monopoly.getTable().getSquare(player.getPosition()).getName());
-                        
-                        // emptySquare();
+                        // jailSquare();
+                        // // emptySquare();
+                        // // bonusSquare();
                         break;
 
 
@@ -160,12 +162,15 @@ public class MonopolyCommandsPanel extends JPanel implements ActionListener {
 
             public void actionPerformed(ActionEvent arg) {
 
-                if (player.getMoney() >= monopoly.getTable().getSquarePrice(player.getPosition()) ){
+                if (player.getMoney() >= monopoly.getTable().getSquarePrice(player.getPosition()) &&  monopoly.getTable().getSquareOwner(player.getPosition())  == null  ){
 
                     monopoly.getTable().setSquareOwner(player);
                     player.buyPropertySquare(monopoly.getTable().getPropertySquare(player.getPosition()));
                     player.decreaseMoney(monopoly.getTable().getSquarePrice(player.getPosition()));
-
+                    
+                    
+                    // main.refreshPAGE();
+                    
 
                 }
                 else{
@@ -210,6 +215,23 @@ public class MonopolyCommandsPanel extends JPanel implements ActionListener {
 
             public void actionPerformed(ActionEvent arg) {
 
+                if(monopoly.getTable().getSquareOwner(player.getPosition()) == player){
+                    
+                    player.increaseMoney(monopoly.getTable().getPropertySquare(player.getPosition()).getPriceSell());
+                    player.removePropertySquare(monopoly.getTable().getPropertySquare(player.getPosition()));
+                    
+                    monopoly.getTable().resetOwner(player.getPosition());
+                    refresh();
+
+
+                } else {
+                    // TO D
+                    System.out.println("NONTUA");
+                }
+
+
+
+
             }
 
         });
@@ -236,6 +258,10 @@ public class MonopolyCommandsPanel extends JPanel implements ActionListener {
 
             public void actionPerformed(ActionEvent arg) {
 
+                JailSquare.payFine(player);
+                JailSquare.freeFromJail(player);
+
+
             }
 
         });
@@ -244,13 +270,11 @@ public class MonopolyCommandsPanel extends JPanel implements ActionListener {
 
             public void actionPerformed(ActionEvent arg) {
 
-                emp = new EmptySquarePopUpFrame((MonopolyCommandsPanel) pick.getParent());
                
-
-                
-                // empanel = new PropretySquareEMPTY(player, this);
-                emp.setVisible(true);
-                main.nextPage();
+                bonusFrame = new BonusSquareFrame((MonopolyCommandsPanel) pick.getParent(), player);
+                bonusFrame.setVisible(true);
+                // main.nextPage();
+                main.passTurn();
 
             }
 
@@ -273,8 +297,10 @@ public class MonopolyCommandsPanel extends JPanel implements ActionListener {
                 pop = new PopUpPickCardFrame(card, (MonopolyCommandsPanel) pick.getParent());
                 
                 pop.setVisible(true);
+                // pass();
 
-                main.nextPage();
+                main.passTurn();
+                // main.nextPage();
 
 
 
@@ -291,8 +317,20 @@ public class MonopolyCommandsPanel extends JPanel implements ActionListener {
                 monopoly.setPositionPlayer(player);
 
                 System.out.println("SI FUNZ " + monopoly.getListOfPlayer().get(0).getPosition());
+                
+
+
+                if(monopoly.getTable().getColor(player.getPosition()) == "jail"){
+                    player.setJail(JailSquare.getDays());
+                }
+
                 main.nextPage();
-                main.incrementFase();
+                main.incrementFase();   
+
+                
+
+
+
                 // main.setfase(1);
 
                 // dice.addActionListener(click);
@@ -305,7 +343,11 @@ public class MonopolyCommandsPanel extends JPanel implements ActionListener {
 
             public void actionPerformed(ActionEvent arg) {
 
-
+                if (JailSquare.checkFreeJailCard(player)) {
+                    JailSquare.freeFromJail(player);
+                } else {
+                    
+                }
 
             }
 
@@ -339,8 +381,10 @@ public class MonopolyCommandsPanel extends JPanel implements ActionListener {
     public void bonusSquare() {
 
         pass.setPreferredSize(dim);
+        cont.setPreferredSize(dim);
 
-        this.add(pass);
+        this.add(cont);
+        // this.add(pass);
 
     }
 
@@ -349,10 +393,13 @@ public class MonopolyCommandsPanel extends JPanel implements ActionListener {
         info.setPreferredSize(dim);
         buy.setPreferredSize(dim);
         pass.setPreferredSize(dim);
+      
 
         // this.add(infoFrame);
+
         this.add(info);
         this.add(buy);
+
         this.add(pass);
 
     }
@@ -387,6 +434,7 @@ public class MonopolyCommandsPanel extends JPanel implements ActionListener {
     public void jailSquare() {
 
         pay.setPreferredSize(dim);
+        
 
         dice.setPreferredSize(dim);
 

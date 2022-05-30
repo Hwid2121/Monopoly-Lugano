@@ -283,6 +283,26 @@ public class Player {
         }
     }
 
+
+
+
+    /**
+     * Remove the propertysqure Square from the list of propertySQuare owned by
+     * player.
+     * 
+     * @param square to remove from the list of the propertySquares
+     * 
+     */
+    public void removePropertySquare(PropertySquare square){
+
+        for (PropertySquare x: listofPropertySquares){
+            if (x == square){
+                listofPropertySquares.remove(x);
+            }
+        }
+
+    }
+
     /**
      * Get the price of each propertysquare own by the player.
      * Usefull in the TUI.

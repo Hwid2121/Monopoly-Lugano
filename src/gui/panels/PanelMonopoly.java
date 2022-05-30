@@ -34,7 +34,6 @@ public class PanelMonopoly extends JPanel {
         player = players;
          main = game;
         int width = getWidth();
-        int heigh = getHeight();
         
         // if (main.getFase() == 0){
         //     monopolyGridPanel = new MonopolyGridPanel(player);
@@ -62,34 +61,6 @@ public class PanelMonopoly extends JPanel {
     }
 
 
-    // public void refreshplayerStats(){
-    //     main.refresh();
-    // }
-
-
-
-    // public int getFase(){
-    //     return main.getFase();
-    // }
-
-    // public void incrementFase(){
-    //     main.incrementFase();
-    // }
-
-
-
-    // public void nextPage(){
-    //     main.nextPage();
-    // }
-
-
-    // public void setfase(int i){
-    //     main.setFase(i);
-    // }
-    
-
-
-
 
 
 
@@ -98,11 +69,3 @@ public class PanelMonopoly extends JPanel {
 
 }
 
-
-        // JButton button2 = new JButton("END-LINE");
-
-
-        // button2.addActionListener(new ActionListener() {
-        //     public void actionPerformed(ActionEvent arg0) {
-        //     }
-        // });
