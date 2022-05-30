@@ -9,9 +9,7 @@ import java.awt.Font;
 import java.awt.Color;
 import java.awt.Component;
 
-
 import javax.swing.JPanel;
-
 
 import gui.main.GameMain;
 
@@ -22,31 +20,19 @@ import java.awt.Dimension;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-
-
-
-
 public class PopUpPickCardFrame extends JFrame implements ActionListener {
 
-    // private JLabel descr;
-    // private JButton esc;
+    public PopUpPickCardFrame(Card card, MonopolyCommandsPanel parentPanel) {
 
-    private JPanel pop;
-
-    public PopUpPickCardFrame (Card card, MonopolyCommandsPanel parentPanel){
-        
-        
         super();
 
         MonopolyCommandsPanel parentPan = parentPanel;
-        JPanel panel  = new PopUpPickCardPanel(parentPan, this, card);
-        
-
+        JPanel panel = new PopUpPickCardPanel(parentPan, this, card);
 
         setVisible(false);
         setPreferredSize(new Dimension(500, 150));
         setResizable(false);
-        
+
         setLocationRelativeTo(null);
         this.getContentPane().setBackground(GameMain.SFONDO);
         BoxLayout laymain = new BoxLayout(getContentPane(), BoxLayout.Y_AXIS);
@@ -60,29 +46,16 @@ public class PopUpPickCardFrame extends JFrame implements ActionListener {
         label.setAlignmentX(Component.CENTER_ALIGNMENT);
         panel.setAlignmentX(Component.CENTER_ALIGNMENT);
 
-        
-
-        
         add(label);
-        // add(Box.createRigidArea(new Dimension(5, 20)));
         add(panel);
 
-
         pack();
-        // setVisible(false);
-
-
-
 
     }
 
-
-
-
     @Override
     public void actionPerformed(ActionEvent arg0) {
-        
-        
+
     }
 
 }

@@ -9,7 +9,6 @@ import gui.main.GameMain;
 import java.awt.Font;
 import javax.swing.border.Border;
 
-
 public class MyButton extends BasicButtonUI {
     @Override
     public void paint(Graphics g, JComponent c) {

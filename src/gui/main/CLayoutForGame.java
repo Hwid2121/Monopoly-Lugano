@@ -8,19 +8,28 @@ import model.Player;
 
 import java.awt.CardLayout;
 
+
+
+/**
+ *
+ * Main panel of the gameplay of monopoly.
+ * Recursive call to refresh the page.
+ * 
+ * 
+ * 
+ * @author taftan@usi.ch & sardoa@usiu.ch
+ * @version 24/05/2022
+ */
 public class CLayoutForGame extends JPanel {
 
     public static int puttana = 0;
     private CardLayout mainFrame = new CardLayout();
 
-    private GameMain main;
     private Monopoly monopoly = GameMain.monopoly;
 
     private int turn = 1;
     private int numberOfPlayers = monopoly.getNumOfplayer();
     private int skip = 0;
-
-    private Player player;
 
     private int fase = 0;
 
@@ -28,16 +37,21 @@ public class CLayoutForGame extends JPanel {
 
         super();
 
-        main = game;
         setLayout(mainFrame);
 
         turn = turn % numberOfPlayers;
-        player = monopoly.getPLayer(turn);
 
         monopoly(monopoly.getPLayer(turn), fase);
 
     }
 
+
+
+/**
+ * The main panel where all the monopoly is played.
+ * @param player the player  that have to play the turn
+ * @param i the fase of the game
+ */
     public void monopoly(Player player, int i) {
 
         turn = turn % numberOfPlayers;
@@ -50,20 +64,24 @@ public class CLayoutForGame extends JPanel {
 
     }
 
+
+
+
+/**
+ * Refresh the page with the update. If skip = 1 then it will be the turn
+ * of the next player.
+ */
     public void nextPage() {
 
-        // if (monopoly.getPLayer(turn).getTurnsInJail() == -1) {
+        if (skip == 0) {
 
-            if (skip == 0) {
+            PanelMonopoly panelMonopolysa = new PanelMonopoly(this, monopoly.getPLayer(turn));
+            add(panelMonopolysa, "2");
 
-                PanelMonopoly panelMonopolysa = new PanelMonopoly(this, monopoly.getPLayer(turn));
-                add(panelMonopolysa, "2");
-                refreshPAGE();
+            mainFrame.show(this, "2");
+        }
 
-                mainFrame.show(this, "2");
-            }
-        // }
-         else {
+        else {
 
             resetTurn();
             resetfase();
@@ -98,11 +116,6 @@ public class CLayoutForGame extends JPanel {
 
     public void resetfase() {
         fase = 0;
-    }
-
-    public void refreshPAGE() {
-        // mainFrame.show(this, "2");
-        // nextPage();
     }
 
 }

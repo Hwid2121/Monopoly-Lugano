@@ -1,10 +1,9 @@
 package gui;
-import javax.swing.JFrame;
 
+import javax.swing.JFrame;
 
 public class GameFrame extends JFrame {
 
-    // private final Color = ;
 
     public GameFrame() {
         super();

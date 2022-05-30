@@ -1,4 +1,5 @@
 package gui.pregame;
+
 import javax.swing.JPanel;
 import javax.swing.BoxLayout;
 import java.awt.event.ActionEvent;
@@ -13,17 +14,21 @@ import java.util.ArrayList;
 import java.awt.Dimension;
 import javax.swing.Box;
 
+/**
+ * Inset name of the players.
+ * 
+ * @author taftan@usi.ch & sardoa@usiu.ch
+ * @version 24/05/2022
+ */
 public class PanelNickname extends JPanel {
-    
+
     private ArrayList<NicknameForm> playersList = new ArrayList<>();
     private PanelPlayers panel;
-    
+
     public PanelNickname(PanelPlayers pan) {
         super();
 
         panel = pan;
-
-        System.out.println("Numero di giocatoei in panelNick " + GameMain.monopoly.getNumOfplayer());
 
         int num = GameMain.monopoly.getNumOfplayer();
 
@@ -50,7 +55,6 @@ public class PanelNickname extends JPanel {
         button.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                
 
                 int i = 0;
                 for (NicknameForm x : playersList) {
@@ -60,7 +64,6 @@ public class PanelNickname extends JPanel {
                 }
 
                 panel.endPregame();
-               
 
             }
         });

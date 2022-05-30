@@ -13,42 +13,30 @@ import model.*;
  * @version 28/05/2022
  */
 
-
 public class MonopolyPlayerPanel extends JPanel {
 
     private Monopoly monopoly = GameMain.monopoly;
     private int numPlayers = monopoly.getNumOfplayer();
 
-    // JPanel statPanel = new PlayerStatPanel();
-
-
-
     private GridLayout layout = new GridLayout(numPlayers, 2);
 
-    public MonopolyPlayerPanel (){
-        super();    
+    public MonopolyPlayerPanel() {
+        super();
         setLayout(layout);
 
-        // setSize(new DimensionUIResource(, height));
-
         setBackground(GameMain.SFONDO);
-        setBorder(GameMain. BLACKLINE);
-        
+        setBorder(GameMain.BLACKLINE);
+
         setFont(GameMain.COURIER);
 
-        for(Player x: monopoly.getListOfPlayer()){
+        for (Player x : monopoly.getListOfPlayer()) {
 
             add(new PlayerStatPanel(x));
         }
 
-
-
-
     }
 
-
-
-    public  void refreshPage(){
+    public void refreshPage() {
         revalidate();
         repaint();
     }

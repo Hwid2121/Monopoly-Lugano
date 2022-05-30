@@ -2,7 +2,6 @@ package gui;
 
 import java.awt.ComponentOrientation;
 import javax.swing.JPanel;
-import javax.swing.JTextField;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.Component;
@@ -11,26 +10,25 @@ import javax.swing.Box;
 import javax.swing.BoxLayout;
 import javax.swing.JButton;
 import javax.swing.JLabel;
-import javax.swing.SwingUtilities;
 
 import gui.main.GameMain;
-import gui.panels.PanelPregame;
-import model.Card;
 import model.Monopoly;
 import model.Player;
 
 import java.awt.Dimension;
-import java.awt.FlowLayout;
 import java.awt.Font;
 
-public class BonusSquarePANEL extends JPanel implements ActionListener  {
-
-
-
+/**
+ * BonusSquarePanel that contains the frameBOnus.
+ * 
+ * 
+ * @author taftan@usi.ch & sardoa@usiu.ch
+ * @version 24/05/2022
+ */
+public class BonusSquarePANEL extends JPanel implements ActionListener {
 
     private JLabel desc;
     final private BonusSquareFrame framea;
-    final private MonopolyCommandsPanel frameb;
     private JButton button;
     private Font s = new Font("SansSerif", Font.BOLD, 14);
 
@@ -38,91 +36,61 @@ public class BonusSquarePANEL extends JPanel implements ActionListener  {
     private int price;
 
     private Monopoly monopoly = GameMain.monopoly;
-   public BonusSquarePANEL(MonopolyCommandsPanel frameB, BonusSquareFrame frameA, Player players){
-    super();
 
+    public BonusSquarePANEL(MonopolyCommandsPanel frameB, BonusSquareFrame frameA, Player players) {
+        super();
 
-    
-    this.player = players;
-    price = monopoly.getTable().getSquareBonusPrice(player);
+        this.player = players;
+        price = monopoly.getTable().getSquareBonusPrice(player);
 
-    
-    this.frameb = frameB;
-    this.framea = frameA;
+        this.framea = frameA;
 
-    
-    BoxLayout lay = new BoxLayout(this, BoxLayout.Y_AXIS);
-    // FlowLayout lay = new FlowLayout();
-    
-    setLayout(lay);
-    setComponentOrientation(ComponentOrientation.LEFT_TO_RIGHT);
-    setBackground(GameMain.SFONDO);
+        BoxLayout lay = new BoxLayout(this, BoxLayout.Y_AXIS);
 
-    // desc.setBounds(x, y, width, height);
+        setLayout(lay);
+        setComponentOrientation(ComponentOrientation.LEFT_TO_RIGHT);
+        setBackground(GameMain.SFONDO);
 
-    button = new JButton("CONTINUE");
-    // button.setUI(GameMain.BUTTON_STYLE);
-    button.setForeground(GameMain.CREMISI);
-    button.setFont(s);
-    button.setMinimumSize(new Dimension(120, 40));
-    button.setPreferredSize(new Dimension(120, 40));
+        button = new JButton("CONTINUE");
+        button.setForeground(GameMain.CREMISI);
+        button.setFont(s);
+        button.setMinimumSize(new Dimension(120, 40));
+        button.setPreferredSize(new Dimension(120, 40));
 
-    desc = new JLabel(GameMain.monopoly.getTable().getSquareBonusDescr(player.getPosition()));
-    desc.setFont(s);
-    desc.setAlignmentX(Component.CENTER_ALIGNMENT);
-    bonusPlay();
-    // button.setAlignmentX(Component.CENTER_ALIGNMENT);
-    // desc.
-    add(desc);
-    add(Box.createRigidArea(new Dimension(0, 70)));
-    add(button);
-    setVisible(true);
+        desc = new JLabel(GameMain.monopoly.getTable().getSquareBonusDescr(player.getPosition()));
+        desc.setFont(s);
+        desc.setAlignmentX(Component.CENTER_ALIGNMENT);
+        bonusPlay();
+        add(desc);
+        add(Box.createRigidArea(new Dimension(0, 70)));
+        add(button);
+        setVisible(true);
 
-
-    button.addActionListener(new ActionListener() {
-        @Override
-        public void actionPerformed(ActionEvent e) {
-
-            
-            // String s = textField.getText();
+        button.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
 
                 framea.dispose();
-                // frameb.swapPanel();
 
-                
-
-
-
-
-        }
-    });
-
-}
-
-
-public void bonusPlay(){
-
-    if (monopoly.getTable().getSquare(player.getPosition()).getColor().equals("bonus")) {
-
-        player.increaseMoney(price);
-    } else {
-        player.decreaseMoney(price);
-        // if (monopoly.checkbankruptStatus(player)) {
-        //     // bankRuptPLAYmain(player, monopoly);
-        //     skip = 1;
-        //     return;
-        // }
+            }
+        });
 
     }
 
-}
+    public void bonusPlay() {
 
+        if (monopoly.getTable().getSquare(player.getPosition()).getColor().equals("bonus")) {
 
+            player.increaseMoney(price);
+        } else {
+            player.decreaseMoney(price);
 
+        }
 
-@Override
-public void actionPerformed(ActionEvent arg0) {
-    // TODO Auto-generated method stub
-    
-}
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent arg0) {
+
+    }
 }

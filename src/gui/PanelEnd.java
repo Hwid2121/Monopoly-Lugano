@@ -1,6 +1,7 @@
 package gui;
 
 import javax.swing.JPanel;
+
 /**
  * This class rappresents the Monopoly End Game panel.
  * 

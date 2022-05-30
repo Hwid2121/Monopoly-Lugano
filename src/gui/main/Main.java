@@ -11,7 +11,7 @@ import java.awt.EventQueue;
 
 public class Main {
 
-    // add a main method here
+    
     public static void main(String[] args) {
         System.out.println("GUI STARRRRRRRT");
 

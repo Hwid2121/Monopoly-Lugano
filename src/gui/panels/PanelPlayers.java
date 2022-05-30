@@ -2,12 +2,9 @@ package gui.panels;
 
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-// import javax.swing.JTextField;
 import javax.swing.BoxLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
-// import javax.swing.JButton;
 import gui.main.CLayout;
 import gui.main.GameMain;
 import gui.pregame.PanelNickname;
@@ -19,15 +16,17 @@ import java.awt.Dimension;
 import javax.swing.Box;
 import java.awt.Component;
 
-
+/**
+ * Panel Players is the panel where nickname of the players have to be
+ * inserted.
+ * 
+ * @author taftan@usi.ch & sardoa@usiu.ch
+ * @version 24/05/2022
+ */
 public class PanelPlayers extends JPanel implements ActionListener {
 
-    private final Dimension   prfsizeimg = new Dimension(800, 800);
-    private final Dimension  minsizeimg = new Dimension(200, 200);
-
-
-    // private JTextField textField = new JTextField();
-    // private JButton button = new JButton("Submit");
+    private final Dimension prfsizeimg = new Dimension(800, 800);
+    private final Dimension minsizeimg = new Dimension(200, 200);
 
     private PanelNickname panelNick = new PanelNickname(this);
 
@@ -46,17 +45,16 @@ public class PanelPlayers extends JPanel implements ActionListener {
         image = new ImageIcon(img);
         JLabel imagelabel = new JLabel(image);
 
-        imagelabel.setMinimumSize( minsizeimg);
-        imagelabel.setPreferredSize(  prfsizeimg);
+        imagelabel.setMinimumSize(minsizeimg);
+        imagelabel.setPreferredSize(prfsizeimg);
 
         add(imagelabel);
 
         add(Box.createVerticalGlue());
-        // add(jb1);
+
         add(Box.createRigidArea(new Dimension(0, 70)));
 
         imagelabel.setAlignmentX(CENTER_ALIGNMENT);
-        // jb1.setAlignmentX(CENTER_ALIGNMENT);
 
         setBackground(GameMain.SFONDO);
         Component rigidArea = Box.createRigidArea(new Dimension(0, 50));
@@ -85,6 +83,9 @@ public class PanelPlayers extends JPanel implements ActionListener {
 
     }
 
+    /**
+     * End of the Pregame phase.
+     */
     public void endPregame() {
         parentFrame.endPreGame();
     }
