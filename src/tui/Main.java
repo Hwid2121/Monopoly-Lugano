@@ -54,7 +54,7 @@ public class Main {
      * And the turn will skip.
      * 
      * @param player           that play in that turn
-     * @param RefactorMain.monopoly the main class where the game is strutured
+     * @param monopoly the main class where the game is strutured
      *
      */
     public void elimininationPLAYmain(Player player, Monopoly monopoly) {
@@ -68,7 +68,7 @@ public class Main {
      * Else will brake.
      * 
      * @param player           that play in that turn
-     * @param RefactorMain.monopoly the main class where the game is strutured
+     * @param monopoly the main class where the game is strutured
      *
      */
     public void bankRuptPLAYmain(Player player, Monopoly monopoly) {
@@ -81,7 +81,7 @@ public class Main {
      * to let the player take the card and active its effect.
      * 
      * @param player           that play in that turn
-     * @param RefactorMain.monopoly the main class where the game is strutured
+     * @param monopoly the main class where the game is strutured
      *
      */
     public void cardsPLAYmain(Player player, Monopoly monopoly) {
@@ -94,7 +94,7 @@ public class Main {
      * and will be moved to the position 30 where is the jail.
      * 
      * @param player           that play in that turn
-     * @param RefactorMain.monopoly the main class where the game is strutured
+     * @param monopoly the main class where the game is strutured
      *
      */
     public void gotoPLAYmain(Player player, Monopoly monopoly) {
@@ -111,7 +111,7 @@ public class Main {
      * if the player go under 0 chf then bankrupt will be activated.
      * 
      * @param player           that play in that turn
-     * @param RefactorMain.monopoly the main class where the game is strutured
+     * @param monopoly the main class where the game is strutured
      *
      */
     public void bonusPLAYmain(Player player, Monopoly monopoly) {
@@ -127,7 +127,7 @@ public class Main {
      * - trying to do a perfect pair
      * 
      * @param player           that play in that turn
-     * @param RefactorMain.monopoly the main class where the game is strutured
+     * @param monopoly the main class where the game is strutured
      *
      */
     public void jailPLAYmain(Player player, Monopoly monopoly) {
@@ -266,7 +266,7 @@ public class Main {
      * some actions.
      * 
      * @param player           that play in that turn
-     * @param RefactorMain.monopoly the main class where the game is strutured
+     * @param monopoly the main class where the game is strutured
      *
      */
     public void emptyPLAYmain(Player player, Monopoly monopoly) {
@@ -317,7 +317,7 @@ public class Main {
      * the rent.
      * 
      * @param player           that play in that turn
-     * @param RefactorMain.monopoly the main class where the game is strutured
+     * @param monopoly the main class where the game is strutured
      *
      */
     public void propertysquareplay(Player player, Monopoly monopoly) {
@@ -428,7 +428,7 @@ public class Main {
      * A player can buy houses and Hotel if own the propertySquare.
      * 
      * @param player           that play in that turn
-     * @param RefactorMain.monopoly the main class where the game is strutured
+     * @param monopoly the main class where the game is strutured
      *
      */
     public void hotelBUY(Player player, Monopoly monopoly) {
@@ -520,7 +520,7 @@ public class Main {
      * Build in the property of the player the amount of hotel or houses requested.
      * 
      * @param player           that play in that turn
-     * @param RefactorMain.monopoly the main class where the game is strutured
+     * @param monopoly the main class where the game is strutured
      *
      */
     public void propertySquareBUILD(Player player, Monopoly monopoly, int num) {
@@ -580,8 +580,8 @@ public class Main {
      * When the player has enough money and the square is not own by another
      * player can buy the porpertysquare.
      * 
-     * @param player           that play in that turn
-     * @param RefactorMain.monopoly the main class where the game is strutured
+     * @param player that play in that turn
+     * @param monopoly the main class where the game is strutured
      *
      */
     public void propertysquarebuy(Player player, Monopoly monopoly) {
@@ -624,9 +624,9 @@ public class Main {
     /**
      * Check if the propertySquare own by the player
      * 
-     * @param player           that play in that turn
-     * @param RefactorMain.monopoly the main class where the game is strutured
-     * @param color            the color of the square where the player is
+     * @param player that play in that turn
+     * @param monopoly the main class where the game is strutured
+     * @param color the color of the square where the player is
      *
      */
     public void checkmonopolyProperty(Player player, Monopoly monopoly, String color) {
