@@ -3,7 +3,6 @@ import java.util.Scanner; // Import the Scanner class
 import model.JailSquare;
 import model.Monopoly;
 import model.Player;
-import model.PropertySquare;
 import model.cardsDeck;
 import model.Card;
 /**
@@ -24,8 +23,6 @@ public class auxmain {
     public int status = 0;
     public int skip = 0;
     private String chf = " chf";
-    private int turn = 0;
-    private String nName = "\nName: ";
 
     public void preGameStatus(){
 

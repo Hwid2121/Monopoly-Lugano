@@ -4,7 +4,6 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.Box;
 import javax.swing.BoxLayout;
-import javax.swing.JButton;
 
 import java.awt.Font;
 import java.awt.Color;
@@ -16,7 +15,6 @@ import javax.swing.JPanel;
 
 import gui.main.GameMain;
 
-import model.Card;
 
 import java.awt.Dimension;
 
@@ -26,10 +24,6 @@ import java.awt.event.ActionListener;
 
 
 public class EmptySquarePopUpFrame extends JFrame implements ActionListener  {
-
-    private JPanel pop;
-    private Font s = new Font("SansSerif", Font.BOLD, 14);
-    
 
     public EmptySquarePopUpFrame(MonopolyCommandsPanel parentPanel){
 
