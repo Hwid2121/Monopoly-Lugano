@@ -33,6 +33,7 @@ public class MonopolyCommandsPanel extends JPanel implements ActionListener {
     // JButton button4;
     // JButton button5;
     private PopUpPickCardFrame pop ;
+    private InfoSquareFrame infoFrame;
     private EmptySquarePopUpFrame emp;
     private Clicklistener click = new Clicklistener();
     private JButton buy = new JButton("BUY");
@@ -42,6 +43,8 @@ public class MonopolyCommandsPanel extends JPanel implements ActionListener {
     private JButton pay = new JButton("PAY FINE");
     private JButton dice = new JButton("TROW DICE");
     private JButton card = new JButton("USE CARD");
+    private JButton info = new JButton("INFO SQUARE");
+    
 
     private JButton pick = new JButton("PICK CARD");
     private Player player;
@@ -95,17 +98,17 @@ public class MonopolyCommandsPanel extends JPanel implements ActionListener {
 
                 switch (monopoly.getTable().getSquare(player.getPosition()).getColor()) {
 
-                    // case "cards":
-                    //     pickCard();
-                    //     break;
+                    case "cards":
+                        pickCard();
+                        break;
 
                     // case "jail":
                     //     jailSquare();
                     //     break;
 
-                    // case "empty":
-                    //     emptySquare();
-                    //     break;
+                    case "empty":
+                        emptySquare();
+                        break;
                     // case "goto":
                     //     goToJailSquare();
                     //     break;
@@ -119,7 +122,8 @@ public class MonopolyCommandsPanel extends JPanel implements ActionListener {
                         // if(monopoly.getTable().getPropertySquare(player.getPosition()).getOwner() == null){
                         //     propertySquareEMPTY();
                         // } else propertySquareOwned();
-                        emptySquare();
+                        // emptySquare();
+                        propertySquareEMPTY();
                         break;
 
 
@@ -144,9 +148,48 @@ public class MonopolyCommandsPanel extends JPanel implements ActionListener {
 
             public void actionPerformed(ActionEvent arg) {
 
+                if (player.getMoney() >= monopoly.getTable().getSquarePrice(player.getPosition()) ){
+
+
+
+                }
+                else{
+
+                }
+
+
             }
 
         });
+
+        
+
+        info.addActionListener(new ActionListener() {
+
+            public void actionPerformed(ActionEvent arg) {
+
+                // cardsDeck deck = new cardsDeck();
+                // Card card = deck.randomCard();
+                // System.out.println("CARD: " + card.getDescription());
+
+                // deck.playCard(deck.getIndex(), player);
+
+                // pop = new PopUpPickCardFrame(card, (MonopolyCommandsPanel) pick.getParent());
+                
+                // pop.setVisible(true);
+
+                // main.nextPage();
+
+
+
+                infoFrame = new InfoSquareFrame((MonopolyCommandsPanel) pick.getParent(), player, monopoly);
+                infoFrame.setVisible(true);
+
+            }
+
+        });
+
+        
 
         sell.addActionListener(new ActionListener() {
 
@@ -159,7 +202,7 @@ public class MonopolyCommandsPanel extends JPanel implements ActionListener {
         pass.addActionListener(new ActionListener() {
 
             public void actionPerformed(ActionEvent arg) {
-
+                
                 main.passTurn();
 
             }
@@ -272,9 +315,13 @@ public class MonopolyCommandsPanel extends JPanel implements ActionListener {
 
     public void propertySquareEMPTY() {
 
-       
-
+        info.setPreferredSize(dim);
+        buy.setPreferredSize(dim);
         pass.setPreferredSize(dim);
+
+        // this.add(infoFrame);
+        this.add(info);
+        this.add(buy);
         this.add(pass);
 
     }
