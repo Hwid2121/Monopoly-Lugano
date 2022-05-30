@@ -56,8 +56,8 @@ public class House {
      *
      * 
      */
-    public int getPrice(int i) {
-        switch (i) {
+    public int getPrice(int index) {
+        switch (index) {
             case 1:
                 return price1;
             case 2:

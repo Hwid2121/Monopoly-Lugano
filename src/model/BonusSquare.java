@@ -1,7 +1,7 @@
 package model;
 
 /**
- * This class rapresent the bonus square of the table such as:
+ * This class rapresent the bonus square of the table such as.
  * - Start
  * - Bonus (in future cards)
  * - Malus (in future cards)

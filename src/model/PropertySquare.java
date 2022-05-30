@@ -29,6 +29,7 @@ public class PropertySquare extends Square {
      * @param name      of the propertySquare
      * @param color     of the propertySquare, used as an ID of the square
      * @param priceSell of the propertySquare
+     * @param position of the propertySquare
      * @param bh        building price for the propertySquare
      * @param p1        pricetax for 1 house
      * @param p2        pricetax for 2 houses

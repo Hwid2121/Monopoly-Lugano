@@ -9,7 +9,7 @@ import java.util.ArrayList;
  * - PropertySquare
  * 
  *
- * @author Nicolo' Tafta & Alberto Sardo
+ * @author taftan@usi.ch & sardoa@usi.ch
  * @version 28/04/2022
  */
 public class Table {
@@ -42,9 +42,7 @@ public class Table {
      * The Array of Square, composed by child Classes:
      * - BonusSquare
      * - PropertySquare
-     * 
      * 40 Square.
-     * 
      */
     public void newtable() {
         cell[0] = new BonusSquare("Start", bonus, "Collect 200.- salary as you pass", 200);
@@ -172,8 +170,8 @@ public class Table {
     public int getSquarePrice(int pos) {
         Object obj = this.getSquare(pos);
         if (obj instanceof PropertySquare) {
-            PropertySquare s = (PropertySquare) obj;
-            return s.getPrice();
+            PropertySquare string = (PropertySquare) obj;
+            return string.getPrice();
         }
         return 0;
     }
@@ -190,9 +188,9 @@ public class Table {
 
         Object obj = this.getSquare(pos);
         if (obj instanceof PropertySquare) {
-            PropertySquare s = (PropertySquare) obj;
+            PropertySquare string = (PropertySquare) obj;
 
-            return s.getHouse();
+            return string.getHouse();
         }
         return null;
 
@@ -208,9 +206,9 @@ public class Table {
     public int getSquarePriceTax(int pos) {
         Object obj = this.getSquare(pos);
         if (obj instanceof PropertySquare) {
-            PropertySquare s = (PropertySquare) obj;
+            PropertySquare string = (PropertySquare) obj;
 
-            return s.getPriceTax();
+            return string.getPriceTax();
         }
         return 0;
     }
@@ -227,7 +225,7 @@ public class Table {
     /**
      * Get the Owner of the propertySquare.
      * 
-     * @param for the index of the Square in the Table
+     * @param pos the index of the Square in the Table
      * @return the Owner of the Square if it is a propertySquare else null
      * 
      */
@@ -243,8 +241,9 @@ public class Table {
     /**
      * Get the nickname of the owner of the propertySquare.
      * 
-     * @return the nickname of the owner
      * @param pos for the index of the Square in the table
+     * @return the nickname of the owner
+     * 
      */
     public String getSquareOwnerToString(int pos) {
 
@@ -272,8 +271,8 @@ public class Table {
     /**
      * Get the price of the BonusSquare.
      * 
-     * @return the price of the Square if it is a bonusSquare else return -1
      * @param player for take the position and take it as index in Table
+     * @return the price of the Square if it is a bonusSquare else return -1
      * 
      */
     public int getSquareBonusPrice(Player player) {
@@ -303,6 +302,13 @@ public class Table {
 
     }
 
+
+
+    /**
+     * Get the list of squres.
+
+     * @return the square list
+     */
     public Square[] getCell() {
         return cell;
     }
@@ -310,16 +316,16 @@ public class Table {
     /**
      * Get the propertySquare at index pos in the table.
      * 
-     * @return the Square at index pos if it is a propertySquare else
-     *         return null
+     * 
      * @param pos for index in the table
+     * @return the propertySquare at index pos
      */
     public PropertySquare getPropertySquare(int pos) {
         Object obj = this.getSquare(pos);
 
         if (obj instanceof PropertySquare) {
-            PropertySquare s = (PropertySquare) obj;
-            return s;
+            PropertySquare string = (PropertySquare) obj;
+            return string;
         }
         return null;
 
@@ -334,8 +340,9 @@ public class Table {
      * - 3 squares for red, azure, pink, orange, yellow
      * - 4 for Squares park
      * 
-     * @return true if the player did monopoly color, false otherwise
      * @param player for check its properties
+     * @return true if the player did monopoly color, false otherwise
+     * 
      */
     public boolean getMonopolyColor(Player player) {
 
@@ -358,8 +365,8 @@ public class Table {
                 Object obj = pr;
 
                 if (obj instanceof PropertySquare) {
-                    PropertySquare s = (PropertySquare) obj;
-                    s.setPriceTaxMonopoly();
+                    PropertySquare string = (PropertySquare) obj;
+                    string.setPriceTaxMonopoly();
 
                 }
             }
@@ -389,11 +396,11 @@ public class Table {
             Object obj = pr;
 
             if (obj instanceof PropertySquare) {
-                PropertySquare s = (PropertySquare) obj;
+                PropertySquare string = (PropertySquare) obj;
 
-                if (s.getColor() == color) {
+                if (string.getColor() == color) {
 
-                    list.add(s);
+                    list.add(string);
                 }
 
             }
@@ -424,8 +431,8 @@ public class Table {
         Object obj = this.getSquare(pos);
 
         if (obj instanceof PropertySquare) {
-            PropertySquare s = (PropertySquare) obj;
-            s.resetOwner();
+            PropertySquare string = (PropertySquare) obj;
+            string.resetOwner();
 
         }
     }

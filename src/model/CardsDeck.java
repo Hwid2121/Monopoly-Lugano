@@ -85,6 +85,7 @@ public class CardsDeck {
 
     /**
      * getIndex of the card.
+     * @return the index of the card
      */
     public int getIndex() {
         return index;
@@ -144,6 +145,9 @@ public class CardsDeck {
                 break;
             case 14:
                 Card.card14(player);
+                break;
+
+            default:
                 break;
         }
 

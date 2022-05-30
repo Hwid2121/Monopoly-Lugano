@@ -20,7 +20,6 @@ public class Player {
     private ArrayList<PropertySquare> listofPropertySquares = new ArrayList<PropertySquare>();
 
     /**
-     * 
      * The constructor of Player that take the nickname.
      * set the money of default by 1500 and the positio at 0.
      * 
@@ -261,14 +260,14 @@ public class Player {
         if (listofPropertySquares.isEmpty()) {
             return "No properties";
         } else {
-            String s = listofPropertySquares.get(0).getName();
+            String string = listofPropertySquares.get(0).getName();
 
-            for (int i = 1; i < listofPropertySquares.size(); i++) {
+            for (int index = 1; index < listofPropertySquares.size(); index++) {
 
-                s = s + " ," + listofPropertySquares.get(i).getName();
+                string = string + " ," + listofPropertySquares.get(index).getName();
 
             }
-            return s;
+            return string;
         }
     }
 

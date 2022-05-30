@@ -217,7 +217,7 @@ public class Main {
                         // RefactorMain.monopoly.getTable().getSquareName(RefactorMain.monopoly.getPLayer(turn).getPosition()));
 
                         // startTurn(player, RefactorMain.monopoly);
-                        gameStatusPLAY();
+                        gameStatusPlay();
 
                         break;
 
@@ -251,7 +251,7 @@ public class Main {
                         break;
                     }
 
-                    gameStatusPLAY();
+                    gameStatusPlay();
 
                     break;
                 default:
@@ -705,8 +705,8 @@ public class Main {
      */
     public void payrent(Player player, Monopoly monopoly) {
         System.out.println(
-                "Oh no, this property is owned by: " +
-                        RefactorMain.monopoly.getTable().getSquareOwnerToString(player.getPosition()));
+                "Oh no, this property is owned by: " 
+                +   RefactorMain.monopoly.getTable().getSquareOwnerToString(player.getPosition()));
         System.out.println(
                 "You have to pay: " + RefactorMain.monopoly.getTable().getSquarePriceTax(player.getPosition()));
         RefactorMain.monopoly.getTable().getPropertySquare(player.getPosition()).payrent();
@@ -714,9 +714,9 @@ public class Main {
     }
 
     /**
-     * GamestatusPlay the main method of the class.
+     * gameStatusPlay the main method of the class.
      */
-    public void gameStatusPLAY() {
+    public void gameStatusPlay() {
 
         while (RefactorMain.monopoly.monopolyEND()) {
 
@@ -783,7 +783,7 @@ public class Main {
         System.out.println(
                 "Every player start with 1500 chf \n  If you go bankrupt you lose \n Win the last player with money");
 
-        gameStatusPLAY();
+        gameStatusPlay();
 
     }
 
@@ -827,6 +827,10 @@ public class Main {
             case -1:
                 System.out.println("Game finished status");
                 game.finishStatus();
+
+            default:
+                System.out.println("Error status");
+                break;
 
         }
 

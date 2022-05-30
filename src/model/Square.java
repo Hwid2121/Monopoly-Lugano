@@ -1,7 +1,7 @@
 package model;
 
 /**
- * this class rapresents all the square in the table, this class have 2 childs:
+ * this class rapresents all the square in the table, this class have 2 childs.
  * - PropertySquare
  * - BonusSquare
  *

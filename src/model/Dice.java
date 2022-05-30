@@ -7,7 +7,7 @@ import java.util.Random;
  * postion of the player.
  * 
  *
- * @author Nicolo' Tafta & Alberto Sardo
+ * @author taftan@usi.ch & sardoa@usi.ch
  * @version 28/04/2022
  */
 
