@@ -154,6 +154,16 @@ public class CLayoutForGame extends JPanel {
 
             mainFrame.show(this, "3");
         }
+        else {
+            //Generate End Panel
+            JFrame f = new JFrame("CONGRATULATIONS!");
+            f.getContentPane().setBackground(GameMain.SFONDO);
+            f.setLocationRelativeTo(null);
+            f.add(new PanelEnd(monopoly));
+            f.setSize(400, 400);
+            f.setVisible(true);
+            f.pack();
+        }
 
     }
 
