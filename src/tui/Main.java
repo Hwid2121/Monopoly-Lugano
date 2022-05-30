@@ -1,11 +1,9 @@
 package tui;
-import java.util.Scanner; // Import the Scanner class
 import model.JailSquare;
 import model.Monopoly;
 import model.Player;
 import model.PropertySquare;
-import model.cardsDeck;
-import model.Card;
+
 
 /**
  * This is the main of the TUI
