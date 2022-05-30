@@ -1,12 +1,14 @@
 package gui;
 
+
 import model.Monopoly;
 
-import java.awt.Font;
 import java.awt.BorderLayout;
 import java.awt.Color;
+import java.awt.Font;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+
 
 
 /**

@@ -218,9 +218,9 @@ public class Monopoly {
         Object obj = this.table.getSquare(player.getPosition());
 
         if (obj instanceof PropertySquare) {
-            PropertySquare s = (PropertySquare) obj;
+            PropertySquare string = (PropertySquare) obj;
 
-            return s.getOwner() == player;
+            return string.getOwner() == player;
         } else {
             return false;
 

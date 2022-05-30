@@ -1,10 +1,11 @@
 package gui;
 
+import model.Player;
 import model.Card;
+import model.CardsDeck;
 import model.JailSquare;
 import model.Monopoly;
-import model.Player;
-import model.CardsDeck;
+
 
 import java.awt.ComponentOrientation;
 import java.awt.Dimension;
@@ -13,6 +14,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JPanel;
+
 
 
 /**
@@ -66,7 +68,6 @@ public class MonopolyCommandsPanel extends JPanel implements ActionListener {
         this.player = playerx;
         main = mainb;
 
-        
         this.setComponentOrientation(ComponentOrientation.LEFT_TO_RIGHT);
 
         setBackground(GameMain.SFONDO);
@@ -136,8 +137,8 @@ public class MonopolyCommandsPanel extends JPanel implements ActionListener {
 
             public void actionPerformed(ActionEvent arg) {
 
-                if (player.getMoney() >= monopoly.getTable().getSquarePrice(player.getPosition()) 
-                && monopoly.getTable().getSquareOwner(player.getPosition()) == null) {
+                if (player.getMoney() >= monopoly.getTable().getSquarePrice(player.getPosition())
+                        && monopoly.getTable().getSquareOwner(player.getPosition()) == null) {
 
                     monopoly.getTable().setSquareOwner(player);
                     player.buyPropertySquare(monopoly.getTable().getPropertySquare(player.getPosition()));

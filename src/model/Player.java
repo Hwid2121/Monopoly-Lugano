@@ -195,16 +195,16 @@ public class Player {
      * Then increase the money of the player by the price sell of the
      * propertySquare.
      * 
-     * @param i  as index in the listOfPropertySquare
-     * @param ps property square to remove from the listOfPropertySquare
+     * @param index  as index in the listOfPropertySquare
+     * @param propertySquareTemp property square to remove from the listOfPropertySquare
      * 
      */
-    public void sellPropertySquare(int i, PropertySquare ps) {
-        int cash = listofPropertySquares.get(i).getPriceSell();
+    public void sellPropertySquare(int index, PropertySquare propertySquareTemp) {
+        int cash = listofPropertySquares.get(index).getPriceSell();
 
         this.increaseMoney(cash);
 
-        listofPropertySquares.remove(ps);
+        listofPropertySquares.remove(propertySquareTemp);
 
     }
 

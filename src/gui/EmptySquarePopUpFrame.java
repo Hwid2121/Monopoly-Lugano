@@ -15,7 +15,6 @@ import javax.swing.JPanel;
 
 
 /**
- * 
  * EmptySquarePopUpFrame that contains the the emptySquare popup.
  * 
  * @author taftan@usi.ch & sardoa@usiu.ch

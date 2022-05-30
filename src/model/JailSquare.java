@@ -1,15 +1,17 @@
 package model;
+
+
 /**
- * Jailsquare rapresent the prison where a player could reach in 2 ways:
+ * Jailsquare rapresent the prison where a player could reach in 2 ways.
  *  - By card
  *  - By dice
- * 
  * for escape have to do a perfect pair and after can throw again the dice or
  * pay 50 chf or by the card "Free from jail".
  *
  * @author Nicolo' Tafta & Alberto Sardo
  * @version 28/04/2022
  */
+
 public class JailSquare extends Square {
 
     private Dice dice;
@@ -59,8 +61,7 @@ public class JailSquare extends Square {
     /**
      * Decrease the day in jail of the player.
      * @param player where to decrese the money   
-     *
-     *  
+     * 
      */
     public static void decreseDayInJail(Player player){
         player.decreseDayInJail();
