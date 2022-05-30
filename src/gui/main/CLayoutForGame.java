@@ -3,6 +3,7 @@ package gui.main;
 
 import javax.swing.JPanel;
 import gui.panels.PanelMonopoly;
+import gui.panels.PanelPlayers;
 import model.Monopoly;
 import model.Player;
 
@@ -54,6 +55,8 @@ public class CLayoutForGame extends JPanel {
  */
     public void monopoly(Player player, int i) {
 
+
+        checkEndGame();
         turn = turn % numberOfPlayers;
         player = monopoly.getPLayer(turn);
 
@@ -116,6 +119,30 @@ public class CLayoutForGame extends JPanel {
 
     public void resetfase() {
         fase = 0;
+    }
+
+
+
+    public void checkEndGame(){
+        if(monopoly.monopolyEND()){
+
+
+            JPanel end = new PanelPlayers(null);
+            // ENDPANEL panelMonopolysa = new PanelMonopoly(this, monopoly.getPLayer(turn));
+            // add(ENDPANE, "3");
+            add(end, "3");
+
+            mainFrame.show(this, "3");
+        }
+
+        
+
+
+
+
+
+
+
     }
 
 }
