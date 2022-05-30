@@ -1,14 +1,15 @@
 
 package gui.main;
-
+import javax.swing.JButton;
+import javax.swing.JFrame;
 import javax.swing.JPanel;
 import gui.panels.PanelMonopoly;
 import gui.panels.PanelPlayers;
 import model.Monopoly;
 import model.Player;
-
+import gui.PanelEnd;
 import java.awt.CardLayout;
-
+import java.awt.Color;
 
 
 /**
@@ -133,6 +134,16 @@ public class CLayoutForGame extends JPanel {
             add(end, "3");
 
             mainFrame.show(this, "3");
+        }
+        else {
+            //Generate End Panel
+            JFrame f = new JFrame("CONGRATULATIONS!");
+            f.getContentPane().setBackground(GameMain.SFONDO);
+            f.setLocationRelativeTo(null);
+            f.add(new PanelEnd(monopoly));
+            f.setSize(400, 400);
+            f.setVisible(true);
+            f.pack();
         }
 
         
