@@ -14,7 +14,7 @@ import org.junit.Test;
 public class cardsDeckTest {
 
     @Test
-    public void cardsDeckTest() {
+    public void cardsDecksTest() {
         cardsDeck cardsDeck = new cardsDeck();
         cardsDeck.newCards();
     }

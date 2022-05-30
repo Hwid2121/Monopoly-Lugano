@@ -1,144 +1,148 @@
 
 package gui.main;
+
 import javax.swing.JPanel;
 import gui.panels.PanelMonopoly;
+import gui.panels.PanelPlayers;
 import model.Monopoly;
 import model.Player;
 
 import java.awt.CardLayout;
 
 
-public class CLayoutForGame extends JPanel  {
 
+/**
+ *
+ * Main panel of the gameplay of monopoly.
+ * Recursive call to refresh the page.
+ * 
+ * 
+ * 
+ * @author taftan@usi.ch & sardoa@usiu.ch
+ * @version 24/05/2022
+ */
+public class CLayoutForGame extends JPanel {
 
+    public static int puttana = 0;
+    private CardLayout mainFrame = new CardLayout();
 
-    public   static int puttana = 0;
-    private CardLayout mainFrame  = new CardLayout();
-
-    private GameMain main;
     private Monopoly monopoly = GameMain.monopoly;
 
-
-
-    private int turn =0;
+    private int turn = 1;
     private int numberOfPlayers = monopoly.getNumOfplayer();
     private int skip = 0;
 
-    private Player player;
-
     private int fase = 0;
 
-
-
-    
     public CLayoutForGame(GameMain game) {
 
-    
         super();
 
-        main = game;
         setLayout(mainFrame);
 
-        
-        
-
-
-        // while(GameMain.monopoly.monopolyEND()){
-
-            
-            
-  
-            
-            player =  monopoly.getPLayer(turn);
-            turn = turn % numberOfPlayers;
-            monopoly(monopoly.getPLayer(turn), fase);
-
-
-
-
-
-        // }
-        
-        
-
-
-        
-
-        
-        
-    }
-
-
-    public void monopoly(Player player, int i) {
-        PanelMonopoly panelMonopoly = new PanelMonopoly(this, player);
-        add(panelMonopoly, "1");
-        
-        mainFrame.show(this, "1");
-        
-    }   
-
-
-    public void refresh(){
-
-       System.out.println("POSIXIONE PLA" + monopoly.getListOfPlayer().get(0).getPosition());
-
-    }
-
-
-    public void nextPage(){
-        if(skip == 0){
-        PanelMonopoly panelMonopolys = new PanelMonopoly(this, player);
-        add(panelMonopolys, "2");
-        // incrementFase();
-        // setFase(1);
-
-        // mainFrame.next(this);
-        mainFrame.show(this, "2");
-    } else{
-        
-        resetTurn();
-        resetfase();
-        turn = turn +1;
         turn = turn % numberOfPlayers;
 
         monopoly(monopoly.getPLayer(turn), fase);
 
     }
+
+
+
+/**
+ * The main panel where all the monopoly is played.
+ * @param player the player  that have to play the turn
+ * @param i the fase of the game
+ */
+    public void monopoly(Player player, int i) {
+
+
+        checkEndGame();
+        turn = turn % numberOfPlayers;
+        player = monopoly.getPLayer(turn);
+
+        PanelMonopoly panelMonopoly = new PanelMonopoly(this, player);
+        add(panelMonopoly, "1");
+
+        mainFrame.show(this, "1");
+
     }
 
-    
 
+
+
+/**
+ * Refresh the page with the update. If skip = 1 then it will be the turn
+ * of the next player.
+ */
+    public void nextPage() {
+
+        if (skip == 0) {
+
+            PanelMonopoly panelMonopolysa = new PanelMonopoly(this, monopoly.getPLayer(turn));
+            add(panelMonopolysa, "2");
+
+            mainFrame.show(this, "2");
+        }
+
+        else {
+
+            resetTurn();
+            resetfase();
+            turn = turn + 1;
+            turn = turn % numberOfPlayers;
+
+            monopoly(monopoly.getPLayer(turn), fase);
+
+        }
+    }
 
     public int getFase() {
         return fase;
     }
 
-
     public void incrementFase() {
-        fase = fase +1;
+        fase = fase + 1;
     }
 
-    public void setFase(int i){
+    public void setFase(int i) {
         fase = i;
     }
 
-
-
-    public void passTurn(){
+    public void passTurn() {
         skip = 1;
         nextPage();
     }
 
-    public void resetTurn(){
+    public void resetTurn() {
         skip = 0;
     }
 
-
-    public void resetfase(){
+    public void resetfase() {
         fase = 0;
     }
 
 
 
-     
+    public void checkEndGame(){
+        if(monopoly.monopolyEND()){
+
+
+            JPanel end = new PanelPlayers(null);
+            // ENDPANEL panelMonopolysa = new PanelMonopoly(this, monopoly.getPLayer(turn));
+            // add(ENDPANE, "3");
+            add(end, "3");
+
+            mainFrame.show(this, "3");
+        }
+
+        
+
+
+
+
+
+
+
+    }
+
 }

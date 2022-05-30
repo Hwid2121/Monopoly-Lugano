@@ -14,6 +14,13 @@ import java.awt.Font;
 
 import java.awt.Dimension;
 
+/**
+ * NicknameFOrm where inser the nicknames of the players.
+ * 
+ * 
+ * @author taftan@usi.ch & sardoa@usiu.ch
+ * @version 24/05/2022
+ */
 public class NicknameForm extends JPanel {
 
     private JTextField textField;

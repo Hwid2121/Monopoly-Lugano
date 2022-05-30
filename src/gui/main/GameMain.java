@@ -1,4 +1,5 @@
 package gui.main;
+
 import gui.MyButton;
 import java.awt.Color;
 import model.*;
@@ -10,6 +11,13 @@ import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
+/**
+ * Main frame where monopoly is shown.
+ * 
+ * 
+ * @author taftan@usi.ch & sardoa@usiu.ch
+ * @version 24/05/2022
+ */
 public class GameMain extends JFrame {
 
     public final static MyButton BUTTON_STYLE = new MyButton();
@@ -25,25 +33,18 @@ public class GameMain extends JFrame {
     public static final Color BLU = new Color(0, 114, 187, 255);
     public static final Color CREMISI = new Color(192, 43, 77, 255);
 
-    public static final Border  BLACKLINE = BorderFactory.createLineBorder(GameMain.CREMISI);
+    public static final Border BLACKLINE = BorderFactory.createLineBorder(GameMain.CREMISI);
     public static final Font COURIER = new Font("SansSerif", Font.BOLD, 22);
 
     public static Monopoly monopoly = new Monopoly();
-
-    // private CLayout clayout;
-
-
-    private int status = 0;
 
     private CLayout clayout = new CLayout(this);
 
     private JPanel pannello = new JPanel();
 
     private CardLayout mainframe = new CardLayout();
-    
-    private ImageIcon img = new ImageIcon("src/gui/images/icon.png");
 
-    // private JFrame frame = new JFrame("Monopoly Lugano");
+    private ImageIcon img = new ImageIcon("src/gui/images/icon.png");
 
     public GameMain() {
         super();
@@ -53,55 +54,28 @@ public class GameMain extends JFrame {
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setLocationRelativeTo(null);
         this.setExtendedState(JFrame.MAXIMIZED_BOTH);
-        
 
         pannello.setLayout(mainframe);
 
-        // pannello.add(, "1");
         pannello.add(clayout, "1");
-        
 
         this.add(pannello);
 
-        
-
-
         mainframe.show(pannello, "1");
 
-
-
-        
-
-
-
-
-        // clayout = new CLayout(this);
-        // add(clayout);
-
-        
-        // mainGame();
         this.pack();
         this.setVisible(true);
 
     }
 
-    // public void preGame() {
-
-    //     CLayout clayout = new CLayout(this);
-    //     add(clayout);
-
-    //     this.pack();
-
-    // }
-
+    /**
+     * Change the stage of the game with mainGame() card.
+     *
+     */
     public void mainGame() {
-        // private CLayoutForGame monopolyGUI = new CLayoutForGame(this);
         CLayoutForGame monopolyGUI = new CLayoutForGame(this);
-        // add(monopolyGUI);
-        // pack();
         pannello.add(monopolyGUI, "2");
         mainframe.show(pannello, "2");
-        // mainframe.next(pannello);
 
     }
 

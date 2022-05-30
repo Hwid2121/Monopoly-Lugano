@@ -21,13 +21,22 @@ import javax.swing.ImageIcon;
 import java.awt.Dimension;
 import javax.swing.Box;
 
+/**
+ * PanelPregame the first panel that the user will
+ * see.
+ * User can exit or play.
+ * 
+ * 
+ * @author taftan@usi.ch & sardoa@usiu.ch
+ * @version 24/05/2022
+ */
 public class PanelPregame extends JPanel {
 
-    private final Dimension   prfsizeimg = new Dimension(800, 800);
-    private final Dimension  minsizeimg = new Dimension(200, 200);
+    private final Dimension prfsizeimg = new Dimension(800, 800);
+    private final Dimension minsizeimg = new Dimension(200, 200);
 
-    private final Dimension  pfrsizebutton = new Dimension(200, 50);
-    private final Dimension  minsizebutton = new Dimension(200, 50);
+    private final Dimension pfrsizebutton = new Dimension(200, 50);
+    private final Dimension minsizebutton = new Dimension(200, 50);
 
     private CLayout parentFrame;
 
@@ -37,7 +46,6 @@ public class PanelPregame extends JPanel {
         parentFrame = frame;
 
         JButton jb1 = new JButton("Play!");
-        // JButton jb2 = new JButton("Rules");
         JButton jb3 = new JButton("Exit");
 
         jb3.addActionListener(new ActionListener() {
@@ -57,82 +65,46 @@ public class PanelPregame extends JPanel {
             public void actionPerformed(ActionEvent e) {
 
                 numPlayeFrame.setVisible(true);
-                // getRootPane().setGlassPane(new JPanel(){
-                // @Override
-                // public void paintComponent(Graphics g) {
-                // g.setColor(new Color(0,0,0,125));
-                // g.fillRect(0, 0, getWidth(), getHeight());
-                // }
-                // });
-                // getRootPane().getGlassPane().setVisible(true);
-                // numPlayeFrame.addWindowListener(new WindowListener() {
-                // public void windowOpened(WindowEvent e) {
-                // }
-                // public void windowClosing(WindowEvent e) {
-                // getRootPane().
-                // }
-                // public void windowClosed(WindowEvent e) {
-                // }
-                // public void windowIconified(WindowEvent e) {
-                // }
-                // public void windowDeiconified(WindowEvent e) {
-                // }
-                // public void windowActivated(WindowEvent e) {
-                // }
-                // public void windowDeactivated(WindowEvent e) {
-                // }
-                // });
 
             }
 
         });
 
         BoxLayout laybut = new BoxLayout(this, BoxLayout.Y_AXIS);
-        // GridLayout laybut = new GridLayout(3,1);
         setLayout(laybut);
 
         ImageIcon image = new ImageIcon("src/gui/images/monopoly.png");
         Image img = image.getImage();
-        // Image img = image.getImage();
 
         image = new ImageIcon(img);
         JLabel imagelabel = new JLabel(image);
 
-        imagelabel.setMinimumSize( minsizeimg);
-        imagelabel.setPreferredSize(  prfsizeimg);
+        imagelabel.setMinimumSize(minsizeimg);
+        imagelabel.setPreferredSize(prfsizeimg);
 
-        jb1.setMinimumSize( minsizebutton);
-        jb1.setPreferredSize( pfrsizebutton);
+        jb1.setMinimumSize(minsizebutton);
+        jb1.setPreferredSize(pfrsizebutton);
 
-        // jb2.setMinimumSize( minsizebutton);
-        // jb2.setPreferredSize( pfrsizebutton);
-
-        jb3.setMinimumSize( minsizebutton);
-        jb3.setPreferredSize( pfrsizebutton);
+        jb3.setMinimumSize(minsizebutton);
+        jb3.setPreferredSize(pfrsizebutton);
 
         jb1.setUI(GameMain.BUTTON_STYLE);
-        // jb2.setUI(CLayout.BUTTON_STYLE);
         jb3.setUI(GameMain.BUTTON_STYLE);
 
         add(imagelabel);
         add(Box.createVerticalGlue());
         add(jb1);
         add(Box.createRigidArea(new Dimension(0, 50)));
-        // add(jb2);
-        // add(Box.createRigidArea(new Dimension(0,50)));
         add(jb3);
         add(Box.createRigidArea(new Dimension(0, 400)));
 
         imagelabel.setAlignmentX(CENTER_ALIGNMENT);
         jb1.setAlignmentX(CENTER_ALIGNMENT);
-        // jb2.setAlignmentX(CENTER_ALIGNMENT);
         jb3.setAlignmentX(CENTER_ALIGNMENT);
 
         setBackground(GameMain.SFONDO);
 
     }
-
-    // public void nextPanel()
 
     @Override
     protected void paintComponent(Graphics g) {
@@ -140,11 +112,11 @@ public class PanelPregame extends JPanel {
         g.setColor(Color.RED);
         g.drawRect(0, 0, getWidth() - 1, getHeight() - 1);
 
-        // g.drawImage(image, 0, 0, this); // see javadoc for more info on the
-        // parameters
-
     }
 
+    /**
+     * Swap the panel.
+     */
     public void swapPanel() {
 
         parentFrame.switchCard();

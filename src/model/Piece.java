@@ -4,9 +4,6 @@ import java.util.ArrayList;
 import java.util.Random;
 import java.awt.Color;
 
-import java.awt.Graphics2D;
-import java.awt.Graphics;
-
 public class Piece {
 
     private Random rand = new Random();
@@ -15,27 +12,14 @@ public class Piece {
     private float b = rand.nextFloat();
     private Color randomColor;
 
-
-    // private Graphics2D circle;
-
     private ArrayList<Player> players = new ArrayList<>();
 
     public Piece() {
 
-
-
-        // circle = (Graphics2D) circle.create();
-        
-
         generatePiece();
         checkPiece();
 
-
     }
-
-
-
-
 
     public void generatePiece() {
         r = rand.nextFloat();

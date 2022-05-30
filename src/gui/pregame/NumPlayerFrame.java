@@ -16,15 +16,20 @@ import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
 
-
+/**
+ * NumplayerFrame frame to inset the number of the players.
+ * 
+ * 
+ * 
+ * @author taftan@usi.ch & sardoa@usiu.ch
+ * @version 24/05/2022
+ */
 public class NumPlayerFrame extends JFrame implements ActionListener {
 
     public NumPlayerFrame(PanelPregame parentPanel) {
         super();
         PanelPregame parentPan = parentPanel;
         JPanel panel = new FormPanel(parentPan, this);
-        // JPanel panel = new PopUpPickCardPanel(parentPan,)
-
         setVisible(false);
         setPreferredSize(new Dimension(500, 150));
         setResizable(false);
@@ -52,8 +57,6 @@ public class NumPlayerFrame extends JFrame implements ActionListener {
     public void actionPerformed(ActionEvent arg0) {
 
         dispose();
-
-        // GameMain.next();
 
     }
 

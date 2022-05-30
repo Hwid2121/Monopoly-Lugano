@@ -1,4 +1,5 @@
 package gui.main;
+
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JPanel;
@@ -6,22 +7,19 @@ import gui.panels.PanelPlayers;
 import gui.panels.PanelPregame;
 import java.awt.CardLayout;
 
-
-
+/**
+ * 
+ * Panel of the Pregame.
+ * 
+ * 
+ * @author taftan@usi.ch & sardoa@usiu.ch
+ * @version 24/05/2022
+ */
 public class CLayout extends JPanel implements ActionListener {
-
-    // private JFrame frame = new JFrame("Monopoly Lugano");
-    // private JPanel panelCont = new JPanel();
-    //private JPanel panelPregame;
-    // private JPanel panelPlayers = new PanelPlayers();
-    // private JPanel panelMonopoly = new PanelMonopoly();
 
     private CardLayout mainFrame = new CardLayout();
 
-    // private JPanel clayoutforgame = new CLayoutForGame();
-
     private GameMain main;
-    // ImageIcon img = new ImageIcon("/src/gui/images/icon.png");
 
     public CLayout(GameMain game) {
         super();
@@ -30,14 +28,14 @@ public class CLayout extends JPanel implements ActionListener {
         this.setLayout(mainFrame);
         JPanel panelPregame = new PanelPregame(this);
 
-
         this.add(panelPregame, "1");
         mainFrame.show(this, "1");
 
- 
-
     }
 
+    /**
+     * Switch the card to the panel Players.
+     */
     public void switchCard() {
 
         JPanel panelPlayers = new PanelPlayers(this);
@@ -45,40 +43,22 @@ public class CLayout extends JPanel implements ActionListener {
 
         mainFrame.next(this);
 
-
-        // main.mainGame();
-
     }
 
+    /**
+     * Method to finish the pregame.
+     */
+    public void endPreGame() {
 
-    public void endPreGame(){
-
-
-        // main.setStatus(1)
-
-        // JPanel panelMonopoly = new PanelMonopoly();
-        // panelCont.add(panelMonopoly, "3");
-
-        // mainFrame.next(panelCont);
-        // PanelMonopoly.mamma();
-        // System.out.println("heigh tot" + panelMonopoly.getHeight());
-        // System.out.println("width tot" + panelMonopoly.getWidth());
-        // this.dispose();
-        this.setVisible(false); 
-        
-
-        // main.setStatus(1);
+        this.setVisible(false);
 
         main.mainGame();
-        
-
-
 
     }
 
     @Override
     public void actionPerformed(ActionEvent arg0) {
-        // mainFrame.next(panelCont);
+
     }
 
 }

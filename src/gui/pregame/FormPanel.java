@@ -6,7 +6,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
-import javax.swing.SwingUtilities;
 
 import gui.main.GameMain;
 import gui.panels.PanelPregame;
@@ -15,6 +14,12 @@ import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.Font;
 
+/**
+ * Formpanel where inset nickname. 
+ * 
+ * @author taftan@usi.ch & sardoa@usiu.ch
+ * @version 24/05/2022
+ */
 public class FormPanel extends JPanel {
     
     private JTextField textField;
@@ -68,7 +73,6 @@ public class FormPanel extends JPanel {
 
 
                 } catch (NumberFormatException error) {
-                    // TO DO
                     
                 }
 
@@ -77,8 +81,5 @@ public class FormPanel extends JPanel {
 
     }
 
-    // public void closeFrame() {
-    //     SwingUtilities.getWindowAncestor(this).dispose();
-    // }
 
 }

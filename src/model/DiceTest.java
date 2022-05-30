@@ -18,11 +18,13 @@ public class DiceTest {
     private int die1;
     private int die2;
     Dice dice = new Dice(die1, die2);
+
     @Test
-    public void DiceTest() {
+    public void DicesTest() {
         Dice dice1 = new Dice(die1, die2);
         assertTrue(dice1 instanceof Dice);
     }
+
     @Test
     public void GetDie1Test() {
         assertEquals(die1, new Dice(die1, die2).getDie1());

@@ -2,9 +2,7 @@ package gui;
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;
-
-import javax.swing.BoxLayout;
-
+import java.awt.BorderLayout;
 import java.awt.Font;
 import java.awt.Color;
 import java.awt.Component;
@@ -13,21 +11,25 @@ import javax.swing.JPanel;
 
 import gui.main.GameMain;
 
-import model.Card;
-
 import java.awt.Dimension;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class PopUpPickCardFrame extends JFrame implements ActionListener {
+import model.Dice;
 
-    public PopUpPickCardFrame(Card card, MonopolyCommandsPanel parentPanel) {
+public class DiceFrame extends JFrame implements ActionListener {
+
+    private Dice dice;
+
+    public DiceFrame(MonopolyCommandsPanel game, Dice dic) {
 
         super();
 
-        MonopolyCommandsPanel parentPan = parentPanel;
-        JPanel panel = new PopUpPickCardPanel(parentPan, this, card);
+        dice = dic;
+
+        JPanel dicePanel = new DicePanel(this, dice);
+        JLabel label = new JLabel("YOUR DICE IS:  ");
 
         setVisible(false);
         setPreferredSize(new Dimension(500, 150));
@@ -35,19 +37,17 @@ public class PopUpPickCardFrame extends JFrame implements ActionListener {
 
         setLocationRelativeTo(null);
         this.getContentPane().setBackground(GameMain.SFONDO);
-        BoxLayout laymain = new BoxLayout(getContentPane(), BoxLayout.Y_AXIS);
+        BorderLayout laymain = new BorderLayout();
         setLayout(laymain);
         setUndecorated(true);
 
-        JLabel label = new JLabel("CARD: ");
         label.setForeground(Color.BLACK);
         label.setFont(new Font("SansSerif", Font.BOLD, 22));
         label.setSize(new Dimension(40, 40));
         label.setAlignmentX(Component.CENTER_ALIGNMENT);
-        panel.setAlignmentX(Component.CENTER_ALIGNMENT);
 
-        add(label);
-        add(panel);
+        add(label, BorderLayout.PAGE_START);
+        add(dicePanel, BorderLayout.CENTER);
 
         pack();
 

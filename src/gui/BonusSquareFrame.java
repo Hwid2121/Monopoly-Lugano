@@ -13,26 +13,28 @@ import javax.swing.JPanel;
 
 import gui.main.GameMain;
 
-import model.Monopoly;
 import model.Player;
 
 import java.awt.Dimension;
+/**
+ * BonusSquare frame to show the description of the bonusSQUare.
+ * 
+ * @author taftan@usi.ch & sardoa@usiu.ch
+ * @version 24/05/2022
+ */
+public class BonusSquareFrame extends JFrame {
 
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+    private Player player;
 
-public class InfoSquareFrame extends JFrame implements ActionListener {
-
-    private JPanel panel;
-
-    public InfoSquareFrame(MonopolyCommandsPanel parentPanel, Player player, Monopoly monopolya) {
-
+    public BonusSquareFrame(MonopolyCommandsPanel parentPanel, Player playera) {
         super();
-        Monopoly monopoly = monopolya;
-        panel = new InfoSquarePanel(player, this, monopoly);
+
+        player = playera;
+        MonopolyCommandsPanel parentPan = parentPanel;
+        JPanel panel = new BonusSquarePANEL(parentPan, this, player);
 
         setVisible(false);
-        setPreferredSize(new Dimension(900, 350));
+        setPreferredSize(new Dimension(500, 150));
         setResizable(false);
 
         setLocationRelativeTo(null);
@@ -41,10 +43,10 @@ public class InfoSquareFrame extends JFrame implements ActionListener {
         setLayout(laymain);
         setUndecorated(true);
 
-        JLabel label = new JLabel("INFO SQUARE: ");
+        JLabel label = new JLabel("BONUS SQUARE: ");
         label.setForeground(Color.BLACK);
-        label.setFont(new Font("SansSerif", Font.BOLD, 14));
-        label.setSize(new Dimension(20, 20));
+        label.setFont(new Font("SansSerif", Font.BOLD, 22));
+        label.setSize(new Dimension(40, 40));
         label.setAlignmentX(Component.CENTER_ALIGNMENT);
         panel.setAlignmentX(Component.CENTER_ALIGNMENT);
 
@@ -52,11 +54,6 @@ public class InfoSquareFrame extends JFrame implements ActionListener {
         add(panel);
 
         pack();
-
-    }
-
-    @Override
-    public void actionPerformed(ActionEvent arg0) {
 
     }
 

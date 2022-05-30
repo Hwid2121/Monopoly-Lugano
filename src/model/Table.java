@@ -2,7 +2,6 @@
 package model;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 
 /**
  * The table is composed by Squares that can be:
@@ -27,7 +26,7 @@ public class Table {
 
     private Square[] cell = new Square[SIZETABLE];
 
-    /** 
+    /**
      * Constructor of the class Table.
      * Constructor that call the method newtable() where are stored all the Squares
      * of monopoly game.
