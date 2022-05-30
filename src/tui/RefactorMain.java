@@ -48,26 +48,24 @@ public class RefactorMain {
             System.out.println("Number of player not allowed, insert a number of player greater than 2");
             preGameStatus();
             return;
-        }
+        }   else {
 
-        else {
+                while (monopoly.getSizeOfPlayers() < numberOfPlayers) {
 
-            while (monopoly.getSizeOfPlayers() < numberOfPlayers) {
+                    System.out.println("Nickname player " + (monopoly.getSizeOfPlayers() + 1));
 
-                System.out.println("Nickname player " + (monopoly.getSizeOfPlayers() + 1));
+                    String nickname = input.next();
+                    if (input.hasNextLine()) {
 
-                String nickname = input.next();
-                if (input.hasNextLine()) {
+                        monopoly.addPlayer(new Player(nickname));
+                    }
 
-                    monopoly.addPlayer(new Player(nickname));
                 }
 
-            }
+                System.out.println("Pregame ready, now let's play!");
+                status = 1;
 
-            System.out.println("Pregame ready, now let's play!");
-            status = 1;
-
-        }
+                 }
 
     }
 
@@ -77,7 +75,7 @@ public class RefactorMain {
      * @param player    the player that have to be eliminated
      * @param monopoly2 the monopoly
      */
-    public void elimininationPLAYmain(Player player, Monopoly monopoly2) {
+    public void elimininationPlaymain(Player player, Monopoly monopoly2) {
         monopoly.playerEliminated(player);
         skip = 1;
     }
@@ -88,7 +86,7 @@ public class RefactorMain {
      * @param player   the player that have to be eliminated
      * @param monopoly the monopoly
      */
-    public void bankRuptPLAYmain(Player player, Monopoly monopoly) {
+    public void bankRuptPlaymain(Player player, Monopoly monopoly) {
         System.out.println("You are in bankrupt, you do not have money");
         System.out.println("You must sell your properties till you balance is positive");
 
@@ -105,7 +103,7 @@ public class RefactorMain {
         System.out.println("Oh no you don't have enough money to cover the debit");
         System.out.println(player.getNickname() + " has been eliminated");
 
-        elimininationPLAYmain(player, monopoly);
+        elimininationPlaymain(player, monopoly);
 
     }
 
@@ -115,7 +113,7 @@ public class RefactorMain {
      * @param player   the player that have to be eliminated
      * @param monopoly the monopoly
      */
-    public void cardsPLAYmain(Player player, Monopoly monopoly) {
+    public void cardsPlaymain(Player player, Monopoly monopoly) {
 
         System.out.println("You gonna take a card \n that can be a bonus card or a malus card\n ");
         System.out.println("After the effect the card the pass will be automatically");
@@ -137,12 +135,12 @@ public class RefactorMain {
 
             default:
                 System.out.println("Command not allowed here.\n");
-                cardsPLAYmain(player, monopoly);
+                cardsPlaymain(player, monopoly);
 
         }
 
         if (monopoly.checkbankruptStatus(player)) {
-            bankRuptPLAYmain(player, monopoly);
+            bankRuptPlaymain(player, monopoly);
             skip = 1;
             return;
         }
@@ -199,7 +197,7 @@ public class RefactorMain {
      * @param player   the player that have to be eliminated
      * @param monopoly the monopoly
      */
-    public void bonusPLAYmain(Player player, Monopoly monopoly) {
+    public void bonusPlaymain(Player player, Monopoly monopoly) {
         int price = monopoly.getTable().getSquareBonusPrice(player);
 
         System.out.println(monopoly.getTable().getSquareBonusDescr(player.getPosition()));
@@ -210,7 +208,7 @@ public class RefactorMain {
         } else {
             player.decreaseMoney(price);
             if (monopoly.checkbankruptStatus(player)) {
-                bankRuptPLAYmain(player, monopoly);
+                bankRuptPlaymain(player, monopoly);
                 skip = 1;
                 return;
             }

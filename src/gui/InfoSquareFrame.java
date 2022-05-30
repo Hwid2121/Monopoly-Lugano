@@ -1,5 +1,8 @@
 package gui;
 
+import model.Monopoly;
+import model.Player;
+
 import java.awt.Color;
 import java.awt.Component;
 import java.awt.Dimension;
@@ -11,8 +14,6 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-import model.Monopoly;
-import model.Player;
 
 /**
  * InfoSquareFrame frame tjat show info of the square.

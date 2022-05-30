@@ -1,11 +1,10 @@
 package gui;
 
+import model.Player;
+
 import java.awt.BorderLayout;
 import java.awt.Dimension;
-
 import javax.swing.JPanel;
-
-import model.Player;
 
 /**
  * PanelMonopoly panel that show the monopoly game.

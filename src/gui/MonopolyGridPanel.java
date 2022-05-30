@@ -1,5 +1,8 @@
 package gui;
 
+import model.Monopoly;
+import model.Player;
+
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.Image;
@@ -8,8 +11,6 @@ import java.awt.event.ActionListener;
 import javax.swing.ImageIcon;
 import javax.swing.JPanel;
 
-import model.Monopoly;
-import model.Player;
 
 /**
  * MonopolyGridPanel the panel that contains the grid of the game.

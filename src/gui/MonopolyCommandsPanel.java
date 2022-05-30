@@ -1,5 +1,11 @@
 package gui;
 
+import model.Card;
+import model.JailSquare;
+import model.Monopoly;
+import model.Player;
+import model.CardsDeck;
+
 import java.awt.ComponentOrientation;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
@@ -8,11 +14,6 @@ import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JPanel;
 
-import model.Card;
-import model.JailSquare;
-import model.Monopoly;
-import model.Player;
-import model.CardsDeck;
 
 /**
  * MonopolyCommandsPanel panel that conintas all the comands that a player can

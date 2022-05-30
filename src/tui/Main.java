@@ -8,9 +8,7 @@ import model.PropertySquare;
 /**
  * This is the main of the TUI
  * inside of this class is present the class main and the main for start with
- * the TUI
- * 
- * 
+ * the TUI.
  * 
  * 
  * @author taftan@usi.ch & sardoa@usiu.ch
@@ -18,26 +16,23 @@ import model.PropertySquare;
  */
 public class Main {
 
-    /**
-     * private RefactorMain.monopoly RefactorMain.monopoly = new
-     * RefactorMain.monopoly();
-     * private Scanner input = new Scanner(System.in);
-     * 
-     * private int numberOfPlayers = 0;
-     * private int status = 0;
-     * private String chf = " chf";
-     * private String nName = "\nName: ";
-     * private int skip = 0;
-     * private int turn = 0;
-     */
+
     private String chf = " chf";
     private String nName = "\nName: ";
     private int turn = 0;
 
+
+
+
+    /**
+     * This is the main of the TUI
+     * 
+     */
     public Main() {
         RefactorMain = new RefactorMain();
     }
 
+    
     public RefactorMain RefactorMain;
 
     /**
@@ -58,8 +53,8 @@ public class Main {
      * @param monopoly the main class where the game is strutured
      *
      */
-    public void elimininationPLAYmain(Player player, Monopoly monopoly) {
-        RefactorMain.elimininationPLAYmain(player, monopoly);
+    public void elimininationPlaymain(Player player, Monopoly monopoly) {
+        RefactorMain.elimininationPlaymain(player, monopoly);
     }
 
     /**
@@ -72,21 +67,21 @@ public class Main {
      * @param monopoly the main class where the game is strutured
      *
      */
-    public void bankRuptPLAYmain(Player player, Monopoly monopoly) {
-        RefactorMain.bankRuptPLAYmain(player, monopoly);
+    public void bankRuptPlaymain(Player player, Monopoly monopoly) {
+        RefactorMain.bankRuptPlaymain(player, monopoly);
     }
 
     /**
      * When a player is in the square bonus where picking a card then will activate
-     * cardsPLAYmain
+     * cardsPlaymain
      * to let the player take the card and active its effect.
      * 
      * @param player   that play in that turn
      * @param monopoly the main class where the game is strutured
      *
      */
-    public void cardsPLAYmain(Player player, Monopoly monopoly) {
-        RefactorMain.cardsPLAYmain(player, monopoly);
+    public void cardsPlaymain(Player player, Monopoly monopoly) {
+        RefactorMain.cardsPlaymain(player, monopoly);
     }
 
     /**
@@ -103,7 +98,7 @@ public class Main {
 
         player.movePosition(30);
         player.setJail(JailSquare.getDays());
-        jailPLAYmain(player, RefactorMain.monopoly);
+        jailPlaymain(player, RefactorMain.monopoly);
 
     }
 
@@ -115,8 +110,8 @@ public class Main {
      * @param monopoly the main class where the game is strutured
      *
      */
-    public void bonusPLAYmain(Player player, Monopoly monopoly) {
-        RefactorMain.bonusPLAYmain(player, monopoly);
+    public void bonusPlaymain(Player player, Monopoly monopoly) {
+        RefactorMain.bonusPlaymain(player, monopoly);
 
     }
 
@@ -131,7 +126,7 @@ public class Main {
      * @param monopoly the main class where the game is strutured
      *
      */
-    public void jailPLAYmain(Player player, Monopoly monopoly) {
+    public void jailPlaymain(Player player, Monopoly monopoly) {
 
         if (player.getTurnsInJail() == -1) {
             player.setJail(JailSquare.getDays());
@@ -167,7 +162,7 @@ public class Main {
 
                     if (RefactorMain.monopoly.checkbankruptStatus(player)) {
                         System.out.println("\n You do not have enough money to pay the fi");
-                        bankRuptPLAYmain(player, RefactorMain.monopoly);
+                        bankRuptPlaymain(player, RefactorMain.monopoly);
                         RefactorMain.skip = 1;
                         return;
                     }
@@ -231,7 +226,7 @@ public class Main {
 
                 default:
                     System.out.println("Command not allowed here.\n");
-                    jailPLAYmain(player, RefactorMain.monopoly);
+                    jailPlaymain(player, RefactorMain.monopoly);
 
             }
         } else if (player.getTurnsInJail() == 0) {
@@ -247,7 +242,7 @@ public class Main {
                     System.out.println("You paid 50 chf, you can throw the dice");
 
                     if (RefactorMain.monopoly.checkbankruptStatus(player)) {
-                        bankRuptPLAYmain(player, RefactorMain.monopoly);
+                        bankRuptPlaymain(player, RefactorMain.monopoly);
                         break;
                     }
 
@@ -271,7 +266,7 @@ public class Main {
      * @param monopoly the main class where the game is strutured
      *
      */
-    public void emptyPLAYmain(Player player, Monopoly monopoly) {
+    public void emptyPlaymain(Player player, Monopoly monopoly) {
         System.out.println("This is an empty square \n You cannot do nothing here");
         System.out.println("[p] (to finish the turn) ");
         System.out.println("[m] (to show your balance)");
@@ -286,8 +281,8 @@ public class Main {
                 break;
 
             case "i":
-                System.out.println(nName + player.getNickname() + "\nMoney: " + player.getMoney() +
-                        "\nProperties: " + player.getPropertySquare() + "\nPosition: " + player.getPosition());
+                System.out.println(nName + player.getNickname() + "\nMoney: " + player.getMoney() 
+                +   "\nProperties: " + player.getPropertySquare() + "\nPosition: " + player.getPosition());
 
                 break;
 
@@ -297,14 +292,14 @@ public class Main {
 
             default:
                 System.out.println("Command not allowed here");
-                emptyPLAYmain(player, RefactorMain.monopoly);
+                emptyPlaymain(player, RefactorMain.monopoly);
 
         }
 
     }
 
     /**
-     * When a player reach a propertySQuare could have some comands:
+     * When a player reach a propertySQuare could have some comands.
      * - [b] (for buying the property)
      * - [s] (to sell this property)
      * - [m] (to show your balance)
@@ -314,7 +309,6 @@ public class Main {
      * - [h] (for buy house, hotel and more info)
      * - [o] (for see the infos for other players)
      * - [exit] (for close the game)
-     * 
      * if the square is owned by another player, then the player will have to pay
      * the rent.
      * 
@@ -341,12 +335,12 @@ public class Main {
         switch (word) {
             case "d":
                 System.out
-                        .println(nName + RefactorMain.monopoly.getTable().getSquare(position).getName() + "\nColor: " +
-                                RefactorMain.monopoly.getTable().getSquare(position).getColor());
+                        .println(nName + RefactorMain.monopoly.getTable().getSquare(position).getName() + "\nColor: " 
+                        +   RefactorMain.monopoly.getTable().getSquare(position).getColor());
                 System.out
                         .println("Owner: " + RefactorMain.monopoly.getTable().getSquareOwnerToString(position)
-                                + "\nPrice: " +
-                                RefactorMain.monopoly.getTable().getSquarePrice(position));
+                                + "\nPrice: " 
+                                +   RefactorMain.monopoly.getTable().getSquarePrice(position));
                 System.out.println("Price tax: " + RefactorMain.monopoly.getTable().getSquarePriceTax(position));
                 if (RefactorMain.monopoly.getTable().getHouse(position).getCounter() <= 4) {
                     System.out.println("House: " + RefactorMain.monopoly.getTable().getHouse(position).getCounter());
@@ -376,14 +370,14 @@ public class Main {
                 break;
 
             case "i":
-                System.out.println(nName + player.getNickname() + "\nMoney: " + player.getMoney() +
-                        "\nProperties: " + player.propertySquaretoString() + "\nPosition: " + player.getPosition());
+                System.out.println(nName + player.getNickname() + "\nMoney: " + player.getMoney() 
+                +   "\nProperties: " + player.propertySquaretoString() + "\nPosition: " + player.getPosition());
                 break;
 
             case "o":
                 for (Player pl : RefactorMain.monopoly.getListOfPlayer()) {
-                    System.out.println(nName + pl.getNickname() + "\nMoney: " + pl.getMoney() +
-                            "\nProperties: " + pl.propertySquaretoString() + "\nPosition: " + pl.getPosition());
+                    System.out.println(nName + pl.getNickname() + "\nMoney: " + pl.getMoney() 
+                    +   "\nProperties: " + pl.propertySquaretoString() + "\nPosition: " + pl.getPosition());
 
                 }
                 break;
@@ -410,10 +404,10 @@ public class Main {
                         "You are in square of color:\t"
                                 + RefactorMain.monopoly.getTable().getSquare(position).getColor());
                 for (PropertySquare n : RefactorMain.monopoly.getTable().getOtherMonopolySquare(player)) {
-                    System.out.println("Name: " + n.getName() + "\t" + " Owner: " +
-                            RefactorMain.monopoly.getTable().getSquareOwnerToString(n.getPosition()) + "\t"
-                            + " Position: " +
-                            n.getPosition());
+                    System.out.println("Name: " + n.getName() + "\t" + " Owner: " 
+                    +   RefactorMain.monopoly.getTable().getSquareOwnerToString(n.getPosition()) + "\t"
+                            + " Position: " 
+                            +   n.getPosition());
                 }
                 break;
 
@@ -439,15 +433,15 @@ public class Main {
 
         System.out.println(
                 "Price for build an house: "
-                        + RefactorMain.monopoly.getTable().getHouse(player.getPosition()).getPrice(6) +
-                        chf);
+                        + RefactorMain.monopoly.getTable().getHouse(player.getPosition()).getPrice(6) 
+                        +   chf);
 
         for (int i = 1; i <= 4; i++) {
-            System.out.println("PriceTax with " + i + " house increasing to: " +
-                    RefactorMain.monopoly.getTable().getHouse(player.getPosition()).getPrice(i) + chf);
+            System.out.println("PriceTax with " + i + " house increasing to: " 
+            +   RefactorMain.monopoly.getTable().getHouse(player.getPosition()).getPrice(i) + chf);
         }
-        System.out.println("PriceTax with hotel increasing to: " +
-                RefactorMain.monopoly.getTable().getHouse(player.getPosition()).getPrice(5) + chf);
+        System.out.println("PriceTax with hotel increasing to: " 
+        +   RefactorMain.monopoly.getTable().getHouse(player.getPosition()).getPrice(5) + chf);
         System.out.println("For building an Hotel you have to buy 4 houses + building price");
 
         if (RefactorMain.monopoly.getTable().getHouse(player.getPosition()).getCounter() < 5) {
@@ -458,18 +452,18 @@ public class Main {
         System.out.println("Write:\n");
         System.out.println("[0] For go back");
         System.out.println(
-                "[1] For build 1 house at price of " +
-                        (RefactorMain.monopoly.getTable().getHouse(player.getPosition()).getPrice(6)));
-        System.out.println("[2] For build 2 houses at price of " +
-                (RefactorMain.monopoly.getTable().getHouse(player.getPosition()).getPrice(6)) * 2);
-        System.out.println("[3] For build 3 houses at price of " +
-                (RefactorMain.monopoly.getTable().getHouse(player.getPosition()).getPrice(6)) * 3);
-        System.out.println("[4] For build 4 houses at price of " +
-                (RefactorMain.monopoly.getTable().getHouse(player.getPosition()).getPrice(6)) * 4);
+                "[1] For build 1 house at price of " 
+                +   (RefactorMain.monopoly.getTable().getHouse(player.getPosition()).getPrice(6)));
+        System.out.println("[2] For build 2 houses at price of " 
+        +   (RefactorMain.monopoly.getTable().getHouse(player.getPosition()).getPrice(6)) * 2);
+        System.out.println("[3] For build 3 houses at price of " 
+        +   (RefactorMain.monopoly.getTable().getHouse(player.getPosition()).getPrice(6)) * 3);
+        System.out.println("[4] For build 4 houses at price of " 
+        +   (RefactorMain.monopoly.getTable().getHouse(player.getPosition()).getPrice(6)) * 4);
 
-        System.out.println("[5] For build an Hotel at price of " +
-                ((5 - RefactorMain.monopoly.getTable().getHouse(player.getPosition()).getCounter())) *
-                        (RefactorMain.monopoly.getTable().getHouse(player.getPosition()).getPrice(6)));
+        System.out.println("[5] For build an Hotel at price of " 
+        +   ((5 - RefactorMain.monopoly.getTable().getHouse(player.getPosition()).getCounter())) 
+        *   (RefactorMain.monopoly.getTable().getHouse(player.getPosition()).getPrice(6)));
 
         int word = RefactorMain.input.nextInt();
 
@@ -477,14 +471,14 @@ public class Main {
             if (RefactorMain.monopoly.getTable().getHouse(player.getPosition()).checkNumHouses(word)) {
                 System.out.println("Building" + word + " house at the price of " +
                         ((RefactorMain.monopoly.getTable().getHouse(player.getPosition()).getPrice(6)) * word) + chf);
-                propertySquareBUILD(player, RefactorMain.monopoly, word);
+                propertySquareBuild(player, RefactorMain.monopoly, word);
             } else {
                 System.out.println(
                         "You have already "
-                                + RefactorMain.monopoly.getTable().getHouse(player.getPosition()).getCounter() +
-                                " house");
-                System.out.println("Maybe is the time for buying an hotel with 4 house + " +
-                        RefactorMain.monopoly.getTable().getHouse(player.getPosition()).getPrice(6));
+                                + RefactorMain.monopoly.getTable().getHouse(player.getPosition()).getCounter() 
+                                +   " house");
+                System.out.println("Maybe is the time for buying an hotel with 4 house + " 
+                +   RefactorMain.monopoly.getTable().getHouse(player.getPosition()).getPrice(6));
             }
             return;
 
@@ -503,16 +497,16 @@ public class Main {
                                 +
                                 chf);
 
-                propertySquareBUILD(player, RefactorMain.monopoly, word);
+                propertySquareBuild(player, RefactorMain.monopoly, word);
 
             } else {
                 System.out.println("You have to buy 4 more houses + pay the build fee ");
-                System.out.println("Cost: " +
-                        (RefactorMain.monopoly.getTable().getHouse(player.getPosition()).getPrice(6) * 4) + chf +
-                        " + " + (RefactorMain.monopoly.getTable().getHouse(player.getPosition()).getPrice(6)) + chf);
-                propertySquareBUILD(player, RefactorMain.monopoly,
-                        (5 - RefactorMain.monopoly.getTable().getHouse(player.getPosition()).getCounter()) *
-                                (RefactorMain.monopoly.getTable().getHouse(player.getPosition()).getPrice(6)));
+                System.out.println("Cost: " 
+                +   (RefactorMain.monopoly.getTable().getHouse(player.getPosition()).getPrice(6) * 4) + chf 
+                        +   " + " + (RefactorMain.monopoly.getTable().getHouse(player.getPosition()).getPrice(6)) + chf);
+                propertySquareBuild(player, RefactorMain.monopoly,
+                        (5 - RefactorMain.monopoly.getTable().getHouse(player.getPosition()).getCounter()) 
+                        *   (RefactorMain.monopoly.getTable().getHouse(player.getPosition()).getPrice(6)));
             }
             return;
 
@@ -532,7 +526,7 @@ public class Main {
      * @param num      the number of houses or hotel to build
      *
      */
-    public void propertySquareBUILD(Player player, Monopoly monopoly, int num) {
+    public void propertySquareBuild(Player player, Monopoly monopoly, int num) {
 
         int position = player.getPosition();
 
@@ -575,6 +569,12 @@ public class Main {
                 case "n":
                     hotelBUY(player, RefactorMain.monopoly);
 
+                    break;
+
+                default:
+                    System.out.println("Input not valid");
+                    break;
+
             }
 
         } else {
@@ -602,9 +602,9 @@ public class Main {
 
         {
             System.out.println("Confirm to buy the property?" +
-                    RefactorMain.monopoly.getTable().getSquareName(position) +
-                    "\n Your budget will be " +
-                    (player.getMoney() - RefactorMain.monopoly.getTable().getSquarePrice(position)));
+                    RefactorMain.monopoly.getTable().getSquareName(position) 
+                    +   "\n Your budget will be " 
+                    +   (player.getMoney() - RefactorMain.monopoly.getTable().getSquarePrice(position)));
 
             System.out.println("Write [y] for the confirm or [n] for return back: ");
             inp = RefactorMain.input.next();
@@ -645,8 +645,8 @@ public class Main {
     public void checkmonopolyProperty(Player player, Monopoly monopoly, String color) {
 
         if (RefactorMain.monopoly.getTable().getMonopolyColor(player)) {
-            System.out.println("\n \n You did RefactorMain.monopoly for the color " + color +
-                    " now the rent for these property square are doubled \n");
+            System.out.println("\n \n You did RefactorMain.monopoly for the color " + color 
+            +   " now the rent for these property square are doubled \n");
             RefactorMain.monopoly.getTable().getMonopolyColor(player);
         }
 
@@ -737,15 +737,15 @@ public class Main {
                         .getColor()) {
 
                     case "cards":
-                        cardsPLAYmain(RefactorMain.monopoly.getPLayer(turn), RefactorMain.monopoly);
+                        cardsPlaymain(RefactorMain.monopoly.getPLayer(turn), RefactorMain.monopoly);
                         break;
 
                     case "jail":
-                        jailPLAYmain(RefactorMain.monopoly.getPLayer(turn), RefactorMain.monopoly);
+                        jailPlaymain(RefactorMain.monopoly.getPLayer(turn), RefactorMain.monopoly);
                         break;
 
                     case "empty":
-                        emptyPLAYmain(RefactorMain.monopoly.getPLayer(turn), RefactorMain.monopoly);
+                        emptyPlaymain(RefactorMain.monopoly.getPLayer(turn), RefactorMain.monopoly);
                         break;
 
                     case "goto":
@@ -753,11 +753,11 @@ public class Main {
                         break;
 
                     case "bonus":
-                        bonusPLAYmain(RefactorMain.monopoly.getPLayer(turn), RefactorMain.monopoly);
+                        bonusPlaymain(RefactorMain.monopoly.getPLayer(turn), RefactorMain.monopoly);
                         break;
 
                     case "malus":
-                        bonusPLAYmain(RefactorMain.monopoly.getPLayer(turn), RefactorMain.monopoly);
+                        bonusPlaymain(RefactorMain.monopoly.getPLayer(turn), RefactorMain.monopoly);
                         break;
 
                     default:

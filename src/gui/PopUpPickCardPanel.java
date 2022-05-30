@@ -1,5 +1,7 @@
 package gui;
 
+import model.Card;
+
 import java.awt.Component;
 import java.awt.ComponentOrientation;
 import java.awt.Dimension;
@@ -12,7 +14,6 @@ import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-import model.Card;
 
 /**
  * PopUpPickCardPanel panel that show a popup for pick a card.

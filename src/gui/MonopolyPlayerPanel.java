@@ -1,11 +1,11 @@
 package gui;
 
-import java.awt.GridLayout;
-
-import javax.swing.JPanel;
-
 import model.Monopoly;
 import model.Player;
+
+import java.awt.GridLayout;
+import javax.swing.JPanel;
+
 
 /**
  * This class rappresents the Monopoly game board player panel.

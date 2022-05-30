@@ -1,20 +1,21 @@
 package gui;
 
+import model.Monopoly;
+import model.Player;
+
 import java.awt.Component;
 import java.awt.ComponentOrientation;
 import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
 import javax.swing.Box;
 import javax.swing.BoxLayout;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-import model.Monopoly;
-import model.Player;
+
 
 /**
  * BonusSquarePanel that contains the frameBOnus.

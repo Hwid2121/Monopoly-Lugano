@@ -1,12 +1,13 @@
 package gui;
 
-import java.awt.CardLayout;
+import model.Monopoly;
+import model.Player;
 
+
+import java.awt.CardLayout;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
-import model.Monopoly;
-import model.Player;
 
 /**
  *

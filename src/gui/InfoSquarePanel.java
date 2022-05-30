@@ -1,5 +1,8 @@
 package gui;
 
+import model.Monopoly;
+import model.Player;
+
 import java.awt.ComponentOrientation;
 import java.awt.Dimension;
 import java.awt.Font;
@@ -10,8 +13,7 @@ import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-import model.Monopoly;
-import model.Player;
+
 
 /**
  * 

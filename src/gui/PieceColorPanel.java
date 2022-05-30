@@ -1,10 +1,10 @@
 package gui;
 
+import model.Player;
+
 import java.awt.BorderLayout;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-
-import model.Player;
 
 /**
  * PieceColorPanel where the piece of the player is showned.

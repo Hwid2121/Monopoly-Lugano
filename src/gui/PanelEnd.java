@@ -1,12 +1,13 @@
 package gui;
 
+import model.Monopoly;
+
 import java.awt.Font;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-import model.Monopoly;
 
 /**
  * This class rappresents the Monopoly End Game panel.

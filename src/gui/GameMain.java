@@ -1,16 +1,16 @@
 package gui;
 
+import model.Monopoly;
+
 import java.awt.CardLayout;
 import java.awt.Color;
 import java.awt.Font;
-
 import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.Border;
 
-import model.Monopoly;
 
 /**
  * Main frame where monopoly is shown.
