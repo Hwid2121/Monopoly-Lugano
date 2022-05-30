@@ -194,3 +194,16 @@ Then open `target/site/index.html` and find the JaCoCo report.
 
 * Pregame Panel, choosing the names of the players. 
 ![.](https://github.com/usi-pf2-2022/project-monopoly-dinasty/blob/main/src/gui/images/screen2readmegui.png)
+
+
+* Game Panel, start of the game. 
+![.](https://github.com/usi-pf2-2022/project-monopoly-dinasty/blob/main/src/gui/images/screen6gui.png)
+
+
+* Game Panel, the process of the game. 
+![.](https://github.com/usi-pf2-2022/project-monopoly-dinasty/blob/main/src/gui/images/screen5gui.png)
+
+
+
+* Game Panel, the BonusSquare frame of the game. 
+![.](https://github.com/usi-pf2-2022/project-monopoly-dinasty/blob/main/src/gui/images/screen4gui.png)
