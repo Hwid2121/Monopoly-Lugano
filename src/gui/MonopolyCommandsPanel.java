@@ -35,6 +35,12 @@ public class MonopolyCommandsPanel extends JPanel implements ActionListener {
     private PopUpPickCardFrame pop ;
     private InfoSquareFrame infoFrame;
     private EmptySquarePopUpFrame emp;
+
+    // private PropretySquareEMPTY empanel;
+
+
+    // private EmptySquarePopUpFrame emp;
+
     private Clicklistener click = new Clicklistener();
     private JButton buy = new JButton("BUY");
     private JButton pass = new JButton("PASS");
@@ -44,6 +50,9 @@ public class MonopolyCommandsPanel extends JPanel implements ActionListener {
     private JButton dice = new JButton("TROW DICE");
     private JButton card = new JButton("USE CARD");
     private JButton info = new JButton("INFO SQUARE");
+
+
+    private JButton cont = new JButton("CONTINUE...");
     
 
     private JButton pick = new JButton("PICK CARD");
@@ -110,20 +119,23 @@ public class MonopolyCommandsPanel extends JPanel implements ActionListener {
                         emptySquare();
                         break;
                     // case "goto":
-                    //     goToJailSquare();
+                    //     goToJailSquare(); 
                     //     break;
-                    // case "bonus":
-                    //     bonusSquare();
+                    case "bonus":
+                        bonusSquare();
                     //     break;
                     // case "malus":
                     //     bonusSquare();
-                    //     break;
+                        break;
+
+    
                     default:
-                        // if(monopoly.getTable().getPropertySquare(player.getPosition()).getOwner() == null){
-                        //     propertySquareEMPTY();
-                        // } else propertySquareOwned();
+                        if(monopoly.getTable().getPropertySquare(player.getPosition()).getOwner() == null){
+                            propertySquareEMPTY();
+                        } else propertySquareOwned();
+                        System.out.println(monopoly.getTable().getSquare(player.getPosition()).getName());
+                        
                         // emptySquare();
-                        propertySquareEMPTY();
                         break;
 
 
@@ -150,11 +162,14 @@ public class MonopolyCommandsPanel extends JPanel implements ActionListener {
 
                 if (player.getMoney() >= monopoly.getTable().getSquarePrice(player.getPosition()) ){
 
+                    monopoly.getTable().setSquareOwner(player);
+                    player.buyPropertySquare(monopoly.getTable().getPropertySquare(player.getPosition()));
+                    player.decreaseMoney(monopoly.getTable().getSquarePrice(player.getPosition()));
 
 
                 }
                 else{
-
+                    System.out.println("non abbastanza soldi");
                 }
 
 
@@ -220,6 +235,22 @@ public class MonopolyCommandsPanel extends JPanel implements ActionListener {
         pay.addActionListener(new ActionListener() {
 
             public void actionPerformed(ActionEvent arg) {
+
+            }
+
+        });
+
+        cont.addActionListener(new ActionListener() {
+
+            public void actionPerformed(ActionEvent arg) {
+
+                emp = new EmptySquarePopUpFrame((MonopolyCommandsPanel) pick.getParent());
+               
+
+                
+                // empanel = new PropretySquareEMPTY(player, this);
+                emp.setVisible(true);
+                main.nextPage();
 
             }
 
@@ -342,16 +373,11 @@ public class MonopolyCommandsPanel extends JPanel implements ActionListener {
 
     public void emptySquare() {
 
-        
-        emp = new EmptySquarePopUpFrame((MonopolyCommandsPanel) pick.getParent());
                 
-        // emp.setVisible(true);
-
-      
-        emptySquareON();
         pass.setPreferredSize(dim);
+        // cont.setPreferredSize(dim);
 
-        this.add(emp);
+        // this.add(cont);
         this.add(pass);
         // main.nextPage();
         
@@ -418,7 +444,14 @@ public class MonopolyCommandsPanel extends JPanel implements ActionListener {
     }
 
 
-    public void emptySquareON(){
-        emp.setVisible(true);
+    public void refresh(){
+        main.nextPage();
     }
+
+
 }
+
+
+
+
+

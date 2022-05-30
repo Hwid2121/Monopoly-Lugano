@@ -20,7 +20,7 @@ public class CLayoutForGame extends JPanel  {
 
 
 
-    private int turn =0;
+    private int turn =1;
     private int numberOfPlayers = monopoly.getNumOfplayer();
     private int skip = 0;
 
@@ -43,23 +43,17 @@ public class CLayoutForGame extends JPanel  {
         
 
 
-        // while(GameMain.monopoly.monopolyEND()){
-
-            
             
   
-            
-            player =  monopoly.getPLayer(turn);
             turn = turn % numberOfPlayers;
+            player =  monopoly.getPLayer(turn);
+            
             monopoly(monopoly.getPLayer(turn), fase);
 
 
 
 
 
-        // }
-        
-        
 
 
         
@@ -70,6 +64,11 @@ public class CLayoutForGame extends JPanel  {
 
 
     public void monopoly(Player player, int i) {
+
+        turn = turn % numberOfPlayers;
+        player =  monopoly.getPLayer(turn);
+        
+
         PanelMonopoly panelMonopoly = new PanelMonopoly(this, player);
         add(panelMonopoly, "1");
         
@@ -87,7 +86,7 @@ public class CLayoutForGame extends JPanel  {
 
     public void nextPage(){
         if(skip == 0){
-        PanelMonopoly panelMonopolys = new PanelMonopoly(this, player);
+        PanelMonopoly panelMonopolys = new PanelMonopoly(this, monopoly.getPLayer(turn));
         add(panelMonopolys, "2");
         // incrementFase();
         // setFase(1);

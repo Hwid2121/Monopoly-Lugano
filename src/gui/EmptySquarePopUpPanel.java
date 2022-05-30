@@ -44,7 +44,7 @@ public class EmptySquarePopUpPanel extends JPanel implements ActionListener {
 
         // desc.setBounds(x, y, width, height);
  
-        button = new JButton("CONTINUE");
+        button = new JButton("PASS");
         // button.setUI(GameMain.BUTTON_STYLE);
         button.setForeground(GameMain.CREMISI);
         button.setFont(s);
@@ -73,6 +73,8 @@ public class EmptySquarePopUpPanel extends JPanel implements ActionListener {
                 // String s = textField.getText();
 
                     framea.dispose();
+                    
+                    
                     // frameb.swapPanel();
 
                     

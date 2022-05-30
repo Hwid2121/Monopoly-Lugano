@@ -30,12 +30,12 @@ public class EmptySquarePopUpFrame extends JFrame implements ActionListener  {
     private JPanel pop;
     private Font s = new Font("SansSerif", Font.BOLD, 14);
     
-
+    private MonopolyCommandsPanel parentPan ;
     public EmptySquarePopUpFrame(MonopolyCommandsPanel parentPanel){
 
         super();
         // JButton button ;
-        MonopolyCommandsPanel parentPan = parentPanel;
+        parentPan = parentPanel;
         JPanel panel  = new EmptySquarePopUpPanel(parentPan, this);
 
         
@@ -83,6 +83,6 @@ public class EmptySquarePopUpFrame extends JFrame implements ActionListener  {
     @Override
     public void actionPerformed(ActionEvent arg0) {
         
-        
+        // parentPan.refresh();
     }
 }
