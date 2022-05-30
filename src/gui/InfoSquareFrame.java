@@ -15,7 +15,6 @@ import model.Monopoly;
 import model.Player;
 
 /**
- * 
  * InfoSquareFrame frame tjat show info of the square.
  * 
  * @author taftan@usi.ch & sardoa@usiu.ch

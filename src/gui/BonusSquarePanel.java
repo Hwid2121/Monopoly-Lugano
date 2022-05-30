@@ -26,7 +26,7 @@ import model.Player;
 public class BonusSquarePanel extends JPanel implements ActionListener {
 
     private JLabel desc;
-    final private BonusSquareFrame framea;
+    private final  BonusSquareFrame framea;
     private JButton button;
     private Font sansSerif = new Font("SansSerif", Font.BOLD, 14);
 
@@ -73,7 +73,7 @@ public class BonusSquarePanel extends JPanel implements ActionListener {
 
         button.addActionListener(new ActionListener() {
             @Override
-            public void actionPerformed(ActionEvent eG) {
+            public void actionPerformed(ActionEvent actionEvent) {
 
                 framea.dispose();
 

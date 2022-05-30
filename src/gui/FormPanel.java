@@ -72,7 +72,8 @@ public class FormPanel extends JPanel {
                     frameb.swapPanel();
 
                 } catch (NumberFormatException error) {
-
+                    
+                    textField.setText("");
                 }
 
             }

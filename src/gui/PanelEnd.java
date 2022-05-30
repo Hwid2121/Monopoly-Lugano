@@ -12,7 +12,7 @@ import model.Monopoly;
  * This class rappresents the Monopoly End Game panel.
  * 
  *
- * @author Nicolo' Tafta & Alberto Sardo
+ * @author taftan@usi.ch & sardoa@usi.ch
  * @version 28/05/2022
  */
 

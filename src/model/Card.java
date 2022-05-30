@@ -10,13 +10,18 @@ package model;
  */
 public class Card {
 
-      /**
+    /**
      * Constructor of the class Card.
      * 
      * @param descr the description
      */
     private String descr;
 
+    /**
+     * Constructor of the class Card.
+     * 
+     * @param descr the description
+     */
     public Card(String descr) {
         this.descr = descr;
     }

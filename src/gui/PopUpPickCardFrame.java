@@ -25,15 +25,15 @@ public class PopUpPickCardFrame extends JFrame implements ActionListener {
 
     /**
      * Construcotr of the frame PopUpPickCardFrame.
-     * 
+     * @param card the card
      * @param parentPanel the parent panel
      */
     public PopUpPickCardFrame(Card card, MonopolyCommandsPanel parentPanel) {
 
         super();
 
-        MonopolyCommandsPanel parentPan = parentPanel;
-        JPanel panel = new PopUpPickCardPanel(parentPan, this, card);
+
+        
 
         setVisible(false);
         setPreferredSize(new Dimension(500, 150));
@@ -50,6 +50,8 @@ public class PopUpPickCardFrame extends JFrame implements ActionListener {
         label.setFont(new Font("SansSerif", Font.BOLD, 22));
         label.setSize(new Dimension(40, 40));
         label.setAlignmentX(Component.CENTER_ALIGNMENT);
+        MonopolyCommandsPanel parentPan = parentPanel;
+        JPanel panel = new PopUpPickCardPanel(parentPan, this, card);
         panel.setAlignmentX(Component.CENTER_ALIGNMENT);
 
         add(label);

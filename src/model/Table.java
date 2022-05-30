@@ -4,7 +4,7 @@ package model;
 import java.util.ArrayList;
 
 /**
- * The table is composed by Squares that can be:
+ * The table is composed by Squares that can be.
  * - BonusSquare
  * - PropertySquare
  * 
@@ -14,7 +14,7 @@ import java.util.ArrayList;
  */
 public class Table {
 
-    static private final int SIZETABLE = 40;
+    private static final int SIZETABLE = 40;
     private String bonus = "Bonus";
     private String azure = "azure";
     private String park = "park";

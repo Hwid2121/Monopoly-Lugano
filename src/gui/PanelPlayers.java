@@ -68,24 +68,24 @@ public class PanelPlayers extends JPanel implements ActionListener {
 
         add(panelNick);
 
-        Component rigidArea_2 = Box.createRigidArea(new Dimension(0, 40));
-        add(rigidArea_2);
+        Component rigidArea2 = Box.createRigidArea(new Dimension(0, 40));
+        add(rigidArea2);
 
-        Component rigidArea_1 = Box.createRigidArea(new Dimension(0, 400));
-        add(rigidArea_1);
-
-    }
-
-    @Override
-    protected void paintComponent(Graphics g) {
-        super.paintComponent(g);
-        g.setColor(Color.RED);
-        g.drawRect(0, 0, getWidth() - 1, getHeight() - 1);
+        Component rigidArea1 = Box.createRigidArea(new Dimension(0, 400));
+        add(rigidArea1);
 
     }
 
     @Override
-    public void actionPerformed(ActionEvent e) {
+    protected void paintComponent(Graphics graphics) {
+        super.paintComponent(graphics);
+        graphics.setColor(Color.RED);
+        graphics.drawRect(0, 0, getWidth() - 1, getHeight() - 1);
+
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent actionEvent) {
 
     }
 

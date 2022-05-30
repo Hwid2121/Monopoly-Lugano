@@ -50,14 +50,14 @@ public class DiceFrame extends JFrame implements ActionListener {
         setLayout(laymain);
         setUndecorated(true);
 
-        JPanel dicePanel = new DicePanel(this, dice);
+        
         JLabel label = new JLabel("YOUR DICE IS:  ");
 
         label.setForeground(Color.BLACK);
         label.setFont(new Font("SansSerif", Font.BOLD, 22));
         label.setSize(new Dimension(40, 40));
         label.setAlignmentX(Component.CENTER_ALIGNMENT);
-
+        JPanel dicePanel = new DicePanel(this, dice);
         add(label, BorderLayout.PAGE_START);
         add(dicePanel, BorderLayout.CENTER);
 

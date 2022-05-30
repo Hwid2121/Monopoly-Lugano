@@ -36,7 +36,7 @@ public class EmptySquarePopUpFrame extends JFrame implements ActionListener {
         super();
 
         parentPan = parentPanel;
-        JPanel panel = new EmptySquarePopUpPanel(parentPan, this);
+       
 
         setVisible(false);
         setPreferredSize(new Dimension(500, 150));
@@ -53,7 +53,7 @@ public class EmptySquarePopUpFrame extends JFrame implements ActionListener {
         label.setFont(new Font("SansSerif", Font.BOLD, 22));
         label.setSize(new Dimension(40, 40));
         label.setAlignmentX(Component.CENTER_ALIGNMENT);
-
+        JPanel panel = new EmptySquarePopUpPanel(parentPan, this);
         add(label);
         add(Box.createRigidArea(new Dimension(0, 10)));
         add(panel);

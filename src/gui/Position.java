@@ -15,12 +15,12 @@ public class Position {
     /**
      * Constructor of the Position class.
      * 
-     * @param x the x coordinate
-     * @param y the y coordinate
+     * @param xposition the x coordinate
+     * @param yposition the y coordinate
      */
-    public Position(int xPos, int yPos) {
-        posX = xPos;
-        posY = yPos;
+    public Position(int xposition, int yposition) {
+        posX = xposition;
+        posY = yposition;
     }
 
     /**

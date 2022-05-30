@@ -73,8 +73,8 @@ public class GridPosition {
 
     /**
      * GetPositionSquare method return the position of the squares.
-     * 
-     * @return the position of the squares.
+     * @param index index of the square
+     * @return the position of the squares
      */
     public Position getPosition(int index) {
 

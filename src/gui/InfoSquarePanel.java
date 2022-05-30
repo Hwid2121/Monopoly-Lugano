@@ -64,26 +64,26 @@ public class InfoSquarePanel extends JPanel implements ActionListener {
         color = new JLabel("COLOR: " + monopoly.getTable().getSquare(player.getPosition()).getColor());
         price = new JLabel(
             "PRICE: " + monopoly.getTable().getPropertySquare(player.getPosition()).getPrice());
-        priceTax = new JLabel("PRICE TAX: " +
-            monopoly.getTable().getPropertySquare(player.getPosition()).getPriceTax());
-        priceSell = new JLabel("PRICE SELL: " +
-            monopoly.getTable().getPropertySquare(player.getPosition()).getPriceSell());
+        priceTax = new JLabel("PRICE TAX: " 
+        + monopoly.getTable().getPropertySquare(player.getPosition()).getPriceTax());
+        priceSell = new JLabel("PRICE SELL: " 
+        + monopoly.getTable().getPropertySquare(player.getPosition()).getPriceSell());
 
-        owner = new JLabel("OWNER: " +
-            monopoly.getTable().getSquareOwnerToString(player.getPosition()));
+        owner = new JLabel("OWNER: " 
+        + monopoly.getTable().getSquareOwnerToString(player.getPosition()));
 
-        priceh1 = new JLabel("PRICE TAX FOR 1 HOUSE: " +
-            monopoly.getTable().getPropertySquare(player.getPosition()).getHouse().getPrice(1));
-        priceh2 = new JLabel("PRICE TAX FOR 2 HOUSE: " +
-            monopoly.getTable().getPropertySquare(player.getPosition()).getHouse().getPrice(2));
-        priceh3 = new JLabel("PRICE TAX FOR 3 HOUSE: " +
-            monopoly.getTable().getPropertySquare(player.getPosition()).getHouse().getPrice(3));
-        priceh4 = new JLabel("PRICE TAX FOR 4 HOUSE: " +
-            monopoly.getTable().getPropertySquare(player.getPosition()).getHouse().getPrice(4));
-        priceHotel = new JLabel("PRICE TAX FOR HOTEL: " +
-            monopoly.getTable().getPropertySquare(player.getPosition()).getHouse().getPrice(5));
-        priceBuilding = new JLabel("PRICE FOR BUILD: " +
-            monopoly.getTable().getPropertySquare(player.getPosition()).getHouse().getPrice(6));
+        priceh1 = new JLabel("PRICE TAX FOR 1 HOUSE: " 
+        + monopoly.getTable().getPropertySquare(player.getPosition()).getHouse().getPrice(1));
+        priceh2 = new JLabel("PRICE TAX FOR 2 HOUSE: " 
+        + monopoly.getTable().getPropertySquare(player.getPosition()).getHouse().getPrice(2));
+        priceh3 = new JLabel("PRICE TAX FOR 3 HOUSE: " 
+        + monopoly.getTable().getPropertySquare(player.getPosition()).getHouse().getPrice(3));
+        priceh4 = new JLabel("PRICE TAX FOR 4 HOUSE: " 
+        +    monopoly.getTable().getPropertySquare(player.getPosition()).getHouse().getPrice(4));
+        priceHotel = new JLabel("PRICE TAX FOR HOTEL: " 
+        +    monopoly.getTable().getPropertySquare(player.getPosition()).getHouse().getPrice(5));
+        priceBuilding = new JLabel("PRICE FOR BUILD: " 
+        +    monopoly.getTable().getPropertySquare(player.getPosition()).getHouse().getPrice(6));
 
         button = new JButton("CLOSE");
         button.setForeground(GameMain.CREMISI);
@@ -134,7 +134,7 @@ public class InfoSquarePanel extends JPanel implements ActionListener {
 
         button.addActionListener(new ActionListener() {
             @Override
-            public void actionPerformed(ActionEvent eGet) {
+            public void actionPerformed(ActionEvent actionEvent) {
 
                 frame.dispose();
 
@@ -143,6 +143,8 @@ public class InfoSquarePanel extends JPanel implements ActionListener {
     }
 
     @Override
-    public void actionPerformed(ActionEvent arg0) {}
+    public void actionPerformed(ActionEvent arg0) {
+        
+    }
 
 }

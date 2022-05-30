@@ -67,7 +67,6 @@ public class PropertySquare extends Square {
         owner = player;
     }
 
-
     /**
      * Set the monopolyColor true if it was false, false if it was true.
      */
@@ -113,6 +112,7 @@ public class PropertySquare extends Square {
 
     /**
      * Get the position of the propertySquare.
+     * @return the position of the propertySquare
      */
     public int getPosition() {
         return position;

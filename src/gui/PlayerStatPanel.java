@@ -85,12 +85,13 @@ public class PlayerStatPanel extends JPanel {
         gridBagLay.fill = GridBagConstraints.HORIZONTAL;
         add(pos, gridBagLay);
 
-        JPanel pieceColorPanel = new PieceColorPanel(player);
+
         gridBagLay.fill = GridBagConstraints.HORIZONTAL;
         gridBagLay.insets = new Insets(10, 0, 10, 50);
         gridBagLay.gridwidth = 2;
         gridBagLay.gridx = 0;
         gridBagLay.gridy = 4;
+        JPanel pieceColorPanel = new PieceColorPanel(player);
         add(pieceColorPanel, gridBagLay);
 
     }

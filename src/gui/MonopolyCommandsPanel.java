@@ -1,4 +1,3 @@
-
 package gui;
 
 import java.awt.ComponentOrientation;
@@ -66,12 +65,13 @@ public class MonopolyCommandsPanel extends JPanel implements ActionListener {
         this.player = playerx;
         main = mainb;
 
-        FlowLayout layout = new FlowLayout(FlowLayout.CENTER, 50, 20);
+        
         this.setComponentOrientation(ComponentOrientation.LEFT_TO_RIGHT);
 
         setBackground(GameMain.SFONDO);
 
         setBorder(GameMain.BLACKLINE);
+        FlowLayout layout = new FlowLayout(FlowLayout.CENTER, 50, 20);
         setLayout(layout);
         setFont(GameMain.COURIER);
 
@@ -122,9 +122,7 @@ public class MonopolyCommandsPanel extends JPanel implements ActionListener {
                             }
 
                     }
-                }
-
-                else {
+                } else {
                     jailSquare();
                 }
 
@@ -137,8 +135,8 @@ public class MonopolyCommandsPanel extends JPanel implements ActionListener {
 
             public void actionPerformed(ActionEvent arg) {
 
-                if (player.getMoney() >= monopoly.getTable().getSquarePrice(player.getPosition())
-                        && monopoly.getTable().getSquareOwner(player.getPosition()) == null) {
+                if (player.getMoney() >= monopoly.getTable().getSquarePrice(player.getPosition()) 
+                && monopoly.getTable().getSquareOwner(player.getPosition()) == null) {
 
                     monopoly.getTable().setSquareOwner(player);
                     player.buyPropertySquare(monopoly.getTable().getPropertySquare(player.getPosition()));
@@ -417,7 +415,7 @@ public class MonopolyCommandsPanel extends JPanel implements ActionListener {
     }
 
     @Override
-    public void actionPerformed(ActionEvent e) {
+    public void actionPerformed(ActionEvent actionEvent) {
 
     }
 

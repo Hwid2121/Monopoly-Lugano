@@ -86,12 +86,10 @@ public class JailSquare extends Square {
 
 
     /**
-     *
      * Check if the player own the card "Free from the Jail" return true and delete the card
      * if the player own it. 
-     * @return true if the player have the card, false otherwise
      * @param player where to check the deck 
-     *
+     * @return true if the player have the card, false otherwise
      *  
      */
     public static boolean checkFreeJailCard(Player player) {
@@ -109,10 +107,7 @@ public class JailSquare extends Square {
 
     /**
      * Check if the player did a perfect pair.
-     * @return the dice.getperfectparil that is true when the die1 and die2 are equal
-     * false otherwise
-     *
-     *  
+     * @return true if the player did a perfect pair, false otherwise
      */
     public boolean checkPerfectPair() {
         return dice.isPerfectPair();

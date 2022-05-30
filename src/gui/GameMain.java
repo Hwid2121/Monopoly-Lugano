@@ -21,7 +21,7 @@ import model.Monopoly;
  */
 public class GameMain extends JFrame {
 
-    public final static MyButton BUTTON_STYLE = new MyButton();
+    public static final  MyButton BUTTON_STYLE = new MyButton();
 
     public static final Color SFONDO = new Color(205, 230, 208, 255);
     public static final Color MARRONE = new Color(149, 84, 54, 255);

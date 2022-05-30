@@ -5,7 +5,7 @@ import java.util.ArrayList;
 /**
  * Thiss class rapresents the player
  *
- * @author Nicolo' Tafta & Alberto Sardo
+ * @author taftan@usi.ch & sardoa@usi.ch
  * @version 28/04/2022
  */
 public class Player {
@@ -48,11 +48,11 @@ public class Player {
     /**
      * Set the number of injail with the number given as input.
      * 
-     * @param i to set the num of Injail
+     * @param index to set the num of Injail
      * 
      */
-    public void setJail(int i) {
-        inJail = i;
+    public void setJail(int index) {
+        inJail = index;
     }
 
     /**
@@ -156,6 +156,7 @@ public class Player {
     /**
      * Decrese the money of the player by cash.
      * 
+     * @param cash the value of the money to decrease
      */
     public void decreaseMoney(int cash) {
         this.money = getMoney() - cash;
@@ -163,6 +164,7 @@ public class Player {
 
     /**
      * Increase the money of the player by cash.
+     * @param cash the value of the money to increase
      * 
      */
     public void increaseMoney(int cash) {
@@ -301,17 +303,17 @@ public class Player {
             return "No properties";
         }
 
-        String s = "";
-        for (int i = 0; i < listofPropertySquares.size(); i++) {
-            s = ("[" + i + "] ") + listofPropertySquares.get(i).getName() + "Price of sell: "
-                    + listofPropertySquares.get(i).getPriceSell();
+        String string = "";
+        for (int index = 0; index < listofPropertySquares.size(); index++) {
+            string = ("[" + index + "] ") + listofPropertySquares.get(index).getName() + "Price of sell: "
+                    + listofPropertySquares.get(index).getPriceSell();
         }
-        return s;
+        return string;
 
     }
 
     /**
-     * Get the listOfPropertySquare
+     * Get the listOfPropertySquare.
      * 
      * @return listofPropertySquare
      * 

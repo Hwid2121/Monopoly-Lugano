@@ -27,15 +27,21 @@ public class House {
      * - Pricetax from 1 to 4 houses
      * - Pricetax for the Hotel
      * 
+     * @param buildHotel price of the building House
+     * @param priceTemp1     price of the building 1 house
+     * @param priceTemp2     price of the building 2 house
+     * @param priceTemp3     price of the building 3 house
+     * @param priceTemp4     price of the building 4 house
+     * @param priceTempHotel price of the building Hotel
      */
-    public House(int bh, int p1, int p2, int p3, int p4, int ph) {
+    public House(int buildHotel, int priceTemp1, int priceTemp2, int priceTemp3, int priceTemp4, int priceTempHotel) {
 
-        buildingPrice = bh;
-        price1 = p1;
-        price2 = p2;
-        price3 = p3;
-        price4 = p4;
-        priceHotel = ph;
+        buildingPrice = buildHotel;
+        price1 = priceTemp1;
+        price2 = priceTemp2;
+        price3 = priceTemp3;
+        price4 = priceTemp4;
+        priceHotel = priceTempHotel;
 
     }
 
@@ -43,13 +49,7 @@ public class House {
      * This method get the price for every variable of the class.
      * Given an input as id of the price that we want see.
      *
-     * @param i that is the index of the price that we want to see
-     *          1 to see price1
-     *          2 to see price2
-     *          3 to see price3
-     *          4 to see price4
-     *          5 to see priceHotel
-     *          6 to see BuildingPrice
+     * @param i id of the price that we want to see
      * 
      * 
      * @return the price of the field requested

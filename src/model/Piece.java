@@ -10,7 +10,7 @@ import java.awt.Color;
 
 /**
  * Piece class that indetify the player.
- * @author Alberto Sardo & Nicolo' Tafta
+ * @author taftan@usi.ch & sardoa@usi.ch
  * @version 24/05/2022
  */
 public class Piece {

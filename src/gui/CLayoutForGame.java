@@ -1,4 +1,3 @@
-
 package gui;
 
 import java.awt.CardLayout;
@@ -53,9 +52,9 @@ public class CLayoutForGame extends JPanel {
      * The main panel where all the monopoly is played.
      * 
      * @param player the player that have to play the turn
-     * @param i      the fase of the game
+     * @param index     the fase of the game
      */
-    public void monopoly(Player player, int i) {
+    public void monopoly(Player player, int index) {
 
         playerEliminate(player);
         checkEndGame();
@@ -81,9 +80,7 @@ public class CLayoutForGame extends JPanel {
             add(panelMonopolysa, "2");
 
             mainFrame.show(this, "2");
-        }
-
-        else {
+        } else {
 
             resetTurn();
             resetfase();
@@ -114,7 +111,7 @@ public class CLayoutForGame extends JPanel {
     /**
      * Set the fase.
      * 
-     * @param index
+     * @param index the fase that we want to set
      */
     public void setFase(int index) {
         fase = index;
@@ -154,16 +151,15 @@ public class CLayoutForGame extends JPanel {
             add(end, "3");
 
             mainFrame.show(this, "3");
-        }
-        else {
-            //Generate End Panel
-            JFrame f = new JFrame("CONGRATULATIONS!");
-            f.getContentPane().setBackground(GameMain.SFONDO);
-            f.setLocationRelativeTo(null);
-            f.add(new PanelEnd());
-            f.setSize(400, 400);
-            f.setVisible(true);
-            f.pack();
+        } else {
+            // Generate End Panel
+            JFrame frame = new JFrame("CONGRATULATIONS!");
+            frame.getContentPane().setBackground(GameMain.SFONDO);
+            frame.setLocationRelativeTo(null);
+            frame.add(new PanelEnd());
+            frame.setSize(400, 400);
+            frame.setVisible(true);
+            frame.pack();
         }
 
     }

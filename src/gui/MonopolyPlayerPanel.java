@@ -22,6 +22,13 @@ public class MonopolyPlayerPanel extends JPanel {
 
     private GridLayout layout = new GridLayout(numPlayers, 2);
 
+
+
+
+    /**
+     * Constructor of the MonopolyPlayerPanel.
+     * 
+     */
     public MonopolyPlayerPanel() {
         super();
         setLayout(layout);
@@ -38,9 +45,6 @@ public class MonopolyPlayerPanel extends JPanel {
 
     }
 
-    public void refreshPage() {
-        revalidate();
-        repaint();
-    }
+
 
 }

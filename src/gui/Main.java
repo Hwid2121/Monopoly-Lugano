@@ -6,7 +6,7 @@ import java.awt.EventQueue;
 /**
  * in this class we create the main frame of the game gui.
  * 
- * @author Alberto Sardo & Nicolo' Tafta
+ * @author taftan@usi.ch & sardoa@usi.ch
  * @version 24/05/2022
  */
 
