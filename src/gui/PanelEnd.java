@@ -1,15 +1,13 @@
 package gui;
 
-
 import model.Monopoly;
+import model.Player;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Font;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-
-
 
 /**
  * This class rappresents the Monopoly End Game panel.
@@ -26,12 +24,17 @@ public class PanelEnd extends JPanel {
      * PanelEnd constructor.
      * 
      */
-    public PanelEnd() {
+    public PanelEnd(Player player) {
         super();
-        String nick = monopoly.getListOfPlayer().get(0).getNickname();
+        String nick = player.getNickname();
         makeUI(nick);
     }
 
+    /**
+     * This method make the UI of the panel.
+     * 
+     * @param nick the nickname of the winner
+     */
     private void makeUI(String nick) {
 
         setBackground(new Color(205, 230, 208, 255));
