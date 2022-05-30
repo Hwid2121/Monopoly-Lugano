@@ -24,9 +24,7 @@ import javax.swing.JPanel;
  */
 public class PopUpPickCardPanel extends JPanel implements ActionListener {
 
-    private JLabel desc;
     private PopUpPickCardFrame framea;
-    private JButton button;
     private Font sansSerif = new Font("SansSerif", Font.BOLD, 14);
 
     /**
@@ -47,13 +45,13 @@ public class PopUpPickCardPanel extends JPanel implements ActionListener {
         setComponentOrientation(ComponentOrientation.LEFT_TO_RIGHT);
         setBackground(GameMain.SFONDO);
 
-        button = new JButton("CONTINUE");
+        JButton button = new JButton("CONTINUE");
         button.setForeground(GameMain.CREMISI);
         button.setFont(sansSerif);
         button.setMinimumSize(new Dimension(120, 40));
         button.setPreferredSize(new Dimension(120, 40));
 
-        desc = new JLabel(card.getDescription());
+        JLabel desc = new JLabel(card.getDescription());
         desc.setFont(sansSerif);
         desc.setAlignmentX(Component.CENTER_ALIGNMENT);
         // button.setAlignmentX(Component.CENTER_ALIGNMENT);

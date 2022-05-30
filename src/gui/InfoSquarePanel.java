@@ -25,27 +25,18 @@ public class InfoSquarePanel extends JPanel implements ActionListener {
 
     private GridLayout lay = new GridLayout(3, 5, 2, 2);
 
-    private JLabel name;
 
-    private JLabel color;
 
-    private JLabel price;
 
-    private JLabel priceTax;
-    private JLabel priceSell;
-    private JLabel priceh1;
-    private JLabel owner;
-    private JLabel priceh2;
-    private JLabel priceh3;
-    private JLabel priceh4;
-    private JLabel priceHotel;
-    private JLabel priceBuilding;
 
-    private JButton button;
+  
+    
+
+
+
 
     private Font sansSerif = new Font("SansSerif", Font.BOLD, 12);
     private InfoSquareFrame frame;
-    private Monopoly monopoly;
 
     /**
      * Construcotr of the frame InfoSquareFrame.
@@ -57,39 +48,39 @@ public class InfoSquarePanel extends JPanel implements ActionListener {
     public InfoSquarePanel(Player player, InfoSquareFrame framea, Monopoly monopolya) {
         super();
 
-        monopoly = monopolya;
+        Monopoly monopoly = monopolya;
         this.frame = framea;
 
         setLayout(lay);
         setComponentOrientation(ComponentOrientation.LEFT_TO_RIGHT);
         setBackground(GameMain.SFONDO);
 
-        name = new JLabel("NAME: " + monopoly.getTable().getSquare(player.getPosition()).getName());
-        color = new JLabel("COLOR: " + monopoly.getTable().getSquare(player.getPosition()).getColor());
-        price = new JLabel(
+        JLabel name = new JLabel("NAME: " + monopoly.getTable().getSquare(player.getPosition()).getName());
+        JLabel color = new JLabel("COLOR: " + monopoly.getTable().getSquare(player.getPosition()).getColor());
+        JLabel price = new JLabel(
             "PRICE: " + monopoly.getTable().getPropertySquare(player.getPosition()).getPrice());
-        priceTax = new JLabel("PRICE TAX: " 
+        JLabel priceTax = new JLabel("PRICE TAX: " 
         + monopoly.getTable().getPropertySquare(player.getPosition()).getPriceTax());
-        priceSell = new JLabel("PRICE SELL: " 
+        JLabel priceSell = new JLabel("PRICE SELL: " 
         + monopoly.getTable().getPropertySquare(player.getPosition()).getPriceSell());
 
-        owner = new JLabel("OWNER: " 
+        JLabel owner = new JLabel("OWNER: " 
         + monopoly.getTable().getSquareOwnerToString(player.getPosition()));
 
-        priceh1 = new JLabel("PRICE TAX FOR 1 HOUSE: " 
+        JLabel priceh1 = new JLabel("PRICE TAX FOR 1 HOUSE: " 
         + monopoly.getTable().getPropertySquare(player.getPosition()).getHouse().getPrice(1));
-        priceh2 = new JLabel("PRICE TAX FOR 2 HOUSE: " 
+        JLabel priceh2 = new JLabel("PRICE TAX FOR 2 HOUSE: " 
         + monopoly.getTable().getPropertySquare(player.getPosition()).getHouse().getPrice(2));
-        priceh3 = new JLabel("PRICE TAX FOR 3 HOUSE: " 
+        JLabel priceh3 = new JLabel("PRICE TAX FOR 3 HOUSE: " 
         + monopoly.getTable().getPropertySquare(player.getPosition()).getHouse().getPrice(3));
-        priceh4 = new JLabel("PRICE TAX FOR 4 HOUSE: " 
+        JLabel priceh4 = new JLabel("PRICE TAX FOR 4 HOUSE: " 
         +    monopoly.getTable().getPropertySquare(player.getPosition()).getHouse().getPrice(4));
-        priceHotel = new JLabel("PRICE TAX FOR HOTEL: " 
+        JLabel priceHotel = new JLabel("PRICE TAX FOR HOTEL: " 
         +    monopoly.getTable().getPropertySquare(player.getPosition()).getHouse().getPrice(5));
-        priceBuilding = new JLabel("PRICE FOR BUILD: " 
+        JLabel priceBuilding = new JLabel("PRICE FOR BUILD: " 
         +    monopoly.getTable().getPropertySquare(player.getPosition()).getHouse().getPrice(6));
 
-        button = new JButton("CLOSE");
+        JButton button = new JButton("CLOSE");
         button.setForeground(GameMain.CREMISI);
         button.setFont(sansSerif);
         button.setMinimumSize(new Dimension(50, 15));

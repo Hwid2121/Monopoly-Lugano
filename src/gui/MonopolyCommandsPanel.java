@@ -30,10 +30,9 @@ public class MonopolyCommandsPanel extends JPanel implements ActionListener {
 
     private Dimension dim = new Dimension(130, 80);
 
-    private PopUpPickCardFrame pop;
-    private InfoSquareFrame infoFrame;
 
-    private DiceFrame diceFrame;
+
+   
     private JButton buy = new JButton("BUY");
     private JButton pass = new JButton("PASS");
     private JButton sell = new JButton("SELL");
@@ -44,8 +43,6 @@ public class MonopolyCommandsPanel extends JPanel implements ActionListener {
     private JButton info = new JButton("INFO SQUARE");
 
     private JButton perfectDice = new JButton("TRY PERFECT DICE");
-
-    private BonusSquareFrame bonusFrame;
 
     private JButton cont = new JButton("CONTINUE...");
 
@@ -158,7 +155,7 @@ public class MonopolyCommandsPanel extends JPanel implements ActionListener {
 
             public void actionPerformed(ActionEvent arg) {
 
-                infoFrame = new InfoSquareFrame((MonopolyCommandsPanel) pick.getParent(), player, monopoly);
+                InfoSquareFrame infoFrame = new InfoSquareFrame((MonopolyCommandsPanel) pick.getParent(), player, monopoly);
                 infoFrame.setVisible(true);
 
             }
@@ -219,7 +216,7 @@ public class MonopolyCommandsPanel extends JPanel implements ActionListener {
 
             public void actionPerformed(ActionEvent arg) {
 
-                bonusFrame = new BonusSquareFrame((MonopolyCommandsPanel) pick.getParent(), player);
+                BonusSquareFrame bonusFrame = new BonusSquareFrame((MonopolyCommandsPanel) pick.getParent(), player);
                 bonusFrame.setVisible(true);
                 main.passTurn();
 
@@ -237,7 +234,7 @@ public class MonopolyCommandsPanel extends JPanel implements ActionListener {
 
                 deck.playCard(deck.getIndex(), player);
 
-                pop = new PopUpPickCardFrame(card, (MonopolyCommandsPanel) pick.getParent());
+                PopUpPickCardFrame pop = new PopUpPickCardFrame(card, (MonopolyCommandsPanel) pick.getParent());
 
                 pop.setVisible(true);
 
@@ -273,7 +270,7 @@ public class MonopolyCommandsPanel extends JPanel implements ActionListener {
                 monopoly.throwDice();
                 monopoly.setPositionPlayer(player);
 
-                diceFrame = new DiceFrame((MonopolyCommandsPanel) pick.getParent(), monopoly.getDice());
+                DiceFrame diceFrame = new DiceFrame((MonopolyCommandsPanel) pick.getParent(), monopoly.getDice());
                 diceFrame.setVisible(true);
 
                 System.out.println("SI FUNZ " + monopoly.getListOfPlayer().get(0).getPosition());

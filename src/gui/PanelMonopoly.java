@@ -14,9 +14,7 @@ import javax.swing.JPanel;
  */
 public class PanelMonopoly extends JPanel {
 
-    private MonopolyGridPanel monopolyGridPanel;
-    private MonopolyPlayerPanel monopolyPlayerPanel;
-    private MonopolyCommandsPanel monopolyCommandsPanel;
+
 
     private CLayoutForGame main;
     private Player player;
@@ -28,14 +26,13 @@ public class PanelMonopoly extends JPanel {
      * @param players the players of the game
      */
     public PanelMonopoly(CLayoutForGame game, Player players) {
-
-        player = players;
-        main = game;
+        super();
 
 
-        monopolyGridPanel = new MonopolyGridPanel(player);
-        monopolyPlayerPanel = new MonopolyPlayerPanel();
-        monopolyCommandsPanel = new MonopolyCommandsPanel(player, main, this);
+
+        MonopolyGridPanel monopolyGridPanel = new MonopolyGridPanel(player);
+        MonopolyPlayerPanel monopolyPlayerPanel = new MonopolyPlayerPanel();
+        MonopolyCommandsPanel monopolyCommandsPanel = new MonopolyCommandsPanel(player = players, main = game, this);
 
         
         monopolyGridPanel.setPreferredSize(new Dimension(1000, 1000));

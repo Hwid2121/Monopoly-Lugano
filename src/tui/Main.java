@@ -5,7 +5,6 @@ import model.Monopoly;
 import model.Player;
 import model.PropertySquare;
 
-
 /**
  * This is the main of the TUI
  * inside of this class is present the class main and the main for start with
@@ -201,13 +200,6 @@ public class Main {
                         JailSquare.freeFromJail(player);
                         System.out.println(
                                 "You did perfect pair, you gonna forward for " + (refactorMain.monopoly.die1() * 2));
-
-                        // refactorMain.monopoly.setPositionPlayer(refactorMain.monopoly.getPLayer(turn));
-                        // System.out.println("You are in the square: "
-                        // +
-                        // refactorMain.monopoly.getTable().getSquareName(refactorMain.monopoly.getPLayer(turn).getPosition()));
-
-                        // startTurn(player, refactorMain.monopoly);
                         gameStatusPlay();
 
                         break;

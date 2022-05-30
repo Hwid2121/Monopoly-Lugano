@@ -1,5 +1,4 @@
 package gui;
-
 import model.Card;
 
 import java.awt.Color;

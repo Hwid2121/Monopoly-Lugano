@@ -6,8 +6,6 @@ import model.Player;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.Image;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import javax.swing.ImageIcon;
 import javax.swing.JPanel;
 
@@ -19,7 +17,7 @@ import javax.swing.JPanel;
  * @author taftan@usi.ch & sardoa@usiu.ch
  * @version 24/05/2022
  */
-public class MonopolyGridPanel extends JPanel implements ActionListener {
+public class MonopolyGridPanel extends JPanel {
 
     private GridPosition gridpos = new GridPosition();
 
@@ -58,15 +56,4 @@ public class MonopolyGridPanel extends JPanel implements ActionListener {
         }
 
     }
-
-    /**
-     * Action performed when the user click on the grid.
-     * 
-     * @param arg0 the action event
-     */
-    @Override
-    public void actionPerformed(ActionEvent arg0) {
-
-    }
-
 }
