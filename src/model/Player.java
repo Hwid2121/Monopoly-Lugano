@@ -27,7 +27,7 @@ public class Player {
      */
     public Player(String nickname) {
         this.nickname = nickname;
-        money = 5;
+        money = 1500;
         position = 0;
         piece = new Piece();
     }
