@@ -1,3 +1,6 @@
 [submodule "Monopoly-Lugano"]
 	path = Monopoly-Lugano
 	url = https://github.com/usi-pf2-2022/project-monopoly-dinasty.git
+[submodule "project-monopoly-dinasty"]
+	path = project-monopoly-dinasty
+	url = https://github.com/Hwid2121/Monopoly-Lugano.git
